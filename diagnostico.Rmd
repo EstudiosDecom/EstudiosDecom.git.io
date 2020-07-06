@@ -1,0 +1,31 @@
+---
+title: "Diagnóstico Social Comunal"
+date: "Noviembre 2019"
+author: "Nicolás Vatter, Paulina Peña & Felipe Vega"
+output:
+  html_document:
+    toc: true
+    toc_depth: 6
+    toc_float:
+      collapsed: false
+      smooth_scroll: true
+---
+<div align="left">
+
+## Capitulo 1: Geografia, desarrollo urbano y movilidad.
+
+La ciudad comprende un sistema complejo donde convergen múltiples necesidades; seguridad, transporte y movilidad, integración y cohesión social, salud, educación, actividad económica, desarrollo sostenible y sustentable, y la disposición del espacio público para el encuentro de las diversas culturas, todas las cuales son dimensiones del bienestar y calidad de vida urbana (Newman & Jennings, 2008).
+En esta línea, la comuna de Las Condes hoy se consolida como un gran asentamiento urbano en la Región Metropolitana, con una población total de 294.838 habitantes. Los datos censales del año 2017 la exhiben como la novena comuna más poblada del país, y la que concentra mayor cantidad de habitantes en la zona oriente de la Región Metropolitana. Por ello, uno de los desafíos del municipio de Las Condes es consolidar el alto estándar de calidad de vida existente en la comuna, y enfrentar las necesidades de una comunidad que transita aceleradamente hacia el envejecimiento.
+Comprender las características geográficas de la ciudad es fundamental para una correcta planificación social. En la literatura académica se demuestra la importancia que adquieren las variables asociadas a los sistemas de transporte e infraestructura urbana en la calidad de vida de las personas.
+En el presente apartado se aborda una breve caracterización geográfica y de transporte relativa a la comuna. Se incluye la delimitación urbana, la subdivisión territorial, las características de transporte y movilidad, y una descripción de infraestructura urbana presente en la comuna.
+
+
+
+### i. Límites territoriales
+### ii. Subdivisión urbana: unidades vecinales
+### iii. Organizaciones comunitarias
+### iv. Desarrollo urbano
+#### a. Parques e infraestructura urbana
+#### b. Transporte y movilidad
+
+

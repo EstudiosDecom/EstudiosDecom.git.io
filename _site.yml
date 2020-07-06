@@ -1,9 +1,21 @@
 name: "my-website"
 output_dir: "."
 navbar:
-  title: "My Website"
+  title: "Estudios DECOM"
   left:
     - text: "Home"
       href: index.html
+    - text: "Diagnóstico Social Comunal"
+      href: diagnostico.html
+    - text: "Análisis"
+      href: doc_analisis.html
+    - text: "Datos georreferenciados"
+      href: maps.html
     - text: "About"
       href: about.html
+      
+      
+output:
+  html_document:
+    theme: spacelab
+    highlight: tango
