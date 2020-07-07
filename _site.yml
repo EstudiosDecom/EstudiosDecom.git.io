@@ -13,8 +13,6 @@ navbar:
       href: maps.html
     - text: "About"
       href: about.html
-      
-      
 output:
   html_document:
     theme: spacelab

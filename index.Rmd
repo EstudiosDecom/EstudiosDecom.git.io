@@ -1,11 +1,9 @@
-
 ---
 title: "Planificación Social y Estudios"
 ---
 
-<div align="left">
----
-El Departamento de Planificación Social y Estudios de la Dirección de Desarrollo Comunitario pone a disposición del público en general, el Diagnóstico Social Comunal de Las Condes. El propósito de este instrumento es contar con una extensa revisión de datos estadísticos que contribuya a una mejor toma de decisiones en materia de políticas sociales.  
+<p align="justify">
+El Departamento de Planificación Social y Estudios de la Dirección de Desarrollo Comunitario pone a disposición del público en general, el Diagnóstico Social Comunal de Las Condes. El propósito de este instrumento es contar con una extensa revisión de datos estadísticos que contribuya a una mejor toma de decisiones en materia de políticas sociales.</p>
 
 
 
