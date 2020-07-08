@@ -3,13 +3,14 @@ title: "Diagnóstico Social Comunal"
 date: "Noviembre 2019"
 author: "Nicolás Vatter, Paulina Peña & Felipe Vega"
 output:
-  html_document: {}
+  html_document:
     toc: true
     toc_depth: 6
     toc_float:
-    collapsed: false
-    smooth_scroll: true
+      collapsed: false
+      smooth_scroll: true
 ---
+
 <p align="left">
 ## Capítulo 1: Geografía, Desarrollo Urbano y Movilidad
 </p>
@@ -51,18 +52,27 @@ output:
 
 <p align="justify">De acuerdo con la definición normativa las organizaciones territoriales se caracterizan por constituirse con individuos que residen dentro de una misma unidad vecinal, y tienen por objetivo promover el desarrollo de la comunidad, defendiendo los intereses de los vecinos.Por su parte, las organizaciones funcionales corresponden a agrupaciones con personalidad jurídica y sin fines de lucro, que representan y promueven valores e intereses específicos de una comunidad.</p>
 
-<p align="justify">A través del Departamento de Organizaciones Comunitarias, la Dirección de Desarrollo Comunitario de Las Condes fomenta y promueven el funcionamiento adecuado de estas organizaciones que canalizan los intereses y necesidades de los vecinos. En la Tabla 1 se describe la cantidad de organizaciones según su tipo, presentes en la comuna.</p>
+<p align="justify">A través del Departamento de Organizaciones Comunitarias, la Dirección de Desarrollo Comunitario de Las Condes fomenta y promueven el funcionamiento adecuado de estas organizaciones que canalizan los intereses y necesidades de los vecinos. En la Tabla 1 se describe la cantidad de organizaciones presentes en la comuna.</p>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library('stargazer')
+library('knitr')
+```
 
 ```{r table1, echo=FALSE}
-library('stargazer')
 library('dplyr')
-
 organizacion = c('Junta de vecinos', 'Unión comunal', 'Centro de seguridad', 'Centro cultural',
                  'Club de adulto mayor', 'Clubes deportivos', 'Centros de madres', 'Centros de padres', 'Centro juvenil', 'Comité de vivienda', 'Comité de administración', 'Otras organizaciones funcionales')
 cantidad = c(59, 5,136,53,90,60,3,20,10,7,13,3)
 table1 <- data.frame(organizacion,cantidad)
 table1$organizacion <- factor(table1$organizacion)
-stargazer(table1[1:12,], title="Registro de organizaciones comunitarias en Las Condes.", align=TRUE)
+```
+
+```{r table1LaTex,results='ASIS'}
+knitr::kable(table1, "html", col.names = c('Organización', 'Cantidad'), caption = "Tabla 1. Registro de organizaciones comunitarias en Las Condes.", align = 'l') %>%
+  kable_styling(position = "center", bootstrap_options = "striped", full_width = F) %>%
+  footnote(general = "Fuente: Elaboración propia en base a datos del Departamento de Organizaciones Comunitarias DECOM")
 ```
 
 ### iv. Desarrollo urbano
@@ -71,8 +81,18 @@ stargazer(table1[1:12,], title="Registro de organizaciones comunitarias en Las C
 
 <p align="justify">En relación a lo anterior, el Instituto Nacional de Estadísticas (INE) ha dispuesto una serie de indicadores que miden el compromiso de las ciudades para alcanzar el desarrollo urbano. En esta línea el presente apartado aborda estadísticas de áreas verdes y transporte y movilidad a nivel comunal.</p>
 
-
 #### a. Parques e infraestructura urbana
+
+<p align="justify">La presencia de áreas verdes en las ciudades genera una serie de externalidades positivas que se traducen en beneficios sociales intangibles para las comunidades (Anguluri & Narayanan, 2017).</p>
+
+<p align="justify">Las Condes, actualmente, cuenta con una superficie total de parques urbanos que alcanza 701.515 metros cuadrados, y 679.627 metros cuadrados de plazas. En total, suman 138 hectáreas de áreas verdes urbanas, según los datos del Sistema de Indicadores y Estándares del Desarrollo Urbano (Instituto Nacional de Estadísticas & PNUD, 2018).</p>
+
+<p align="justify">Al analizar la cantidad de áreas verdes urbanas per cápita, los datos revelan que en la comuna existen 4,7 metros cuadrados de áreas verdes por habitante, distante de la meta propuesta por el Consejo Nacional de Desarrollo Urbano (CNDU) que es de 10 metros cuadrados por persona.</p>
+
+<p align="justify">Entre las comunas con mayor cantidad de áreas verdes per cápita a nivel nacional, Las Condes se ubica en el lugar 58, y a nivel regional ocupa el puesto 23 del ranking. En la Figura 1 se muestra la distribución de metros cuadrados de áreas verdes por habitantes para las comunas de la Provincia de Santiago a través de un mapa, aquellas comunas con mayor cantidad de áreas verdes per cápita aparecen más oscuras.</p>
+
+<p align="justify">Las Comunas de referencia, Vitacura y Providencia se encuentran dentro de las tres con mayor cantidad de áreas verdes por persona con un promedio de 17,2 metros cuadrados por habitante. Vitacura se ubica en el primer lugar a nivel nacional con un índice de 18,9 m2/hab., mientras que Providencia aparece en el tercer lugar con 15,5 m2 de área verde por persona.</p>
+
 
 
 #### b. Transporte y movilidad
@@ -87,11 +107,11 @@ stargazer(table1[1:12,], title="Registro de organizaciones comunitarias en Las C
 </p>
 
 <p align="left">
-##Capítulo 4: Bienestar social básico
+## Capítulo 4: Bienestar social básico
 </p>
 
 <p align="left">
-##Capítulo 5: Clases medias
+## Capítulo 5: Clases medias
 </p>
 
 
