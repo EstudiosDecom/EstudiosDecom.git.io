@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Nicolás Vatter, Paulina Peña &amp; Felipe Vega" />
+
+
+<title>Diagnóstico Social Comunal</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 52px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h2 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h3 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h4 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h5 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.section h6 {
+  padding-top: 57px;
+  margin-top: -57px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Estudios DECOM</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="diagnostico.html">Diagnóstico Social Comunal</a>
+</li>
+<li>
+  <a href="doc_analisis.html">Análisis</a>
+</li>
+<li>
+  <a href="maps.html">Datos georreferenciados</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Diagnóstico Social Comunal</h1>
+<h4 class="author">Nicolás Vatter, Paulina Peña &amp; Felipe Vega</h4>
+<h4 class="date">Noviembre 2019</h4>
+
+</div>
+
+
+<div align="left">
+<div id="capítulo-1-geografía-desarrollo-urbano-y-movilidad" class="section level2">
+<h2>Capítulo 1: Geografía, Desarrollo Urbano y Movilidad</h2>
+<p align="justify">
+La ciudad comprende un sistema complejo donde ocurren múltiples interacciones y convergen diversas necesidades humanas; seguridad, transporte y movilidad, integración y cohesión social, salud, educación, actividad económica, desarrollo sostenible y sustentable, y la disposición del espacio público para el encuentro de las diversas culturas, todas dimensiones de bienestar y calidad de vida urbana (Newman &amp; Jennings, 2008).
+</p>
+<p align="justify">
+Las Condes hoy se presenta como un extenso asentamiento urbano en la Región Metropolitana, con una población cercana a los 300 mil habitantes, la novena comuna con mayor cantidad de población a nivel nacional y la más poblada del sector oriente.
+</p>
+<p align="justify">
+La comuna destaca por sus elevados estándares de calidad de vida urbana, y uno de los desafíos más significativos del municipio es consolidar ese alto estándar de calidad de vida, y extenderlo a todos los sectores de la comuna, en un contexto de transición acelerada hacia el envejecimiento de su población.
+</p>
+<p align="justify">
+En esta línea, comprender las características geográficas de la ciudad es fundamental para una correcta planificación social. En la literatura académica se demuestra la importancia que adquieren las variables asociadas a los sistemas de transporte e infraestructura urbana en la calidad de vida de las personas.
+</p>
+<p align="justify">
+En el presente apartado se aborda una breve caracterización geográfica y de transporte relativa a la comuna. Se incluye la delimitación urbana, la subdivisión territorial, las características de transporte y movilidad, y una descripción de infraestructura urbana presente en la comuna.
+</p>
+<div id="i.-límites-territoriales" class="section level3">
+<h3>i. Límites territoriales</h3>
+<p align="justify">
+La Comuna de Las Condes se ubica en el sector oriente de la Región Metropolitana, cuenta con una superficie total de 96 km2 de los cuales 43,9 km2 corresponden al área urbana. Esta limita al norte con la comuna de Vitacura, al nororiente con Lo Barnechea, al sur con La Reina y al poniente con Providencia. Los límites comunales se demarcan a partir de la siguiente descripción:
+</p>
+<p align="justify">
+• Norte: Avenida Kennedy, desde el puente Los Saldes, sobre el Río Mapocho hasta Avenida Las Condes y su prolongación por ésta hasta el Camino a Farellones.
+</p>
+<p align="justify">
+• Oriente: Desde el Camino a Farellones frente al Cerro Arrayán Sur, la línea de cumbres que pasa por ese cerro, el Moro de Guayacán, el Cerro de la Provincia, el Cerro Las Lagunas, hasta el Cerro San Ramón.
+</p>
+<p align="justify">
+• Sur: La línea de cumbres que limita por el sur lo hoya de la quebrada San Ramón, desde el Cerro San Ramón hasta la intersección de las calles Valenzuela Puelma, Onofre Jarpa y Álvaro Casanova. La calle Valenzuela Puelma, desde la intersección antes citada hasta el Canal de Las Perdices; el Canal Las Perdices desde la calle Valenzuela Puelma hasta Avenida Francisco Bilbao, y Avenida Francisco Bilbao, desde el Canal Las Perdices hasta el Canal San Carlos.
+</p>
+<p align="justify">
+• Poniente: El Canal San Carlos desde Avenida Francisco Bilbao hasta su desembocadura en el Río Mapocho, y el Río Mapocho, desde la desembocadura del Canal San Carlos hasta el Puente Lo Saldes.
+</p>
+</div>
+<div id="ii.-subdivisión-urbana-unidades-vecinales" class="section level3">
+<h3>ii. Subdivisión urbana: unidades vecinales</h3>
+<p align="justify">
+La Ley 19.418 sobre Juntas de Vecinos y demás organizaciones comunitarias (Ministerio del Interior, 1997) establece los criterios para subdividir los territorios de las comunas. De acuerdo a esta ley, una Unidad Vecinal se define como el territorio “(…) en que se subdividen las comunas, para efectos de descentralizar asuntos comunales y promover la participación ciudadana y la gestión comunitaria, y en el cual se constituyen y desarrollan sus funciones las juntas de vecinos”.
+</p>
+<p align="justify">
+Las unidades vecinales son determinadas por el alcalde “…de propia iniciativa o a petición de las juntas de vecinos o de los vecinos interesados, con el acuerdo del Concejo y oyendo al Consejo Económico y Social de la Comuna”. Actualmente, en la comuna de Las Condes existen 25 unidades vecinales distribuidas en el territorio comunal (ver mapa).
+</p>
+<p align="center">
+<iframe src="https://www.google.com/maps/d/embed?mid=1Qp_2a8tQn-_jWYvTB_eWLO1CLU1arma3" width="600" height="420">
+</iframe>
+</p>
+</div>
+<div id="iii.-organizaciones-comunitarias" class="section level3">
+<h3>iii. Organizaciones comunitarias</h3>
+<p align="justify">
+La ley citada anteriormente, también reconoce la organización de la comunidad bajo la forma de organizaciones territoriales y organizaciones funcionales. Entre las primeras destacan las juntas de vecinos, mientras que en las segundas aparecen los centros de madres, centros de padres y apoderados, organizaciones artísticas y culturales, organizaciones deportivas, y otras.
+</p>
+<p align="justify">
+De acuerdo con la definición normativa las organizaciones territoriales se caracterizan por constituirse con individuos que residen dentro de una misma unidad vecinal, y tienen por objetivo promover el desarrollo de la comunidad, defendiendo los intereses de los vecinos.Por su parte, las organizaciones funcionales corresponden a agrupaciones con personalidad jurídica y sin fines de lucro, que representan y promueven valores e intereses específicos de una comunidad.
+</p>
+<p align="justify">
+A través del Departamento de Organizaciones Comunitarias, la Dirección de Desarrollo Comunitario de Las Condes fomenta y promueven el funcionamiento adecuado de estas organizaciones que canalizan los intereses y necesidades de los vecinos. En la Tabla 1 se describe la cantidad de organizaciones según su tipo, presentes en la comuna.
+</p>
+<pre><code>## 
+## Please cite as:</code></pre>
+<pre><code>##  Hlavac, Marek (2018). stargazer: Well-Formatted Regression and Summary Statistics Tables.</code></pre>
+<pre><code>##  R package version 5.2.2. https://CRAN.R-project.org/package=stargazer</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre><code>## 
+## % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+## % Date and time: Tue, Jul 07, 2020 - 19:09:35
+## % Requires LaTeX packages: dcolumn 
+## \begin{table}[!htbp] \centering 
+##   \caption{Registro de organizaciones comunitarias en Las Condes.} 
+##   \label{} 
+## \begin{tabular}{@{\extracolsep{5pt}}lD{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} } 
+## \\[-1.8ex]\hline 
+## \hline \\[-1.8ex] 
+## Statistic &amp; \multicolumn{1}{c}{N} &amp; \multicolumn{1}{c}{Mean} &amp; \multicolumn{1}{c}{St. Dev.} &amp; \multicolumn{1}{c}{Min} &amp; \multicolumn{1}{c}{Pctl(25)} &amp; \multicolumn{1}{c}{Pctl(75)} &amp; \multicolumn{1}{c}{Max} \\ 
+## \hline \\[-1.8ex] 
+## cantidad &amp; 12 &amp; 38.250 &amp; 42.309 &amp; 3 &amp; 6.5 &amp; 59.2 &amp; 136 \\ 
+## \hline \\[-1.8ex] 
+## \end{tabular} 
+## \end{table}</code></pre>
+</div>
+<div id="iv.-desarrollo-urbano" class="section level3">
+<h3>iv. Desarrollo urbano</h3>
+<p align="justify">
+La Nueva Agenda Urbana (2016), documento ratificado por Estado de Chile ante Naciones Unidas, es un compromiso común que invita a poner los recursos y esfuerzos en alcanzar la equidad urbana. Entregar igualdad de acceso a las oportunidades que ofrecen las ciudades es uno de los grandes desafíos para alcanzar el desarrollo sostenible.
+</p>
+<p align="justify">
+En relación a lo anterior, el Instituto Nacional de Estadísticas (INE) ha dispuesto una serie de indicadores que miden el compromiso de las ciudades para alcanzar el desarrollo urbano. En esta línea el presente apartado aborda estadísticas de áreas verdes y transporte y movilidad a nivel comunal.
+</p>
+<div id="a.-parques-e-infraestructura-urbana" class="section level4">
+<h4>a. Parques e infraestructura urbana</h4>
+</div>
+<div id="b.-transporte-y-movilidad" class="section level4">
+<h4>b. Transporte y movilidad</h4>
+</div>
+</div>
+</div>
+<div id="capítulo-2-estadísticas-demográficas" class="section level2">
+<h2>Capítulo 2: Estadísticas demográficas</h2>
+</div>
+<div id="bibliografía" class="section level2">
+<h2>Bibliografía</h2>
+<p align="justify">
+Alkire, S., Apablaza, M., Chakravarty, S., &amp; Yalonetzky, G. (2017). Measuring chronic multidimensional poverty. <em>Journal of Policy Modeling</em>, 39(6), 983–1006.
+</p>
+<p align="justify">
+Alkire, S., &amp; Foster, J. (2011). Counting and multidimensional poverty measurement. <em>Journal of Public Economics</em>, 95(7–8), 476–487.
+</p>
+<p align="justify">
+Anguluri, R., &amp; Narayanan, P. (2017). Role of green space in urban planning: Outlook towards smart cities. <em>Urban Forestry &amp; Urban Greening</em>, 25, 58–65.
+</p>
+<p align="justify">
+Arriagada, V., Méndez, R., Sehnbruch, K., Apablaza, M., &amp; González, P. (2018). Measuring the Quality of Employment (QoE) in Central America. A multidimensional approach (No. 38). Santiago.
+</p>
+<p align="justify">
+Atkinson, A. B. (2003). Multidimensional deprivation: contrasting social welfare and counting approaches. <em>The Journal of Economic Inequality</em>, 1(1), 51–65.
+</p>
+<p align="justify">
+Balaz, V., &amp; Williams, A. M. (2011). Risk attitudes and migration experience. <em>Journal of Risk Research</em>, 14(5), 583–596.
+</p>
+<p align="justify">
+Bardasi, E., Jenkins, S., &amp; Rigg, J. (2002). Retirement and the income of older people: a British perspective. <em>Ageing and Society</em>, 22(2), 131–159.
+</p>
+<p align="justify">
+Benyamini, Y. (2016). Self-rated health. In Y. Benyamini, M. Johnston, &amp; E. C. Karademas (Eds.), Assessment in health psychology (2nd ed., pp. 175–188). Boston: Hogrefe.
+</p>
+<p align="justify">
+Bloom, D. E., Canning, D., &amp; Lubet, A. (2015). Global population aging: Facts, challenges, solutions &amp; perspectives. Daedalus, 144(2), 80–92.
+</p>
+<p align="justify">
+Burchell, B., Sehnbruch, K., Piasna, A., &amp; Agloni, N. (2013). The quality of employment and decent work: definitions, methodologies, and ongoing debates. <em>Cambridge Journal of Economics</em>, 38(2), 459–477.
+</p>
+<p align="justify">
+Cabieses, B., Bernales, M., Obach, A., &amp; Pedrero, V. (2016). Vulnerabilidad social y su efecto en salud en Chile. Desde la comprensión del fenómeno hacia la implementación de soluciones (1st ed.). Santiago de Chile: Universidad del Desarrollo.
+</p>
+<p align="justify">
+Castles, S., De Haas, H., &amp; Miller, M. J. (2013). The age of migration: International population movements in the modern world. Palgrave Macmillan.
+</p>
+<p align="justify">
+CEPAL. (2009). El envejecimiento y las personas de edad. Indicadores sociodemográficos para América Latina y el Caribe (CELADE, Ed.). Retrieved from <a href="https://www.cepal.org/es/publicaciones/1350-envejecimiento-personas-edad-indicadores-sociodemograficos-america-latina-caribe" class="uri">https://www.cepal.org/es/publicaciones/1350-envejecimiento-personas-edad-indicadores-sociodemograficos-america-latina-caribe</a>
+</p>
+<p align="justify">
+CIPEM. (2018a). Contexto Demográfico Global y Chileno: Situación de la Población Adulto Mayor. Retrieved from <a href="http://www.cipem.cl/wp-content/uploads/2018/12/Informe-1.pdf" class="uri">http://www.cipem.cl/wp-content/uploads/2018/12/Informe-1.pdf</a>
+</p>
+<p align="justify">
+CIPEM. (2018b). Mercado Laboral y Personas Mayores. Retrieved from <a href="http://www.cipem.cl/wp-content/uploads/2018/12/Reporte-II-20_12FV.pdf" class="uri">http://www.cipem.cl/wp-content/uploads/2018/12/Reporte-II-20_12FV.pdf</a>
+</p>
+<p align="justify">
+Dahlgren, G., &amp; Whitehead, M. (1991). Policies and strategies to promote social equity in health (1st ed.). Stockholm: Institute for future studies.
+</p>
+<p align="justify">
+Davies, A. R., &amp; Ware, J. E. (1981). Measuring health perceptions in the health insurance experiment (1st ed.). Los Angeles: Rand Corporation.
+</p>
+<p align="justify">
+Donoso, E. (2008). Embarazo adolescente: un problema país. <em>Revista Chilena de Obstetricia y Ginecología</em>, 73, 291–292.
+</p>
+<p align="justify">
+Estudios Urbanos UC. (2019). Índice de Calidad de Vida Urbana Comunas y Ciudades de Chile. Retrieved from <a href="https://www.cchc.cl/uploads/comunicacion/archivos/20180508_ICVU_2018-_Versión_Definitiva.pdf" class="uri">https://www.cchc.cl/uploads/comunicacion/archivos/20180508_ICVU_2018-_Versión_Definitiva.pdf</a>
+</p>
+<p align="justify">
+Fernandez, B., &amp; Herrera, S. (2017). Chile y sus mayores: 10 años de la Encuesta Calidad de Vida en la Vejez UC - Caja Los Andes. Retrieved from <a href="http://adultomayor.uc.cl/docs/Libro_CHILE_Y_SUS_MAYORES_2016.pdf" class="uri">http://adultomayor.uc.cl/docs/Libro_CHILE_Y_SUS_MAYORES_2016.pdf</a>
+</p>
+<p align="justify">
+Franco, R., Hopenhayn, M., &amp; León, A. (2010). Las clases medias en América Latina (1st ed.). México D.F: CEPAL.
+</p>
+<p align="justify">
+Goss, D., Goss, F., &amp; Adam-Smith, D. (2000). Disability and employment: a comparative critique of UK legislation. <em>The International Journal of Human Resource Management</em>, 11(4), 807–821.
+</p>
+<p align="justify">
+Grundy, E., &amp; Sloggett, A. (2003). Health inequalities in the older population: the role of personal capital, social resources and socio-economic circumstances. <em>Social Science &amp; Medicine</em>, 56(5), 935–947.
+</p>
+<p align="justify">
+Halek, M., &amp; Eisenhauer, J. G. (2001). Demography of risk aversion. <em>Journal of Risk and Insurance</em>, 1–24.
+</p>
+<p align="justify">
+Idler, E., &amp; Cartwright, K. (2018). What do we rate when we rate our health? Decomposing age-related contributions to self-rated health. <em>Journal of Health and Social Behavior</em>, 59(1), 74–93.
+</p>
+<p align="justify">
+Instituto Nacional de Estadísticas. (2016). Jefatura de hogar: Usos del concepto, historia, críticas y expresión en los indicadores. Retrieved from <a href="http://historico.ine.cl/genero/files/estadisticas/pdf/documentos/jefatura_hogar.pdf" class="uri">http://historico.ine.cl/genero/files/estadisticas/pdf/documentos/jefatura_hogar.pdf</a>
+</p>
+<p align="justify">
+Instituto Nacional de Estadísticas, &amp; PNUD. (2018). Sistema de Indicadores y Estándares del Desarrollo Urbano (SIEDU). Retrieved July 25, 2019, from <a href="http://siedu.ine.cl/compromisos/compromisos.html" class="uri">http://siedu.ine.cl/compromisos/compromisos.html</a>
+</p>
+<p align="justify">
+International Labour Organization. (2019). World Employment Social Outlook. Retrieved from <a href="https://www.ilo.org/wcmsp5/groups/public/---dgreports/---dcomm/---publ/documents/publication/wcms_670542.pdf" class="uri">https://www.ilo.org/wcmsp5/groups/public/---dgreports/---dcomm/---publ/documents/publication/wcms_670542.pdf</a>
+</p>
+<p align="justify">
+Kotok, S., Ikoma, S., &amp; Bodovski, K. (2016). School climate and dropping out of school in the era of accountability. <em>American Journal of Education</em>, 122(4), 569–599.
+</p>
+<p align="justify">
+Krugman, P. (1994). Competitiveness: A Dangerous Obsession. <em>Foreign Affairs</em>, 73(2), 28–44.
+</p>
+<p align="justify">
+Libertad y Desarrollo. (2019). Hacia una definición de clase media en Chile. Retrieved from <a href="https://lyd.org/wp-content/uploads/2019/05/tp-1399-clase-media.pdf" class="uri">https://lyd.org/wp-content/uploads/2019/05/tp-1399-clase-media.pdf</a>
+</p>
+<p align="justify">
+Marmot, M., &amp; Allen, J. J. (2014). Social Determinants of Health Equity. <em>American Journal of Public Health</em>, 104(S4), S517–S519.
+</p>
+<p align="justify">
+Marmot, M., Friel, S., Bell, R., Houweling, T. A. J., &amp; Taylor, S. (2008). Closing the gap in a generation: health equity through action on the social determinants of health. <em>The Lancet</em>, 372(9650), 1661–1669.
+</p>
+<p align="justify">
+Martin, J. (2015). Activation and active labour market policies in OECD countries: stylised facts and evidence on their effectiveness. <em>Journal of Labor Policy</em>, 4(1), 4.
+</p>
+<p align="justify">
+Ministerio de Desarrollo Social. (2015). Definición de ingresos Casen. Retrieved June 25, 2019, from <a href="http://observatorio.ministeriodesarrollosocial.gob.cl/casen/casen_def_ingresos.php" class="uri">http://observatorio.ministeriodesarrollosocial.gob.cl/casen/casen_def_ingresos.php</a>
+</p>
+<p align="justify">
+Naciones Unidas. (2009). Clasificación Industrial Internacional Uniforme de todas las acividades económicas (CIIU). Retrieved from <a href="file:///C:/respaldo/Downloads/SLV_2017_EHPM_v01_M_DIGESTYC-TEC-CIIU_Rev4.pdf" class="uri">file:///C:/respaldo/Downloads/SLV_2017_EHPM_v01_M_DIGESTYC-TEC-CIIU_Rev4.pdf</a>
+</p>
+<p align="justify">
+Newman, P., &amp; Jennings, I. (2008). Cities as Sustainable Ecosystems (1st ed.). Washington, DC: ISLAND PRESS.
+</p>
+<p align="justify">
+Nussbaum, M. C. (2000). Women and Human Development: The Capabilities Approach (1st ed.). Cambridge: Cambridge University Press.
+</p>
+<p align="justify">
+OECD. (2017). Pensions at a Glance 2017: OECD and G20 Indicators. Paris: OECD Publishing.
+</p>
+<p align="justify">
+Okun, M. A., Stock, W. A., Haring, M. J., &amp; Witter, R. A. (1984). Health and Subjective Well- Being: A Meta-Analyis. <em>The International Journal of Aging and Human Development</em>, 19(2), 111–132.
+</p>
+<p align="justify">
+Östlin, P. (2008). Gender inequity in health: why it exists and how we can change it. <em>Global Public Health</em>, 3, 1–12.
+</p>
+<p align="justify">
+Ravenstein, E. G. (1885). The laws of migration. <em>Journal of the Statistical Society of London</em>, 48(2), 167–235.
+</p>
+<p align="justify">
+Rodríguez, J., &amp; Busso, G. (2009). Migración interna y desarrollo en América Latina entre 1980 y 2005 (1st ed.). Santiago: Naciones Unidas.
+</p>
+<p align="justify">
+Ross, C. E., &amp; Wu, C.-L. (1996). Education, Age, and the Cumulative Advantage in Health. <em>Journal of Health and Social Behavior</em>, 37(1), 104–120.
+</p>
+<p align="justify">
+Sapelli, C. (2011). A cohort analysis of the income distribution in Chile. <em>Estudios de Economía</em>, 38(1), 223–242.
+</p>
+<p align="justify">
+Sen, A. (2000). Poverty as Capability Deprivation. In Development as freedom (1st ed., pp. 78– 96). New York: Anchor Books.
+</p>
+<p align="justify">
+Sen, A. (2001). Development as freedom (1st ed.). Oxford: Oxford Paperbacks.
+</p>
+<p align="justify">
+Sen, A. (2002). Why health equity? <em>Health Economics</em>, 11(8), 659–666.
+</p>
+<p align="justify">
+Servicio Nacional de la Discapacidad. (2016). II Estudio Nacional de la Discapacidad. Santiago.
+</p>
+<p align="justify">
+UNESCO (2015). Education 2030: Towards inclusive and equitable quality education and lifelong learning for all. Retrieved from <a href="https://unesdoc.unesco.org/ark:/48223/pf0000245656" class="uri">https://unesdoc.unesco.org/ark:/48223/pf0000245656</a>
+</p>
+<p align="justify">
+United Nations, Department of Economics and Social Affairs, P. D. (2017). International Migration report 2017: Highlights. New York.
+</p>
+<p align="justify">
+United Nations. (2016). Nueva Agenda Urbana. Retrieved from <a href="http://habitat3.org/wp-content/uploads/NUA-Spanish.pdf" class="uri">http://habitat3.org/wp-content/uploads/NUA-Spanish.pdf</a>
+</p>
+<p align="justify">
+United Nations. (2018). Disability and Development Report. Retrieved from <a href="https://www.un.org/disabilities/documents/2019/UN-flagship-report-disability-7June.pdf" class="uri">https://www.un.org/disabilities/documents/2019/UN-flagship-report-disability-7June.pdf</a>
+</p>
+<p align="justify">
+Uribe, G. G.-B. (2014). Pobreza infantil e impacto de la crisis en la infancia. <em>Educación y Futuro: Revista de Investigación Aplicada y Experiencias Educativas</em>, (30), 109–126.
+</p>
+<p align="justify">
+Weiss, R. S., Bass, S. A., Heimovitz, H. K., &amp; Oka, M. (2005). Japan’s silver human resource centers and participant well-being. <em>Journal of Cross-Cultural Gerontology</em>, 20(1), 47–66.
+</p>
+<p align="justify">
+World Health Organization. (2007). Global Age-Friendly Cities. Retrieved from <a href="https://www.who.int/ageing/publications/Global_age_friendly_cities_Guide_English.pdf" class="uri">https://www.who.int/ageing/publications/Global_age_friendly_cities_Guide_English.pdf</a>
+</p>
+<p align="justify">
+World Health Organization. (2018). Ageing and health. Retrieved October 22, 2019, from <a href="https://www.who.int/news-room/fact-sheets/detail/ageing-and-health" class="uri">https://www.who.int/news-room/fact-sheets/detail/ageing-and-health</a>
+</p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3,h4,h5,h6",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

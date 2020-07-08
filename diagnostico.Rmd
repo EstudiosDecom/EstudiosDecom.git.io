@@ -1,0 +1,215 @@
+---
+title: "Diagnóstico Social Comunal"
+date: "Noviembre 2019"
+author: "Nicolás Vatter, Paulina Peña & Felipe Vega"
+output:
+  html_document: {}
+    toc: true
+    toc_depth: 6
+    toc_float:
+    collapsed: false
+    smooth_scroll: true
+---
+<p align="left">
+## Capítulo 1: Geografía, Desarrollo Urbano y Movilidad
+</p>
+
+<p align="justify">La ciudad comprende un sistema complejo donde ocurren múltiples interacciones y convergen diversas necesidades humanas; seguridad, transporte y movilidad, integración y cohesión social, salud, educación, actividad económica, desarrollo sostenible y sustentable, y la disposición del espacio público para el encuentro de las diversas culturas, todas dimensiones de bienestar y calidad de vida urbana (Newman & Jennings, 2008).</p>
+
+<p align="justify">Las Condes hoy se presenta como un extenso asentamiento urbano en la Región Metropolitana, con una población cercana a los 300 mil habitantes, la novena comuna con mayor cantidad de población a nivel nacional y la más poblada del sector oriente. </p>
+
+<p align="justify">La comuna destaca por sus elevados estándares de calidad de vida urbana, y uno de los desafíos más significativos del municipio es consolidar ese alto estándar de calidad de vida, y extenderlo a todos los sectores de la comuna, en un contexto de transición acelerada hacia el envejecimiento de su población.</p>
+
+<p align="justify">En esta línea, comprender las características geográficas de la ciudad es fundamental para una correcta planificación social. En la literatura académica se demuestra la importancia que adquieren las variables asociadas a los sistemas de transporte e infraestructura urbana en la calidad de vida de las personas.</p>
+
+<p align="justify">En el presente apartado se aborda una breve caracterización geográfica y de transporte relativa a la comuna. Se incluye la delimitación urbana, la subdivisión territorial, las características de transporte y movilidad, y una descripción de infraestructura urbana presente en la comuna.</p>
+
+### i. Límites territoriales
+
+<p align="justify">La Comuna de Las Condes se ubica en el sector oriente de la Región Metropolitana, cuenta con una superficie total de 96 km2 de los cuales 43,9 km2 corresponden al área urbana. Esta limita al norte con la comuna de Vitacura, al nororiente con Lo Barnechea, al sur con La Reina y al poniente con Providencia. Los límites comunales se demarcan a partir de la siguiente descripción:</p>
+
+
+<p align="justify">• Norte: Avenida Kennedy, desde el puente Los Saldes, sobre el Río Mapocho hasta Avenida Las Condes y su prolongación por ésta hasta el Camino a Farellones.</p>
+
+<p align="justify">• Oriente: Desde el Camino a Farellones frente al Cerro Arrayán Sur, la línea de cumbres que pasa por ese cerro, el Moro de Guayacán, el Cerro de la Provincia, el Cerro Las Lagunas, hasta el Cerro San Ramón.</p>
+
+<p align="justify">• Sur: La línea de cumbres que limita por el sur lo hoya de la quebrada San Ramón, desde el Cerro San Ramón hasta la intersección de las calles Valenzuela Puelma, Onofre Jarpa y Álvaro Casanova. La calle Valenzuela Puelma, desde la intersección antes citada hasta el Canal de Las Perdices; el Canal Las Perdices desde la calle Valenzuela Puelma hasta Avenida Francisco Bilbao, y Avenida Francisco Bilbao, desde el Canal Las Perdices hasta el Canal San Carlos.</p>
+
+<p align="justify">• Poniente: El Canal San Carlos desde Avenida Francisco Bilbao hasta su desembocadura en el Río Mapocho, y el Río Mapocho, desde la desembocadura del Canal San Carlos hasta el Puente Lo Saldes.</p>
+
+### ii. Subdivisión urbana: unidades vecinales
+
+<p align="justify">La Ley 19.418 sobre Juntas de Vecinos y demás organizaciones comunitarias (Ministerio del Interior, 1997) establece los criterios para subdividir los territorios de las comunas. De acuerdo a esta ley, una Unidad Vecinal se define como el territorio “(...) en que se subdividen las comunas, para efectos de descentralizar asuntos comunales y promover la participación ciudadana y la gestión comunitaria, y en el cual se constituyen y desarrollan sus funciones las juntas de vecinos”.</p>
+
+<p align="justify">Las unidades vecinales son determinadas por el alcalde “...de propia iniciativa o a petición de las juntas de vecinos o de los vecinos interesados, con el acuerdo del Concejo y oyendo al Consejo Económico y Social de la Comuna”. Actualmente, en la comuna de Las Condes existen 25 unidades vecinales distribuidas en el territorio comunal (ver mapa).</p>
+
+<p align="center"><iframe src="https://www.google.com/maps/d/embed?mid=1Qp_2a8tQn-_jWYvTB_eWLO1CLU1arma3" width="600" height="420"></iframe></p>
+
+### iii. Organizaciones comunitarias
+
+<p align="justify">La ley citada anteriormente, también reconoce la organización de la comunidad bajo la forma de organizaciones territoriales y organizaciones funcionales. Entre las primeras destacan las juntas de vecinos, mientras que en las segundas aparecen los centros de madres, centros de padres y apoderados, organizaciones artísticas y culturales, organizaciones deportivas, y otras.</p>
+
+<p align="justify">De acuerdo con la definición normativa las organizaciones territoriales se caracterizan por constituirse con individuos que residen dentro de una misma unidad vecinal, y tienen por objetivo promover el desarrollo de la comunidad, defendiendo los intereses de los vecinos.Por su parte, las organizaciones funcionales corresponden a agrupaciones con personalidad jurídica y sin fines de lucro, que representan y promueven valores e intereses específicos de una comunidad.</p>
+
+<p align="justify">A través del Departamento de Organizaciones Comunitarias, la Dirección de Desarrollo Comunitario de Las Condes fomenta y promueven el funcionamiento adecuado de estas organizaciones que canalizan los intereses y necesidades de los vecinos. En la Tabla 1 se describe la cantidad de organizaciones según su tipo, presentes en la comuna.</p>
+
+```{r table1, echo=FALSE}
+library('stargazer')
+library('dplyr')
+
+organizacion = c('Junta de vecinos', 'Unión comunal', 'Centro de seguridad', 'Centro cultural',
+                 'Club de adulto mayor', 'Clubes deportivos', 'Centros de madres', 'Centros de padres', 'Centro juvenil', 'Comité de vivienda', 'Comité de administración', 'Otras organizaciones funcionales')
+cantidad = c(59, 5,136,53,90,60,3,20,10,7,13,3)
+table1 <- data.frame(organizacion,cantidad)
+table1$organizacion <- factor(table1$organizacion)
+stargazer(table1[1:12,], title="Registro de organizaciones comunitarias en Las Condes.", align=TRUE)
+```
+
+### iv. Desarrollo urbano
+
+<p align="justify">La Nueva Agenda Urbana (2016), documento ratificado por Estado de Chile ante Naciones Unidas, es un compromiso común que invita a poner los recursos y esfuerzos en alcanzar la equidad urbana. Entregar igualdad de acceso a las oportunidades que ofrecen las ciudades es uno de los grandes desafíos para alcanzar el desarrollo sostenible.</p>
+
+<p align="justify">En relación a lo anterior, el Instituto Nacional de Estadísticas (INE) ha dispuesto una serie de indicadores que miden el compromiso de las ciudades para alcanzar el desarrollo urbano. En esta línea el presente apartado aborda estadísticas de áreas verdes y transporte y movilidad a nivel comunal.</p>
+
+
+#### a. Parques e infraestructura urbana
+
+
+#### b. Transporte y movilidad
+
+<p align="left">
+## Capítulo 2: Estadísticas demográficas
+</p>
+
+
+<p align="left">
+## Capítulo 3: Caracterización Socioeconómica
+</p>
+
+<p align="left">
+##Capítulo 4: Bienestar social básico
+</p>
+
+<p align="left">
+##Capítulo 5: Clases medias
+</p>
+
+
+## Bibliografía
+
+<p align="justify">Alkire, S., Apablaza, M., Chakravarty, S., & Yalonetzky, G. (2017). Measuring chronic multidimensional poverty. *Journal of Policy Modeling*, 39(6), 983–1006.</p>
+
+<p align="justify">Alkire, S., & Foster, J. (2011). Counting and multidimensional poverty measurement. *Journal of Public Economics*, 95(7–8), 476–487.</p>
+
+<p align="justify">Anguluri, R., & Narayanan, P. (2017). Role of green space in urban planning: Outlook towards smart cities. *Urban Forestry & Urban Greening*, 25, 58–65.</p>
+
+<p align="justify">Arriagada, V., Méndez, R., Sehnbruch, K., Apablaza, M., & González, P. (2018). Measuring the Quality of Employment (QoE) in Central America. A multidimensional approach (No. 38). Santiago.</p>
+
+<p align="justify">Atkinson, A. B. (2003). Multidimensional deprivation: contrasting social welfare and counting approaches. *The Journal of Economic Inequality*, 1(1), 51–65.</p>
+
+<p align="justify">Balaz, V., & Williams, A. M. (2011). Risk attitudes and migration experience. *Journal of Risk Research*, 14(5), 583–596.</p>
+
+<p align="justify">Bardasi, E., Jenkins, S., & Rigg, J. (2002). Retirement and the income of older people: a British perspective. *Ageing and Society*, 22(2), 131–159.</p>
+
+<p align="justify">Benyamini, Y. (2016). Self-rated health. In Y. Benyamini, M. Johnston, & E. C. Karademas (Eds.), Assessment in health psychology (2nd ed., pp. 175–188). Boston: Hogrefe.</p>
+
+<p align="justify">Bloom, D. E., Canning, D., & Lubet, A. (2015). Global population aging: Facts, challenges, solutions & perspectives. Daedalus, 144(2), 80–92.</p>
+
+<p align="justify">Burchell, B., Sehnbruch, K., Piasna, A., & Agloni, N. (2013). The quality of employment and decent work: definitions, methodologies, and ongoing debates. *Cambridge Journal of Economics*, 38(2), 459–477.</p>
+
+<p align="justify">Cabieses, B., Bernales, M., Obach, A., & Pedrero, V. (2016). Vulnerabilidad social y su efecto en salud en Chile. Desde la comprensión del fenómeno hacia la implementación de soluciones (1st ed.). Santiago de Chile: Universidad del Desarrollo.</p>
+
+<p align="justify">Castles, S., De Haas, H., & Miller, M. J. (2013). The age of migration: International population movements in the modern world. Palgrave Macmillan.</p>
+
+<p align="justify">CEPAL. (2009). El envejecimiento y las personas de edad. Indicadores sociodemográficos para América Latina y el Caribe (CELADE, Ed.). Retrieved from https://www.cepal.org/es/publicaciones/1350-envejecimiento-personas-edad-indicadores-sociodemograficos-america-latina-caribe </p>
+
+<p align="justify">CIPEM. (2018a). Contexto Demográfico Global y Chileno: Situación de la Población Adulto Mayor. Retrieved from http://www.cipem.cl/wp-content/uploads/2018/12/Informe-1.pdf </p>
+
+<p align="justify">CIPEM. (2018b). Mercado Laboral y Personas Mayores. Retrieved from http://www.cipem.cl/wp-content/uploads/2018/12/Reporte-II-20_12FV.pdf</p>
+
+<p align="justify">Dahlgren, G., & Whitehead, M. (1991). Policies and strategies to promote social equity in health (1st ed.). Stockholm: Institute for future studies.</p>
+
+<p align="justify">Davies, A. R., & Ware, J. E. (1981). Measuring health perceptions in the health insurance experiment (1st ed.). Los Angeles: Rand Corporation.</p>
+
+<p align="justify">Donoso, E. (2008). Embarazo adolescente: un problema país. *Revista Chilena de Obstetricia y Ginecología*, 73, 291–292.</p>
+
+<p align="justify">Estudios Urbanos UC. (2019). Índice de Calidad de Vida Urbana Comunas y Ciudades de Chile. Retrieved from https://www.cchc.cl/uploads/comunicacion/archivos/20180508_ICVU_2018-_Versión_Definitiva.pdf</p>
+
+<p align="justify">Fernandez, B., & Herrera, S. (2017). Chile y sus mayores: 10 años de la Encuesta Calidad de Vida en la Vejez UC - Caja Los Andes. Retrieved from http://adultomayor.uc.cl/docs/Libro_CHILE_Y_SUS_MAYORES_2016.pdf</p>
+
+<p align="justify">Franco, R., Hopenhayn, M., & León, A. (2010). Las clases medias en América Latina (1st ed.). México D.F: CEPAL.</p>
+
+<p align="justify">Goss, D., Goss, F., & Adam-Smith, D. (2000). Disability and employment: a comparative critique of UK legislation. *The International Journal of Human Resource Management*, 11(4), 807–821.</p>
+
+<p align="justify">Grundy, E., & Sloggett, A. (2003). Health inequalities in the older population: the role of personal capital, social resources and socio-economic circumstances. *Social Science & Medicine*, 56(5), 935–947.</p>
+
+<p align="justify">Halek, M., & Eisenhauer, J. G. (2001). Demography of risk aversion. *Journal of Risk and Insurance*, 1–24.</p>
+
+<p align="justify">Idler, E., & Cartwright, K. (2018). What do we rate when we rate our health? Decomposing age-related contributions to self-rated health. *Journal of Health and Social Behavior*, 59(1), 74–93.</p>
+
+<p align="justify">Instituto Nacional de Estadísticas. (2016). Jefatura de hogar: Usos del concepto, historia, críticas y expresión en los indicadores. Retrieved from http://historico.ine.cl/genero/files/estadisticas/pdf/documentos/jefatura_hogar.pdf</p>
+
+<p align="justify">Instituto Nacional de Estadísticas, & PNUD. (2018). Sistema de Indicadores y Estándares del Desarrollo Urbano (SIEDU). Retrieved July 25, 2019, from http://siedu.ine.cl/compromisos/compromisos.html</p>
+
+<p align="justify">International Labour Organization. (2019). World Employment Social Outlook. Retrieved from https://www.ilo.org/wcmsp5/groups/public/---dgreports/---dcomm/---publ/documents/publication/wcms_670542.pdf</p>
+
+<p align="justify">Kotok, S., Ikoma, S., & Bodovski, K. (2016). School climate and dropping out of school in the era of accountability. *American Journal of Education*, 122(4), 569–599.</p>
+
+<p align="justify">Krugman, P. (1994). Competitiveness: A Dangerous Obsession. *Foreign Affairs*, 73(2), 28–44.</p>
+
+<p align="justify">Libertad y Desarrollo. (2019). Hacia una definición de clase media en Chile. Retrieved from
+https://lyd.org/wp-content/uploads/2019/05/tp-1399-clase-media.pdf</p>
+
+<p align="justify">Marmot, M., & Allen, J. J. (2014). Social Determinants of Health Equity. *American Journal of Public Health*, 104(S4), S517–S519.</p>
+
+<p align="justify">Marmot, M., Friel, S., Bell, R., Houweling, T. A. J., & Taylor, S. (2008). Closing the gap in a generation: health equity through action on the social determinants of health. *The Lancet*, 372(9650), 1661–1669.</p>
+
+<p align="justify">Martin, J. (2015). Activation and active labour market policies in OECD countries: stylised facts and evidence on their effectiveness. *Journal of Labor Policy*, 4(1), 4.</p>
+
+<p align="justify">Ministerio de Desarrollo Social. (2015). Definición de ingresos Casen. Retrieved June 25, 2019, from http://observatorio.ministeriodesarrollosocial.gob.cl/casen/casen_def_ingresos.php</p>
+
+<p align="justify">Naciones Unidas. (2009). Clasificación Industrial Internacional Uniforme de todas las acividades económicas (CIIU). Retrieved from file:///C:/respaldo/Downloads/SLV_2017_EHPM_v01_M_DIGESTYC-TEC-CIIU_Rev4.pdf</p>
+
+<p align="justify">Newman, P., & Jennings, I. (2008). Cities as Sustainable Ecosystems (1st ed.). Washington, DC: ISLAND PRESS.</p>
+
+<p align="justify">Nussbaum, M. C. (2000). Women and Human Development: The Capabilities Approach (1st ed.). Cambridge: Cambridge University Press.</p>
+
+<p align="justify">OECD. (2017). Pensions at a Glance 2017: OECD and G20 Indicators. Paris: OECD Publishing.</p>
+
+<p align="justify">Okun, M. A., Stock, W. A., Haring, M. J., & Witter, R. A. (1984). Health and Subjective Well- Being: A Meta-Analyis. *The International Journal of Aging and Human Development*, 19(2), 111–132.</p>
+
+<p align="justify">Östlin, P. (2008). Gender inequity in health: why it exists and how we can change it. *Global Public Health*, 3, 1–12.</p>
+
+<p align="justify">Ravenstein, E. G. (1885). The laws of migration. *Journal of the Statistical Society of London*, 48(2), 167–235.</p>
+
+<p align="justify">Rodríguez, J., & Busso, G. (2009). Migración interna y desarrollo en América Latina entre 1980 y 2005 (1st ed.). Santiago: Naciones Unidas.</p>
+
+<p align="justify">Ross, C. E., & Wu, C.-L. (1996). Education, Age, and the Cumulative Advantage in Health. *Journal of Health and Social Behavior*, 37(1), 104–120.</p>
+
+<p align="justify">Sapelli, C. (2011). A cohort analysis of the income distribution in Chile. *Estudios de Economía*, 38(1), 223–242.</p>
+
+<p align="justify">Sen, A. (2000). Poverty as Capability Deprivation. In Development as freedom (1st ed., pp. 78– 96). New York: Anchor Books.</p>
+
+<p align="justify">Sen, A. (2001). Development as freedom (1st ed.). Oxford: Oxford Paperbacks.</p>
+
+<p align="justify">Sen, A. (2002). Why health equity? *Health Economics*, 11(8), 659–666.</p>
+
+<p align="justify">Servicio Nacional de la Discapacidad. (2016). II Estudio Nacional de la Discapacidad. Santiago.</p>
+
+<p align="justify">UNESCO (2015). Education 2030: Towards inclusive and equitable quality education and lifelong learning for all. Retrieved from https://unesdoc.unesco.org/ark:/48223/pf0000245656</p>
+
+<p align="justify">United Nations, Department of Economics and Social Affairs, P. D. (2017). International Migration report 2017: Highlights. New York.</p>
+
+<p align="justify">United Nations. (2016). Nueva Agenda Urbana. Retrieved from http://habitat3.org/wp-content/uploads/NUA-Spanish.pdf</p>
+
+<p align="justify">United Nations. (2018). Disability and Development Report. Retrieved from https://www.un.org/disabilities/documents/2019/UN-flagship-report-disability-7June.pdf</p>
+
+<p align="justify">Uribe, G. G.-B. (2014). Pobreza infantil e impacto de la crisis en la infancia. *Educación y Futuro: Revista de Investigación Aplicada y Experiencias Educativas*, (30), 109–126.</p>
+
+<p align="justify">Weiss, R. S., Bass, S. A., Heimovitz, H. K., & Oka, M. (2005). Japan’s silver human resource centers and participant well-being. *Journal of Cross-Cultural Gerontology*, 20(1), 47–66.</p>
+
+<p align="justify">World Health Organization. (2007). Global Age-Friendly Cities. Retrieved from https://www.who.int/ageing/publications/Global_age_friendly_cities_Guide_English.pdf</p>
+
+<p align="justify">World Health Organization. (2018). Ageing and health. Retrieved October 22, 2019, from https://www.who.int/news-room/fact-sheets/detail/ageing-and-health</p>
+
+
