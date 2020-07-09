@@ -19,7 +19,7 @@ output:
 
 <p align="justify">Las Condes hoy se presenta como un extenso asentamiento urbano en la Región Metropolitana, con una población cercana a los 300 mil habitantes, la novena comuna con mayor cantidad de población a nivel nacional y la más poblada del sector oriente. </p>
 
-<p align="justify">La comuna destaca por sus elevados estándares de calidad de vida urbana, y uno de los desafíos más significativos del municipio es consolidar ese alto estándar de calidad de vida, y extenderlo a todos los sectores de la comuna, en un contexto de transición acelerada hacia el envejecimiento de su población.</p>
+<p align="justify">La comuna destaca por sus elevados estándares de calidad de vida urbana, lo que supone un desafíos significativos para le gestión municipal. Consolidar el alto estándar de calidad de vida y bienestar, y extenderlo a todos los sectores de la comuna, especialmente en un contexto de transición avanzada hacia el envejecimiento de su población, </p>
 
 <p align="justify">En esta línea, comprender las características geográficas de la ciudad es fundamental para una correcta planificación social. En la literatura académica se demuestra la importancia que adquieren las variables asociadas a los sistemas de transporte e infraestructura urbana en la calidad de vida de las personas.</p>
 
@@ -58,22 +58,29 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 library('stargazer')
 library('knitr')
+library('dplyr')
+library('ggplot2')
+library('ggthemes')
+
 ```
 
-```{r table1, echo=FALSE}
-library('dplyr')
+```{r dataframetab1, echo=FALSE}
 organizacion = c('Junta de vecinos', 'Unión comunal', 'Centro de seguridad', 'Centro cultural',
                  'Club de adulto mayor', 'Clubes deportivos', 'Centros de madres', 'Centros de padres', 'Centro juvenil', 'Comité de vivienda', 'Comité de administración', 'Otras organizaciones funcionales')
 cantidad = c(59, 5,136,53,90,60,3,20,10,7,13,3)
 table1 <- data.frame(organizacion,cantidad)
 table1$organizacion <- factor(table1$organizacion)
+
 ```
 
-```{r table1LaTex,results='ASIS'}
-knitr::kable(table1, "html", col.names = c('Organización', 'Cantidad'), caption = "Tabla 1. Registro de organizaciones comunitarias en Las Condes.", align = 'l') %>%
-  kable_styling(position = "center", bootstrap_options = "striped", full_width = F) %>%
-  footnote(general = "Fuente: Elaboración propia en base a datos del Departamento de Organizaciones Comunitarias DECOM")
+```{r table1html,results='ASIS'}
+
+knitr::kable(table1, "html", col.names = c('Organización', 'Cantidad'), caption = "Tabla 1. Registro de organizaciones comunitarias en Las Condes.", align = 'lc') %>%
+kable_styling(position = "center", bootstrap_options = "basic", full_width = F)
+
 ```
+
+<p align="center">*Fuente: Elaboración propia en base a datos del Departamento de Organizaciones Comunitarias DECOM*</p>
 
 ### iv. Desarrollo urbano
 
@@ -91,15 +98,126 @@ knitr::kable(table1, "html", col.names = c('Organización', 'Cantidad'), caption
 
 <p align="justify">Entre las comunas con mayor cantidad de áreas verdes per cápita a nivel nacional, Las Condes se ubica en el lugar 58, y a nivel regional ocupa el puesto 23 del ranking. En la Figura 1 se muestra la distribución de metros cuadrados de áreas verdes por habitantes para las comunas de la Provincia de Santiago a través de un mapa, aquellas comunas con mayor cantidad de áreas verdes per cápita aparecen más oscuras.</p>
 
+<p align="center"> Figura 1. Áreas verdes (mt2/habitante) comunas de la Provincia de Santiago.</p>
+<p align="center"><iframe src="https://estudiosdecom.github.io/WebMapping/#12/-33.1922/-70.5700" width="600" height="420"></iframe></p>
+<p align="center">*Fuente: Elaboración propia en base a datos del Sistema de Indicadores y Estándares del Desarrollo Urbano(SIEDU)*</p>
+
 <p align="justify">Las Comunas de referencia, Vitacura y Providencia se encuentran dentro de las tres con mayor cantidad de áreas verdes por persona con un promedio de 17,2 metros cuadrados por habitante. Vitacura se ubica en el primer lugar a nivel nacional con un índice de 18,9 m2/hab., mientras que Providencia aparece en el tercer lugar con 15,5 m2 de área verde por persona.</p>
 
+<p align="justify">En la misma línea, SIEDU rescata información respecto a la distancia mínima promedio que existe entre los hogares y las áreas verdes comunales. El objetivo de este indicador es visualizar la accesibilidad que poseen los vecinos a las áreas verdes de su comuna. De acuerdo con las metas planteadas por el Consejo Nacional de Desarrollo Urbano (CNDU), una distancia inferior a 400 metros es una cifra aceptable que permite elevar los estándares de calidad de vida urbana.</p>
 
+<p align="justify">En términos de distancia a plazas públicas y parques urbanos, Las Condes se ubica dentro del lugar 29 del ranking regional, con una distancia media de 335 metros, un nivel aceptable según los parámetros fijados por CNDU, y se encuentra en una mejor situación respecto al promedio de las Comunas de referencia (397 metros de distancia promedio).</p>
+
+<p align="justify">No obstante, si se observa la interacción de ambos indicadores, distancia y superficie, la comuna de Las Condes aparece fuera del cuadrante de cumplimiento en acceso a servicios y equipamientos urbanos del CNDU. En este sentido, surge un desafío importante para el municipio. En la Figura 2 se muestra el cumplimiento de los indicadores de SIEDU por cuadrante para todas las comunas del gran Santiago.</p>
+
+<p align="center">Figura 2. Cumplimiento comunal de indicadores de acceso a servicios y equipamientos públicos Provincia de Santiago.</p>
+<div align="center"><img src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/graph_dist_arverde.png" alt="drawing" width="600"/>
+<p align="center"> Fuente: Elaboración propia en base a datos del Sistema de Indicadores y Estándares del Desarrollo Urbano(SIEDU)</p>
 
 #### b. Transporte y movilidad
+
+<p align="justify">La información señalada en el Plan de Desarrollo Comunal 2018 – 2021 (PLADECO), acusa un aumento significativo del tránsito vehicular en Las Condes durante los últimos años, con un crecimiento anual que varía entre un 6% y 17% según el área observada. Por su parte, se indica que el parque automotriz bordea un total de ciento diez mil vehículos.</p>
+
+<p align="justify">Los puntos de mayor congestión son el eje Américo Vespucio y Manquehue, estos constituyen los mayores desafíos para la gestión de tránsito. La solución del eje Américo Vespucio excede la capacidad del municipio por lo que, las obras que se harán cargo de esta problemática han sido abordadas por el nivel central a través del sistema de concesiones.</p>
+
+<p align="justify">Del mismo modo se observan grados de congestión en otros sectores de la comuna, los cuales están fuera del rango aceptado, a partir de ahí se están desarrollando proyectos de consolidación de la vialidad comunal.
+
+En la Tabla 2 se indica la afluencia de vehículos por hora en los puntos de mayor demanda, por horario punta (mañana y tarde). Con estos flujos, las velocidades promedio en la comuna son aceptables en horas punta, alcanzando una velocidad media entre 25 y 50 km/h.</p>
+
+```{r dataframetab2, echo=FALSE}
+lugar = c('Av. Andrés Bello dirección poniente', 'Av. Andrés Bello dirección oriente', 'Av. Kennedy dirección oriente', 'Av Manquehue norte', 'Av. Manquehue sur', 'Av. Vespucio norte', 'Av. Vespucio sur', 'Av Colón dirección poniente')
+hp_manana = c(5850," " , 4950, 2800, " ", 3000, 2500, 3900)
+hp_tarde = c(4550, 4650, " ", " ", 2420, 3064, 2600, 2100)
+table2 <- data.frame(lugar, hp_manana, hp_tarde)
+table2$lugar <- factor(table2$lugar)
+
+```
+
+```{r table2html,results='ASIS'}
+knitr::kable(table2, "html", col.names = c('Lugar', 'Horario punta mañana', 'Horario punta tarde'), caption = "Tabla 2. Tránsito vehicular en horario punta.", align = 'lcc' ) %>%
+  kable_styling(position = "center", bootstrap_options = "basic", full_width = F) 
+
+```
+<p align="center">*Fuente: Elaboración propia en base a datos del Sistema de Indicadores y Estándares del Desarrollo Urbano*</p>
+
+<p align="justify">Al mismo tiempo, las estimaciones de SIEDU indican que el 90% de los viajes en transporte público en la comuna tiene una duración máxima de 75 minutos en horario punta mañana, y de 60 minutos considerando cualquier medio de transporte.</p>
+
+<p align="justify">Para el CNDU la duración deseable de los viajes no debiese exceder los 60 min., considerando el costo de oportunidad que implica para las familias. Las Condes se encuentra cercana a alcanzar niveles aceptables, para el caso de las Comunas de referencia la media es de 76 min., y Providencia es la comuna que más se acerca a cumplir el estándar con una duración máxima 70 minutos para el 90% de los viajes efectuados.</p>
+
+<p align="justify"> Figura 3. Clasificación brecha tiempos de traslado en transporte público a nivel comunal en la Provincia de Santiago respecto de la meta CNDU (60 min).</p>
+
+```{r dataframefig3, include=FALSE}
+comuna = c ('Quilicura', 'La Pintana/ Lo espejo', 'Renca', 'Pedro Aguirre Cerda', 'La Granja', 'Pudahuel', 'Maipú', 'El Bosque', 'Cerro Navia', 'Estación Central', 'San Miguel/ San Ramón', 'Quinta Normal/Recoleta', 'Macul/Peñalolén', 'Lo Barnechea/Lo Prado', 'La Cisterna/La Florida', 'Cerrillos/Huechuraba', 'Vitacura', 'Santiago', 'La Reina/San Joaquín', 'Independencia', 'Ñuñoa', 'Las Condes', 'Conchalí', 'Providencia')
+indicador = c (120,120,110,109.5,106,105,105,105,105,95,90,90,90,90,90,90,83.4,81,80,80,75,75,75,70)
+brecha = c (1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,3)
+brecha <- factor(brecha, labels = c("Brecha alta", "Brecha media", "Brecha baja"))
+brechatransporte <- data.frame(brecha, comuna, indicador)
+brechatransporte$comuna = factor (brechatransporte$comuna, levels = c('Providencia', 'Conchalí', 'Las Condes', 'Ñuñoa', 'Independencia', 'La Reina/San Joaquín', 'Santiago', 'Vitacura', 'Cerrillos/Huechuraba' , 'La Cisterna/La Florida', 'Lo Barnechea/Lo Prado' , 'Macul/Peñalolén', 'Quinta Normal/Recoleta', 'San Miguel/ San Ramón', 'Estación Central', 'Cerro Navia', 'El Bosque', 'Maipú','Pudahuel', 'La Granja', 'Pedro Aguirre Cerda', 'Renca', 'La Pintana/ Lo espejo','Quilicura'))
+levels(brechatransporte$comuna) 
+
+```
+
+<p align="center">
+```{r plotbrechatransporte, echo=FALSE, results='ASIS'}
+#Select dataframe
+transportplot <-  ggplot(brechatransporte, mapping = aes(x = comuna,  y = indicador, fill = brecha, colour = brecha)) 
+#Add Geometry
+transportplot <- transportplot + geom_bar(stat = "identity", position = "dodge", colour = "#666666") 
+#Horizontal barplot
+transportplot <- transportplot + coord_flip()
+#Add labels + custom theme
+transportplot <- transportplot +  ggtitle("") + ylab("Tiempo de traslado (min)") + xlab("Comuna") + theme_tufte() + theme(
+    legend.position = 'right',
+    legend.box = 'horizontal',
+    text = element_text(size = 11,  color = "black" ))
+#Change fill colour
+transportplot <- transportplot + scale_fill_manual(values = c('#CC0000', '#FFCC33', '#33FF00'))
+
+print(transportplot)
+
+```
+</p>
+<p align="center">*Fuente: Elaboración propia en base a datos de SIEDU*</p>
+
+<p align="justify">Según los datos recolectados del PLADECO 2018 – 2021, se calcula que en promedio existen alrededor de un millón doscientos mil viajes diarios en la comuna, siendo la mitad de estos dentro de la misma. El principal destino fuera de la comuna es Vitacura con un 13% seguido por Providencia y Lo Barnechea con un porcentaje que bordea el 7%.</p>
+
+<p align="justify">Por otra parte, la Encuesta Casen recoge información relativa al tipo de transporte utilizado por la población ocupada para dirigirse a su lugar de trabajo. Al respecto, los datos señalan que el medio de transporte más utilizado por los vecinos de Las Condes para llegar a su lugar de trabajo es el vehículo motorizado particular (auto, camioneta, motocicleta u otro), seguido del uso de transporte público. En la Figura 4 se describen los medios de transporte más utilizados para movilizarse entre el hogar y el lugar de trabajo.</p>
+
+```{r dataframefig4, include=FALSE}
+mediotransp = c('Transporte público', 'Vehículo particular', 'A pie', 'En bicicleta u otro medio no motorizado', 'Otros')
+prop_transp = c (0.357,0.497, 0.093, 0.04, 0.013 )
+medio_transporte <- data.frame(mediotransp,prop_transp)
+
+```
+
+<p align="center">Figura 4. Medio de transporte frecuentemente utilizado para traslado entre el hogar y lugar de trabajo.</p>
+
+<p align="center">
+```{r plotmedtransp, echo=FALSE ,results = 'ASIS'}
+#Select dataframe
+medtranspplot <-  ggplot(medio_transporte, mapping = aes(x = mediotransp,  y = prop_transp, label = scales::percent(prop_transp))) 
+#Add Geometry
+medtranspplot <- medtranspplot + geom_bar(stat = 'identity', 
+                  colour = '#666666', fill = '#003366') 
+#Add labels + custom theme
+medtranspplot <- medtranspplot +  ggtitle("") + ylab("") + xlab("") + theme_tufte() + theme(
+ text = element_text(size = 11,  color = "black" )) + scale_y_continuous(breaks = seq(0,0.5,0.1), labels = scales::percent_format(accuracy = 1)) + geom_text(position = position_dodge(width = .9), vjust = -0.5, size = 3) 
+
+print(medtranspplot)
+
+```
+</p>
+
+<p align="center">*Fuente: Elaboración propia en base a datos de Casen 2015*</p>
+
+<p align="justify">En materia de transporte, existe una serie de desafíos para empujar el desarrollo sostenible y sustentable. En este sentido, el municipio de Las Condes ha incorporado un número importante de servicios de electromovilidad disponibles para los vecinos (scooters y bicicletas), además ha puesto a disposición una flota de 10 buses eléctricos que conectan zonas de residencia que no se encuentran totalmente cubiertas por el sistema de transporte público metropolitano. Esto, con el objetivo de mejorar la capacidad de movilidad urbana en la comuna.</p>
 
 <p align="left">
 ## Capítulo 2: Estadísticas demográficas
 </p>
+
+
+
 
 
 <p align="left">
