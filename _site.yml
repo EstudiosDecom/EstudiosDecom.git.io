@@ -17,3 +17,5 @@ output:
   html_document:
     theme: spacelab
     highlight: tango
+    include:
+      after_body: footer.Rhtml

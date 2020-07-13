@@ -225,6 +225,7 @@ print(medtranspplot)
 En Las Condes la composición de la población por sexo indica que existe una mayor proporción de mujeres, tendencia observada para el resto del país. El 53,9% de los vecinos de Las Condes corresponde a población femenina, a nivel nacional y regional esta alcanza el 51,1% y 51,3% respectivamente, mientras que en las comunas de referencia la proporción de mujeres es de 54,4%.</p>
 
 <p align="center">Figura 5. Proporción población por sexo según área de referencia.</p>
+
 ```{r dataframfig5, include=FALSE}
 area_1 = c(4, 3, 2, 1, 4, 3, 2, 1)
 area_1 = factor (area_1, levels = c(1,2,3,4) ,
@@ -423,6 +424,10 @@ https://lyd.org/wp-content/uploads/2019/05/tp-1399-clase-media.pdf </p>
 <p align="justify">[^2]: Residentes se refiere a las personas censadas que declaran residencia habitual en Las Condes. Se considera a los individuos encuestados dentro o fuera de la comuna.</p>
 
 <p align="justify">[^3]: La tasa de envejecimiento relativo expresa la proporción de personas de 60 años y más sobre el total de población.</p>
+
+
+
+
 
 
 
