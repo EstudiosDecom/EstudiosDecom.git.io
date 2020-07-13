@@ -9,50 +9,37 @@ output:
     toc_float:
       collapsed: false
       smooth_scroll: true
+
 ---
 
+---
 <p align="left">
 ## Capítulo 1: Geografía, Desarrollo Urbano y Movilidad
 </p>
 
-<p align="justify">La ciudad comprende un sistema complejo donde ocurren múltiples interacciones y convergen diversas necesidades humanas; seguridad, transporte y movilidad, integración y cohesión social, salud, educación, actividad económica, desarrollo sostenible y sustentable, y la disposición del espacio público para el encuentro de las diversas culturas, todas dimensiones de bienestar y calidad de vida urbana (Newman & Jennings, 2008).</p>
+<p align="justify">Las Condes hoy se presenta como un extenso asentamiento urbano en la Región Metropolitana, con una población cercana a los 300 mil habitantes, es la novena comuna con mayor cantidad de población a nivel nacional y la más poblada del sector oriente del Gran Santiago.</p>
 
-<p align="justify">Las Condes hoy se presenta como un extenso asentamiento urbano en la Región Metropolitana, con una población cercana a los 300 mil habitantes, la novena comuna con mayor cantidad de población a nivel nacional y la más poblada del sector oriente. </p>
-
-<p align="justify">La comuna destaca por sus elevados estándares de calidad de vida urbana, lo que supone un desafíos significativos para le gestión municipal. Consolidar el alto estándar de calidad de vida y bienestar, y extenderlo a todos los sectores de la comuna, especialmente en un contexto de transición avanzada hacia el envejecimiento de su población, </p>
+<p align="justify">La comuna destaca por sus elevados estándares de calidad de vida urbana. Consolidar estos estándares y extenderlo a todos los sectores de la comuna supone un desafío significativo para la gestión municipal, especialmente en un contexto de transición avanzada hacia el envejecimiento de su población, </p>
 
 <p align="justify">En esta línea, comprender las características geográficas de la ciudad es fundamental para una correcta planificación social. En la literatura académica se demuestra la importancia que adquieren las variables asociadas a los sistemas de transporte e infraestructura urbana en la calidad de vida de las personas.</p>
 
-<p align="justify">En el presente apartado se aborda una breve caracterización geográfica y de transporte relativa a la comuna. Se incluye la delimitación urbana, la subdivisión territorial, las características de transporte y movilidad, y una descripción de infraestructura urbana presente en la comuna.</p>
+<p align="justify">En la presente sección se aborda una breve caracterización geográfica y de transporte. Se incluye la subdivisión territorial, una descripción de variables de transporte, movilidad e infraestructura urbana presente en la comuna de Las Condes.</p>
 
-### i. Límites territoriales
+### i. Subdivisión urbana: Unidades Vecinales
 
-<p align="justify">La Comuna de Las Condes se ubica en el sector oriente de la Región Metropolitana, cuenta con una superficie total de 96 km2 de los cuales 43,9 km2 corresponden al área urbana. Esta limita al norte con la comuna de Vitacura, al nororiente con Lo Barnechea, al sur con La Reina y al poniente con Providencia. Los límites comunales se demarcan a partir de la siguiente descripción:</p>
+<p align="justify">La Ley 19.418 sobre Juntas de Vecinos y demás organizaciones comunitarias (Ministerio del Interior, 1997) establece los criterios para subdividir los territorios de las comunas. La ley señalada, define una Unidad Vecinal como el territorio “(...) en que se subdividen las comunas, para efectos de descentralizar asuntos comunales y promover la participación ciudadana y la gestión comunitaria, y en el cual se constituyen y desarrollan sus funciones las juntas de vecinos”.</p>
 
-
-<p align="justify">• Norte: Avenida Kennedy, desde el puente Los Saldes, sobre el Río Mapocho hasta Avenida Las Condes y su prolongación por ésta hasta el Camino a Farellones.</p>
-
-<p align="justify">• Oriente: Desde el Camino a Farellones frente al Cerro Arrayán Sur, la línea de cumbres que pasa por ese cerro, el Moro de Guayacán, el Cerro de la Provincia, el Cerro Las Lagunas, hasta el Cerro San Ramón.</p>
-
-<p align="justify">• Sur: La línea de cumbres que limita por el sur lo hoya de la quebrada San Ramón, desde el Cerro San Ramón hasta la intersección de las calles Valenzuela Puelma, Onofre Jarpa y Álvaro Casanova. La calle Valenzuela Puelma, desde la intersección antes citada hasta el Canal de Las Perdices; el Canal Las Perdices desde la calle Valenzuela Puelma hasta Avenida Francisco Bilbao, y Avenida Francisco Bilbao, desde el Canal Las Perdices hasta el Canal San Carlos.</p>
-
-<p align="justify">• Poniente: El Canal San Carlos desde Avenida Francisco Bilbao hasta su desembocadura en el Río Mapocho, y el Río Mapocho, desde la desembocadura del Canal San Carlos hasta el Puente Lo Saldes.</p>
-
-### ii. Subdivisión urbana: unidades vecinales
-
-<p align="justify">La Ley 19.418 sobre Juntas de Vecinos y demás organizaciones comunitarias (Ministerio del Interior, 1997) establece los criterios para subdividir los territorios de las comunas. De acuerdo a esta ley, una Unidad Vecinal se define como el territorio “(...) en que se subdividen las comunas, para efectos de descentralizar asuntos comunales y promover la participación ciudadana y la gestión comunitaria, y en el cual se constituyen y desarrollan sus funciones las juntas de vecinos”.</p>
-
-<p align="justify">Las unidades vecinales son determinadas por el alcalde “...de propia iniciativa o a petición de las juntas de vecinos o de los vecinos interesados, con el acuerdo del Concejo y oyendo al Consejo Económico y Social de la Comuna”. Actualmente, en la comuna de Las Condes existen 25 unidades vecinales distribuidas en el territorio comunal (ver mapa).</p>
+<p align="justify">Las unidades vecinales son determinadas por el alcalde “...de propia iniciativa o a petición de las juntas de vecinos o de los vecinos interesados, con el acuerdo del Concejo y oyendo al Consejo Económico y Social de la Comuna”. Actualmente, existen 25 unidades vecinales distribuidas en el territorio comunal (ver mapa).</p>
 
 <p align="center"><iframe src="https://www.google.com/maps/d/embed?mid=1Qp_2a8tQn-_jWYvTB_eWLO1CLU1arma3" width="600" height="420"></iframe></p>
 
-### iii. Organizaciones comunitarias
+### ii. Organizaciones comunitarias
 
-<p align="justify">La ley citada anteriormente, también reconoce la organización de la comunidad bajo la forma de organizaciones territoriales y organizaciones funcionales. Entre las primeras destacan las juntas de vecinos, mientras que en las segundas aparecen los centros de madres, centros de padres y apoderados, organizaciones artísticas y culturales, organizaciones deportivas, y otras.</p>
+<p align="justify">La ley 19.418, también reconoce la organización de la comunidad bajo la forma de organizaciones territoriales y organizaciones funcionales. Entre las primeras destacan las juntas de vecinos, mientras que en las segundas aparecen los centros de madres, centros de padres y apoderados, organizaciones artísticas y culturales, organizaciones deportivas, y otras.</p>
 
 <p align="justify">De acuerdo con la definición normativa las organizaciones territoriales se caracterizan por constituirse con individuos que residen dentro de una misma unidad vecinal, y tienen por objetivo promover el desarrollo de la comunidad, defendiendo los intereses de los vecinos.Por su parte, las organizaciones funcionales corresponden a agrupaciones con personalidad jurídica y sin fines de lucro, que representan y promueven valores e intereses específicos de una comunidad.</p>
 
-<p align="justify">A través del Departamento de Organizaciones Comunitarias, la Dirección de Desarrollo Comunitario de Las Condes fomenta y promueven el funcionamiento adecuado de estas organizaciones que canalizan los intereses y necesidades de los vecinos. En la Tabla 1 se describe la cantidad de organizaciones presentes en la comuna.</p>
+<p align="justify">A través del Departamento de Organizaciones Comunitarias, la Dirección de Desarrollo Comunitario de Las Condes fomenta y promueven el funcionamiento adecuado de estas organizaciones que canalizan los intereses y necesidades de los vecinos. En la *Tabla 1* se describe la cantidad de organizaciones presentes en la comuna.</p>
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
@@ -61,6 +48,8 @@ library('knitr')
 library('dplyr')
 library('ggplot2')
 library('ggthemes')
+library('kableExtra')
+library('plyr')
 
 ```
 
@@ -82,37 +71,37 @@ kable_styling(position = "center", bootstrap_options = "basic", full_width = F)
 
 <p align="center">*Fuente: Elaboración propia en base a datos del Departamento de Organizaciones Comunitarias DECOM*</p>
 
-### iv. Desarrollo urbano
+### iii. Desarrollo urbano
 
-<p align="justify">La Nueva Agenda Urbana (2016), documento ratificado por Estado de Chile ante Naciones Unidas, es un compromiso común que invita a poner los recursos y esfuerzos en alcanzar la equidad urbana. Entregar igualdad de acceso a las oportunidades que ofrecen las ciudades es uno de los grandes desafíos para alcanzar el desarrollo sostenible.</p>
+<p align="justify">La Nueva Agenda Urbana (2016), es un acuerdo internacional ratificado por el Estado de Chile en la Conferencia sobre Vivienda y Desarrollo Sostenible de Naciones Unidas, que invita a poner los recursos y esfuerzos en alcanzar la equidad urbana, con el propósito de lograr que las ciudades y los asentamientos humanos sean inclusivos, seguros, resilientes y sostenibles, y dar igualdad de derechos y acceso a las oportunidades que ofrecen las ciudades a las personas.</p>
 
-<p align="justify">En relación a lo anterior, el Instituto Nacional de Estadísticas (INE) ha dispuesto una serie de indicadores que miden el compromiso de las ciudades para alcanzar el desarrollo urbano. En esta línea el presente apartado aborda estadísticas de áreas verdes y transporte y movilidad a nivel comunal.</p>
+<p align="justify">En relación a lo anterior, el Instituto Nacional de Estadísticas (INE) a través del Sistema de Indicadores y Estándares del Desarrollo Urbano (SIEDU), ha dispuesto una serie de mediciones que reportan el compromiso de las ciudades para alcanzar el desarrollo urbano. En esta línea el presente apartado aborda estadísticas de áreas verdes, transporte y movilidad a nivel comunal.</p>
 
 #### a. Parques e infraestructura urbana
 
-<p align="justify">La presencia de áreas verdes en las ciudades genera una serie de externalidades positivas que se traducen en beneficios sociales intangibles para las comunidades (Anguluri & Narayanan, 2017).</p>
+<p align="justify">La presencia de áreas verdes en las ciudades genera una serie de externalidades positivas que se traducen en integración, cohesión, participación social de las comunidades, y beneficios sociales intangibles relacionados a un concepto amplio de bienestar y calidad de vida (Anguluri & Narayanan, 2017; Ayala-Azcárraga, Diaz & Zambrano, 2019).</p>
 
-<p align="justify">Las Condes, actualmente, cuenta con una superficie total de parques urbanos que alcanza 701.515 metros cuadrados, y 679.627 metros cuadrados de plazas. En total, suman 138 hectáreas de áreas verdes urbanas, según los datos del Sistema de Indicadores y Estándares del Desarrollo Urbano (Instituto Nacional de Estadísticas & PNUD, 2018).</p>
+<p align="justify">Las Condes, actualmente, cuenta con una superficie de 701.515 metros cuadrados de parques urbanos y 679.627 metros cuadrados de plazas que en total suman 138 hectáreas de áreas verdes urbanas, según los datos del Sistema de Indicadores y Estándares del Desarrollo Urbano (Instituto Nacional de Estadísticas & PNUD, 2018).</p>
 
 <p align="justify">Al analizar la cantidad de áreas verdes urbanas per cápita, los datos revelan que en la comuna existen 4,7 metros cuadrados de áreas verdes por habitante, distante de la meta propuesta por el Consejo Nacional de Desarrollo Urbano (CNDU) que es de 10 metros cuadrados por persona.</p>
 
-<p align="justify">Entre las comunas con mayor cantidad de áreas verdes per cápita a nivel nacional, Las Condes se ubica en el lugar 58, y a nivel regional ocupa el puesto 23 del ranking. En la Figura 1 se muestra la distribución de metros cuadrados de áreas verdes por habitantes para las comunas de la Provincia de Santiago a través de un mapa, aquellas comunas con mayor cantidad de áreas verdes per cápita aparecen más oscuras.</p>
+<p align="justify">Entre las comunas con mayor cantidad de áreas verdes per cápita a nivel nacional, Las Condes se ubica en el lugar 58, y a nivel regional ocupa el puesto 23 del ranking. En la *Figura 1* se muestra la distribución de metros cuadrados de áreas verdes por habitantes para las comunas de la Provincia de Santiago a través de un mapa, aquellas comunas con mayor cantidad de áreas verdes per cápita aparecen más oscuras.</p>
 
-<p align="center"> Figura 1. Áreas verdes (mt2/habitante) comunas de la Provincia de Santiago.</p>
-<p align="center"><iframe src="https://estudiosdecom.github.io/WebMapping/#12/-33.1922/-70.5700" width="600" height="420"></iframe></p>
+<p align="center">Figura 1. Áreas verdes (mt2/habitante) comunas de la Provincia de Santiago.</p>
+<p align="center"><iframe src="https://estudiosdecom.github.io/WebMapping/#12/-33.1922/-70.5700" width="580" height="420"></iframe></p>
 <p align="center">*Fuente: Elaboración propia en base a datos del Sistema de Indicadores y Estándares del Desarrollo Urbano(SIEDU)*</p>
 
-<p align="justify">Las Comunas de referencia, Vitacura y Providencia se encuentran dentro de las tres con mayor cantidad de áreas verdes por persona con un promedio de 17,2 metros cuadrados por habitante. Vitacura se ubica en el primer lugar a nivel nacional con un índice de 18,9 m2/hab., mientras que Providencia aparece en el tercer lugar con 15,5 m2 de área verde por persona.</p>
+<p align="justify">Las comunas de referencia, Vitacura y Providencia se encuentran dentro de las tres con mayor cantidad de áreas verdes por persona con un promedio de 17,2 metros cuadrados por habitante. Vitacura se ubica en el primer lugar a nivel nacional con un índice de 18,9 m2/hab., mientras que Providencia aparece en el tercer lugar con 15,5 m2 de área verde por persona.</p>
 
-<p align="justify">En la misma línea, SIEDU rescata información respecto a la distancia mínima promedio que existe entre los hogares y las áreas verdes comunales. El objetivo de este indicador es visualizar la accesibilidad que poseen los vecinos a las áreas verdes de su comuna. De acuerdo con las metas planteadas por el Consejo Nacional de Desarrollo Urbano (CNDU), una distancia inferior a 400 metros es una cifra aceptable que permite elevar los estándares de calidad de vida urbana.</p>
+<p align="justify">En la misma línea, SIEDU rescata información respecto a la distancia mínima promedio[^1] que existe entre los hogares y las áreas verdes comunales. El objetivo de este indicador es visualizar la accesibilidad que poseen los vecinos a las áreas verdes de su comuna. De acuerdo con las metas planteadas por el CNDU, una distancia inferior a 400 metros es una cifra aceptable que permite elevar los estándares de calidad de vida urbana.</p>
 
-<p align="justify">En términos de distancia a plazas públicas y parques urbanos, Las Condes se ubica dentro del lugar 29 del ranking regional, con una distancia media de 335 metros, un nivel aceptable según los parámetros fijados por CNDU, y se encuentra en una mejor situación respecto al promedio de las Comunas de referencia (397 metros de distancia promedio).</p>
+<p align="justify">En términos de distancia a plazas públicas y parques urbanos, Las Condes se ubica dentro del lugar 29 del ranking regional, con una distancia media de 335 metros, un nivel aceptable según los parámetros fijados por CNDU, y se encuentra en una mejor situación respecto al promedio de las comunas de referencia (397 metros de distancia promedio).</p>
 
-<p align="justify">No obstante, si se observa la interacción de ambos indicadores, distancia y superficie, la comuna de Las Condes aparece fuera del cuadrante de cumplimiento en acceso a servicios y equipamientos urbanos del CNDU. En este sentido, surge un desafío importante para el municipio. En la Figura 2 se muestra el cumplimiento de los indicadores de SIEDU por cuadrante para todas las comunas del gran Santiago.</p>
+<p align="justify">No obstante, si se observa la interacción de ambos indicadores, distancia y superficie, Las Condes aparece fuera del cuadrante de cumplimiento en acceso a servicios y equipamientos urbanos del CNDU. En este sentido, surge un desafío importante para el municipio. En la *Figura 2* se muestra el cumplimiento de los indicadores de SIEDU por cuadrante para todas las comunas del gran Santiago.</p>
 
 <p align="center">Figura 2. Cumplimiento comunal de indicadores de acceso a servicios y equipamientos públicos Provincia de Santiago.</p>
 <div align="center"><img src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/graph_dist_arverde.png" alt="drawing" width="600"/>
-<p align="center"> Fuente: Elaboración propia en base a datos del Sistema de Indicadores y Estándares del Desarrollo Urbano(SIEDU)</p>
+<p align="center">*Fuente: Elaboración propia en base a datos de SIEDU*</p>
 
 #### b. Transporte y movilidad
 
@@ -120,9 +109,8 @@ kable_styling(position = "center", bootstrap_options = "basic", full_width = F)
 
 <p align="justify">Los puntos de mayor congestión son el eje Américo Vespucio y Manquehue, estos constituyen los mayores desafíos para la gestión de tránsito. La solución del eje Américo Vespucio excede la capacidad del municipio por lo que, las obras que se harán cargo de esta problemática han sido abordadas por el nivel central a través del sistema de concesiones.</p>
 
-<p align="justify">Del mismo modo se observan grados de congestión en otros sectores de la comuna, los cuales están fuera del rango aceptado, a partir de ahí se están desarrollando proyectos de consolidación de la vialidad comunal.
+<p align="justify">Del mismo modo se observan grados de congestión en otros sectores de la comuna, los cuales están fuera del rango aceptado, a partir de ahí se están desarrollando proyectos de consolidación de la vialidad comunal. En la *Tabla 2* se indica la afluencia de vehículos por hora en los puntos de mayor demanda, por horario punta (mañana y tarde). Con estos flujos, las velocidades promedio en la comuna son aceptables en horas punta, alcanzando una velocidad media entre 25 y 50 km/h.</p>
 
-En la Tabla 2 se indica la afluencia de vehículos por hora en los puntos de mayor demanda, por horario punta (mañana y tarde). Con estos flujos, las velocidades promedio en la comuna son aceptables en horas punta, alcanzando una velocidad media entre 25 y 50 km/h.</p>
 
 ```{r dataframetab2, echo=FALSE}
 lugar = c('Av. Andrés Bello dirección poniente', 'Av. Andrés Bello dirección oriente', 'Av. Kennedy dirección oriente', 'Av Manquehue norte', 'Av. Manquehue sur', 'Av. Vespucio norte', 'Av. Vespucio sur', 'Av Colón dirección poniente')
@@ -133,6 +121,7 @@ table2$lugar <- factor(table2$lugar)
 
 ```
 
+
 ```{r table2html,results='ASIS'}
 knitr::kable(table2, "html", col.names = c('Lugar', 'Horario punta mañana', 'Horario punta tarde'), caption = "Tabla 2. Tránsito vehicular en horario punta.", align = 'lcc' ) %>%
   kable_styling(position = "center", bootstrap_options = "basic", full_width = F) 
@@ -140,11 +129,11 @@ knitr::kable(table2, "html", col.names = c('Lugar', 'Horario punta mañana', 'Ho
 ```
 <p align="center">*Fuente: Elaboración propia en base a datos del Sistema de Indicadores y Estándares del Desarrollo Urbano*</p>
 
-<p align="justify">Al mismo tiempo, las estimaciones de SIEDU indican que el 90% de los viajes en transporte público en la comuna tiene una duración máxima de 75 minutos en horario punta mañana, y de 60 minutos considerando cualquier medio de transporte.</p>
+<p align="justify">Al mismo tiempo, las estimaciones de SIEDU indican que el 90% de los viajes en transporte público en la comuna tiene una duración máxima de 75 minutos en horario punta mañana, y de 60 minutos considerando todos los medio de transporte utilizados.</p>
 
-<p align="justify">Para el CNDU la duración deseable de los viajes no debiese exceder los 60 min., considerando el costo de oportunidad que implica para las familias. Las Condes se encuentra cercana a alcanzar niveles aceptables, para el caso de las Comunas de referencia la media es de 76 min., y Providencia es la comuna que más se acerca a cumplir el estándar con una duración máxima 70 minutos para el 90% de los viajes efectuados.</p>
+Para el CNDU la duración deseable de los viajes no debiese exceder los 60 min., considerando el costo de oportunidad que implica para las familias. Las Condes se encuentra cercana a alcanzar niveles aceptables, para el caso de las comunas de referencia la media es de 76 minutos, y Providencia es la comuna que más cercana a cumplir el estándar con una duración máxima 70 minutos para el 90% de los viajes efectuados. En la *Figura 3* se clasifica la brecha existente entre el indicador y la meta.</p>
 
-<p align="justify"> Figura 3. Clasificación brecha tiempos de traslado en transporte público a nivel comunal en la Provincia de Santiago respecto de la meta CNDU (60 min).</p>
+<p align="justify">Figura 3. Clasificación brecha tiempos de traslado en transporte público a nivel comunal en la Provincia de Santiago respecto de la meta CNDU (60 min).</p>
 
 ```{r dataframefig3, include=FALSE}
 comuna = c ('Quilicura', 'La Pintana/ Lo espejo', 'Renca', 'Pedro Aguirre Cerda', 'La Granja', 'Pudahuel', 'Maipú', 'El Bosque', 'Cerro Navia', 'Estación Central', 'San Miguel/ San Ramón', 'Quinta Normal/Recoleta', 'Macul/Peñalolén', 'Lo Barnechea/Lo Prado', 'La Cisterna/La Florida', 'Cerrillos/Huechuraba', 'Vitacura', 'Santiago', 'La Reina/San Joaquín', 'Independencia', 'Ñuñoa', 'Las Condes', 'Conchalí', 'Providencia')
@@ -158,9 +147,9 @@ levels(brechatransporte$comuna)
 ```
 
 <p align="center">
-```{r plotbrechatransporte, echo=FALSE, results='ASIS'}
+```{r brechatransporte, echo=FALSE, results='ASIS'}
 #Select dataframe
-transportplot <-  ggplot(brechatransporte, mapping = aes(x = comuna,  y = indicador, fill = brecha, colour = brecha)) 
+transportplot <-  ggplot(brechatransporte, mapping = aes(x = comuna,  y = indicador, fill = brecha, colour = brecha, label = indicador)) 
 #Add Geometry
 transportplot <- transportplot + geom_bar(stat = "identity", position = "dodge", colour = "#666666") 
 #Horizontal barplot
@@ -169,9 +158,10 @@ transportplot <- transportplot + coord_flip()
 transportplot <- transportplot +  ggtitle("") + ylab("Tiempo de traslado (min)") + xlab("Comuna") + theme_tufte() + theme(
     legend.position = 'right',
     legend.box = 'horizontal',
-    text = element_text(size = 11,  color = "black" ))
+    legend.title = element_blank(),
+    text = element_text(size = 11,  color = "black" )) + scale_y_discrete(breaks = seq(0,140,10))
 #Change fill colour
-transportplot <- transportplot + scale_fill_manual(values = c('#CC0000', '#FFCC33', '#33FF00'))
+transportplot <- transportplot + scale_fill_manual(values = c('#FF3333', '#FFCC33', '#009900'))
 
 print(transportplot)
 
@@ -181,7 +171,7 @@ print(transportplot)
 
 <p align="justify">Según los datos recolectados del PLADECO 2018 – 2021, se calcula que en promedio existen alrededor de un millón doscientos mil viajes diarios en la comuna, siendo la mitad de estos dentro de la misma. El principal destino fuera de la comuna es Vitacura con un 13% seguido por Providencia y Lo Barnechea con un porcentaje que bordea el 7%.</p>
 
-<p align="justify">Por otra parte, la Encuesta Casen recoge información relativa al tipo de transporte utilizado por la población ocupada para dirigirse a su lugar de trabajo. Al respecto, los datos señalan que el medio de transporte más utilizado por los vecinos de Las Condes para llegar a su lugar de trabajo es el vehículo motorizado particular (auto, camioneta, motocicleta u otro), seguido del uso de transporte público. En la Figura 4 se describen los medios de transporte más utilizados para movilizarse entre el hogar y el lugar de trabajo.</p>
+<p align="justify">Por otra parte, la Encuesta Casen recoge información relativa al tipo de transporte utilizado por la población ocupada para dirigirse a su lugar de trabajo. Al respecto, los datos señalan que el medio de transporte más utilizado por los vecinos de Las Condes para llegar a su lugar de trabajo es el vehículo motorizado particular (auto, camioneta, motocicleta u otro), seguido del uso de transporte público. En la *Figura 4* se describen los medios de transporte más utilizados para movilizarse entre el hogar y el lugar de trabajo.</p>
 
 ```{r dataframefig4, include=FALSE}
 mediotransp = c('Transporte público', 'Vehículo particular', 'A pie', 'En bicicleta u otro medio no motorizado', 'Otros')
@@ -191,14 +181,14 @@ medio_transporte <- data.frame(mediotransp,prop_transp)
 ```
 
 <p align="center">Figura 4. Medio de transporte frecuentemente utilizado para traslado entre el hogar y lugar de trabajo.</p>
-
 <p align="center">
-```{r plotmedtransp, echo=FALSE ,results = 'ASIS'}
+
+```{r medtransp, echo=FALSE ,results = 'ASIS'}
 #Select dataframe
 medtranspplot <-  ggplot(medio_transporte, mapping = aes(x = mediotransp,  y = prop_transp, label = scales::percent(prop_transp))) 
 #Add Geometry
 medtranspplot <- medtranspplot + geom_bar(stat = 'identity', 
-                  colour = '#666666', fill = '#003366') 
+                  colour = '#666666', fill = 'royalblue4') 
 #Add labels + custom theme
 medtranspplot <- medtranspplot +  ggtitle("") + ylab("") + xlab("") + theme_tufte() + theme(
  text = element_text(size = 11,  color = "black" )) + scale_y_continuous(breaks = seq(0,0.5,0.1), labels = scales::percent_format(accuracy = 1)) + geom_text(position = position_dodge(width = .9), vjust = -0.5, size = 3) 
@@ -210,11 +200,86 @@ print(medtranspplot)
 
 <p align="center">*Fuente: Elaboración propia en base a datos de Casen 2015*</p>
 
-<p align="justify">En materia de transporte, existe una serie de desafíos para empujar el desarrollo sostenible y sustentable. En este sentido, el municipio de Las Condes ha incorporado un número importante de servicios de electromovilidad disponibles para los vecinos (scooters y bicicletas), además ha puesto a disposición una flota de 10 buses eléctricos que conectan zonas de residencia que no se encuentran totalmente cubiertas por el sistema de transporte público metropolitano. Esto, con el objetivo de mejorar la capacidad de movilidad urbana en la comuna.</p>
+<p align="justify">En materia de transporte, existe una serie de desafíos para empujar el desarrollo sostenible y sustentable. En este sentido, el municipio de Las Condes ha incorporado un número importante de servicios de electromovilidad disponibles para los vecinos (scooters y bicicletas), además ha puesto a disposición una flota de buses eléctricos que conectan zonas de residencia que no se encuentran totalmente cubiertas por el sistema de transporte público metropolitano. Esto, con el objetivo de mejorar la capacidad de movilidad urbana en la comuna.</p>
 
 <p align="left">
 ## Capítulo 2: Estadísticas demográficas
 </p>
+
+<p align="justify">En el presente capítulo se explora la estructura demográfica de Las Condes, con un foco en el envejecimiento de la población y el fenómeno migratorio. El objetivo de esta sección es caracterizar a los vecinos y hogares de la comuna en un análisis comparado con las áreas de referencia.</p>
+
+<p align="justify">En primer lugar, se presenta la estructura demográfica de la comuna según su composición por sexo y edad. Luego, se describen los indicadores de envejecimiento y se caracteriza la población de personas mayores. Enseguida, se exponen indicadores de densidad poblacional y se describe la composición de los hogares. Finalmente, se aborda el fenómeno migratorio, considerando migración internacional y migración interna, además de abarcar al segmento de población perteneciente a pueblos originarios.</p>
+
+<p align="left">
+### i. Estructura demográfica
+</p>
+
+<p align="justify">El Censo 2017 reveló que en Chile existen 17.574.003 habitantes distribuidos a lo largo del territorio nacional con una proyección de 19,1 millones al años 2019. La mayor concentración de población se registra en la Región Metropolitana (40,5%), territorio que alberga la capital nacional (Santiago).</p> 
+
+<p align="justify">En Las Condes, a través del mismo instrumento se contabilizaron un total de 294.838 personas, de las cuales 287.023 corresponden a residentes permanentes[^2]. Si se considera la población total, la comuna representa el 1,7% de los habitantes del país y el 4,1% de la Región Metropolitana. La comuna es la novena más poblada en Chile.</p>
+
+<p align="justify">Al mismo tiempo, las estadísticas censales sugieren que Las Condes registra la segunda tasa más elevada de envejecimiento relativo[^3] en la Región Metropolitana, y los datos de extranjería indican que es la tercera comuna con mayor población migrante en Chile.</p>
+
+#### a. Composición de la población según sexo
+<p align="justify">
+En Las Condes la composición de la población por sexo indica que existe una mayor proporción de mujeres, tendencia observada para el resto del país. El 53,9% de los vecinos de Las Condes corresponde a población femenina, a nivel nacional y regional esta alcanza el 51,1% y 51,3% respectivamente, mientras que en las comunas de referencia la proporción de mujeres es de 54,4%.</p>
+
+<p align="center">Figura 5. Proporción población por sexo según área de referencia.</p>
+```{r dataframfig5, include=FALSE}
+area_1 = c(4, 3, 2, 1, 4, 3, 2, 1)
+area_1 = factor (area_1, levels = c(1,2,3,4) ,
+        labels = c('Nacional', 'Región Metropolitana', 'Comunas de referencia', 'Las Condes'))
+sexo = c (1, 1, 1, 1, 2, 2, 2, 2)
+sexo = factor(sexo, levels = c(1,2),
+                       labels = c("Hombre", "Mujer"))
+prop_pobl = c (.461, .456, .487, .489, .539, .544, .513, .511)
+pobl_sexo <- data.frame(area_1, sexo, prop_pobl)
+pobl_sexo_sorted <- arrange(pobl_sexo, prop_pobl, sexo)
+pobl_sexo_sorted$labelpos <- ifelse(pobl_sexo_sorted$sexo=='Hombre', pobl_sexo_sorted$prop_pobl/2, 
+                                    1-pobl_sexo_sorted$prop_pobl/2)
+
+```
+
+<p align="center">
+```{r plotsex, echo=FALSE ,results = 'ASIS'}
+#Select dataframe + Add geometry
+psexplot <-  ggplot(pobl_sexo_sorted, aes ( y= prop_pobl, x = area_1, fill = sexo, )) +
+  geom_bar(stat = 'identity' , position = 'fill' ,colour = 'black', width = 0.9)
+#Add labels + custom theme
+psexplot <- psexplot + ggtitle("") + ylab("") + xlab("") + theme_tufte() + 
+theme(text = element_text(size = 10,  color = "black" ), legend.position = 'top' , legend.box = 'horizontal', legend.title = element_blank()) + scale_y_continuous(breaks = seq(0,1,0.25), labels = scales::percent_format(accuracy = 1)) + guides(fill = guide_legend(reverse=TRUE))
+
+
+#Add label % 
+psexplot <- psexplot +geom_text(aes(label = paste0(100*prop_pobl,"%"),y=labelpos),size = 3, color = 'white')
+
+#Select fill color
+psexplot <- psexplot + scale_fill_manual(values = c('royalblue4','red3')) + coord_flip()
+
+print(psexplot)
+
+```
+</p>
+<p align="center">*Fuente: Elaboración propia en base a datos del Censo 2017*</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -245,6 +310,8 @@ print(medtranspplot)
 
 <p align="justify">Atkinson, A. B. (2003). Multidimensional deprivation: contrasting social welfare and counting approaches. *The Journal of Economic Inequality*, 1(1), 51–65.</p>
 
+<p align="justify">Ayala-Azcárraga, C., Diaz, D., & Zambrano, L. (2019). Characteristics of urban parks and their relation to user well-being. *Landscape and Urban Planning*, 189, 27-35.</p>
+
 <p align="justify">Balaz, V., & Williams, A. M. (2011). Risk attitudes and migration experience. *Journal of Risk Research*, 14(5), 583–596.</p>
 
 <p align="justify">Bardasi, E., Jenkins, S., & Rigg, J. (2002). Retirement and the income of older people: a British perspective. *Ageing and Society*, 22(2), 131–159.</p>
@@ -263,7 +330,7 @@ print(medtranspplot)
 
 <p align="justify">CIPEM. (2018a). Contexto Demográfico Global y Chileno: Situación de la Población Adulto Mayor. Retrieved from http://www.cipem.cl/wp-content/uploads/2018/12/Informe-1.pdf </p>
 
-<p align="justify">CIPEM. (2018b). Mercado Laboral y Personas Mayores. Retrieved from http://www.cipem.cl/wp-content/uploads/2018/12/Reporte-II-20_12FV.pdf</p>
+<p align="justify">CIPEM. (2018b). Mercado Laboral y Personas Mayores. Retrieved from http://www.cipem.cl/wp-content/uploads/2018/12/Reporte-II-20_12FV.pdf </p>
 
 <p align="justify">Dahlgren, G., & Whitehead, M. (1991). Policies and strategies to promote social equity in health (1st ed.). Stockholm: Institute for future studies.</p>
 
@@ -271,9 +338,9 @@ print(medtranspplot)
 
 <p align="justify">Donoso, E. (2008). Embarazo adolescente: un problema país. *Revista Chilena de Obstetricia y Ginecología*, 73, 291–292.</p>
 
-<p align="justify">Estudios Urbanos UC. (2019). Índice de Calidad de Vida Urbana Comunas y Ciudades de Chile. Retrieved from https://www.cchc.cl/uploads/comunicacion/archivos/20180508_ICVU_2018-_Versión_Definitiva.pdf</p>
+<p align="justify">Estudios Urbanos UC. (2019). Índice de Calidad de Vida Urbana Comunas y Ciudades de Chile. Retrieved from https://www.cchc.cl/uploads/comunicacion/archivos/20180508_ICVU_2018-_Versión_Definitiva.pdf </p>
 
-<p align="justify">Fernandez, B., & Herrera, S. (2017). Chile y sus mayores: 10 años de la Encuesta Calidad de Vida en la Vejez UC - Caja Los Andes. Retrieved from http://adultomayor.uc.cl/docs/Libro_CHILE_Y_SUS_MAYORES_2016.pdf</p>
+<p align="justify">Fernandez, B., & Herrera, S. (2017). Chile y sus mayores: 10 años de la Encuesta Calidad de Vida en la Vejez UC - Caja Los Andes. Retrieved from http://adultomayor.uc.cl/docs/Libro_CHILE_Y_SUS_MAYORES_2016.pdf </p>
 
 <p align="justify">Franco, R., Hopenhayn, M., & León, A. (2010). Las clases medias en América Latina (1st ed.). México D.F: CEPAL.</p>
 
@@ -285,18 +352,18 @@ print(medtranspplot)
 
 <p align="justify">Idler, E., & Cartwright, K. (2018). What do we rate when we rate our health? Decomposing age-related contributions to self-rated health. *Journal of Health and Social Behavior*, 59(1), 74–93.</p>
 
-<p align="justify">Instituto Nacional de Estadísticas. (2016). Jefatura de hogar: Usos del concepto, historia, críticas y expresión en los indicadores. Retrieved from http://historico.ine.cl/genero/files/estadisticas/pdf/documentos/jefatura_hogar.pdf</p>
+<p align="justify">Instituto Nacional de Estadísticas. (2016). Jefatura de hogar: Usos del concepto, historia, críticas y expresión en los indicadores. Retrieved from http://historico.ine.cl/genero/files/estadisticas/pdf/documentos/jefatura_hogar.pdf </p>
 
-<p align="justify">Instituto Nacional de Estadísticas, & PNUD. (2018). Sistema de Indicadores y Estándares del Desarrollo Urbano (SIEDU). Retrieved July 25, 2019, from http://siedu.ine.cl/compromisos/compromisos.html</p>
+<p align="justify">Instituto Nacional de Estadísticas, & PNUD. (2018). Sistema de Indicadores y Estándares del Desarrollo Urbano (SIEDU). Retrieved July 25, 2019, from http://siedu.ine.cl/compromisos/compromisos.html </p>
 
-<p align="justify">International Labour Organization. (2019). World Employment Social Outlook. Retrieved from https://www.ilo.org/wcmsp5/groups/public/---dgreports/---dcomm/---publ/documents/publication/wcms_670542.pdf</p>
+<p align="justify">International Labour Organization. (2019). World Employment Social Outlook. Retrieved from https://www.ilo.org/wcmsp5/groups/public/---dgreports/---dcomm/---publ/documents/publication/wcms_670542.pdf </p>
 
 <p align="justify">Kotok, S., Ikoma, S., & Bodovski, K. (2016). School climate and dropping out of school in the era of accountability. *American Journal of Education*, 122(4), 569–599.</p>
 
 <p align="justify">Krugman, P. (1994). Competitiveness: A Dangerous Obsession. *Foreign Affairs*, 73(2), 28–44.</p>
 
 <p align="justify">Libertad y Desarrollo. (2019). Hacia una definición de clase media en Chile. Retrieved from
-https://lyd.org/wp-content/uploads/2019/05/tp-1399-clase-media.pdf</p>
+https://lyd.org/wp-content/uploads/2019/05/tp-1399-clase-media.pdf </p>
 
 <p align="justify">Marmot, M., & Allen, J. J. (2014). Social Determinants of Health Equity. *American Journal of Public Health*, 104(S4), S517–S519.</p>
 
@@ -304,9 +371,9 @@ https://lyd.org/wp-content/uploads/2019/05/tp-1399-clase-media.pdf</p>
 
 <p align="justify">Martin, J. (2015). Activation and active labour market policies in OECD countries: stylised facts and evidence on their effectiveness. *Journal of Labor Policy*, 4(1), 4.</p>
 
-<p align="justify">Ministerio de Desarrollo Social. (2015). Definición de ingresos Casen. Retrieved June 25, 2019, from http://observatorio.ministeriodesarrollosocial.gob.cl/casen/casen_def_ingresos.php</p>
+<p align="justify">Ministerio de Desarrollo Social. (2015). Definición de ingresos Casen. Retrieved June 25, 2019, from http://observatorio.ministeriodesarrollosocial.gob.cl/casen/casen_def_ingresos.php </p>
 
-<p align="justify">Naciones Unidas. (2009). Clasificación Industrial Internacional Uniforme de todas las acividades económicas (CIIU). Retrieved from file:///C:/respaldo/Downloads/SLV_2017_EHPM_v01_M_DIGESTYC-TEC-CIIU_Rev4.pdf</p>
+<p align="justify">Naciones Unidas. (2009). Clasificación Industrial Internacional Uniforme de todas las acividades económicas (CIIU). Retrieved from file:///C:/respaldo/Downloads/SLV_2017_EHPM_v01_M_DIGESTYC-TEC-CIIU_Rev4.pdf </p>
 
 <p align="justify">Newman, P., & Jennings, I. (2008). Cities as Sustainable Ecosystems (1st ed.). Washington, DC: ISLAND PRESS.</p>
 
@@ -334,20 +401,36 @@ https://lyd.org/wp-content/uploads/2019/05/tp-1399-clase-media.pdf</p>
 
 <p align="justify">Servicio Nacional de la Discapacidad. (2016). II Estudio Nacional de la Discapacidad. Santiago.</p>
 
-<p align="justify">UNESCO (2015). Education 2030: Towards inclusive and equitable quality education and lifelong learning for all. Retrieved from https://unesdoc.unesco.org/ark:/48223/pf0000245656</p>
+<p align="justify">UNESCO (2015). Education 2030: Towards inclusive and equitable quality education and lifelong learning for all. Retrieved from https://unesdoc.unesco.org/ark:/48223/pf0000245656 </p>
 
 <p align="justify">United Nations, Department of Economics and Social Affairs, P. D. (2017). International Migration report 2017: Highlights. New York.</p>
 
 <p align="justify">United Nations. (2016). Nueva Agenda Urbana. Retrieved from http://habitat3.org/wp-content/uploads/NUA-Spanish.pdf</p>
 
-<p align="justify">United Nations. (2018). Disability and Development Report. Retrieved from https://www.un.org/disabilities/documents/2019/UN-flagship-report-disability-7June.pdf</p>
+<p align="justify">United Nations. (2018). Disability and Development Report. Retrieved from https://www.un.org/disabilities/documents/2019/UN-flagship-report-disability-7June.pdf </p>
 
 <p align="justify">Uribe, G. G.-B. (2014). Pobreza infantil e impacto de la crisis en la infancia. *Educación y Futuro: Revista de Investigación Aplicada y Experiencias Educativas*, (30), 109–126.</p>
 
 <p align="justify">Weiss, R. S., Bass, S. A., Heimovitz, H. K., & Oka, M. (2005). Japan’s silver human resource centers and participant well-being. *Journal of Cross-Cultural Gerontology*, 20(1), 47–66.</p>
 
-<p align="justify">World Health Organization. (2007). Global Age-Friendly Cities. Retrieved from https://www.who.int/ageing/publications/Global_age_friendly_cities_Guide_English.pdf</p>
+<p align="justify">World Health Organization. (2007). Global Age-Friendly Cities. Retrieved from https://www.who.int/ageing/publications/Global_age_friendly_cities_Guide_English.pdf </p>
 
-<p align="justify">World Health Organization. (2018). Ageing and health. Retrieved October 22, 2019, from https://www.who.int/news-room/fact-sheets/detail/ageing-and-health</p>
+<p align="justify">World Health Organization. (2018). Ageing and health. Retrieved October 22, 2019, from https://www.who.int/news-room/fact-sheets/detail/ageing-and-health </p>
+
+
+<p align="justify">[^1]: Este indicador se construye a partir de distancia mínima promedio ponderada por población entre el centro geométrico de cada manzana y la plaza pública más cercana. Dicha distancia se pondera en función de la población a nivel de manzana con la finalidad de no subestimar el resultado final. El estándar establecido por el CNDU para este indicador es de 400m.</p>
+
+<p align="justify">[^2]: Residentes se refiere a las personas censadas que declaran residencia habitual en Las Condes. Se considera a los individuos encuestados dentro o fuera de la comuna.</p>
+
+<p align="justify">[^3]: La tasa de envejecimiento relativo expresa la proporción de personas de 60 años y más sobre el total de población.</p>
+
+
+
+
+
+
+
+
+
 
 
