@@ -1,7 +1,46 @@
 ---
-title: "About us"
+title: "Programación y Evaluación Social"
 ---
 
-El Departamento de Planificación Social y Estudios, centra su acción -a través del subprograma de Programación y Evaluación- en la generación y análisis de información social que contribuya en la toma de decisiones por parte de la Dirección de DECOM. 
+<p align="justify">El Departamento de Planificación Social y Estudios - a través del equipo de Programación y Evaluación- persigue el objetivo de aportar sistemáticamente a la mejora de diseño e implementación de las políticas sociales ejecutadas por DECOM, a través de la generación y análisis sistemático de información social.</p>
 
-En el equipo de Programación y Evaluación se desempeñan como investigadores tres profesionales de las ciencias sociales con formación en
+<p align="justify">La acción del Departamento se enmarca dentro de un proceso de modernización de DECOM, cuyos objetivos estratégicos corresponden a una mejora en la calidad de los servicios que recibe el vecino, aumentar la cobertura de los programas sociales, y promover la innovación y mejora de la gestión interna, para de esta manera aportar en la creación de valor público.</p>
+
+### Equipo
+
+
+<img style="float:left; margin:10px;" src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/AleRoa.jpeg" alt="drawing" width="180"/><br>Alejandra Roa Inostroza<br>Secretaria del Departamento de Planificación Social y Estudios<br><img src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/mail.png" alt="drawing" width="18" align="center"><a href="mailito:proyectos.socialesye@lascondes.cl">proyectos.socialesye@lascondes.cl</a><br><img src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/lnkdin.png" alt="drawing" width="18" align="center"><a href=""></a></br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</br>
+<img style="float:left; margin:10px;" src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/nvatter.jpeg" alt="drawing" width="180"/><br>Nicolás Vatter Rodríguez<br>Coordinador del Departamento de Planificación Social y Estudios<br>Analista DEPSE<br>Bachiller en Ciencias Sociales y Humanidades<br>Pontificia Universidad Católica de Chile<br>Licenciado en Sociología<br>Pontificia Universidad Católica de Chile<br><img src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/mail.png" alt="drawing" width="18" align="center"><a href="mailito:nvatter@lascondes.cl">nvatter@lascondes.cl</a><br><img src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/lnkdin.png" alt="drawing" width="18" align="center"><a href="https://www.linkedin.com/in/nicolás-vatter-rodríguez-5a84b256/">https://www.linkedin.com/in/nicolás-vatter-rodríguez-5a84b256/</a> </br>
+<br>
+<br>
+</br>
+<img style="float:left; margin:10px;" src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/ppena.jpeg" alt="drawing" width="180"/><br>Paulina Peña Vidal<br>Analista DEPSE<br>Licenciada en Sociología<br>Pontificia Universidad Católica de Chile<br>Magíster en Sociología<br>Pontificia Universidad Católica de Chile<br><img src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/mail.png" alt="drawing" width="18" align="center"><a href="mailito:paulina.pena@lascondes.cl">paulina.pena@lascondes.cl</a><br><img src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/lnkdin.png" alt="drawing" width="18" align="center"><a href="https://www.linkedin.com/in/paulina-peña-vidal-72748611a/">https://www.linkedin.com/in/paulina-peña-vidal-72748611a</a> </br>
+<br>
+<br>
+</br>
+<img style="float:left; margin:10px;" src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/fvega.jpg" alt="drawing" width="180"/><br>Felipe Vega Gaete<br>Analista DEPSE<br>Licenciado en Ciencia Política con Mención en Políticas Públicas<br>Universidad del Desarrollo<br>Magíster en Políticas Públicas con Mención en Economía y Gestión Pública<br>Universidad del Desarrollo<br><img src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/mail.png" alt="drawing" width="18" align="center"><a href="mailito:fvega@lascondes.cl"> fvega@lascondes.cl</a><br><img src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/lnkdin.png" alt="drawing" width="18" align="center"><a href="https://www.linkedin.com/in/fevegag">https://www.linkedin.com/in/fevegag</a> 
+</br>
+<br>
+<br>
+</br>
+<img style="float:left; margin:10px;" src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/sacevedo.jpeg" alt="drawing" width="180"/><br>Sebastián Acevedo<br>Desarrollador DEPSE<br>Licenciado en Ingeniería en informática<br>Universidad...<br><img src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/mail.png" alt="drawing" width="18" align="center"><a href="mailito:sacevedo@lascondes.cl"> sacevedo@lascondes.cl</a><br><img src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/lnkdin.png" alt="drawing" width="18" align="center"><a href=""></a></br>
+</br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</br>
+
+
+
+

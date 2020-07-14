@@ -9,13 +9,14 @@ navbar:
       href: diagnostico.html
     - text: "Análisis"
       href: doc_analisis.html
-    - text: "Datos georreferenciados"
+    - text: "Web mapping"
       href: maps.html
-    - text: "About"
+    - text: "Equipo de Estudios"
       href: about.html
 output:
   html_document:
     theme: spacelab
     highlight: tango
     include:
+      in_header: 
       after_body: footer.Rhtml

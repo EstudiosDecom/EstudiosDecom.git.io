@@ -50,6 +50,7 @@ library('ggplot2')
 library('ggthemes')
 library('kableExtra')
 library('plyr')
+library ('RMySQL')
 
 ```
 
@@ -68,6 +69,7 @@ knitr::kable(table1, "html", col.names = c('Organización', 'Cantidad'), caption
 kable_styling(position = "center", bootstrap_options = "basic", full_width = F)
 
 ```
+
 
 <p align="center">*Fuente: Elaboración propia en base a datos del Departamento de Organizaciones Comunitarias DECOM*</p>
 
@@ -127,6 +129,8 @@ knitr::kable(table2, "html", col.names = c('Lugar', 'Horario punta mañana', 'Ho
   kable_styling(position = "center", bootstrap_options = "basic", full_width = F) 
 
 ```
+
+
 <p align="center">*Fuente: Elaboración propia en base a datos del Sistema de Indicadores y Estándares del Desarrollo Urbano*</p>
 
 <p align="justify">Al mismo tiempo, las estimaciones de SIEDU indican que el 90% de los viajes en transporte público en la comuna tiene una duración máxima de 75 minutos en horario punta mañana, y de 60 minutos considerando todos los medio de transporte utilizados.</p>
@@ -149,17 +153,17 @@ levels(brechatransporte$comuna)
 <p align="center">
 ```{r brechatransporte, echo=FALSE, results='ASIS'}
 #Select dataframe
-transportplot <-  ggplot(brechatransporte, mapping = aes(x = comuna,  y = indicador, fill = brecha, colour = brecha, label = indicador)) 
+transportplot <-  ggplot(brechatransporte, mapping = aes(x = comuna,  y = indicador, fill = brecha, label = indicador)) 
 #Add Geometry
-transportplot <- transportplot + geom_bar(stat = "identity", position = "dodge", colour = "#666666") 
+transportplot <- transportplot + geom_bar(stat = "identity", position = "dodge", colour = "#999999") 
 #Horizontal barplot
 transportplot <- transportplot + coord_flip()
 #Add labels + custom theme
 transportplot <- transportplot +  ggtitle("") + ylab("Tiempo de traslado (min)") + xlab("Comuna") + theme_tufte() + theme(
-    legend.position = 'right',
+    legend.position = 'top',
     legend.box = 'horizontal',
     legend.title = element_blank(),
-    text = element_text(size = 11,  color = "black" )) + scale_y_discrete(breaks = seq(0,140,10))
+    text = element_text(size = 11,  color = "black" )) + scale_y_discrete(breaks = seq(0,150,25))  + geom_text(aes(label = indicador),size = 3.5, color = 'black', hjust=1.5)
 #Change fill colour
 transportplot <- transportplot + scale_fill_manual(values = c('#FF3333', '#FFCC33', '#009900'))
 
@@ -188,7 +192,7 @@ medio_transporte <- data.frame(mediotransp,prop_transp)
 medtranspplot <-  ggplot(medio_transporte, mapping = aes(x = mediotransp,  y = prop_transp, label = scales::percent(prop_transp))) 
 #Add Geometry
 medtranspplot <- medtranspplot + geom_bar(stat = 'identity', 
-                  colour = '#666666', fill = 'royalblue4') 
+                  colour = '#999999', fill = '#336699') 
 #Add labels + custom theme
 medtranspplot <- medtranspplot +  ggtitle("") + ylab("") + xlab("") + theme_tufte() + theme(
  text = element_text(size = 11,  color = "black" )) + scale_y_continuous(breaks = seq(0,0.5,0.1), labels = scales::percent_format(accuracy = 1)) + geom_text(position = position_dodge(width = .9), vjust = -0.5, size = 3) 
@@ -236,7 +240,7 @@ sexo = factor(sexo, levels = c(1,2),
 prop_pobl = c (.461, .456, .487, .489, .539, .544, .513, .511)
 pobl_sexo <- data.frame(area_1, sexo, prop_pobl)
 pobl_sexo_sorted <- arrange(pobl_sexo, prop_pobl, sexo)
-pobl_sexo_sorted$labelpos <- ifelse(pobl_sexo_sorted$sexo=='Hombre', pobl_sexo_sorted$prop_pobl/2, 
+pobl_sexo_sorted$labelpos <- ifelse(pobl_sexo_sorted$sexo=='Mujer', pobl_sexo_sorted$prop_pobl/2, 
                                     1-pobl_sexo_sorted$prop_pobl/2)
 
 ```
@@ -245,7 +249,7 @@ pobl_sexo_sorted$labelpos <- ifelse(pobl_sexo_sorted$sexo=='Hombre', pobl_sexo_s
 ```{r plotsex, echo=FALSE ,results = 'ASIS'}
 #Select dataframe + Add geometry
 psexplot <-  ggplot(pobl_sexo_sorted, aes ( y= prop_pobl, x = area_1, fill = sexo, )) +
-  geom_bar(stat = 'identity' , position = 'fill' ,colour = 'black', width = 0.9)
+  geom_bar(stat = 'identity' , position = 'fill' ,colour = '#999999', width = 0.8)
 #Add labels + custom theme
 psexplot <- psexplot + ggtitle("") + ylab("") + xlab("") + theme_tufte() + 
 theme(text = element_text(size = 10,  color = "black" ), legend.position = 'top' , legend.box = 'horizontal', legend.title = element_blank()) + scale_y_continuous(breaks = seq(0,1,0.25), labels = scales::percent_format(accuracy = 1)) + guides(fill = guide_legend(reverse=TRUE))
@@ -255,35 +259,114 @@ theme(text = element_text(size = 10,  color = "black" ), legend.position = 'top'
 psexplot <- psexplot +geom_text(aes(label = paste0(100*prop_pobl,"%"),y=labelpos),size = 3, color = 'white')
 
 #Select fill color
-psexplot <- psexplot + scale_fill_manual(values = c('royalblue4','red3')) + coord_flip()
+psexplot <- psexplot + scale_fill_manual(values = c('#336699', '#FF6633')) + coord_flip()
 
 print(psexplot)
 
 ```
 </p>
+
 <p align="center">*Fuente: Elaboración propia en base a datos del Censo 2017*</p>
 
+<p align="justify">En la misma línea, el índice de masculinidad[^4] a nivel comunal indica un total de 85,5 hombres por cada 100 mujeres. Este índice es menor en comparación a la realidad nacional y regional, pero similar a las Comunas de referencia (*Tabla 3*). Al mismo tiempo, se observa en Las Condes que por cada 100 hombres existen 116,9 mujeres.</p>
 
 
+```{r dataframetab3, echo=FALSE}
+indicemf = c('Índice de masculinidad', 'Índice de feminidad')
+lcfm = c (85.5, 116.9)
+crfm = c (83.8, 119.3)
+rmfm = c (94.8, 105.4)
+nacfm = c (95.9, 104.3)
+table3 <- data.frame(indicemf, lcfm, crfm, rmfm, nacfm)
+
+```
+
+```{r table3html,results='ASIS'}
+knitr::kable(table3, "html", col.names = c('Índice', 'Las Condes', 'Comunas de referencia', 'Región Metropolitana', 'Nacional'), caption = "Tabla 3. Índice de masculinidad y feminidad según área de referencia.", align = 'lcccc' ) %>%
+  kable_styling(position = "center", bootstrap_options = "basic", full_width = F) 
+
+```
 
 
+<p align="center">*Fuente: Elaboración propia en base a datos del Censo 2017*</p>
+
+<p align="justify">Las estadísticas reflejan una tendencia a nivel nacional. En la población existe una mayor proporción de mujeres, siendo más evidente esta diferencia en las Comunas de referencia y en Las Condes. Tal como se verá en los siguientes apartados, esta mayor cantidad de mujeres es constante en segmentos como adultos mayores, migrantes y pueblos originarios.</p>
+
+#### b. Composición etaria de la población
+
+<p align="justify">Al analizar la estructura poblacional por edades quinquenales se observa que el rango etario de mayor prevalencia en Las Condes es entre los 25 a 29 años de edad (8,8%), lo cual se condice con lo encontrado a nivel nacional (8,4%) y regional (9%).</p>
+
+<p align="justify">En cuanto a la edad promedio de la comuna esta alcanza los 39,1 años, superando la media nacional (35,8 años) y de la Región Metropolitana (35,6 años), y marginalmente por debajo del promedio de las Comunas de referencia (39,5). Ver en la *tabla 4*.</p>
+
+```{r dataframetab4, echo=FALSE}
+indiceedad = c('Edad media', 'Edad mediana')
+lcedad = c (39.1, 37)
+credad = c (39.5, 37)
+rmedad = c (35.6, 33)
+nacedad = c (35.8, 34)
+table4 <- data.frame(indiceedad, lcedad, credad, rmedad, nacedad)
+
+```
+
+```{r table4html,results='ASIS'}
+knitr::kable(table4, "html", col.names = c('Índice edad', 'Las Condes', 'Comunas de referencia', 'Región Metropolitana', 'Nacional'), caption = "Tabla 3. Edad media y mediana según área de.", align = 'lcccc' ) %>%
+  kable_styling(position = "center", bootstrap_options = "basic", full_width = F) 
+
+```
 
 
+<p align="center">*Fuente: Elaboración propia en base a datos del Censo 2017*</p>
+
+<p align="justify">Una herramienta útil al momento de estudiar la composición etaria de una población es la pirámide poblacional. En esta, se representan gráficamente datos estadísticos básicos de una comunidad como el sexo y la edad. Además, permite realizar comparaciones entre grupos y observar fenómenos de envejecimiento poblacional.</p>
+
+<p align="justify">Al analizar la pirámide poblacional para las áreas de referencia, se observan tendencias similares a nivel comunal, regional, y nacional, las cuales permiten concluir que la población se encuentra en transición- en diferentes grados- desde una estructura estacionaria a una regresiva (*Figura 6*).</p>
+
+<p align="justify">Las pirámides estacionarias se caracterizan por la presencia de un equilibrio entre los distintos rangos etarios, el cual se explica por tasas de natalidad y mortalidad equivalentes. Por su parte, una pirámide regresiva presenta en su parte superior una estructura más ancha que en sus bases, como consecuencia del descenso de la natalidad y el aumento en la esperanza de vida. En general, se asocia este tipo de pirámides con sociedades desarrolladas.</p>
+
+```{r dataframe fig6, echo=FALSE}
+#Select dataframe
+#database <- dbConnect(MySQL(), user='felipe', host='190.3.169.152', password='d3c0m', dbname='decom')
+#censo17_pop <-dbGetQuery(database, statement ='select  region, comuna, p08, 09  from -')
+
+#Definir etiquetas para clasificar edad en quinquenios
+#labels_edad5 = c('0-4','5-9','10-14','15-19','20-24','25-29','30-34','35-39'
+ #                ,'40-44', '45-49', '50-54', '55-59','60-64','65-69','70-74','75-79'
+  #               ,'80-84','85-89','90-94', '95-99','+99')
 
 
+```
 
 
+<p align="justify">Respecto de la natalidad, el índice de paridez media[^5] sugiere que en promedio las mujeres
+en edad fértil han tenido menos de un hijo, cifra menor a la tasa de reemplazo generacional esperada[^6]. En la *Figura 7* se describe el índice de paridez por área de referencia. A nivel comunal las cifras son significativamente menores a las observadas en el país.</p>
 
+<p align="center">Figura 7. Índice de paridez media según área de referencia..</p>
 
+```{r dataframe fig7, echo=FALSE}
 
+indicepm = c(1.3, 1.3, 0.8, 0.9)
+area_pm = c (1,2,3,4)
+area_pm = factor(area_pm, levels = c(1,2,3,4),
+      labels = c('Nacional', 'Región Metropolitana', 'Comunas de referencia', 'Las Condes'))
+indice_pm <- data.frame(area_pm, indicepm)
 
+```
 
+<p align="center">
+```{r plotparmed, echo=FALSE ,results = 'ASIS'}
+#Select dataframe + Add geometry
+parmedplot <-  ggplot(indice_pm, aes ( y= area_pm, x = indicepm, fill = area_pm)) + geom_bar(stat = 'identity' ,colour = '#999999', width = 0.8)
+#Add labels + custom theme
+parmedplot <- parmedplot + ggtitle("") + ylab("") + xlab("") + theme_tufte() + theme(legend.position = "none", text = element_text(size = 9,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1.5 ,0.3)) + geom_text(aes(label = indicepm),size = 3, color = 'white', hjust=5)
+#Select fill color
 
+parmedplot <- parmedplot + scale_fill_manual(values = c('#336699','#336699','#336699','#FF6633'))
 
+print(parmedplot)
 
-
-
-
+```
+</p>
+<p align="center">*Fuente: Elaboración propia en base a datos del Censo 2017*</p>
 
 
 <p align="left">
@@ -418,14 +501,21 @@ https://lyd.org/wp-content/uploads/2019/05/tp-1399-clase-media.pdf </p>
 
 <p align="justify">World Health Organization. (2018). Ageing and health. Retrieved October 22, 2019, from https://www.who.int/news-room/fact-sheets/detail/ageing-and-health </p>
 
+<p style="font-size:10px">
 
-<p align="justify">[^1]: Este indicador se construye a partir de distancia mínima promedio ponderada por población entre el centro geométrico de cada manzana y la plaza pública más cercana. Dicha distancia se pondera en función de la población a nivel de manzana con la finalidad de no subestimar el resultado final. El estándar establecido por el CNDU para este indicador es de 400m.</p>
+[^1]: Este indicador se construye a partir de distancia mínima promedio ponderada por población entre el centro geométrico de cada manzana y la plaza pública más cercana. Dicha distancia se pondera en función de la población a nivel de manzana con la finalidad de no subestimar el resultado final. El estándar establecido por el CNDU para este indicador es de 400m.
 
-<p align="justify">[^2]: Residentes se refiere a las personas censadas que declaran residencia habitual en Las Condes. Se considera a los individuos encuestados dentro o fuera de la comuna.</p>
+[^2]: Residentes se refiere a las personas censadas que declaran residencia habitual en Las Condes. Se considera a los individuos encuestados dentro o fuera de la comuna.
 
-<p align="justify">[^3]: La tasa de envejecimiento relativo expresa la proporción de personas de 60 años y más sobre el total de población.</p>
+[^3]: La tasa de envejecimiento relativo expresa la proporción de personas de 60 años y más sobre el total de población.
 
+[^4]: (Total de hombres/ Total de mujeres) x 100.
 
+[^5]: Promedio de hijos nacidos vivos que las mujeres de entre 15 y 49 años (edad fértil) han tenido a lo largo de su vida.
+
+[^6]: La tasa de reemplazo generacional supone un promedio de hijos nacidos vivos por mujer, requeridos para sostener un volumen de población constante en el tiempo (sin considerar recambios por efectos de migración internacional), este índice se cálcula en 2,1 hijos nacidos vivos.
+
+</p>
 
 
 
