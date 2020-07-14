@@ -5,17 +5,29 @@ author: "Nicolás Vatter, Paulina Peña & Felipe Vega"
 output:
   html_document:
     toc: true
-    toc_depth: 6
+    toc_depth: 4
     toc_float:
       collapsed: false
       smooth_scroll: true
-
 ---
 
 ---
-<p align="left">
+
+# Presentación
+
+<p align="justify">El año 2019, la Dirección de Desarrollo Comunitario (DECOM) persiguió los objetivos estratégicos de asegurar la calidad de los servicios, aumentar la cobertura, promover la innovación, y mejorar la gestión interna. Esto, en el contexto de los cambios en la estructura de la Dirección a raíz de la dictación de la ley 20.922 de Plantas Municipales y Fortalecimiento de la Gestión Municipal (2016).</p>
+
+<p align="justify">Como parte de estos cambios, el Departamento de Evaluación de Proyectos Sociales y de Emprendimiento se reformuló, pasando a llamarse Departamento de Planificación Social y Estudios, y centró su acción -a través del subprograma de Programación y evaluación- en la generación y análisis de información social. En su nuevo enfoque, el Departamento busca contribuir sistemáticamente con la generación y análisis de información social para dar insumos para la toma de decisiones, y entregar herramientas -tanto a la Dirección como a los departamentos ejecutantes- para implementar mejoras en el diseño e implementación de los programas y subprogramas. Producto de ello, la Dirección robusteció el equipo del área de Estudios del Departamento, y le encomendó la misión de actualizar el Diagnóstico social comunal, cuya última versión fuera elaborada el año 2015.</p>
+
+<p align="justify">En suma, todos estos cambios implicaron grandes desafíos para los equipos de la DECOM que se proyectan a futuro. Estos son: aumentar la cobertura manteniendo o mejorando la calidad de los servicios, promover la innovación, y mejorar la gestión interna, sobre todo con foco en optimizar procesos y poder dar cuenta de los logros del trabajo de los equipos.</p>
+
+<p align="justify">En este contexto, resulta relevante detectar las necesidades de la comunidad, así como actuar con prontitud para dar una debida atención a ellas a través de servicios de calidad en todas las áreas que se vinculen a la calidad de vida de los vecinos.</p>
+
+<p align="justify">El presente Diagnóstico social comunal busca caracterizar la realidad comunale identificar las problemáticas sociales más significativas que afectan a los vecinos de Las Condes. Esto, en miras a contribuir a un diseño e implementación de programas y subprogramas que respondan a la misión de la Dirección, y a las necesidades e inquietudes de los vecinos.</p>
+
+<p align="justify">Con todo, como equipo del Departamento de Planificación social y estudios, esperamos aportar a través de este Diagnóstico social comunal a cada uno de los departamentos de la Dirección con información y análisis, para que puedan seguir innovando y aplicando sus programas y subprogramas. Este documento queda disponible para que los equipos puedan hacerlo suyo para reflexionar en torno a sus áreas de acción, buscar nuevas líneas de servicio, y evaluar la pertinencia de su labor para poder así, contribuir al bienestar integral de los vecinos de Las Condes.</p>
+
 ## Capítulo 1: Geografía, Desarrollo Urbano y Movilidad
-</p>
 
 <p align="justify">Las Condes hoy se presenta como un extenso asentamiento urbano en la Región Metropolitana, con una población cercana a los 300 mil habitantes, es la novena comuna con mayor cantidad de población a nivel nacional y la más poblada del sector oriente del Gran Santiago.</p>
 
@@ -25,7 +37,7 @@ output:
 
 <p align="justify">En la presente sección se aborda una breve caracterización geográfica y de transporte. Se incluye la subdivisión territorial, una descripción de variables de transporte, movilidad e infraestructura urbana presente en la comuna de Las Condes.</p>
 
-### i. Subdivisión urbana: Unidades Vecinales
+### 1.1 Subdivisión urbana: Unidades Vecinales
 
 <p align="justify">La Ley 19.418 sobre Juntas de Vecinos y demás organizaciones comunitarias (Ministerio del Interior, 1997) establece los criterios para subdividir los territorios de las comunas. La ley señalada, define una Unidad Vecinal como el territorio “(...) en que se subdividen las comunas, para efectos de descentralizar asuntos comunales y promover la participación ciudadana y la gestión comunitaria, y en el cual se constituyen y desarrollan sus funciones las juntas de vecinos”.</p>
 
@@ -33,7 +45,7 @@ output:
 
 <p align="center"><iframe src="https://www.google.com/maps/d/embed?mid=1Qp_2a8tQn-_jWYvTB_eWLO1CLU1arma3" width="600" height="420"></iframe></p>
 
-### ii. Organizaciones comunitarias
+### 1.2 Organizaciones comunitarias
 
 <p align="justify">La ley 19.418, también reconoce la organización de la comunidad bajo la forma de organizaciones territoriales y organizaciones funcionales. Entre las primeras destacan las juntas de vecinos, mientras que en las segundas aparecen los centros de madres, centros de padres y apoderados, organizaciones artísticas y culturales, organizaciones deportivas, y otras.</p>
 
@@ -73,13 +85,13 @@ kable_styling(position = "center", bootstrap_options = "basic", full_width = F)
 
 <p align="center">*Fuente: Elaboración propia en base a datos del Departamento de Organizaciones Comunitarias DECOM*</p>
 
-### iii. Desarrollo urbano
+### 1.3. Desarrollo urbano
 
 <p align="justify">La Nueva Agenda Urbana (2016), es un acuerdo internacional ratificado por el Estado de Chile en la Conferencia sobre Vivienda y Desarrollo Sostenible de Naciones Unidas, que invita a poner los recursos y esfuerzos en alcanzar la equidad urbana, con el propósito de lograr que las ciudades y los asentamientos humanos sean inclusivos, seguros, resilientes y sostenibles, y dar igualdad de derechos y acceso a las oportunidades que ofrecen las ciudades a las personas.</p>
 
 <p align="justify">En relación a lo anterior, el Instituto Nacional de Estadísticas (INE) a través del Sistema de Indicadores y Estándares del Desarrollo Urbano (SIEDU), ha dispuesto una serie de mediciones que reportan el compromiso de las ciudades para alcanzar el desarrollo urbano. En esta línea el presente apartado aborda estadísticas de áreas verdes, transporte y movilidad a nivel comunal.</p>
 
-#### a. Parques e infraestructura urbana
+#### 1.3.1 Parques e infraestructura urbana
 
 <p align="justify">La presencia de áreas verdes en las ciudades genera una serie de externalidades positivas que se traducen en integración, cohesión, participación social de las comunidades, y beneficios sociales intangibles relacionados a un concepto amplio de bienestar y calidad de vida (Anguluri & Narayanan, 2017; Ayala-Azcárraga, Diaz & Zambrano, 2019).</p>
 
@@ -105,7 +117,7 @@ kable_styling(position = "center", bootstrap_options = "basic", full_width = F)
 <div align="center"><img src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/graph_dist_arverde.png" alt="drawing" width="600"/>
 <p align="center">*Fuente: Elaboración propia en base a datos de SIEDU*</p>
 
-#### b. Transporte y movilidad
+#### 1.3.2 Transporte y movilidad
 
 <p align="justify">La información señalada en el Plan de Desarrollo Comunal 2018 – 2021 (PLADECO), acusa un aumento significativo del tránsito vehicular en Las Condes durante los últimos años, con un crecimiento anual que varía entre un 6% y 17% según el área observada. Por su parte, se indica que el parque automotriz bordea un total de ciento diez mil vehículos.</p>
 
@@ -206,17 +218,15 @@ print(medtranspplot)
 
 <p align="justify">En materia de transporte, existe una serie de desafíos para empujar el desarrollo sostenible y sustentable. En este sentido, el municipio de Las Condes ha incorporado un número importante de servicios de electromovilidad disponibles para los vecinos (scooters y bicicletas), además ha puesto a disposición una flota de buses eléctricos que conectan zonas de residencia que no se encuentran totalmente cubiertas por el sistema de transporte público metropolitano. Esto, con el objetivo de mejorar la capacidad de movilidad urbana en la comuna.</p>
 
-<p align="left">
+---
+
 ## Capítulo 2: Estadísticas demográficas
-</p>
 
 <p align="justify">En el presente capítulo se explora la estructura demográfica de Las Condes, con un foco en el envejecimiento de la población y el fenómeno migratorio. El objetivo de esta sección es caracterizar a los vecinos y hogares de la comuna en un análisis comparado con las áreas de referencia.</p>
 
 <p align="justify">En primer lugar, se presenta la estructura demográfica de la comuna según su composición por sexo y edad. Luego, se describen los indicadores de envejecimiento y se caracteriza la población de personas mayores. Enseguida, se exponen indicadores de densidad poblacional y se describe la composición de los hogares. Finalmente, se aborda el fenómeno migratorio, considerando migración internacional y migración interna, además de abarcar al segmento de población perteneciente a pueblos originarios.</p>
 
-<p align="left">
-### i. Estructura demográfica
-</p>
+### 2.1 Estructura demográfica
 
 <p align="justify">El Censo 2017 reveló que en Chile existen 17.574.003 habitantes distribuidos a lo largo del territorio nacional con una proyección de 19,1 millones al años 2019. La mayor concentración de población se registra en la Región Metropolitana (40,5%), territorio que alberga la capital nacional (Santiago).</p> 
 
@@ -224,7 +234,7 @@ print(medtranspplot)
 
 <p align="justify">Al mismo tiempo, las estadísticas censales sugieren que Las Condes registra la segunda tasa más elevada de envejecimiento relativo[^3] en la Región Metropolitana, y los datos de extranjería indican que es la tercera comuna con mayor población migrante en Chile.</p>
 
-#### a. Composición de la población según sexo
+#### 2.1.1 Composición de la población según sexo
 <p align="justify">
 En Las Condes la composición de la población por sexo indica que existe una mayor proporción de mujeres, tendencia observada para el resto del país. El 53,9% de los vecinos de Las Condes corresponde a población femenina, a nivel nacional y regional esta alcanza el 51,1% y 51,3% respectivamente, mientras que en las comunas de referencia la proporción de mujeres es de 54,4%.</p>
 
@@ -292,7 +302,7 @@ knitr::kable(table3, "html", col.names = c('Índice', 'Las Condes', 'Comunas de 
 
 <p align="justify">Las estadísticas reflejan una tendencia a nivel nacional. En la población existe una mayor proporción de mujeres, siendo más evidente esta diferencia en las Comunas de referencia y en Las Condes. Tal como se verá en los siguientes apartados, esta mayor cantidad de mujeres es constante en segmentos como adultos mayores, migrantes y pueblos originarios.</p>
 
-#### b. Composición etaria de la población
+#### 2.1.2 Composición etaria de la población
 
 <p align="justify">Al analizar la estructura poblacional por edades quinquenales se observa que el rango etario de mayor prevalencia en Las Condes es entre los 25 a 29 años de edad (8,8%), lo cual se condice con lo encontrado a nivel nacional (8,4%) y regional (9%).</p>
 
@@ -353,6 +363,7 @@ indice_pm <- data.frame(area_pm, indicepm)
 ```
 
 <p align="center">
+
 ```{r plotparmed, echo=FALSE ,results = 'ASIS'}
 #Select dataframe + Add geometry
 parmedplot <-  ggplot(indice_pm, aes ( y= area_pm, x = indicepm, fill = area_pm)) + geom_bar(stat = 'identity' ,colour = '#999999', width = 0.8)
@@ -369,18 +380,20 @@ print(parmedplot)
 <p align="center">*Fuente: Elaboración propia en base a datos del Censo 2017*</p>
 
 
-<p align="left">
+
+---
+
 ## Capítulo 3: Caracterización Socioeconómica
-</p>
 
-<p align="left">
+---
+
 ## Capítulo 4: Bienestar social básico
-</p>
 
-<p align="left">
-## Capítulo 5: Clases medias
-</p>
+---
 
+## Capítulo 5: Estratos medios: Una caracterización de las "clases medias".
+
+---
 
 ## Bibliografía
 
@@ -501,7 +514,9 @@ https://lyd.org/wp-content/uploads/2019/05/tp-1399-clase-media.pdf </p>
 
 <p align="justify">World Health Organization. (2018). Ageing and health. Retrieved October 22, 2019, from https://www.who.int/news-room/fact-sheets/detail/ageing-and-health </p>
 
-<p style="font-size:10px">
+---
+
+<p style="font-size:12px"><main><b>Footnotes</b></main></p>
 
 [^1]: Este indicador se construye a partir de distancia mínima promedio ponderada por población entre el centro geométrico de cada manzana y la plaza pública más cercana. Dicha distancia se pondera en función de la población a nivel de manzana con la finalidad de no subestimar el resultado final. El estándar establecido por el CNDU para este indicador es de 400m.
 
@@ -515,7 +530,7 @@ https://lyd.org/wp-content/uploads/2019/05/tp-1399-clase-media.pdf </p>
 
 [^6]: La tasa de reemplazo generacional supone un promedio de hijos nacidos vivos por mujer, requeridos para sostener un volumen de población constante en el tiempo (sin considerar recambios por efectos de migración internacional), este índice se cálcula en 2,1 hijos nacidos vivos.
 
-</p>
+
 
 
 
