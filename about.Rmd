@@ -4,7 +4,7 @@ title: "Programación y Evaluación Social"
 
 <p align="justify">El Departamento de Planificación Social y Estudios - a través del equipo de Programación y Evaluación- persigue el objetivo de aportar sistemáticamente a la mejora de diseño e implementación de las políticas sociales ejecutadas por DECOM, a través de la generación y análisis sistemático de información social.</p>
 
-<p align="justify">La acción del Departamento se enmarca dentro de un proceso de modernización de DECOM, cuyos objetivos estratégicos corresponden a una mejora en la calidad de los servicios que recibe el vecino, aumentar la cobertura de los programas sociales, y promover la innovación y mejora de la gestión interna, para de esta manera aportar en la creación de valor público.</p>
+<p align="justify">La acción del Departamento se enmarca dentro de un proceso de modernización de DECOM, cuyos objetivos estratégicos corresponden a una mejora en la calidad de los servicios que recibe el vecino, aumentar la cobertura de los programas sociales, y promover la innovación de la gestión interna, para de esta manera aportar en la creación de valor público desde el municipio.</p>
 
 ### Equipo
 
@@ -31,7 +31,7 @@ title: "Programación y Evaluación Social"
 <br>
 <br>
 </br>
-<img style="float:left; margin:10px;" src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/sacevedo.jpeg" alt="drawing" width="180"/><br>Sebastián Acevedo<br>Desarrollador DEPSE<br>Licenciado en Ingeniería en informática<br>Universidad...<br><img src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/mail.png" alt="drawing" width="18" align="center"><a href="mailito:sacevedo@lascondes.cl"> sacevedo@lascondes.cl</a><br><img src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/lnkdin.png" alt="drawing" width="18" align="center"><a href=""></a></br>
+<img style="float:left; margin:10px;" src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/sacevedo.png" alt="drawing" width="180"/><br>Sebastián Acevedo Carrasco<br>Ingeniero DEPSE<br>Ingeniero en Computación e Informática<br>Universidad Andrés Bello<br>Scrum Master<br>Ennovate<br><img src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/mail.png" alt="drawing" width="18" align="center"><a href="mailito:sacevedo@lascondes.cl"> sacevedo@lascondes.cl</a><br><img src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/lnkdin.png" alt="drawing" width="18" align="center"><a href="https://www.linkedin.com/in/sebastianacevedo/">https://www.linkedin.com/in/sebastianacevedo/</a></br>
 </br>
 <br>
 <br>
