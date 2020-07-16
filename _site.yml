@@ -3,7 +3,7 @@ output_dir: "."
 navbar:
   title: "Estudios DECOM"
   left:
-    - text: "Home"
+    - text: "Inicio"
       href: index.html
     - text: "Diagnóstico Social Comunal"
       href: diagnostico.html
@@ -11,7 +11,7 @@ navbar:
       href: doc_analisis.html
     - text: "Web mapping"
       href: maps.html
-    - text: "Equipo de Estudios"
+    - text: "Nosotros"
       href: about.html
 output:
   html_document:

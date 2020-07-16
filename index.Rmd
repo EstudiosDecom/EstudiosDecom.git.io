@@ -2,18 +2,17 @@
 title: "Planificación Social y Estudios"
 ---
 
-<p align="justify">
-El Departamento de Planificación Social y Estudios de la Dirección de Desarrollo Comunitario blablabla... sociales.</p>
+---
 
+<p align="justify">El año 2019, la Dirección de Desarrollo Comunitario (DECOM) persiguió los objetivos estratégicos de asegurar la calidad de los servicios, aumentar la cobertura, promover la innovación, y mejorar la gestión interna. Esto, en el contexto de los cambios en la estructura de la Dirección a raíz de la dictación de la ley 20.922 de Plantas Municipales y Fortalecimiento de la Gestión Municipal (2016).</p>
 
+<p align="justify">Como parte de estos cambios, el Departamento de Evaluación de Proyectos Sociales y de Emprendimiento se reformuló, pasando a llamarse Departamento de Planificación Social y Estudios, y centró su acción -a través del subprograma de Programación y Evaluación- en la generación y análisis de información social.</p>
 
-
-
-
-
-
-
-
-
-
+<p align="justify">En su nuevo enfoque, el Departamento busca contribuir de manera sistemática con información técnica que aporte como insumos para la toma de decisiones, y entregar herramientas -tanto a la Dirección como a los departamentos ejecutantes- para implementar mejoras en el diseño e implementación de los Programas y Subprogramas de DECOM.</p>
+<br>
+</br>
+<p align="left">
+<a href="https://twitter.com/LC_Decom?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @LC_Decom</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<p align="center">
+<a class="twitter-timeline" data-width="700" data-height="550" href="https://twitter.com/LC_Decom?ref_src=twsrc%5Etfw">Tweets by LC_Decom</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
 
