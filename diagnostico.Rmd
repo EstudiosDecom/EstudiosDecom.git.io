@@ -13,28 +13,32 @@ output:
 
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library('stargazer')
+library('knitr')
+library('dplyr')
+library('ggplot2')
+library('ggthemes')
+library('kableExtra')
+library('plyr')
+library ('RMySQL')
+
+```
+
 # Presentación
 
-<p align="justify">El año 2019, la Dirección de Desarrollo Comunitario (DECOM) persiguió los objetivos estratégicos de asegurar la calidad de los servicios, aumentar la cobertura, promover la innovación, y mejorar la gestión interna. Esto, en el contexto de los cambios en la estructura de la Dirección a raíz de la dictación de la ley 20.922 de Plantas Municipales y Fortalecimiento de la Gestión Municipal (2016).</p>
+<p align="justify">El presente Diagnóstico social comunal busca caracterizar la realidad comunal e identificar las problemáticas sociales más significativas que afectan a los vecinos de Las Condes. Esto, en miras a contribuir a un diseño e implementación de programas y subprogramas que respondan a la misión de la Dirección, y a las necesidades e inquietudes de los vecinos.</p>
 
-<p align="justify">Como parte de estos cambios, el Departamento de Evaluación de Proyectos Sociales y de Emprendimiento se reformuló, pasando a llamarse Departamento de Planificación Social y Estudios, y centró su acción -a través del subprograma de Programación y evaluación- en la generación y análisis de información social. En su nuevo enfoque, el Departamento busca contribuir sistemáticamente con la generación y análisis de información social para dar insumos para la toma de decisiones, y entregar herramientas -tanto a la Dirección como a los departamentos ejecutantes- para implementar mejoras en el diseño e implementación de los programas y subprogramas. Producto de ello, la Dirección robusteció el equipo del área de Estudios del Departamento, y le encomendó la misión de actualizar el Diagnóstico social comunal, cuya última versión fuera elaborada el año 2015.</p>
-
-<p align="justify">En suma, todos estos cambios implicaron grandes desafíos para los equipos de la DECOM que se proyectan a futuro. Estos son: aumentar la cobertura manteniendo o mejorando la calidad de los servicios, promover la innovación, y mejorar la gestión interna, sobre todo con foco en optimizar procesos y poder dar cuenta de los logros del trabajo de los equipos.</p>
-
-<p align="justify">En este contexto, resulta relevante detectar las necesidades de la comunidad, así como actuar con prontitud para dar una debida atención a ellas a través de servicios de calidad en todas las áreas que se vinculen a la calidad de vida de los vecinos.</p>
-
-<p align="justify">El presente Diagnóstico social comunal busca caracterizar la realidad comunale identificar las problemáticas sociales más significativas que afectan a los vecinos de Las Condes. Esto, en miras a contribuir a un diseño e implementación de programas y subprogramas que respondan a la misión de la Dirección, y a las necesidades e inquietudes de los vecinos.</p>
-
-<p align="justify">Con todo, como equipo del Departamento de Planificación social y estudios, esperamos aportar a través de este Diagnóstico social comunal a cada uno de los departamentos de la Dirección con información y análisis, para que puedan seguir innovando y aplicando sus programas y subprogramas. Este documento queda disponible para que los equipos puedan hacerlo suyo para reflexionar en torno a sus áreas de acción, buscar nuevas líneas de servicio, y evaluar la pertinencia de su labor para poder así, contribuir al bienestar integral de los vecinos de Las Condes.</p>
+<p align="justify">Como equipo del Departamento de Planificación Social y Estudios, esperamos aportar a través de este instrumento a cada uno de los departamentos de la Dirección con información y análisis, para que puedan seguir innovando y aplicando sus programas y subprogramas. Este documento queda disponible para que los equipos puedan hacerlo suyo para reflexionar en torno a sus áreas de acción, buscar nuevas líneas de servicio, y evaluar la pertinencia de su labor para poder así, contribuir al bienestar integral de los vecinos de Las Condes.</p>
 
 ## Capítulo 1: Geografía, Desarrollo Urbano y Movilidad
 
 <p align="justify">Las Condes hoy se presenta como un extenso asentamiento urbano en la Región Metropolitana, con una población cercana a los 300 mil habitantes, es la novena comuna con mayor cantidad de población a nivel nacional y la más poblada del sector oriente del Gran Santiago.</p>
 
-<p align="justify">La comuna destaca por sus elevados estándares de calidad de vida urbana. Consolidar estos estándares y extenderlo a todos los sectores de la comuna supone un desafío significativo para la gestión municipal, especialmente en un contexto de transición avanzada hacia el envejecimiento de su población, </p>
+<p align="justify">La comuna destaca por sus elevados estándares de calidad de vida urbana. Consolidar estos estándares y extenderlo a todos los sectores de la comuna supone un desafío significativo para la gestión municipal, especialmente en un contexto de transición avanzada hacia el envejecimiento de su población.</p>
 
 <p align="justify">En esta línea, comprender las características geográficas de la ciudad es fundamental para una correcta planificación social. En la literatura académica se demuestra la importancia que adquieren las variables asociadas a los sistemas de transporte e infraestructura urbana en la calidad de vida de las personas.</p>
-
 <p align="justify">En la presente sección se aborda una breve caracterización geográfica y de transporte. Se incluye la subdivisión territorial, una descripción de variables de transporte, movilidad e infraestructura urbana presente en la comuna de Las Condes.</p>
 
 ### 1.1 Subdivisión urbana: Unidades Vecinales
@@ -53,19 +57,6 @@ output:
 
 <p align="justify">A través del Departamento de Organizaciones Comunitarias, la Dirección de Desarrollo Comunitario de Las Condes fomenta y promueven el funcionamiento adecuado de estas organizaciones que canalizan los intereses y necesidades de los vecinos. En la *Tabla 1* se describe la cantidad de organizaciones presentes en la comuna.</p>
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-library('stargazer')
-library('knitr')
-library('dplyr')
-library('ggplot2')
-library('ggthemes')
-library('kableExtra')
-library('plyr')
-library ('RMySQL')
-
-```
-
 ```{r dataframetab1, echo=FALSE}
 organizacion = c('Junta de vecinos', 'Unión comunal', 'Centro de seguridad', 'Centro cultural',
                  'Club de adulto mayor', 'Clubes deportivos', 'Centros de madres', 'Centros de padres', 'Centro juvenil', 'Comité de vivienda', 'Comité de administración', 'Otras organizaciones funcionales')
@@ -81,7 +72,6 @@ knitr::kable(table1, "html", col.names = c('Organización', 'Cantidad'), caption
 kable_styling(position = "center", bootstrap_options = "basic", full_width = F)
 
 ```
-
 
 <p align="center">*Fuente: Elaboración propia en base a datos del Departamento de Organizaciones Comunitarias DECOM*</p>
 
@@ -125,7 +115,6 @@ kable_styling(position = "center", bootstrap_options = "basic", full_width = F)
 
 <p align="justify">Del mismo modo se observan grados de congestión en otros sectores de la comuna, los cuales están fuera del rango aceptado, a partir de ahí se están desarrollando proyectos de consolidación de la vialidad comunal. En la *Tabla 2* se indica la afluencia de vehículos por hora en los puntos de mayor demanda, por horario punta (mañana y tarde). Con estos flujos, las velocidades promedio en la comuna son aceptables en horas punta, alcanzando una velocidad media entre 25 y 50 km/h.</p>
 
-
 ```{r dataframetab2, echo=FALSE}
 lugar = c('Av. Andrés Bello dirección poniente', 'Av. Andrés Bello dirección oriente', 'Av. Kennedy dirección oriente', 'Av Manquehue norte', 'Av. Manquehue sur', 'Av. Vespucio norte', 'Av. Vespucio sur', 'Av Colón dirección poniente')
 hp_manana = c(5850," " , 4950, 2800, " ", 3000, 2500, 3900)
@@ -135,13 +124,11 @@ table2$lugar <- factor(table2$lugar)
 
 ```
 
-
 ```{r table2html,results='ASIS'}
 knitr::kable(table2, "html", col.names = c('Lugar', 'Horario punta mañana', 'Horario punta tarde'), caption = "Tabla 2. Tránsito vehicular en horario punta.", align = 'lcc' ) %>%
   kable_styling(position = "center", bootstrap_options = "basic", full_width = F) 
 
 ```
-
 
 <p align="center">*Fuente: Elaboración propia en base a datos del Sistema de Indicadores y Estándares del Desarrollo Urbano*</p>
 
@@ -183,6 +170,7 @@ print(transportplot)
 
 ```
 </p>
+
 <p align="center">*Fuente: Elaboración propia en base a datos de SIEDU*</p>
 
 <p align="justify">Según los datos recolectados del PLADECO 2018 – 2021, se calcula que en promedio existen alrededor de un millón doscientos mil viajes diarios en la comuna, siendo la mitad de estos dentro de la misma. El principal destino fuera de la comuna es Vitacura con un 13% seguido por Providencia y Lo Barnechea con un porcentaje que bordea el 7%.</p>
@@ -198,7 +186,6 @@ medio_transporte <- data.frame(mediotransp,prop_transp)
 
 <p align="center">Figura 4. Medio de transporte frecuentemente utilizado para traslado entre el hogar y lugar de trabajo.</p>
 <p align="center">
-
 ```{r medtransp, echo=FALSE ,results = 'ASIS'}
 #Select dataframe
 medtranspplot <-  ggplot(medio_transporte, mapping = aes(x = mediotransp,  y = prop_transp, label = scales::percent(prop_transp))) 
@@ -208,12 +195,9 @@ medtranspplot <- medtranspplot + geom_bar(stat = 'identity',
 #Add labels + custom theme
 medtranspplot <- medtranspplot +  ggtitle("") + ylab("") + xlab("") + theme_tufte() + theme(
  text = element_text(size = 11,  color = "black" )) + scale_y_continuous(breaks = seq(0,0.5,0.1), labels = scales::percent_format(accuracy = 1)) + geom_text(position = position_dodge(width = .9), vjust = -0.5, size = 3) 
-
 print(medtranspplot)
-
 ```
 </p>
-
 <p align="center">*Fuente: Elaboración propia en base a datos de Casen 2015*</p>
 
 <p align="justify">En materia de transporte, existe una serie de desafíos para empujar el desarrollo sostenible y sustentable. En este sentido, el municipio de Las Condes ha incorporado un número importante de servicios de electromovilidad disponibles para los vecinos (scooters y bicicletas), además ha puesto a disposición una flota de buses eléctricos que conectan zonas de residencia que no se encuentran totalmente cubiertas por el sistema de transporte público metropolitano. Esto, con el objetivo de mejorar la capacidad de movilidad urbana en la comuna.</p>
@@ -258,7 +242,7 @@ pobl_sexo_sorted$labelpos <- ifelse(pobl_sexo_sorted$sexo=='Mujer', pobl_sexo_so
 <p align="center">
 ```{r plotsex, echo=FALSE ,results = 'ASIS'}
 #Select dataframe + Add geometry
-psexplot <-  ggplot(pobl_sexo_sorted, aes ( y= prop_pobl, x = area_1, fill = sexo, )) +
+psexplot <-  ggplot(pobl_sexo_sorted, aes ( y= prop_pobl, x = area_1, fill = sexo )) +
   geom_bar(stat = 'identity' , position = 'fill' ,colour = '#999999', width = 0.8)
 #Add labels + custom theme
 psexplot <- psexplot + ggtitle("") + ylab("") + xlab("") + theme_tufte() + 
@@ -278,8 +262,7 @@ print(psexplot)
 
 <p align="center">*Fuente: Elaboración propia en base a datos del Censo 2017*</p>
 
-<p align="justify">En la misma línea, el índice de masculinidad[^4] a nivel comunal indica un total de 85,5 hombres por cada 100 mujeres. Este índice es menor en comparación a la realidad nacional y regional, pero similar a las Comunas de referencia (*Tabla 3*). Al mismo tiempo, se observa en Las Condes que por cada 100 hombres existen 116,9 mujeres.</p>
-
+<p align="justify">En la misma línea, la razón de sexo [^4] a nivel comunal indica un total de 85,5 hombres por cada 100 mujeres. Este índice es menor en comparación a la realidad nacional y regional, pero similar a las Comunas de referencia (*Tabla 3*). Al mismo tiempo, se observa en Las Condes que por cada 100 hombres existen 116,9 mujeres.</p>
 
 ```{r dataframetab3, echo=FALSE}
 indicemf = c('Índice de masculinidad', 'Índice de feminidad')
@@ -291,8 +274,9 @@ table3 <- data.frame(indicemf, lcfm, crfm, rmfm, nacfm)
 
 ```
 
+
 ```{r table3html,results='ASIS'}
-knitr::kable(table3, "html", col.names = c('Índice', 'Las Condes', 'Comunas de referencia', 'Región Metropolitana', 'Nacional'), caption = "Tabla 3. Índice de masculinidad y feminidad según área de referencia.", align = 'lcccc' ) %>%
+knitr::kable(table3, "html", col.names = c('Razón de sexo', 'Las Condes', 'Comunas de referencia', 'Región Metropolitana', 'Nacional'), caption = "Tabla 3. Índice de masculinidad y feminidad según área de referencia.", align = 'lcccc' ) %>%
   kable_styling(position = "center", bootstrap_options = "basic", full_width = F) 
 
 ```
@@ -346,7 +330,6 @@ knitr::kable(table4, "html", col.names = c('Índice edad', 'Las Condes', 'Comuna
 
 ```
 
-
 <p align="justify">Respecto de la natalidad, el índice de paridez media[^5] sugiere que en promedio las mujeres
 en edad fértil han tenido menos de un hijo, cifra menor a la tasa de reemplazo generacional esperada[^6]. En la *Figura 7* se describe el índice de paridez por área de referencia. A nivel comunal las cifras son significativamente menores a las observadas en el país.</p>
 
@@ -377,7 +360,53 @@ print(parmedplot)
 
 ```
 </p>
+
 <p align="center">*Fuente: Elaboración propia en base a datos del Censo 2017*</p>
+
+<p align="justify">El descenso de la natalidad y la elevada expectativa de vida existente en la comuna (ver estadísticas de Salud), indican que esta se encuentra en un estado de envejecimiento avanzado, con una alta proporción de adultos mayores. A continuación, se describen una serie de indicadores que dan cuenta de los niveles de longevidad alcanzados en Las Condes.</p>
+
+#### 2.1.3 Indicadores de envejecimiento poblacional
+
+<p align="justify">Chile es un país que transita aceleradamente hacia el envejecimiento de su población (CEPAL, 2009). El aumento significativo en la esperanza de vida, y la abrupta caída en las tasas de natalidad y mortalidad infantil son fenómenos que explican este escenario.</p>
+
+<p align="justify">Los datos del Banco Mundial sugieren que desde 1960 a la fecha el país ha logrado un aumento en la expectativa de vida de su población de alrededor de 24 años, la segunda economía OCDE con mayor crecimiento en este indicador. Al mismo tiempo, es el país con la menor mortalidad infantil bajo los 5 años en todo América Latina.</p>
+<p align="justify">De acuerdo con las proyecciones del Departamento de Asuntos Económicos y Sociales (DAES) de Naciones Unidas, al año 2050 se espera que Chile supere el 25% de envejecimiento relativo, una proporción similar a alcanzada actualmente por Japón el país más longevo del planeta.</p>
+
+<p align="justify">Un estudio del Centro de Investigación en Personas Mayores (2018a) reveló que la edad media de la población chilena entre 1982 y 2017 aumentó de 26,9 años a 35,8 años, y que la tasa de envejecimiento[^7] en el país es de 80,9 adultos mayores por cada 100 niños, la más elevada de Latinoamérica.</p>
+
+<p align="justify">El envejecimiento es uno de los grandes desafíos de política pública. El mapa de la vulnerabilidad del Ministerio de Desarrollo Social identifica al segmento de personas mayores como un grupo con altos niveles de vulnerabilidad social. Es una población que sufre serios problemas de abandono principalmente en zonas rurales; de salud reflejados entre otros, en problemas de salud mental; de precarización laboral con un número importante trabajando informalmente; y de educación con menores niveles de escolaridad.</p>
+
+<p align="justify">En este contexto, Las Condes aparece como la segunda comuna con mayor proporción de personas mayores en la Región Metropolitana (21%), siendo superada únicamente por Vitacura (22,9%). En la *Figura 8* se describe el porcentaje de adultos mayores por área de referencia.</p>
+
+<p align="center">Figura 8. Índice de envejecimiento relativo según área de referencia..</p>
+
+```{r dataframe fig8, echo=FALSE}
+
+envej_prop = c(.162, .154, .217, .21)
+area_env = c (1,2,3,4)
+area_env = factor(area_env, levels = c(1,2,3,4),
+      labels = c('Nacional', 'Región Metropolitana', 'Comunas de referencia', 'Las Condes'))
+envejecimiento <- data.frame(area_env, envej_prop)
+
+```
+
+<p align="center">
+```{r plotenvej, echo=FALSE ,results = 'ASIS'}
+#Select dataframe + Add geometry
+env_plot <-  ggplot(envejecimiento, aes ( x = area_env,  y= envej_prop, label = envej_prop, fill = area_env)) + geom_bar(stat = 'identity' ,colour = '#999999', width = 0.8)
+#Add labels + custom theme
+env_plot <- env_plot + ggtitle("") + ylab("") + xlab("") + theme_tufte() + theme(legend.position = "none", text = element_text(size = 9,  color = "black" )) + scale_y_continuous(breaks = seq(0, 0.3 ,0.05), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(100*envej_prop,"%")),size = 3, color = 'black', vjust = -0.5)
+
+#Select fill color
+
+env_plot <- env_plot + scale_fill_manual(values = c('#336699','#336699','#336699','#FF6633'))
+
+print(env_plot)
+
+```
+</p>
+<p align="center">*Fuente: Elaboración propia en base a datos del Censo 2017*</p>
+
 
 
 
@@ -530,6 +559,7 @@ https://lyd.org/wp-content/uploads/2019/05/tp-1399-clase-media.pdf </p>
 
 [^6]: La tasa de reemplazo generacional supone un promedio de hijos nacidos vivos por mujer, requeridos para sostener un volumen de población constante en el tiempo (sin considerar recambios por efectos de migración internacional), este índice se cálcula en 2,1 hijos nacidos vivos.
 
+[^7]: La tasa de envejecimiento es un indicador que señala la cantidad de personas mayores por cada 100 niños menores de 15 años.
 
 
 

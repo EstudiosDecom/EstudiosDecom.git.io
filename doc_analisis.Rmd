@@ -2,22 +2,33 @@
 title: "Análisis"
 ---
 
-<p align="justify"> El presente repositorio contiene una serie de documentos de análisis elaborados por el equipo de Estudios, que buscan aportar como insumo a la toma de decisiones en materia de políticas sociales, y a la gestión de los programas ejecutados por DECOM.</p>
+<p align="justify"> El presente repositorio contiene una serie de documentos de análisis elaborados por el equipo de Estudios, que buscan aportar como insumo a la toma de decisiones en materia de políticas sociales, y a la gestión de los programas ejecutados por DECOM. Estos documentos quedan disponibles exclusivamente para uso interno de los equipos de DECOM</p>
 
 1. Caracterización de las Clases Medias
 
----
-
-2. Vulnerabilidad de las Clases Medias: ¿Qué nos dicen los indicadores de pobreza multidimensional? Estrategias en contextos de emergencia.
-
-
-
-<img style="float:left; margin:10px;" src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/vuln_clasemedia.png" alt="drawing" width="150"/><br><p align="justify">El objetivo del presente <a href="https://lascondescl-my.sharepoint.com/:w:/g/personal/nvatter_lascondes_cl/Ed0INq5Ae4ZFsVghWiybCIoBezibFyBT8TrsCRlGw-PGQw?e=YPfjae"> documento</a> es profundizar el análisis de las clases medias elaborado en 2019, y explorar las principales vulnerabilidades que enfrentan estos hogares en la comuna, relacionadas con las carencias contenidas en el índice de pobreza multidimensional. El análisis incorpora una breve recopilación de literatura académica que evalúa el resultado de estrategias de transferencias monetarias a los hogares en contextos de crisis económica.</p><b>Ver documento</b> <a href="https://lascondescl-my.sharepoint.com/:w:/g/personal/nvatter_lascondes_cl/Ed0INq5Ae4ZFsVghWiybCIoBezibFyBT8TrsCRlGw-PGQw?e=YPfjae">Vulnerabilidad de las Clases Medias: ¿Qué nos dicen los indicadores de pobreza multidimensional?</a></br>
-
-<p style="font-size:11px"; align="justify">Fecha publicación: junio de 2020</p>
+<img style="float:left; margin:10px;" src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/vuln_clasemedia_1.png" alt="drawing" width="100" height="120"/><p align="justify"> La expansión del consumo, un mayor acceso a oportunidades de educación, un rápido crecimiento económico y, la reducción de la pobreza , son fenómenos que invitan a replantear las necesidades de la población y las políticas públicas que las atienden. 
+Al mismo tiempo,el crecimiento de la clase media supone un cambio sustancial en la demanda por programas gubernamentales de parte de los hogares chilenos. En este sentido, para los tomadores de decisión contar con información que permita comprender las necesidades y comportamiento de este segmento, es un insumo indispensable en la discusión de la política pública.</p><b>Ver documento</b> <a href="">Caracterización de las clases medias</a>
+<p align = "right" style="font-size:12px">Fecha publicación: julio de 2019</p>
 
 ---
 
+<p align="justify">
+2. Vulnerabilidad de las Clases Medias: ¿Qué nos dicen los indicadores de pobreza multidimensional? Estrategias en contextos de emergencia.</p>
+
+<img style="float:left; margin:10px;" src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/vuln_clasemedia.png" alt="drawing" width="100" height="120"/><p align="justify">El objetivo del presente estudio es profundizar el análisis de las clases medias elaborado en 2019, y explorar las principales vulnerabilidades que enfrentan estos hogares en la comuna. Se revisaron los indicadores de carencias contenidos en el índice de pobreza multidimensional, y se incorporó una breve recopilación de literatura académica que evalúa el resultado de estrategias de transferencias monetarias a los hogares en contextos de shocks económicos.</p><b>Ver documento</b> <a href="https://lascondescl.sharepoint.com/:w:/s/DECOMCloud/EWWZEJ1iW39AiGyNh_qrHEkB1iBI8D9LJkHpwLi-x-qvLg?e=d24TNl">Vulnerabilidad de las Clases Medias: ¿Qué nos dicen los indicadores de pobreza multidimensional?</a>
+<p align = "right" style="font-size:12px">Fecha publicación: junio de 2020</p>
 
 ---
+
+3. Índice de riesgo: Contagio enfermedad Covid-19 Adultos Mayores de 70 años Las Condes. 
+
+<img style="float:left; margin:10px;" src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/vulam75.png" alt="drawing" width="100" height="120"/><p align="justify">A continuación, se exponen los resultado del índice de riesgo de contagio Covid-19 Adultos Mayores de Las Condes. El objetivo del indicador es conocer los niveles de exposición que presentan los Adultos Mayores de 70 años residentes en la comuna al virus SARS-Cov-2. El indicador observa el comportamiento de los hogares donde residen personas mayores de 70 años o más, en cuatro dimensiones: Salud, Convivencia y Redes, Movilidad y Transporte, y Empleo.</p><b>Ver documento</b><a href="https://lascondescl.sharepoint.com/:w:/s/DECOMCloud/EVFtJAWCjq5EsQ7Yi4XPc2wB7KAFYJZJE5TyqkzCn6tM-g?e=Uh6Xia"> Informe matriz de riesgo Adulto Mayor 70+ Covid-19</a>
+<p align = "right" style="font-size:12px">Fecha publicación: junio de 2020</p>
+
+
+
+
+
+
+
 
