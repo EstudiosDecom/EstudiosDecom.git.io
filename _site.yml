@@ -11,6 +11,8 @@ navbar:
       href: doc_analisis.html
     - text: "Web mapping"
       href: maps.html
+    - text: "Nueva estrategia social DECOM"
+      href: nuevametodologia.html
     - text: "Nosotros"
       href: about.html
 output:

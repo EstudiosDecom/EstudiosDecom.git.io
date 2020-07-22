@@ -623,7 +623,7 @@ https://lyd.org/wp-content/uploads/2019/05/tp-1399-clase-media.pdf </p>
 
 <p align="justify">Servicio Nacional de la Discapacidad. (2016). II Estudio Nacional de la Discapacidad. Santiago.</p>
 
-<p align="justify">Stiglitz, J. E., Sen, A., & Fitoussi, J. P. (2009). Report by the commission on the measurement of economic performance and social progress.</p>
+<p align="justify">Stiglitz, J., Sen, A., & Fitoussi, J. P. (2009). The measurement of economic performance and social progress revisited. Reflections and overview. Commission on the measurement of economic performance and social progress, Paris.</p>
 
 <p align="justify">UNESCO (2015). Education 2030: Towards inclusive and equitable quality education and lifelong learning for all. Retrieved from https://unesdoc.unesco.org/ark:/48223/pf0000245656 </p>
 
