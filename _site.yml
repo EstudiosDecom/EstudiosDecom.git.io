@@ -5,14 +5,14 @@ navbar:
   left:
     - text: "Inicio"
       href: index.html
+    - text: "Estrategia Desarrollo Social"
+      href: nuevametodologia.html
     - text: "Diagnóstico Social Comunal"
       href: diagnostico.html
     - text: "Análisis"
       href: doc_analisis.html
     - text: "Web mapping"
       href: maps.html
-    - text: "Nueva estrategia social DECOM"
-      href: nuevametodologia.html
     - text: "Nosotros"
       href: about.html
 output:

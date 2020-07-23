@@ -1,6 +1,6 @@
 ---
 title: "Diagnóstico Social Comunal"
-date: "Noviembre 2019"
+date: "Octubre 2019"
 author: "Vatter, Peña & Vega"
 output:
   html_document:
@@ -11,7 +11,7 @@ output:
       smooth_scroll: true
 ---
 
-> "Estamos casi ciegos cuando las métricas que guían nuestras acciones están mal diseñadas o cuando estas no son bien entendidas...tener buenas mediciones genera impactos significativos en la manera en que nuestras sociedades se miran a sí mismas, y por tanto, en la manera en que las políticas son diseñadas, implementadas y evaluadas." - (Stiglitz, Sen, & Fitoussi, 2009:p.9). 
+> "Estamos casi ciegos cuando las métricas que guían nuestras acciones están mal diseñadas o cuando estas no son bien entendidas...tener buenas mediciones genera impactos positvo en la manera en que nuestras sociedades se miran a sí mismas, y por tanto, en el modo en que las políticas son diseñadas, implementadas y evaluadas." - (Stiglitz, Sen, & Fitoussi, 2009:p.9). 
 
 ---
 
@@ -32,7 +32,7 @@ library ('RMySQL')
 
 <p align="justify">El presente diagnóstico social tiene como objetivo caracterizar la realidad comunal e identificar las problemáticas sociales que afectan a los vecinos y vecinas de Las Condes. El propósito de la información aquí presentada, es contribuir al diseño e implementación de programas que respondan a la misión de la Dirección, y a las necesidades e inquietudes de los residentes de la comuna.</p>
 
-<p align="justify">El estudio está estructurado en cinco capítulos que exploran una serie de indicadores demográfica y socioeconómica relativos a la comuna. Los capítulos son: (1) Geografía, desarrollo urbano y movilidad, (2) Estadísticas demográficas, (3) Caracterización socioeconómica, (4) Bienestar social básico, y (5) Clases medias.</p>
+<p align="justify">El estudio está estructurado en cinco capítulos que exploran una serie de indicadores demográficos y socioeconómicos relativos a la comuna. Los capítulos son: (1) Geografía, desarrollo urbano y movilidad, (2) Estadísticas demográficas, (3) Caracterización socioeconómica, (4) Bienestar social básico, y (5) Clases medias.</p>
 
 <p align="justify">Como equipo de estudios, esperamos aportar a través de este instrumento a cada uno de los departamentos de la Dirección con información y análisis, para que puedan seguir innovando y aplicando sus programas. Este documento queda disponible para que los equipos puedan hacerlo suyo, y puedan reflexionar en torno a sus áreas de acción, buscar nuevas líneas de servicio, y evaluar la pertinencia de su labor para poder así, asistir al bienestar integral de los vecinos y vecinas de Las Condes.</p>
 
