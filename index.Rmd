@@ -12,9 +12,9 @@ title: "Planificación Social y Estudios"
 <br>
 </br>
 <p align="left">
-<a href="https://twitter.com/LC_Decom?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @LC_Decom</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<a href="https://twitter.com/intent/tweet?screen_name=LC_Decom&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">Tweet to @LC_Decom</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
 <p align="center">
-<a class="twitter-timeline" data-width="700" data-height="550" href="https://twitter.com/LC_Decom?ref_src=twsrc%5Etfw">Tweets by LC_Decom</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<a class="twitter-timeline" data-width="600" data-height="550" href="https://twitter.com/LC_Decom?ref_src=twsrc%5Etfw">Tweets by LC_Decom</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
 
 
 
