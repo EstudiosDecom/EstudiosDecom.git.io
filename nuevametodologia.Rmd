@@ -12,15 +12,15 @@ title: "Nueva estrategia Desarrollo Social DECOM"
 
 <p align="justify">El concepto de bienestar que aquí se utiliza, se desprende del enfoque de capacidades de Amartya Sen, cuyas reflexiones respecto al desarrollo humano, han puesto el foco del bienestar en las personas, la ampliación de sus capacidades y la protección de funciones elementales y complejas, para perseguir aquellos resultados que por diversas razones valoran para sus vidas.</p>
 
-<p align="justify">En cuanto al trabajo desarrollado para presentar esta nueva estrategia social, este fue dividido en cuatro etapas resumidas en el diagrama adjunto. Las distintas fases se fueron desarrollando de manera paralela, cada una con hitos y productos entregados a la Dirección. Corresponde agradecer la colaboración de los equipo involucrados en las distintas etapas, y esperamos que esta estrategia de desarrollo social trascienda a la gestión de esta dirección.</p>
+<p align="justify">El trabajo desarrollado para presentar la nueva estrategia social, se divididó en cuatro etapas resumidas en el diagrama adjunto. Las distintas fases se fueron realizando de manera paralela, cada una con hitos y productos entregados a la Dirección. Corresponde agradecer la colaboración de los equipo involucrados en las distintas etapas, y esperamos que esta estrategia de desarrollo social trascienda a la gestión de esta dirección.</p>
 
 <img style="float:left; margin:15px;" src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/Diagramatrabajo.png" alt="drawing" width="450" height="300"/><p align="justify"><br>1. En una primera etapa de trabajo se realizó un diagnóstico sobre el estado de la oferta programática de DECOM. Se revisaron los setenta y siete programas sociales, y se evaluaron las líneas de acción de estos dentro de las dimensiones del modelo de pobreza multidimensional: Educación, Salud, Trabajo y Seguridad social, Vivienda y entorno, y Redes y Cohesión social.<br>
 <br>
-Al mismo tiempo, se revisaron los instrumentos de focalización y la coherencia de los indicadores utilizados, con la definición de los objetivos de los programas, y la coherencia interna de los instrumentos en relación a las variables empleadas. <br>
+Al mismo tiempo, se revisaron los instrumentos de focalización y la coherencia de los indicadores utilizados con la definición de la población objetivo de los programas, y la coherencia interna de los instrumentos en relación a las variables evaluadas. <br>
 <br>
-2. La segunda parte del proceso correspondió a la definición de un modelo de bienestar social local. Se hizo una revisión en literatura empírica respecto de medidas de bienestar a nivel internacional.<br>
+2. La segunda parte del proceso correspondió a la definición de un modelo de bienestar social local. Se hizo una revisión en literatura académica respecto de medidas de bienestar a nivel internacional, y se diseñó un modelo multidimensional de bienestar bajo el cual se empaquetó la oferta programática existente dentro de DECOM<br>
 <br>
-Luego, se diseñó un modelo multidimensional de bienestar social que abarca 9 dimensiones que encapsulan la oferta programática de DECOM...<br> 
+<br> 
 <br>
 3.<br>
 <br>
@@ -32,17 +32,35 @@ Luego, se diseñó un modelo multidimensional de bienestar social que abarca 9 d
 
 <p style="font-size:18px"; align="justify"><b>Definición de un modelo de bienestar local</b></p>
 
-<p align="justify">La necesidad de contar con indicadores de bienestar más complejos que el producto interno bruto o la observación de condiciones puramente económicas, queda manifiesta en el reporte de la Comisión sobre la medición del Desarrollo Económico y Progreso Social de Paris, elaborado por Stiglitz, Sen y Fitoussi (2009).</p>
+> "El bienestar tiene relación con la libertad. Es la capacidad que poseen las personas de realizar aquello que por diversas razones valoran para sus vidas - (Sen, 1984).
 
-<p align="justify">En la última década se ha avanzado de manera importante en la creación de mediciones de bienestar en diversos países. El Reino Unido, Alemania, Australia, Nueva Zelanda o Bután con su llamativo índice nacional bruto de felicidad, han seguido este camino. Si bien no existen métricas perfectas de bienestar, existe una demanda creciente por este tipo de mediciones para la toma de decisiones en políticas públicas, y diseños de intervención social (Alkire, 2015).</p>
+<p align="justify">La necesidad de contar con indicadores de bienestar más complejos que la observación de condiciones puramente económicas, queda manifiesta en el reporte de la Comisión sobre la medición del Desarrollo Económico y Progreso Social de Paris, elaborado por Stiglitz, Sen y Fitoussi (2009).</p>
 
-<p align="justify">En general los modelos de bienestar se apoyan en el enfoque de capacidades formulado por Amartya Sen. Este, ha despertado un interés mayor en los últimos años, especialmente por la riqueza filosófica de su propuesta entorno al desarrollo humano centrado en la agencia (libertad) de las personas (Alkire, 2005).</p>
+<p align="justify">En esta materia, se ha avanzado de manera sustantiva mediante la creación de indicadores multidimensionales de bienestar en diversos países. El Reino Unido, Alemania, Australia, Nueva Zelanda o Bután con su llamativo índice nacional bruto de felicidad, han seguido este camino. Si bien no existen métricas absolutas para la medición del bienestar, hay una demanda creciente por este tipo de indicadores para el diseño de las políticas sociales (Alkire, 2015).</p>
 
-<p align="justify">Sen propone pensar el bienestar en relación a los conceptos de función, capacidades y agencia. Las funciones corresponden a aquello que las personas pueden ser o hacer en su vida. Existen funciones elementales como poder estar saludables o adecuadamente alimentados, y funciones más complejas como poder participar de una comunidad u optar a ser felices. Por su parte, las capacidades corresponde a la combinación de múltiples funciones para transformarlas en lo que realmente las personas hacen o son en su vida. Las capacidades están directamente relacionadas con la noción de agencia, son estas las opciones reales que tienen las personas para llevar la vida que valoran (Alkire, Comim & Qizilbash, 2008; Sen & Nussbaum, 1993).</p>
+<p align="justify">En general las propuestas para la definición de modelos de bienestar se apoyan en el enfoque de capacidades de Amartya Sen. Este, ha despertado un interés mayor en los años recientes, especialmente por la riqueza filosófica de su propuesta entorno al desarrollo humano y la justicia social centrada en la libertad y preferencias de las personas (Alkire, 2005).</p>
 
-<p align="justify">En términos prácticos, tener la posibilidad de vivir una vida larga y saludable, poder acceder a un trabajo decente, tener la posibilidad de participar de los asuntos de una comunidad, o de educarse son dimensiones que un indicador de bienestar debería considerar, toda vez que son cosas necesarias para que las personas tengan la capacidad de llevar la vida que realmente desean. Es distinto no comer por no contar con recursos para hacerlo, que no comer por la decisión voluntaria de ayunar. Aquí, la libertad no es solo un fin deseable, sino también un medio en sí misma (Alkire, 2015; Sen 2001).</p>
+<p align="justify">El enfoque de capacidades pone en relevancia la necesidad de evaluar el bienestar centrado en las personas y su agencia (libertad de actuar en consecuencia con lo que las personas valoran para su vida), en lugar de definiciones fácticas de consumos esperados (Sen, 2001). En términos prácticos, cuando diseñamos las políticas sociales con atención en la satisfacción de bienes primarios, y generamos asistencia basada únicamente en transferencia de recursos para la satisfacción de estas necesidades (enfoque en la oferta), dejamos de lado las distintas combinaciones de funcionamientos (seres y haceres) que permiten a las personas lograr aquello que aspiran para su vida, limitando de esta manera sus capacidades reales. Sabemos que esto resulta bastante abstracto, y en el siguiente diagrama se resume gráficamente lo expuesto con un caso práctico.</p>
 
-> "El bienestar tiene relación con la agencia. Es la capacidad que poseen las personas de realizar aquello que por diversas razones valoran para sus vidas - (Sen, 1984).
+<div align="center"><img src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/capability.png" alt="drawing" width="550"/>
+
+<p align="justify">La situación que se presente es la de un individuo que posee una cantidad determinada de alimentos (recurso) para satisfacer la necesidad fisiológica de alimentares. El enfoque clásico de economía basado en la satisfacción de necesidades básicas, nos indicaría que esa persona tiene cubierta su necesidad (resultado), solo por el hecho de contar con el recurso para hacerlo, y por tanto no requeriría de una intervención de política pública.</p> 
+
+<p align="justify">En cambio, en el enfoque de las capacidades el recurso aquí solo cumpliría un fin instrumental, y lo que realmente importa es el funcionamiento y la capacidad; el funcionamiento de ser o estar adecuadamente nutrido, y la capacidad de comer. Apliquémoslo al caso de una persona mayor que ha perdido la autonomía de poder alimentarse por sí sola, pero cuenta con el alimento (recurso). El enfoque de capacidades nos diría que no podemos asumir que ese individuo está satisfaciendo su necesidades por el solo hecho de tener alimentos, dado que el funcionamiento de estar adecuadamente nutrido no estaría dentro de su marco de capacidades, toda vez que no cuenta con la asistencia de un cuidador o alguien cercano.</p> 
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</br>
 
 <div align="center"><img src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/bienestar.png" alt="drawing" width="700"/>
 
