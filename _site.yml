@@ -1,8 +1,8 @@
 name: "my-website"
 output_dir: "."
 navbar:
-  title: "Estudios DECOM"
-  left:
+   title: '<div><img src="logo_60x20.png"></img> Estudios DECOM</div>'
+   left:
     - text: "Inicio"
       href: index.html
     - text: "Estrategia Desarrollo Social"
@@ -20,5 +20,4 @@ output:
     theme: flatly
     highlight: tango
     include:
-      in_header: 
       after_body: footer.Rhtml

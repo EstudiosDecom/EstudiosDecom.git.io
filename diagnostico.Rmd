@@ -7,7 +7,7 @@ output:
     toc: true
     toc_depth: 4
     toc_float:
-      collapsed: false
+      collapsed: true
       smooth_scroll: true
 ---
 
@@ -25,6 +25,13 @@ library('ggthemes')
 library('kableExtra')
 library('plyr')
 library ('RMySQL')
+library ('haven')
+library('plotly')
+library('survey')
+library('questionr')
+
+casen15 <- read_dta("C:/Users/17617549-4/Documents/Dataset/CASEN/Casen_2015.dta")
+casen17 <- read_dta("C:/Users/17617549-4/Documents/Dataset/CASEN/Casen_2017.dta")
 
 ```
 
@@ -80,7 +87,7 @@ library ('RMySQL')
 
 <p align="justify">Las unidades vecinales son determinadas por el alcalde “...de propia iniciativa o a petición de las juntas de vecinos o de los vecinos interesados, con el acuerdo del Concejo y oyendo al Consejo Económico y Social de la Comuna”. Actualmente, existen 25 unidades vecinales distribuidas en el territorio comunal (ver mapa).</p>
 
-<p align="center"><iframe src="https://www.google.com/maps/d/embed?mid=1Qp_2a8tQn-_jWYvTB_eWLO1CLU1arma3" width="600" height="420"></iframe></p>
+<p align="center"><iframe src="https://www.google.com/maps/d/embed?mid=1Qp_2a8tQn-_jWYvTB_eWLO1CLU1arma3" width="600" height="420" frameborder="0"></iframe></p>
 
 #### 1.1.1 Organizaciones territoriales y funcionales.
 
@@ -126,7 +133,7 @@ kable_styling(position = "center", bootstrap_options = "basic", full_width = TRU
 <p align="justify">Entre las comunas con mayor cantidad de áreas verdes per cápita a nivel nacional, Las Condes se ubica en el lugar 58 y a nivel regional ocupa el puesto 23. En la *Figura 1* se muestra la distribución de metros cuadrados de áreas verdes por habitantes para las comunas de la Provincia de Santiago a través de un mapa, aquellas comunas con mayor cantidad de áreas verdes per cápita aparecen más oscuras.</p>
 
 <p align="center">Figura 1. Áreas verdes (mt2/habitante) comunas de la Provincia de Santiago.</p>
-<p align="center"><iframe src="https://estudiosdecom.github.io/WebMapping/#9/-33.6089/-70.6009" width="640" height="480"></iframe></p>
+<p align="center"><iframe src="https://estudiosdecom.github.io/areasverdesgranSantiago/#12/-33.4300/-70.5889" width="640" height="480" frameborder="0"></iframe></p>
 <p align="center">*Fuente: Elaboración propia en base a datos del Sistema de Indicadores y Estándares del Desarrollo Urbano(SIEDU)*</p>
 
 <p align="justify">Las comunas de referencia, Vitacura y Providencia se encuentran dentro de las tres con mayor cantidad de áreas verdes por persona con un promedio de 17,2 metros cuadrados por habitante. Vitacura se ubica en el primer lugar a nivel nacional con un índice de 18,9 m2/hab., mientras que Providencia aparece en el tercer lugar con 15,5 m2/hab.</p>
@@ -138,7 +145,7 @@ kable_styling(position = "center", bootstrap_options = "basic", full_width = TRU
 <p align="justify">No obstante, si se observa la interacción de ambos indicadores, distancia y superficie, Las Condes aparece fuera del cuadrante de cumplimiento en acceso a servicios y equipamientos urbanos del CNDU. En este sentido, surge un desafío importante para el municipio. En la *Figura 2* se muestra el cumplimiento de los indicadores de SIEDU por cuadrante para todas las comunas del gran Santiago.</p>
 
 <p align="justify">Figura 2. Cumplimiento comunal de indicadores de acceso a servicios y equipamientos públicos de áreas verdes Provincia de Santiago.</p>
-<div align="center"><img src="/Users/fevegag/OneDrive/Desarrollo website estudios/EstudiosDecom.git.io/images/graph_dist_arverde.png" alt="drawing" width="600"/>
+<div align="center"><img src="C:/Users/17617549-4/Documents/Desarrollo Website Estudios/EstudiosDecom.git.io/images/graph_dist_arverde.png" alt="drawing" width="600"/>
 <p align="center">*Fuente: Elaboración propia en base a datos de SIEDU*</p>
 
 #### 1.2.2 Transporte y movilidad
@@ -189,22 +196,24 @@ levels(brechatransporte$comuna)
 <p align="center">
 ```{r brechatransporte, echo=FALSE, results='ASIS'}
 #Select dataframe
-transportplot <-  ggplot(brechatransporte, mapping = aes(x = comuna,  y = indicador, fill = brecha, label = indicador)) 
+transportplot <-  ggplot(brechatransporte, mapping = aes(x = comuna,  y = indicador, fill = brecha, label = indicador,
+                                                         text = paste("Tiempo promedio de traslado en transporte público",indicador,"minutos" ))) 
 #Add Geometry
 transportplot <- transportplot + geom_bar(stat = "identity", position = "dodge", colour = "#999999") + 
-  geom_hline(yintercept=60, colour = "blue3", linetype="dotted")
+  geom_hline(yintercept=60, colour = "azure2", linetype="dotted")
 #Horizontal barplot
 transportplot <- transportplot + coord_flip()
 #Add labels + custom theme
-transportplot <- transportplot +  ggtitle("") + ylab("Tiempo de traslado (min)") + xlab("Comuna") + theme_hc() + theme(
+transportplot <- transportplot +  ggtitle("") + ylab("Tiempo de traslado (min)") + xlab("Comuna") + theme_light() + theme(
     legend.position = 'top',
     legend.box = 'horizontal',
     legend.title = element_blank(),
-    text = element_text(size = 11,  color = "black" )) + scale_y_discrete(breaks = seq(0,150,25))  + geom_text(aes(label = indicador),size = 3.5, color = 'black', hjust=1.5)
+    text = element_text(size = 10,  color = "black" )) + scale_y_discrete(breaks = seq(0,150,25))  + 
+    geom_text(aes(label = indicador),size = 3, color = 'black', position = position_stack(vjust = 0.95))
 #Change fill colour
 transportplot <- transportplot + scale_fill_manual(values = c('#FF3333', '#FFCC33', '#009900'))
 
-print(transportplot)
+ggplotly(transportplot, tooltip="text") %>% config(displayModeBar = T)
 
 ```
 </p>
@@ -228,17 +237,17 @@ medio_transporte <- data.frame(mediotransp,prop_transp)
 ```{r medtransp, echo=FALSE ,results = 'ASIS'}
 
 #Select dataframe
-medtranspplot <-  ggplot(medio_transporte, mapping = aes(x = mediotransp,  y = prop_transp, label = scales::percent(prop_transp))) 
+medtranspplot <-  ggplot(medio_transporte, mapping = aes(x = reorder(mediotransp, -prop_transp),  y =prop_transp, label = scales::percent(prop_transp), 
+                                                         text = paste0(prop_transp*100,"%"))) 
 #Add Geometry
 medtranspplot <- medtranspplot + geom_bar(stat = 'identity', 
                   colour = '#999999', fill = '#336699') 
 #Add labels + custom theme
-medtranspplot <- medtranspplot +  ggtitle("") + ylab("") + xlab("") + theme_hc() + theme(
- text = element_text(size = 11,  color = "black" )) + scale_y_continuous(breaks = seq(0,0.5,0.1), labels = scales::percent_format(accuracy = 1)) + geom_text(position = position_dodge(width = .9), vjust = -0.5, size = 3) 
+medtranspplot <- medtranspplot +  ggtitle("") + ylab("") + xlab("") + theme_light() + theme(
+ text = element_text(size = 10,  color = "black" )) + scale_y_continuous(breaks = seq(0,0.5,0.1), labels = scales::percent_format(accuracy = 1)) + geom_text(position = position_stack(vjust = 0.5), size=3) + coord_flip()
 
 
-
-print(medtranspplot)
+ggplotly(medtranspplot, tooltip="text") %>% config(displayModeBar = T)
 ```
 </p>
 <p align="center">*Fuente: Elaboración propia en base a datos de Casen 2015*</p>
@@ -288,10 +297,10 @@ pobl_sexo_sorted$labelpos <- ifelse(pobl_sexo_sorted$sexo=='Mujer', pobl_sexo_so
 ```{r plotsex, echo=FALSE ,results = 'ASIS'}
 
 #Select dataframe + Add geometry
-psexplot <-  ggplot(pobl_sexo_sorted, aes ( y= prop_pobl, x = area, fill = sexo )) +
+psexplot <-  ggplot(pobl_sexo_sorted, aes ( y= prop_pobl, x = area, fill = sexo, text = paste0(prop_pobl*100, "%") )) +
   geom_bar(stat = 'identity', colour = '#999999', width = 0.8, position = position_stack(reverse = TRUE))
 #Add labels + custom theme
-psexplot <- psexplot + ggtitle("") + ylab("") + xlab("") + theme_hc() + 
+psexplot <- psexplot + ggtitle("") + ylab("") + xlab("") + theme_light() + 
 theme(text = element_text(size = 10,  color = "black" ), legend.position = 'top' , legend.box = 'horizontal', legend.title = element_blank()) + scale_y_continuous(breaks = seq(0,1,0.25), labels = scales::percent_format(accuracy = 1)) 
 #Add label % 
 psexplot <- psexplot + geom_text (aes(label = paste0(100 * prop_pobl,"%"), y=labelpos), size = 3, color = 'white', position=position_stack (vjust = 0.25, reverse = TRUE))
@@ -299,7 +308,7 @@ psexplot <- psexplot + geom_text (aes(label = paste0(100 * prop_pobl,"%"), y=lab
 #Select fill color
 psexplot <- psexplot + scale_fill_manual(values = c('#336699', '#CC0033')) + coord_flip()
 
-print(psexplot)
+ggplotly(psexplot, tooltip="text") %>% config(displayModeBar = T)
 
 ```
 </p>
@@ -394,8 +403,8 @@ piramide_d <- data.frame(area,edad_quin,sexo,pop)
   
 ```
 
-
 <p align="center">
+
 ``````{r fig6,results='ASIS'}
 #Select dataframe
 pyramidplot <- ggplot(piramide_d, mapping = aes(x=edad_quin, y=ifelse(sexo=='Hombre',-pop,pop), fill=sexo))
@@ -403,11 +412,12 @@ pyramidplot <- ggplot(piramide_d, mapping = aes(x=edad_quin, y=ifelse(sexo=='Hom
 pyramidplot <- pyramidplot + geom_col(position = 'stack', colour = '#999999') + facet_wrap(.~area) + 
   coord_flip()
 #Add legend + custom theme
-pyramidplot <- pyramidplot + ggtitle("") + ylab("Proporción de población") + xlab("Edad en quinquenios") + theme_hc() +  theme(legend.position = "top", legend.title = element_blank(),text = element_text(size = 9,  color = "black" )) + scale_y_continuous(breaks = seq(0,0.1,0.05), labels = scales::percent_format(accuracy = 1))
+pyramidplot <- pyramidplot + ggtitle("") + ylab("Proporción de población") + xlab("Edad en quinquenios") + theme_light() +  theme(legend.position = "top", legend.title = element_blank(),text = element_text(size = 9,  color = "black" )) + scale_y_continuous(breaks = seq(0,0.1,0.05), labels = scales::percent_format(accuracy = 1))
 #Select fill color
 pyramidplot <- pyramidplot + scale_fill_manual(values = c('#336699', '#CC0033'))
 
-print(pyramidplot)
+ggplotly(pyramidplot, tooltip="text") %>% config(displayModeBar = T)
+
 
 ```
 </p>
@@ -435,7 +445,7 @@ indice_pm <- data.frame(area_pm, indicepm)
 #Select dataframe + Add geometry
 parmedplot <-  ggplot(indice_pm, aes ( y= area_pm, x = indicepm, fill = area_pm)) + geom_bar(stat = 'identity' ,colour = '#999999', width = 0.8)
 #Add labels + custom theme
-parmedplot <- parmedplot + ggtitle("") + ylab("") + xlab("") + theme_hc() + theme(legend.position = "none", text = element_text(size = 9,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1.5 ,0.3)) + geom_text(aes(label = indicepm),size = 3, color = 'white', hjust=5)
+parmedplot <- parmedplot + ggtitle("") + ylab("") + xlab("") + theme_light() + theme(legend.position = "none", text = element_text(size = 10,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1.5 ,0.3)) + geom_text(aes(label = indicepm),size = 3, color = 'white', hjust=5)
 #Select fill color
 
 parmedplot <- parmedplot + scale_fill_manual(values = c('#336699','#336699','#336699','#CC0033'))
@@ -1032,6 +1042,43 @@ print(educam)
 
 <p align="justify">Los datos del Censo 2017 señalan que alrededor de un tercio de los adultos mayores a nivel nacional está trabajando o buscando empleo (32,4%), esta cifra es mayor en Las Condes donde 4 de cada 10 personas mayores se encuentran económicamente activas. En la *Figura 19* se describe el porcentaje de adultos de 60 años y más por su condición de actividad para cada área de referencia analizada.</p>
 
+<p align="center">Figura 19. Proporción de personas mayores por condición de actividad económica según área de referencia.</p>
+
+```{r dataframe fig19, echo=FALSE}
+
+propam = c(.324, .368, .407, .393, .676, .632, .593, .607)
+pea = c (1,1,1,1,2,2,2,2)
+pea = factor (pea, levels = c (1,2),
+      labels = c ('Económicamente activo', 'Inactivo'))
+area = c(1,2,3,4)
+area = factor(area, levels = c(1,2,3,4),
+      labels = c('Nacional', 'Región Metropolitana', 'Comunas de referencia', 'Las Condes'))
+pea_am <- data.frame(area, pea, propam)
+
+```
+
+<p align="center">
+```{r plot pea adultos mayores, echo=FALSE ,results = 'ASIS'}
+#Select dataframe + Add geometry
+peaplot <-  ggplot(pea_am, aes ( y = area,  x= propam, label = propam, fill = pea)) + geom_bar(stat = 'identity' ,colour = '#999999', width = 0.7,position = position_stack(reverse = TRUE))
+#Add labels + custom theme
+peaplot <- peaplot  + ggtitle("") + ylab("") + xlab("") + theme_hc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 9,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1 ,0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(100*propam,"%")),size = 3, color = 'white',
+                        position=position_stack (vjust = 0.7, reverse = TRUE))
+#Select fill color
+peaplot <- peaplot + scale_fill_manual(values = c('#336699','#CC0033' ))
+
+print(peaplot)
+
+```
+</p>
+<p align="center">*Fuente: Elaboración propia en base a datos del Censo 2017*</p>
+
+<p align="justify">Entre los adultos mayores económicamente activos en Las Condes, la cifra de personas en búsqueda de empleo es marginal, estos representan el 2% del total de personas de 60 años y más activos en el mercado laboral. Esta baja cifra de desempleo en la población mayor de la comuna podría estar reflejando una alta retención de personas mayores en el mercado de trabajo. En esta línea, los datos de la OCDE (2017), señalan que Chile es la octava economía de los países que integran la organización, con mayor tasa de retención[^12] de trabajadores sobre 60 años.</p>
+
+<p align="justify">En tanto, la participación de los adultos mayores por sector de la actividad económica refleja una tendencia clara existente en el mercado laboral chileno, donde predomina la actividad de servicios (sector terciario).</p>
+
+<p align="justify">Comparativamente la participación en el sector de servicios de los adultos mayores de Las Condes (85,8%) es más elevada que la observada en el país (71,4%) y la Región Metropolitana (79,2%), y marginalmente inferior a la ocurrida en las Comunas de referencia (86,5%).</p>
+
 ---
 
 ## Capítulo 3: Caracterización Socioeconómica
@@ -1193,6 +1240,7 @@ https://lyd.org/wp-content/uploads/2019/05/tp-1399-clase-media.pdf </p>
 
 [^11]: La tasa de participación laboral representa la proporción de población económicamente activa respecto del total de población. En el caso de los adultos mayores, esta expresa el porcentaje de personas de 60 años y más que se encuentran económicamente activos respecto del total de personas de tercera edad.
 
+[^12]: Tasa de retención: Es la proporción de trabajadores entre 60 y 64 años que conserva el mismo empleo hace al menos cinco años.
 
 
 
