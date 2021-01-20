@@ -29,7 +29,8 @@ library ('haven')
 library('plotly')
 library('survey')
 library('questionr')
-library('shiny')
+library("shiny")
+library("spatstat")
 
 casen15 <- read_dta("C:/Users/17617549-4/Documents/Dataset/CASEN/Casen_2015.dta")
 casen17 <- read_dta("C:/Users/17617549-4/Documents/Dataset/CASEN/Casen_2017.dta")
@@ -38,65 +39,65 @@ casen17 <- read_dta("C:/Users/17617549-4/Documents/Dataset/CASEN/Casen_2017.dta"
 
 # Presentación
 
-<p align="justify"><font size=2.5>El presente diagnóstico social tiene como objetivo caracterizar la realidad comunal e identificar las problemáticas sociales que afectan a los vecinos y vecinas de Las Condes. El propósito del análisis es robustecer, en base a información estadística y evidencia empírica, la toma de decisiones en materia de diseño, implementación y evaluación de las políticas sociales.</font></p>
+<p align="justify"><font size=3>El presente diagnóstico social tiene como objetivo caracterizar la realidad comunal e identificar las problemáticas sociales que afectan a los vecinos y vecinas de Las Condes. El propósito del análisis es robustecer, en base a información estadística y evidencia empírica, la toma de decisiones en materia de diseño, implementación y evaluación de las políticas sociales.</font></p>
 
-<p align="justify"><font size=2.5>El estudio está estructurado en cinco capítulos que exploran una serie de indicadores demográficos y socioeconómicos relativos a la comuna. Los capítulos son: (1) Geografía, desarrollo urbano y movilidad, (2) Estadísticas demográficas, (3) Caracterización socioeconómica, (4) Bienestar social básico, y (5) Clases medias. En el costado izquierdo de este documento se encuentra la tabla de navegación de contenidos por capítulo.</font></p>
+<p align="justify"><font size=3>El estudio está estructurado en cinco capítulos que exploran una serie de indicadores demográficos y socioeconómicos relativos a la comuna. Los capítulos son: (1) Geografía, desarrollo urbano y movilidad, (2) Estadísticas demográficas, (3) Caracterización socioeconómica, (4) Bienestar social básico, y (5) Clases medias. En el costado izquierdo de este documento se encuentra la tabla de navegación de contenidos por capítulo.</font></p>
 
-<p align="justify"><font size=2.5>Como equipo de estudios esperamos aportar a través de este instrumento a cada uno de los departamentos de la Dirección con información y análisis, para que les permita seguir innovando y aplicando sus programas. Este documento queda disponible para que los equipos puedan hacerlo suyo, y reflexionen en torno a sus áreas de acción, buscar nuevas líneas de servicio, y evaluar la pertinencia de su labor para poder así, impactar en el bienestar de los vecinos y vecinas de Las Condes.</font></p>
+<p align="justify"><font size=3>Como equipo de estudios esperamos aportar a través de este instrumento a cada uno de los departamentos de la Dirección con información y análisis, para que les permita seguir innovando y aplicando sus programas. Este documento queda disponible para que los equipos puedan hacerlo suyo, y reflexionen en torno a sus áreas de acción, buscar nuevas líneas de servicio, y evaluar la pertinencia de su labor para poder así, impactar en el bienestar de los vecinos y vecinas de Las Condes.</font></p>
 
 ## Resumen
 
-<p align="justify"><font size=2.5>En términos generales Las Condes se caracteriza por un alto estándar de calidad de vida, sin embargo, un segmento de la población no cuenta con las mismas oportunidades de acceso al bienestar material que el resto de la comunidad. El análisis desarrollado permite vislumbrar algunas líneas de reflexión que sintonizan con la gestión de los programas sociales ejecutados por DECOM.</font></p>
+<p align="justify"><font size=3>En términos generales Las Condes se caracteriza por un alto estándar de calidad de vida, sin embargo, un segmento de la población no cuenta con las mismas oportunidades de acceso al bienestar material que el resto de la comunidad. El análisis desarrollado permite vislumbrar algunas líneas de reflexión que sintonizan con la gestión de los programas sociales ejecutados por DECOM.</font></p>
 
-<p align="justify"><font size=2.5>El envejecimiento poblacional presenta importantes desafíos y oportunidades para las políticas públicas en Chile. Actualmente el país cuenta con una de las poblaciones más longevas de Latinoamérica, solo entre 1982 y 2017 el promedio de edad pasó de 27 años a 36 años, esto da cuenta del ritmo acelerado con el que envejece la población chilena. Según los datos del Censo 2017, el segmento de personas mayores representa el 16,2% del total de población, y se espera que para el año 2050 esta proporción sea de un 24,1% (Cipem, 2018a).</font></p>
+<p align="justify"><font size=3>El envejecimiento poblacional presenta importantes desafíos y oportunidades para las políticas públicas en Chile. Actualmente el país cuenta con una de las poblaciones más longevas de Latinoamérica, solo entre 1982 y 2017 el promedio de edad pasó de 27 años a 36 años, esto da cuenta del ritmo acelerado con el que envejece la población chilena. Según los datos del Censo 2017, el segmento de personas mayores representa el 16,2% del total de población, y se espera que para el año 2050 esta proporción sea de un 24,1% (Cipem, 2018a).</font></p>
 
-<p align="justify"><font size=2.5>En el mapa de la vulnerabilidad del Ministerio de Desarrollo Social (2019), se identificó a las personas mayores como un grupo con altos niveles de vulnerabilidad; que sufren serios problemas de abandono, principalmente en zonas rurales; de salud, reflejados entre otros en problemas de salud mental; de precarización laboral con un número significativo trabajando de manera informal; y de educación con bajos niveles de escolaridad.</font></p>
+<p align="justify"><font size=3>En el mapa de la vulnerabilidad del Ministerio de Desarrollo Social (2019), se identificó a las personas mayores como un grupo con altos niveles de vulnerabilidad; que sufren serios problemas de abandono, principalmente en zonas rurales; de salud, reflejados entre otros en problemas de salud mental; de precarización laboral con un número significativo trabajando de manera informal; y de educación con bajos niveles de escolaridad.</font></p>
 
-<p align="justify"><font size=2.5>En este contexto, las estadísticas demográficas demuestran que Las Condes se encuentra en un estado de envejecimiento avanzado, 1 de cada 5 residentes es adulto mayor, lo que la ubica dentro de las comunas urbanas más envejecidas del país. Entre la población mayor, destaca la alta cifra de personas de cuarta edad. Esto constituye una preocupación importante desde el municipio, especialmente si se considera que el 17% de los adultos mayores de 80 años viven solos.</font></p>
+<p align="justify"><font size=3>En este contexto, las estadísticas demográficas demuestran que Las Condes se encuentra en un estado de envejecimiento avanzado, 1 de cada 5 residentes es adulto mayor, lo que la ubica dentro de las comunas urbanas más envejecidas del país. Entre la población mayor, destaca la alta cifra de personas de cuarta edad. Esto constituye una preocupación importante desde el municipio, especialmente si se considera que el 17% de los adultos mayores de 80 años viven solos.</font></p>
 
-<p align="justify"><font size=2.5>Por otra parte, los análisis sugieren la existencia de importantes brechas socioeconómicas en la comuna, en relación a salud, acceso a los mercados laborales, bienestar subjetivo, entre otros, y que afectan las capacidades de desarrollo de las personas más vulnerables.</font></p>
+<p align="justify"><font size=3>Por otra parte, los análisis sugieren la existencia de importantes brechas socioeconómicas en la comuna, en relación a salud, acceso a los mercados laborales, bienestar subjetivo, entre otros, y que afectan las capacidades de desarrollo de las personas más vulnerables.</font></p>
 
-<p align="justify"><font size=2.5>En términos de salud se observa como los ingresos y la adscripción a un determinado sistema previsional se vinculan directamente con el estado de salud y el bienestar de los vecinos. Al mismo tiempo, se visualizan desigualdades estructurales en el funcionamiento de los mercados laborales, las que afectan principalmente a mujeres, adultos mayores y personas en situación de discapacidad. Los indicadores de pobreza multidimensional sugieren que la seguridad social y las jubilaciones son las principales dificultades que enfrentan los hogares de la comuna.</font></p>
+<p align="justify"><font size=3>En términos de salud se observa como los ingresos y la adscripción a un determinado sistema previsional se vinculan directamente con el estado de salud y el bienestar de los vecinos. Al mismo tiempo, se visualizan desigualdades estructurales en el funcionamiento de los mercados laborales, las que afectan principalmente a mujeres, adultos mayores y personas en situación de discapacidad. Los indicadores de pobreza multidimensional sugieren que la seguridad social y las jubilaciones son las principales dificultades que enfrentan los hogares de la comuna.</font></p>
 
-<p align="justify"><font size=2.5>En cuanto al bienestar subjetivo, se aprecia como la soledad y abandono, situación que afecta principalmente a los mayores de 80 años, y grupos más vulnerables, incide directamente en la salud autopercibida. En este sentido, se demuestra que la integración y participación social de los vecinos y vecinas, es fundamental en su calidad de vida.</font></p>
+<p align="justify"><font size=3>En cuanto al bienestar subjetivo, se aprecia como la soledad y abandono, situación que afecta principalmente a los mayores de 80 años, y grupos más vulnerables, incide directamente en la salud autopercibida. En este sentido, se demuestra que la integración y participación social de los vecinos y vecinas, es fundamental en su calidad de vida.</font></p>
 
-<p align="justify"><font size=2.5>Finalmente, este documento da cuenta de la realidad de las "clases medias" de la comuna. La expansión del consumo, el mayor acceso a oportunidades de educación, un rápido crecimiento económico y la disminución de la pobreza, junto al crecimiento de los segmentos medios, son cambios significativos que ha experimentado el país en los últimos treinta años, y que obligan a repensar las necesidades de los hogares. Esto, interpela de manera directa a los distintos departamentos de DECOM, integrar una mirada de "clases medias" en la gestión de las políticas sociales, es un paso importante hacia la búsqueda de la equidad.</font></p> 
+<p align="justify"><font size=3>Finalmente, este documento da cuenta de la realidad de las "clases medias" de la comuna. La expansión del consumo, el mayor acceso a oportunidades de educación, un rápido crecimiento económico y la disminución de la pobreza, junto al crecimiento de los segmentos medios, son cambios significativos que ha experimentado el país en los últimos treinta años, y que obligan a repensar las necesidades de los hogares. Esto, interpela de manera directa a los distintos departamentos de DECOM, integrar una mirada de "clases medias" en la gestión de las políticas sociales, es un paso importante hacia la búsqueda de la equidad.</font></p> 
 
 ## Metodología
 
-<p align="justify"><font size=2.5>El alcance del estudio Diagnóstico Social Comunal es descriptivo, y se realizó desde una óptica comparada de la comuna con las áreas de referencia seleccionadas – Nacional, Región Metropolitana y Comunas de referencia-. La unidad definida como “Comunas de referencia” corresponde al promedio de los indicadores obtenidos para las comunas de Vitacura y Providencia.</font></p>
+<p align="justify"><font size=3>El alcance del estudio Diagnóstico Social Comunal es descriptivo, y se realizó desde una óptica comparada de la comuna con las áreas de referencia seleccionadas – Nacional, Región Metropolitana y Comunas de referencia-. La unidad definida como “Comunas de referencia” corresponde al promedio de los indicadores obtenidos para las comunas de Vitacura y Providencia.</font></p>
 
-<p align="justify"><font size=2.5>El criterio de selección para las comunas de referencia se apoyó en el Índice de Calidad de Vida Urbano (ICVU). Este indicador ubica a las comunas de Las Condes, Vitacura y Providencia como las tres de mejor rendimiento en términos de calidad de vida, lo que satisface un criterio válido de comparación.</font></p>
+<p align="justify"><font size=3>El criterio de selección para las comunas de referencia se apoyó en el Índice de Calidad de Vida Urbano (ICVU). Este indicador ubica a las comunas de Las Condes, Vitacura y Providencia como las tres de mejor rendimiento en términos de calidad de vida, lo que satisface un criterio válido de comparación.</font></p>
 
-<p align="justify"><font size=2.5>Los datos utilizados provienen de fuentes de datos secundarias y de libre acceso. Es preciso aclarar que la encuesta Casen del año 2017 no cuenta con auto representación comunal, por lo que no permite obtener información representativa de la comuna. No obstante, cuando los análisis se realizaron sobre un “n” muestral amplio se empleó la información de 2017, para esto se corroboró el tamaño de la muestra ponderada de Casen con el Censo del mismo año. Por su parte, cuando se utilizaron los datos de Casen del año 2015 solo se utilizó la información de Providencia como Comuna de referencia, dado que para ese año Vitacura no contaba con una muestra representativa.</font></p>
+<p align="justify"><font size=3>Los datos utilizados provienen de fuentes de datos secundarias y de libre acceso. Es preciso aclarar que la encuesta Casen del año 2017 no cuenta con auto representación comunal, por lo que no permite obtener información representativa de la comuna. No obstante, cuando los análisis se realizaron sobre un “n” muestral amplio se empleó la información de 2017, para esto se corroboró el tamaño de la muestra ponderada de Casen con el Censo del mismo año. Por su parte, cuando se utilizaron los datos de Casen del año 2015 solo se utilizó la información de Providencia como Comuna de referencia, dado que para ese año Vitacura no contaba con una muestra representativa.</font></p>
 
 ---
 
 ## Capítulo 1: Geografía, Desarrollo Urbano y Movilidad
 
-<p align="justify"><font size=2.5>Las Condes se presenta como un extenso asentamiento urbano en la Región Metropolitana, con una población cercana a los 300 mil habitantes, es la novena comuna con mayor cantidad de población a nivel nacional y la más poblada del sector oriente del Gran Santiago.</font></p>
+<p align="justify"><font size=3>Las Condes se presenta como un extenso asentamiento urbano en la Región Metropolitana, con una población cercana a los 300 mil habitantes, es la novena comuna con mayor cantidad de población a nivel nacional y la más poblada del sector oriente del Gran Santiago.</font></p>
 
-<p align="justify"><font size=2.5>La comuna destaca por sus elevados estándares de calidad de vida urbana. Consolidar estos estándares y extenderlo a todos los sectores de la comuna supone un desafío significativo para la gestión municipal, especialmente en un contexto de transición avanzada hacia el envejecimiento de su población.</font></p>
+<p align="justify"><font size=3>La comuna destaca por sus elevados estándares de calidad de vida urbana. Consolidar estos estándares y extenderlo a todos los sectores de la comuna supone un desafío significativo para la gestión municipal, especialmente en un contexto de transición avanzada hacia el envejecimiento de su población.</font></p>
 
-<p align="justify"><font size=2.5>En esta línea, comprender cómo operan los sistemas de movilidad, transporte y equipamientos públicos en la ciudad es fundamental para una correcta planificación social. Estas variables, se enmarcan en un entendimiento global del desarrollo de las ciudades y comunidades, planteado por Naciones Unidas a través de los Objetivos de Desarrollo Sostenible (ODS).</font></p>
+<p align="justify"><font size=3>En esta línea, comprender cómo operan los sistemas de movilidad, transporte y equipamientos públicos en la ciudad es fundamental para una correcta planificación social. Estas variables, se enmarcan en un entendimiento global del desarrollo de las ciudades y comunidades, planteado por Naciones Unidas a través de los Objetivos de Desarrollo Sostenible (ODS).</font></p>
 
-<p align="justify"><font size=2.5>El presente capítulo entrega una breve caracterización geográfica de la comuna y su subdivisión territorial. El análisis incluye indicadores asociados a la infraestructura urbana, el transporte y la movilidad, y su relación con el cumplimiento de metas del Sistema de Indicadores y Estándares del Desarrollo Urbano (SIEDU).</font></p>
+<p align="justify"><font size=3>El presente capítulo entrega una breve caracterización geográfica de la comuna y su subdivisión territorial. El análisis incluye indicadores asociados a la infraestructura urbana, el transporte y la movilidad, y su relación con el cumplimiento de metas del Sistema de Indicadores y Estándares del Desarrollo Urbano (SIEDU).</font></p>
 
 ### 1.1 Subdivisión urbana: Unidades Vecinales
 
-<p align="justify"><font size=2.5>La Ley 19.418 sobre Juntas de Vecinos y demás organizaciones comunitarias (Ministerio del Interior, 1997) establece los criterios para subdividir los territorios de las comunas. La ley define una Unidad Vecinal como el territorio “(...) en que se subdividen las comunas, para efectos de descentralizar asuntos comunales y promover la participación ciudadana y la gestión comunitaria, y en el cual se constituyen y desarrollan sus funciones las juntas de vecinos”.</font></p>
+<p align="justify"><font size=3>La Ley 19.418 sobre Juntas de Vecinos y demás organizaciones comunitarias (Ministerio del Interior, 1997) establece los criterios para subdividir los territorios de las comunas. La ley define una Unidad Vecinal como el territorio “(...) en que se subdividen las comunas, para efectos de descentralizar asuntos comunales y promover la participación ciudadana y la gestión comunitaria, y en el cual se constituyen y desarrollan sus funciones las juntas de vecinos”.</font></p>
 
-<p align="justify"><font size=2.5>Las unidades vecinales son determinadas por el alcalde “...de propia iniciativa o a petición de las juntas de vecinos o de los vecinos interesados, con el acuerdo del Concejo y oyendo al Consejo Económico y Social de la Comuna”. Actualmente, existen 25 unidades vecinales distribuidas en el territorio comunal (ver mapa).</font></p>
+<p align="justify"><font size=3>Las unidades vecinales son determinadas por el alcalde “...de propia iniciativa o a petición de las juntas de vecinos o de los vecinos interesados, con el acuerdo del Concejo y oyendo al Consejo Económico y Social de la Comuna”. Actualmente, existen 25 unidades vecinales distribuidas en el territorio comunal (ver mapa).</font></p>
 
 <p align="center"><iframe src="https://www.google.com/maps/d/embed?mid=1Qp_2a8tQn-_jWYvTB_eWLO1CLU1arma3" width="650" height="450" frameborder="0"></iframe></p>
 
 #### 1.1.1 Organizaciones territoriales y funcionales.
 
-<p align="justify"><font size=2.5>La ley 19.418, también reconoce la organización de la comunidad bajo la forma de organizaciones territoriales y organizaciones funcionales. Entre las primeras destacan las juntas de vecinos, mientras que en las segundas aparecen los centros de madres, centros de padres y apoderados, organizaciones artísticas y culturales, organizaciones deportivas, y otras.</font></p>
+<p align="justify"><font size=3>La ley 19.418, también reconoce la organización de la comunidad bajo la forma de organizaciones territoriales y organizaciones funcionales. Entre las primeras destacan las juntas de vecinos, mientras que en las segundas aparecen los centros de madres, centros de padres y apoderados, organizaciones artísticas y culturales, organizaciones deportivas, y otras.</font></p>
 
-<p align="justify"><font size=2.5>De acuerdo con la definición normativa las organizaciones territoriales se caracterizan por constituirse con individuos que residen dentro de una misma unidad vecinal, y tienen por objetivo promover el desarrollo de la comunidad, defendiendo los intereses de los vecinos.Por su parte, las organizaciones funcionales corresponden a agrupaciones con personalidad jurídica y sin fines de lucro, que representan y promueven valores e intereses específicos de una comunidad.</font></p>
+<p align="justify"><font size=3>De acuerdo con la definición normativa las organizaciones territoriales se caracterizan por constituirse con individuos que residen dentro de una misma unidad vecinal, y tienen por objetivo promover el desarrollo de la comunidad, defendiendo los intereses de los vecinos.Por su parte, las organizaciones funcionales corresponden a agrupaciones con personalidad jurídica y sin fines de lucro, que representan y promueven valores e intereses específicos de una comunidad.</font></p>
 
-<p align="justify"><font size=2.5>A través del Departamento de Organizaciones Comunitarias, la Dirección de Desarrollo Comunitario de Las Condes fomenta y promueve el funcionamiento adecuado de estas organizaciones que canalizan los intereses y necesidades de los vecinos. En la *tabla 1* se describe la cantidad de organizaciones activas en la comuna.</font></p>
+<p align="justify"><font size=3>A través del Departamento de Organizaciones Comunitarias, la Dirección de Desarrollo Comunitario de Las Condes fomenta y promueve el funcionamiento adecuado de estas organizaciones que canalizan los intereses y necesidades de los vecinos. En la *tabla 1* se describe la cantidad de organizaciones activas en la comuna.</font></p>
 
 ```{r dataframetab1, echo=FALSE}
 
@@ -111,40 +112,40 @@ table1$organizacion <- factor(table1$organizacion)
 ```{r table1,results='ASIS'}
 
 knitr::kable(table1, "html", col.names = c('Organización', 'Cantidad'), caption = "Tabla 1. Registro de organizaciones comunitarias en Las Condes.", align = 'lc') %>%
-kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = "hover", font_size = 12, full_width = TRUE)
+kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = "hover", font_size = 13, full_width = TRUE)
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos del Departamento de Organizaciones Comunitarias DECOM*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Departamento de Organizaciones Comunitarias DECOM*</font></p>
 
 ### 1.2. Desarrollo urbano
 
-<p align="justify"><font size=2.5>La Nueva Agenda Urbana (2016), es un acuerdo internacional ratificado por el Estado de Chile en la Conferencia sobre Vivienda y Desarrollo Sostenible de Naciones Unidas, que invita a poner los recursos y esfuerzos en alcanzar la equidad urbana, con el propósito de lograr que las ciudades y los asentamientos humanos sean inclusivos, seguros, resilientes y sostenibles.</font></p>
+<p align="justify"><font size=3>La Nueva Agenda Urbana (2016), es un acuerdo internacional ratificado por el Estado de Chile en la Conferencia sobre Vivienda y Desarrollo Sostenible de Naciones Unidas, que invita a poner los recursos y esfuerzos en alcanzar la equidad urbana, con el propósito de lograr que las ciudades y los asentamientos humanos sean inclusivos, seguros, resilientes y sostenibles.</font></p>
 
-<p align="justify"><font size=2.5>En relación a lo anterior, el Instituto Nacional de Estadísticas (INE) a través del Sistema de Indicadores y Estándares del Desarrollo Urbano (SIEDU), ha dispuesto una serie de mediciones que reportan el compromiso de las ciudades para alcanzar el desarrollo urbano. En esta línea el presente apartado aborda estadísticas de áreas verdes, transporte y movilidad a nivel comunal.</font></p>
+<p align="justify"><font size=3>En relación a lo anterior, el Instituto Nacional de Estadísticas (INE) a través del Sistema de Indicadores y Estándares del Desarrollo Urbano (SIEDU), ha dispuesto una serie de mediciones que reportan el compromiso de las ciudades para alcanzar el desarrollo urbano. En esta línea el presente apartado aborda estadísticas de áreas verdes, transporte y movilidad a nivel comunal.</font></p>
 
 #### 1.2.1 Parques e infraestructura urbana
 
-<p align="justify"><font size=2.5>La presencia de áreas verdes en las ciudades genera una serie de externalidades positivas que se traducen en integración, cohesión, participación social de las comunidades, y beneficios sociales intangibles relacionados a un concepto amplio de bienestar y calidad de vida (Anguluri & Narayanan, 2017; Ayala-Azcárraga, Diaz & Zambrano, 2019).</font></p>
+<p align="justify"><font size=3>La presencia de áreas verdes en las ciudades genera una serie de externalidades positivas que se traducen en integración, cohesión, participación social de las comunidades, y beneficios sociales intangibles relacionados a un concepto amplio de bienestar y calidad de vida (Anguluri & Narayanan, 2017; Ayala-Azcárraga, Diaz & Zambrano, 2019).</font></p>
 
-<p align="justify"><font size=2.5>Las Condes, actualmente, cuenta con una superficie de 701.515 metros cuadrados de parques urbanos y 679.627 metros cuadrados de plazas que en total suman 138 hectáreas de áreas verdes urbanas, según los datos del Sistema de Indicadores y Estándares del Desarrollo Urbano (Instituto Nacional de Estadísticas & PNUD, 2018).</font></p>
+<p align="justify"><font size=3>Las Condes, actualmente, cuenta con una superficie de 701.515 metros cuadrados de parques urbanos y 679.627 metros cuadrados de plazas que en total suman 138 hectáreas de áreas verdes urbanas, según los datos del Sistema de Indicadores y Estándares del Desarrollo Urbano (Instituto Nacional de Estadísticas & PNUD, 2018).</font></p>
 
-<p align="justify"><font size=2.5>Al analizar la cantidad de áreas verdes urbanas per cápita, los datos revelan que en la comuna existen 4,7 metros cuadrados de áreas verdes por habitante, distante de la meta propuesta por el Consejo Nacional de Desarrollo Urbano (CNDU) que es de 10 metros cuadrados por persona. En tanto, el índice de calidad de parques urbanos y plazas que mide dimensiones de seguridad, mantención general, vegetación, diversidad de equipamientos y accesibilidad universal sugiere que la comuna presenta un alto estándar de calidad de parques urbanos y plazas de uso público, siendo la dimensión de accesibilidad universal la que presenta una mayor deficiencia.</font></p>
+<p align="justify"><font size=3>Al analizar la cantidad de áreas verdes urbanas per cápita, los datos revelan que en la comuna existen 4,7 metros cuadrados de áreas verdes por habitante, distante de la meta propuesta por el Consejo Nacional de Desarrollo Urbano (CNDU) que es de 10 metros cuadrados por persona. En tanto, el índice de calidad de parques urbanos y plazas que mide dimensiones de seguridad, mantención general, vegetación, diversidad de equipamientos y accesibilidad universal sugiere que la comuna presenta un alto estándar de calidad de parques urbanos y plazas de uso público, siendo la dimensión de accesibilidad universal la que presenta una mayor deficiencia.</font></p>
 
-<p align="justify"><font size=2.5>En la *figura 1* se muestra la distribución de metros cuadrados de áreas verdes por habitantes para las comunas de la Provincia de Santiago a través de un mapa, aquellas comunas con mayor cantidad de áreas verdes per cápita aparecen más oscuras, y se incluye una clasificación del índice de calidad de parques urbanos y plazas de uso público.</font></p>
+<p align="justify"><font size=3>En la *figura 1* se muestra la distribución de metros cuadrados de áreas verdes por habitantes para las comunas de la Provincia de Santiago a través de un mapa, aquellas comunas con mayor cantidad de áreas verdes per cápita aparecen más oscuras, y se incluye una clasificación del índice de calidad de parques urbanos y plazas de uso público.</font></p>
 
-<p align="center"><font size=2.5>Figura 1. Áreas verdes (mt2/habitante) comunas de la Provincia de Santiago.</font></p>
+<p align="center"><font size=3>Figura 1. Áreas verdes (mt2/habitante) comunas de la Provincia de Santiago.</font></p>
 <p align="center"><iframe src="https://estudiosdecom.github.io/areasverdesurbanasGranStgo/#11/-33.4486/-70.6270" width="650" height="450" frameborder="0"></iframe></p>
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos del Sistema de Indicadores y Estándares del Desarrollo Urbano(SIEDU)*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Sistema de Indicadores y Estándares del Desarrollo Urbano(SIEDU)*</font></p>
 
-<p align="justify"><font size=2.5>Las comunas de referencia, Vitacura y Providencia se encuentran dentro de las tres con mayor cantidad de áreas verdes por persona con un promedio de 17,2 metros cuadrados por habitante. Vitacura se ubica en el primer lugar a nivel nacional con un índice de 18,9 m2/hab., mientras que Providencia aparece en el tercer lugar con 15,5 m2/hab.</font></p>
+<p align="justify"><font size=3>Las comunas de referencia, Vitacura y Providencia se encuentran dentro de las tres con mayor cantidad de áreas verdes por persona con un promedio de 17,2 metros cuadrados por habitante. Vitacura se ubica en el primer lugar a nivel nacional con un índice de 18,9 m2/hab., mientras que Providencia aparece en el tercer lugar con 15,5 m2/hab.</font></p>
 
-<p align="justify"><font size=2.5>En la misma línea, SIEDU rescata información respecto a la distancia mínima promedio[^1] que existe entre los hogares y las áreas verdes comunales. El objetivo de este indicador es visualizar la accesibilidad que poseen los vecinos a las áreas verdes de su comuna. De acuerdo con las metas planteadas por el CNDU, una distancia inferior a 400 metros es una cifra aceptable que permite elevar los estándares de calidad de vida urbana.</font></p>
+<p align="justify"><font size=3>En la misma línea, SIEDU rescata información respecto a la distancia mínima promedio[^1] que existe entre los hogares y las áreas verdes comunales. El objetivo de este indicador es visualizar la accesibilidad que poseen los vecinos a las áreas verdes de su comuna. De acuerdo con las metas planteadas por el CNDU, una distancia inferior a 400 metros es una cifra aceptable que permite elevar los estándares de calidad de vida urbana.</font></p>
 
-<p align="justify"><font size=2.5>En términos de distancia a plazas públicas y parques urbanos, Las Condes se ubica dentro del lugar 29 del ranking regional, con una distancia media de 335 metros, un nivel aceptable según los parámetros fijados por CNDU, y se encuentra en una mejor situación respecto al promedio de las comunas de referencia (397 metros de distancia promedio).</font></p>
+<p align="justify"><font size=3>En términos de distancia a plazas públicas y parques urbanos, Las Condes se ubica dentro del lugar 29 del ranking regional, con una distancia media de 335 metros, un nivel aceptable según los parámetros fijados por CNDU, y se encuentra en una mejor situación respecto al promedio de las comunas de referencia (397 metros de distancia promedio).</font></p>
 
-<p align="justify"><font size=2.5>No obstante, si se observa la interacción de ambos indicadores, distancia y superficie, Las Condes aparece fuera del cuadrante de cumplimiento en acceso a servicios y equipamientos urbanos del CNDU. En este sentido, surge un desafío importante para el municipio. En la *figura 2* se muestra el cumplimiento de los indicadores de SIEDU por cuadrante para todas las comunas del gran Santiago.</font></p>
+<p align="justify"><font size=3>No obstante, si se observa la interacción de ambos indicadores, distancia y superficie, Las Condes aparece fuera del cuadrante de cumplimiento en acceso a servicios y equipamientos urbanos del CNDU. En este sentido, surge un desafío importante para el municipio. En la *figura 2* se muestra el cumplimiento de los indicadores de SIEDU por cuadrante para todas las comunas del gran Santiago.</font></p>
 
-<p align="justify"><font size=2.5>Figura 2. Cumplimiento comunal de indicadores de acceso a servicios y equipamientos públicos de áreas verdes gran Santiago.</font></p>
+<p align="justify"><font size=3>Figura 2. Cumplimiento comunal de indicadores de acceso a servicios y equipamientos públicos de áreas verdes gran Santiago.</font></p>
 
 ```{r dataframe fig2, echo=FALSE}
 
@@ -173,15 +174,15 @@ averdes <- averdes  + scale_fill_manual(values = c('#009900', '#00C0B8','#FFCC33
 div( ggplotly(averdes, tooltip="text") %>% config(displayModeBar = T) , align = "center")
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos de SIEDU*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos de SIEDU*</font></p>
 
 #### 1.2.2 Transporte y movilidad
 
-<p align="justify"><font size=2.5>La información señalada en el Plan de Desarrollo Comunal 2018 – 2021 (PLADECO), acusa un aumento significativo del tránsito vehicular en Las Condes durante los últimos años, con un crecimiento anual que varía entre un 6% y 17% según el área observada. Por su parte, se indica que el parque automotriz bordea un total de ciento diez mil vehículos.</font></p>
+<p align="justify"><font size=3>La información señalada en el Plan de Desarrollo Comunal 2018 – 2021 (PLADECO), acusa un aumento significativo del tránsito vehicular en Las Condes durante los últimos años, con un crecimiento anual que varía entre un 6% y 17% según el área observada. Por su parte, se indica que el parque automotriz bordea un total de ciento diez mil vehículos.</font></p>
 
-<p align="justify"><font size=2.5>Los puntos de mayor congestión son el eje Américo Vespucio y Manquehue, estos constituyen los mayores desafíos para la gestión de tránsito. La solución del eje Américo Vespucio excede la capacidad del municipio por lo que, las obras que se harán cargo de esta problemática han sido abordadas por el nivel central a través del sistema de concesiones.</font></p>
+<p align="justify"><font size=3>Los puntos de mayor congestión son el eje Américo Vespucio y Manquehue, estos constituyen los mayores desafíos para la gestión de tránsito. La solución del eje Américo Vespucio excede la capacidad del municipio por lo que, las obras que se harán cargo de esta problemática han sido abordadas por el nivel central a través del sistema de concesiones.</font></p>
 
-<p align="justify"><font size=2.5>Del mismo modo se observan grados de congestión en otros sectores de la comuna, los cuales están fuera del rango aceptado, a partir de ahí se están desarrollando proyectos de consolidación de la vialidad comunal. En la *tabla 2* se indica la afluencia de vehículos por hora en los puntos de mayor demanda, por horario punta (mañana y tarde). Con estos flujos, las velocidades promedio en la comuna son aceptables en horas punta, alcanzando una velocidad media entre 25 y 50 km/h.</font></p>
+<p align="justify"><font size=3>Del mismo modo se observan grados de congestión en otros sectores de la comuna, los cuales están fuera del rango aceptado, a partir de ahí se están desarrollando proyectos de consolidación de la vialidad comunal. En la *tabla 2* se indica la afluencia de vehículos por hora en los puntos de mayor demanda, por horario punta (mañana y tarde). Con estos flujos, las velocidades promedio en la comuna son aceptables en horas punta, alcanzando una velocidad media entre 25 y 50 km/h.</font></p>
 
 ```{r dataframetab2, echo=FALSE}
 
@@ -196,16 +197,16 @@ table2$lugar <- factor(table2$lugar)
 ```{r table2html,results='ASIS'}
 
 knitr::kable(table2, "html", col.names = c('Lugar', 'Horario punta mañana', 'Horario punta tarde'), caption = "Tabla 2. Tránsito vehicular en horario punta.", align = 'lcc' ) %>%
-  kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = "hover", font_size = 12, full_width = TRUE) 
+  kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = "hover", font_size = 13, full_width = TRUE) 
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos del Sistema de Indicadores y Estándares del Desarrollo Urbano*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Sistema de Indicadores y Estándares del Desarrollo Urbano*</font></p>
 
-<p align="justify"><font size=2.5>Al mismo tiempo, las estimaciones de SIEDU indican que el 90% de los viajes en transporte público en la comuna tiene una duración máxima de 75 minutos en horario punta mañana, mientras  que para el caso de las comunas de referencia la media es de 76 minutos.</font></p>
+<p align="justify"><font size=3>Al mismo tiempo, las estimaciones de SIEDU indican que el 90% de los viajes en transporte público en la comuna tiene una duración máxima de 75 minutos en horario punta mañana, mientras  que para el caso de las comunas de referencia la media es de 76 minutos.</font></p>
 
-<p align="justify"><font size=2.5>Para el CNDU la duración deseable de los viajes no debiese exceder los 60 min., considerando el costo de oportunidad que implica el tiempo de traslado para las familias .Las Condes se encuentra cercana a alcanzar niveles aceptables de duración de viajes en transporte público. En la *figura 3* se clasifica la brecha existente entre el indicador y la meta.</font></p>
+<p align="justify"><font size=3>Para el CNDU la duración deseable de los viajes no debiese exceder los 60 min., considerando el costo de oportunidad que implica el tiempo de traslado para las familias .Las Condes se encuentra cercana a alcanzar niveles aceptables de duración de viajes en transporte público. En la *figura 3* se clasifica la brecha existente entre el indicador y la meta.</font></p>
 
-<p align="justify"><font size=2.5>Figura 3. Clasificación brecha tiempos de traslado en transporte público a nivel comunal en la Provincia de Santiago respecto de la meta CNDU (60 min).</font></p>
+<p align="justify"><font size=3>Figura 3. Clasificación brecha tiempos de traslado en transporte público a nivel comunal en la Provincia de Santiago respecto de la meta CNDU (60 min).</font></p>
 
 ```{r dataframefig3, include=FALSE}
 
@@ -235,20 +236,20 @@ transportplot <- transportplot +  ggtitle("") + ylab("Tiempo de traslado (min)")
     legend.box = 'horizontal',
     legend.title = element_blank(),
     text = element_text(size = 10,  color = "black" )) + scale_y_discrete(breaks = seq(0,150,25))  + 
-    geom_text(aes(label = label),size = 3, color = 'azure1', position = position_stack(vjust = 0.9))
+    geom_text(aes(label = label),size = 3.5, color = 'azure1', position = position_stack(vjust = 0.9))
 #Change fill colour
 transportplot <- transportplot + scale_fill_manual(values = c('#CC0033', '#FFCC33', '#009900'))
 
 div( ggplotly(transportplot, tooltip="text") %>% config(displayModeBar = T) , align = "center")
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos de SIEDU*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos de SIEDU*</font></p>
 
-<p align="justify"><font size=2.5>Según los datos recolectados del PLADECO 2018 – 2021, se calcula que en promedio existen alrededor de un millón doscientos mil viajes diarios en la comuna, siendo la mitad de estos dentro de la misma. El principal destino fuera de la comuna es Vitacura con un 13% seguido por Providencia y Lo Barnechea con un porcentaje que bordea el 7%.</font></p>
+<p align="justify"><font size=3>Según los datos recolectados del PLADECO 2018 – 2021, se calcula que en promedio existen alrededor de un millón doscientos mil viajes diarios en la comuna, siendo la mitad de estos dentro de la misma. El principal destino fuera de la comuna es Vitacura con un 13% seguido por Providencia y Lo Barnechea con un porcentaje que bordea el 7%.</font></p>
 
-<p align="justify"><font size=2.5>Por otra parte, la Encuesta Casen recoge información relativa al tipo de transporte utilizado por la población ocupada para dirigirse a su lugar de trabajo. Al respecto, los datos señalan que el medio de transporte más utilizado por los vecinos de Las Condes para llegar a su lugar de trabajo es el vehículo motorizado particular (auto, camioneta, motocicleta u otro), seguido del uso de transporte público. En la *figura 4* se describen los medios de transporte más utilizados para movilizarse entre el hogar y el lugar de trabajo.</font></p>
+<p align="justify"><font size=3>Por otra parte, la Encuesta Casen recoge información relativa al tipo de transporte utilizado por la población ocupada para dirigirse a su lugar de trabajo. Al respecto, los datos señalan que el medio de transporte más utilizado por los vecinos de Las Condes para llegar a su lugar de trabajo es el vehículo motorizado particular (auto, camioneta, motocicleta u otro), seguido del uso de transporte público. En la *figura 4* se describen los medios de transporte más utilizados para movilizarse entre el hogar y el lugar de trabajo.</font></p>
 
-<p align="center"><font size=2.5>Figura 4. Medio de transporte frecuentemente utilizado para traslado entre el hogar y lugar de trabajo.</font></p>
+<p align="center"><font size=3>Figura 4. Medio de transporte frecuentemente utilizado para traslado entre el hogar y lugar de trabajo.</font></p>
 
 ```{r dataframefig4, include=FALSE}
 
@@ -270,36 +271,36 @@ medtranspplot <- medtranspplot + geom_bar(stat = 'identity',
 #Add labels + custom theme
 medtranspplot <- medtranspplot +  ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(
 text = element_text(size = 10,  color = "black" )) + scale_y_continuous(breaks = seq(0,0.5,0.1), labels = scales::percent_format(accuracy = 1)) +
-geom_text(aes(label = paste0(label,"%")), size = 3, color = "black", position = position_stack(vjust = 0.5), show.legend = FALSE )  + coord_flip()
+geom_text(aes(label = paste0(label,"%")), size = 3.5, color = "black", position = position_stack(vjust = 0.5), show.legend = FALSE )  + coord_flip()
 
 div( ggplotly(medtranspplot, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos de Casen 2015*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos de Casen 2015*</font></p>
 
-<p align="justify"><font size=2.5>En materia de transporte, existe una serie de desafíos para empujar el desarrollo sostenible y sustentable. En este sentido, el municipio de Las Condes ha incorporado un número importante de servicios de electromovilidad disponibles para los vecinos (scooters y bicicletas), además ha puesto a disposición una flota de buses eléctricos que conectan zonas de residencia que no se encuentran totalmente cubiertas por el sistema de transporte público metropolitano. Esto, con el objetivo de mejorar la capacidad de movilidad urbana en la comuna.</font></p>
+<p align="justify"><font size=3>En materia de transporte, existe una serie de desafíos para empujar el desarrollo sostenible y sustentable. En este sentido, el municipio de Las Condes ha incorporado un número importante de servicios de electromovilidad disponibles para los vecinos (scooters y bicicletas), además ha puesto a disposición una flota de buses eléctricos que conectan zonas de residencia que no se encuentran totalmente cubiertas por el sistema de transporte público metropolitano. Esto, con el objetivo de mejorar la capacidad de movilidad urbana en la comuna.</font></p>
 
 ---
 
 ## Capítulo 2: Estadísticas demográficas
 
-<p align="justify"><font size=2.5>En el presente capítulo se explora la estructura demográfica de Las Condes, con un foco en el envejecimiento de la población y el fenómeno migratorio. El objetivo de esta sección es caracterizar a los vecinos y hogares de la comuna en un análisis comparado con las áreas de referencia.</font></p>
+<p align="justify"><font size=3>En el presente capítulo se explora la estructura demográfica de Las Condes, con un foco en el envejecimiento de la población y el fenómeno migratorio. El objetivo de esta sección es caracterizar a los vecinos y hogares de la comuna en un análisis comparado con las áreas de referencia.</font></p>
 
-<p align="justify"><font size=2.5>En primer lugar, se presenta la estructura demográfica de la comuna según su composición por sexo y edad. Luego, se describen los indicadores de envejecimiento y se caracteriza la población de personas mayores. Enseguida, se exponen indicadores de densidad poblacional y se describe la composición de los hogares. Finalmente, se aborda el fenómeno migratorio, considerando migración internacional y migración interna, además de abarcar al segmento de población perteneciente a pueblos originarios.</font></p>
+<p align="justify"><font size=3>En primer lugar, se presenta la estructura demográfica de la comuna según su composición por sexo y edad. Luego, se describen los indicadores de envejecimiento y se caracteriza la población de personas mayores. Enseguida, se exponen indicadores de densidad poblacional y se describe la composición de los hogares. Finalmente, se aborda el fenómeno migratorio, considerando migración internacional y migración interna, además de abarcar al segmento de población perteneciente a pueblos originarios.</font></p>
 
 ### 2.1 Estructura demográfica
 
-<p align="justify"><font size=2.5>El Censo 2017 reveló que en Chile existen 17.574.003 habitantes distribuidos a lo largo del territorio nacional con una proyección de 19,1 millones al años 2019. La mayor concentración de población se registra en la Región Metropolitana (40,5%), territorio que alberga la capital nacional (Santiago).</font></p> 
+<p align="justify"><font size=3>El Censo 2017 reveló que en Chile existen 17.574.003 habitantes distribuidos a lo largo del territorio nacional con una proyección de 19,1 millones al años 2019. La mayor concentración de población se registra en la Región Metropolitana (40,5%), territorio que alberga la capital nacional (Santiago).</font></p> 
 
-<p align="justify"><font size=2.5>En Las Condes, a través del mismo instrumento se contabilizaron un total de 294.838 personas, de las cuales 287.023 corresponden a residentes permanentes[^2]. Si se considera la población total, la comuna representa el 1,7% de los habitantes del país y el 4,1% de la Región Metropolitana. La comuna es la novena más poblada en Chile.</font></p>
+<p align="justify"><font size=3>En Las Condes, a través del mismo instrumento se contabilizaron un total de 294.838 personas, de las cuales 287.023 corresponden a residentes permanentes[^2]. Si se considera la población total, la comuna representa el 1,7% de los habitantes del país y el 4,1% de la Región Metropolitana. La comuna es la novena más poblada en Chile.</font></p>
 
-<p align="justify"><font size=2.5>Al mismo tiempo, las estadísticas censales sugieren que Las Condes registra la segunda tasa más elevada de envejecimiento relativo[^3] en la Región Metropolitana, y los datos de extranjería indican que es la tercera comuna con mayor población migrante en Chile.</font></p>
+<p align="justify"><font size=3>Al mismo tiempo, las estadísticas censales sugieren que Las Condes registra la segunda tasa más elevada de envejecimiento relativo[^3] en la Región Metropolitana, y los datos de extranjería indican que es la tercera comuna con mayor población migrante en Chile.</font></p>
 
 #### 2.1.1 Composición de la población según sexo
 
-<p align="justify"><font size=2.5>En Las Condes la composición de la población por sexo indica que existe una mayor proporción de mujeres, tendencia observada para el resto del país. El 53,9% de los vecinos de Las Condes corresponde a población femenina, a nivel nacional y regional esta alcanza el 51,1% y 51,3% respectivamente, mientras que en las comunas de referencia la proporción de mujeres es de 54,4%.</font></p>
+<p align="justify"><font size=3>En Las Condes la composición de la población por sexo indica que existe una mayor proporción de mujeres, tendencia observada para el resto del país. El 53,9% de los vecinos de Las Condes corresponde a población femenina, a nivel nacional y regional esta alcanza el 51,1% y 51,3% respectivamente, mientras que en las comunas de referencia la proporción de mujeres es de 54,4%.</font></p>
 
-<p align="center"><font size=2.5>Figura 5. Proporción población por sexo según área de referencia.</font></p>
+<p align="center"><font size=3>Figura 5. Proporción población por sexo según área de referencia.</font></p>
 
 ```{r dataframfig5, include=FALSE}
 
@@ -329,7 +330,7 @@ psexplot <-  ggplot(pobl_sexo_sorted, aes ( y= prop_pobl, x = area, fill = sexo,
 psexplot <- psexplot + ggtitle("") + ylab("") + xlab("") + theme_calc() + 
 theme(text = element_text(size = 10,  color = "black" ), legend.position = 'top' , legend.box = 'vertical', legend.title = element_blank()) + scale_y_continuous(breaks = seq(0,1,0.25), labels = scales::percent_format(accuracy = 1)) 
 #Add label % 
-psexplot <- psexplot + geom_text (aes(label = paste0(label,"%"), y=labelpos), size = 3, color = 'azure2', position=position_stack (vjust = 0.25, reverse = TRUE))
+psexplot <- psexplot + geom_text (aes(label = paste0(label,"%"), y=labelpos), size = 3.5, color = 'azure2', position=position_stack (vjust = 0.25, reverse = TRUE))
 
 #Select fill color
 psexplot <- psexplot + scale_fill_manual(values = c('#00C0B8', '#F8766D')) + coord_flip()
@@ -337,9 +338,9 @@ psexplot <- psexplot + scale_fill_manual(values = c('#00C0B8', '#F8766D')) + coo
 div( ggplotly(psexplot, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
 
-<p align="justify"><font size=2.5>En la misma línea, la razón de sexo [^4] a nivel comunal indica un total de 85,5 hombres por cada 100 mujeres. Este índice es menor en comparación a la realidad nacional y regional, pero similar a las Comunas de referencia (*tabla 3*). Al mismo tiempo, se observa en Las Condes que por cada 100 hombres existen 116,9 mujeres.</font></p>
+<p align="justify"><font size=3>En la misma línea, la razón de sexo [^4] a nivel comunal indica un total de 85,5 hombres por cada 100 mujeres. Este índice es menor en comparación a la realidad nacional y regional, pero similar a las Comunas de referencia (*tabla 3*). Al mismo tiempo, se observa en Las Condes que por cada 100 hombres existen 116,9 mujeres.</font></p>
 
 ```{r dataframetab3, echo=FALSE}
 indicemf = c('Índice de masculinidad', 'Índice de feminidad')
@@ -353,18 +354,18 @@ table3 <- data.frame(indicemf, lcfm, crfm, rmfm, nacfm)
 
 ```{r table3html,results='ASIS'}
 knitr::kable(table3, "html", col.names = c('Razón de sexo', 'Las Condes', 'Comunas de referencia', 'Región Metropolitana', 'Nacional'), caption = "Tabla 3. Índice de masculinidad y feminidad según área de referencia.", align = 'lcccc' ) %>%
-  kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = "hover",font_size = 12, full_width = TRUE) 
+  kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = "hover",font_size = 13, full_width = TRUE) 
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
 
-<p align="justify"><font size=2.5>Las estadísticas reflejan una tendencia a nivel nacional. En la población existe una mayor proporción de mujeres, siendo más evidente esta diferencia en las Comunas de referencia y en Las Condes. Tal como se verá en los siguientes apartados, esta mayor cantidad de mujeres es constante en segmentos como adultos mayores, migrantes y pueblos originarios.</font></p>
+<p align="justify"><font size=3>Las estadísticas reflejan una tendencia a nivel nacional. En la población existe una mayor proporción de mujeres, siendo más evidente esta diferencia en las Comunas de referencia y en Las Condes. Tal como se verá en los siguientes apartados, esta mayor cantidad de mujeres es constante en segmentos como adultos mayores, migrantes y pueblos originarios.</font></p>
 
 #### 2.1.2 Composición etaria de la población
 
-<p align="justify"><font size=2.5>Al analizar la estructura poblacional por edades quinquenales se observa que el rango etario de mayor prevalencia en Las Condes es entre los 25 a 29 años de edad (8,8%), lo cual se condice con lo encontrado a nivel nacional (8,4%) y regional (9%).</font></p>
+<p align="justify"><font size=3>Al analizar la estructura poblacional por edades quinquenales se observa que el rango etario de mayor prevalencia en Las Condes es entre los 25 a 29 años de edad (8,8%), lo cual se condice con lo encontrado a nivel nacional (8,4%) y regional (9%).</font></p>
 
-<p align="justify"><font size=2.5>En cuanto a la edad promedio de la comuna esta alcanza los 39,1 años, superando la media nacional (35,8 años) y de la Región Metropolitana (35,6 años), y marginalmente por debajo del promedio de las Comunas de referencia (39,5). Ver en la *tabla 4*.</font></p>
+<p align="justify"><font size=3>En cuanto a la edad promedio de la comuna esta alcanza los 39,1 años, superando la media nacional (35,8 años) y de la Región Metropolitana (35,6 años), y marginalmente por debajo del promedio de las Comunas de referencia (39,5). Ver en la *tabla 4*.</font></p>
 
 ```{r dataframetab4, echo=FALSE}
 
@@ -380,18 +381,18 @@ table4 <- data.frame(indiceedad, lcedad, credad, rmedad, nacedad)
 ```{r table4html,results='ASIS'}
 
 knitr::kable(table4, "html", col.names = c('Índice edad', 'Las Condes', 'Comunas de referencia', 'Región Metropolitana', 'Nacional'), caption = "Tabla 4. Edad media y mediana según área de referencia", align = 'lcccc' ) %>%
-  kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = "hover",font_size = 12 , full_width = TRUE) 
+  kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = "hover",font_size = 13 , full_width = TRUE) 
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
 
-<p align="justify"><font size=2.5>Una herramienta útil al momento de estudiar la composición etaria de una población es la pirámide poblacional. En esta, se representan gráficamente datos estadísticos básicos de una comunidad como el sexo y la edad. Además, permite realizar comparaciones entre grupos y observar fenómenos de envejecimiento poblacional.</font></p>
+<p align="justify"><font size=3>Una herramienta útil al momento de estudiar la composición etaria de una población es la pirámide poblacional. En esta, se representan gráficamente datos estadísticos básicos de una comunidad como el sexo y la edad. Además, permite realizar comparaciones entre grupos y observar fenómenos de envejecimiento poblacional.</font></p>
 
-<p align="justify"><font size=2.5>Al analizar la pirámide poblacional para las áreas de referencia, se observan tendencias similares a nivel comunal, regional, y nacional, las cuales permiten concluir que la población se encuentra en transición- en diferentes grados- desde una estructura estacionaria a una regresiva (*figura 6*).</font></p>
+<p align="justify"><font size=3>Al analizar la pirámide poblacional para las áreas de referencia, se observan tendencias similares a nivel comunal, regional, y nacional, las cuales permiten concluir que la población se encuentra en transición- en diferentes grados- desde una estructura estacionaria a una regresiva (*figura 6*).</font></p>
 
-<p align="justify"><font size=2.5>Las pirámides estacionarias se caracterizan por la presencia de un equilibrio entre los distintos rangos etarios, el cual se explica por tasas de natalidad y mortalidad equivalentes. Por su parte, una pirámide regresiva presenta en su parte superior una estructura más ancha que en sus bases, como consecuencia del descenso de la natalidad y el aumento en la esperanza de vida. En general, se asocia este tipo de pirámides con sociedades desarrolladas.</font></p>
+<p align="justify"><font size=3>Las pirámides estacionarias se caracterizan por la presencia de un equilibrio entre los distintos rangos etarios, el cual se explica por tasas de natalidad y mortalidad equivalentes. Por su parte, una pirámide regresiva presenta en su parte superior una estructura más ancha que en sus bases, como consecuencia del descenso de la natalidad y el aumento en la esperanza de vida. En general, se asocia este tipo de pirámides con sociedades desarrolladas.</font></p>
 
-<p align="center"><font size=2.5>Figura 6. Pirámide población según área de referencia.</font></p>
+<p align="center"><font size=3>Figura 6. Pirámide población según área de referencia.</font></p>
 ```{r dataframe fig6, echo=FALSE}
 #dataframe
 edad_quin = c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20)
@@ -440,12 +441,12 @@ div( ggplotly(pyramidplot, tooltip="text") %>% config(displayModeBar = T), align
 
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
 
-<p align="justify"><font size=2.5>Respecto de la natalidad, el índice de paridez media[^5] sugiere que en promedio las mujeres
+<p align="justify"><font size=3>Respecto de la natalidad, el índice de paridez media[^5] sugiere que en promedio las mujeres
 en edad fértil han tenido menos de un hijo, cifra menor a la tasa de reemplazo generacional esperada[^6]. En la *figura 7* se describe el índice de paridez por área de referencia. A nivel comunal las cifras son significativamente menores a las observadas en el país.</font></p>
 
-<p align="center"><font size=2.5>Figura 7. Índice de paridez media según área de referencia.</font></p>
+<p align="center"><font size=3>Figura 7. Índice de paridez media según área de referencia.</font></p>
 
 ```{r dataframe fig7, echo=FALSE}
 
@@ -463,7 +464,7 @@ indice_pm$label <- formatC(indice_pm$indicepm, digits = 2, decimal.mark="," ,big
 parmedplot <-  ggplot(indice_pm, aes ( y= area_pm, x = indicepm, fill = area_pm, text = paste(label) )) + 
 geom_bar(stat = 'identity' ,colour = 'azure2', width = 0.8)
 #Add labels + custom theme
-parmedplot <- parmedplot + ggtitle("") + ylab("") + xlab("") + theme_light() + theme(legend.position = "none", text = element_text(size = 10,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1.5 ,0.3)) + geom_text(aes(label = label), size = 3, color = 'azure2', position=position_stack (vjust = 0.9)) 
+parmedplot <- parmedplot + ggtitle("") + ylab("") + xlab("") + theme_light() + theme(legend.position = "none", text = element_text(size = 10,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1.5 ,0.3)) + geom_text(aes(label = label), size = 3.5, color = 'azure2', position=position_stack (vjust = 0.9)) 
 #Select fill color
 
 parmedplot <- parmedplot + scale_fill_manual(values = c('#00C0B8','#00C0B8','#00C0B8','slategray3'))
@@ -471,29 +472,29 @@ parmedplot <- parmedplot + scale_fill_manual(values = c('#00C0B8','#00C0B8','#00
 div(ggplotly(parmedplot, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
 
-<p align="justify"><font size=2.5>El descenso de la natalidad y la elevada expectativa de vida existente en la comuna (ver estadísticas de Salud), indican que esta se encuentra en un estado de envejecimiento avanzado, con una alta proporción de adultos mayores. A continuación, se describen una serie de indicadores que dan cuenta de los niveles de longevidad alcanzados en Las Condes.</font></p>
+<p align="justify"><font size=3>El descenso de la natalidad y la elevada expectativa de vida existente en la comuna (ver estadísticas de Salud), indican que esta se encuentra en un estado de envejecimiento avanzado, con una alta proporción de adultos mayores. A continuación, se describen una serie de indicadores que dan cuenta de los niveles de longevidad alcanzados en Las Condes.</font></p>
 
-<p align="justify"><font size=2.5>En la comuna existe una población total de 61.805 adultos mayores según los datos del Censo 2017, si se considera que en 1992 la población de tercera edad era de 25.658 personas es posible inferir que la comuna está envejeciendo a un ritmo acelerado.</font></p>
+<p align="justify"><font size=3>En la comuna existe una población total de 61.805 adultos mayores según los datos del Censo 2017, si se considera que en 1992 la población de tercera edad era de 25.658 personas es posible inferir que la comuna está envejeciendo a un ritmo acelerado.</font></p>
 
-<p align="justify"><font size=2.5>La tasa de crecimiento demográfico , indica que en Las Condes el aumento de la población
+<p align="justify"><font size=3>La tasa de crecimiento demográfico , indica que en Las Condes el aumento de la población
 de personas mayores fue de un 2,5% anual en el periodo intercensal 1982 - 2017. Una cifra elevada teniendo en cuenta que Europa, la región más longeva, experimentó su proceso de envejecimiento a un ritmo de crecimiento del 1,1% anual.</font></p>
 
 #### 2.1.3 Indicadores de envejecimiento poblacional
 
-<p align="justify"><font size=2.5>Chile es un país que transita aceleradamente hacia el envejecimiento de su población (CEPAL, 2009). El aumento significativo en la esperanza de vida, y la abrupta caída en las tasas de natalidad y mortalidad infantil son fenómenos que explican este escenario.</font></p>
+<p align="justify"><font size=3>Chile es un país que transita aceleradamente hacia el envejecimiento de su población (CEPAL, 2009). El aumento significativo en la esperanza de vida, y la abrupta caída en las tasas de natalidad y mortalidad infantil son fenómenos que explican este escenario.</font></p>
 
-<p align="justify"><font size=2.5>Los datos del Banco Mundial sugieren que desde 1960 a la fecha el país ha logrado un aumento en la expectativa de vida de su población de alrededor de 24 años, la segunda economía OCDE con mayor crecimiento en este indicador. Al mismo tiempo, es el país con la menor mortalidad infantil bajo los 5 años en todo América Latina.</p>
+<p align="justify"><font size=3>Los datos del Banco Mundial sugieren que desde 1960 a la fecha el país ha logrado un aumento en la expectativa de vida de su población de alrededor de 24 años, la segunda economía OCDE con mayor crecimiento en este indicador. Al mismo tiempo, es el país con la menor mortalidad infantil bajo los 5 años en todo América Latina.</p>
 <p align="justify">De acuerdo con las proyecciones del Departamento de Asuntos Económicos y Sociales (DAES) de Naciones Unidas, al año 2050 se espera que Chile supere el 25% de envejecimiento relativo, una proporción similar a alcanzada actualmente por Japón el país más longevo del planeta.</font></p>
 
-<p align="justify"><font size=2.5>Un estudio del Centro de Investigación en Personas Mayores (2018a) reveló que la edad media de la población chilena entre 1982 y 2017 aumentó de 26,9 años a 35,8 años, y que la tasa de envejecimiento[^7] en el país es de 80,9 adultos mayores por cada 100 niños, la más elevada de Latinoamérica.</font></p>
+<p align="justify"><font size=3>Un estudio del Centro de Investigación en Personas Mayores (2018a) reveló que la edad media de la población chilena entre 1982 y 2017 aumentó de 26,9 años a 35,8 años, y que la tasa de envejecimiento[^7] en el país es de 80,9 adultos mayores por cada 100 niños, la más elevada de Latinoamérica.</font></p>
 
-<p align="justify"><font size=2.5>El envejecimiento es uno de los grandes desafíos de política pública. El mapa de la vulnerabilidad del Ministerio de Desarrollo Social identifica al segmento de personas mayores como un grupo con altos niveles de vulnerabilidad social. Es una población que sufre serios problemas de abandono principalmente en zonas rurales; de salud reflejados entre otros, en problemas de salud mental; de precarización laboral con un número importante trabajando informalmente; y de educación con menores niveles de escolaridad.</font></p>
+<p align="justify"><font size=3>El envejecimiento es uno de los grandes desafíos de política pública. El mapa de la vulnerabilidad del Ministerio de Desarrollo Social identifica al segmento de personas mayores como un grupo con altos niveles de vulnerabilidad social. Es una población que sufre serios problemas de abandono principalmente en zonas rurales; de salud reflejados entre otros, en problemas de salud mental; de precarización laboral con un número importante trabajando informalmente; y de educación con menores niveles de escolaridad.</font></p>
 
-<p align="justify"><font size=2.5>En este contexto, Las Condes aparece como la segunda comuna con mayor proporción de personas mayores en la Región Metropolitana (21%), siendo superada únicamente por Vitacura (22,9%). En la *figura 8* se describe el porcentaje de adultos mayores por área de referencia.</font></p>
+<p align="justify"><font size=3>En este contexto, Las Condes aparece como la segunda comuna con mayor proporción de personas mayores en la Región Metropolitana (21%), siendo superada únicamente por Vitacura (22,9%). En la *figura 8* se describe el porcentaje de adultos mayores por área de referencia.</font></p>
 
-<p align="center"><font size=2.5>Figura 8. Índice de envejecimiento relativo según área de referencia.</font></p>
+<p align="center"><font size=3>Figura 8. Índice de envejecimiento relativo según área de referencia.</font></p>
 
 ```{r dataframe fig8, echo=FALSE}
 
@@ -512,7 +513,7 @@ envejecimiento$label <- formatC(envejecimiento$label, digits = 3, decimal.mark="
 env_plot <-  ggplot(envejecimiento, aes ( x = area_env,  y= envej_prop, label = envej_prop, fill = area_env, text = paste0(label, "%"))) + 
   geom_bar(stat = 'identity' ,colour = 'azure2', width = 0.7)
 #Add labels + custom theme
-env_plot <- env_plot + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.position = "none", text = element_text(size = 10,  color = "black" )) + scale_y_continuous(breaks = seq(0, 0.3 ,0.05), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3, color = 'azure2', position=position_stack (vjust = 0.7))
+env_plot <- env_plot + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.position = "none", text = element_text(size = 10,  color = "black" )) + scale_y_continuous(breaks = seq(0, 0.3 ,0.05), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3.5, color = 'azure2', position=position_stack (vjust = 0.7))
 
 #Select fill color
 
@@ -521,16 +522,16 @@ env_plot <- env_plot + scale_fill_manual(values = c('#00C0B8','#00C0B8','#00C0B8
 div(ggplotly(env_plot, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
 
-<p align="justify"><font size=2.5>En la comuna existe una población total de 61.805 adultos mayores según los datos del Censo 2017, si se considera que en 1992 la población de tercera edad era de 25.658 personas es posible inferir que la comuna está envejeciendo a un ritmo acelerado.</font></p>
+<p align="justify"><font size=3>En la comuna existe una población total de 61.805 adultos mayores según los datos del Censo 2017, si se considera que en 1992 la población de tercera edad era de 25.658 personas es posible inferir que la comuna está envejeciendo a un ritmo acelerado.</font></p>
 
-<p align="justify"><font size=2.5>La tasa de crecimiento demográfico [^8] , indica que en Las Condes el aumento de la población
+<p align="justify"><font size=3>La tasa de crecimiento demográfico [^8] , indica que en Las Condes el aumento de la población
 de personas mayores fue de un 2,5% anual en el periodo intercensal 1982 - 2017. Una cifra elevada teniendo en cuenta que Europa, la región más longeva del planeta, experimentó su proceso de envejecimiento a un ritmo de crecimiento del 1,1% anual.</font></p>
 
-<p align="justify"><font size=2.5>Por su parte, la relación de dependencia demográfica [^9] sugiere que en la comuna existen 44,7 personas en edad inactiva por cada 100 individuos económicamente activos. Estas cifras son relativamente similares para las distintas unidades de referencia (*tabla 5*).</font></p>
+<p align="justify"><font size=3>Por su parte, la relación de dependencia demográfica [^9] sugiere que en la comuna existen 44,7 personas en edad inactiva por cada 100 individuos económicamente activos. Estas cifras son relativamente similares para las distintas unidades de referencia (*tabla 5*).</font></p>
 
-<p align="justify"><font size=2.5>Al desagregar la relación de dependencia por tramos de edad, se aprecia que en Las Condes y las Comunas de referencia existe una mayor incidencia de población de 65 años y más sobre la tasa global de dependencia. Esto podría implicar que la relación de dependencia siga aumentado dado los niveles de envejecimiento.</font></p>
+<p align="justify"><font size=3>Al desagregar la relación de dependencia por tramos de edad, se aprecia que en Las Condes y las Comunas de referencia existe una mayor incidencia de población de 65 años y más sobre la tasa global de dependencia. Esto podría implicar que la relación de dependencia siga aumentado dado los niveles de envejecimiento.</font></p>
 
 ```{r dataframe tab5, echo=FALSE}
 
@@ -548,13 +549,13 @@ table5 <- data.frame(indice_dp, lascondes_dp, comref_dp, rm_dp, nacional_dp)
 ```{r print tab5, echo=FALSE, results= 'ASIS'}
 
 knitr::kable(table5, "html", col.names = c('Índice', 'Las Condes', 'Comunas de referencia', 'Región Metropolitana', 'Nacional'), caption = "Tabla 5. Relación de dependencia según área de referencia", align = 'lcccc' ) %>%
-  kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = "hover",font_size = 12, full_width = TRUE) 
+  kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = "hover",font_size = 13, full_width = TRUE) 
 
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
 
-<p align="justify"><font size=2.5>En cuanto a la tasa de envejecimiento, los datos censales sugieren que en Las Condes existen 137,3 adultos mayores por cada 100 niños entre 0 y 14 años de edad. Esta cifra difiere de manera importante respecto de los datos a nivel nacional (80,9) y regional (79,5). En la *tabla 6* se describe la tasa de envejecimiento poblacional para las áreas de referencia.</font></p>
+<p align="justify"><font size=3>En cuanto a la tasa de envejecimiento, los datos censales sugieren que en Las Condes existen 137,3 adultos mayores por cada 100 niños entre 0 y 14 años de edad. Esta cifra difiere de manera importante respecto de los datos a nivel nacional (80,9) y regional (79,5). En la *tabla 6* se describe la tasa de envejecimiento poblacional para las áreas de referencia.</font></p>
 
 ```{r dataframe tab6, echo=FALSE}
 
@@ -571,15 +572,15 @@ table6 <- data.frame(tasa_env, lascondes_tenv, comref_tenv, rm_tenv, nacional_te
 ```{r print tab6, echo=FALSE, results= 'ASIS'}
 
 knitr::kable(table6, "html", col.names = c('Índice', 'Las Condes', 'Comunas de referencia', 'Región Metropolitana', 'Nacional'), caption = "Tabla 6. Tasa de envejecimiento según área de referencia", align = 'lcccc' ) %>%
-  kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = "hover",font_size = 12, full_width = TRUE) 
+  kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = "hover",font_size = 13, full_width = TRUE) 
 
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
 
 #### 2.1.3 Composición de los hogares
 
-<p align="justify"><font size=2.5>Los hogares corresponden al conjunto de una o más personas que unidas o no por una relación de parentesco, comparten la alimentación, el presupuesto, y habitan la misma vivienda o parte de ella. A su vez, estas unidades se clasifican de acuerdo a su composición:</font></p>
+<p align="justify"><font size=3>Los hogares corresponden al conjunto de una o más personas que unidas o no por una relación de parentesco, comparten la alimentación, el presupuesto, y habitan la misma vivienda o parte de ella. A su vez, estas unidades se clasifican de acuerdo a su composición:</font></p>
 
 ```{r dataframe table7, echo=FALSE}
 
@@ -593,12 +594,12 @@ table7 <- data.frame(tipo_hogar, definicion_hogar)
 ```{r print tab7, echo=FALSE, results= 'ASIS'}
 
 knitr::kable(table7, "html", col.names = c('Tipo de hogar', 'Definición'), align = 'll' ) %>%
-  kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = "hover",font_size = 12, full_width = TRUE) 
+  kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = "hover",font_size = 13, full_width = TRUE) 
 
 
 ```
 
-<p align="justify"><font size=2.5>En esta línea, los registros del Censo 2017 indican que en Las Condes existen un total de 106.564 hogares, integrados por 2,7 personas en promedio. Esta cifra es inferior a la reflejada en el país, donde en promedio los hogares se componen por 3,1 personas. *En tabla 8* se describe el número de hogares y su composición según número de integrantes.</font></p>
+<p align="justify"><font size=3>En esta línea, los registros del Censo 2017 indican que en Las Condes existen un total de 106.564 hogares, integrados por 2,7 personas en promedio. Esta cifra es inferior a la reflejada en el país, donde en promedio los hogares se componen por 3,1 personas. *En tabla 8* se describe el número de hogares y su composición según número de integrantes.</font></p>
 
 ```{r dataframe table8, echo=FALSE}
 
@@ -620,9 +621,9 @@ knitr::kable(table8, "html", col.names = c('Indicador', 'Las Condes', 'Comunas d
 
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
 
-<p align="justify"><font size=2.5>De igual manera se observa que la cantidad de niños, entre 0 y 14 años, residentes por hogar en Las Condes es menor a la registrada en el país y la región. En la comuna hay 0,42 niños por hogar, mientras que a nivel nacional y regional esta cifra es de 0,62 y 0,61 respectivamente (*tabla 9*). Si se considera solo los hogares donde viven niños, el promedio de menores de 15 años por hogar en la comuna crece a 1,6, número similar al indicado a nivel nacional. Lo anterior obedece a la menor proporción de hogares que integran niños en Las Condes.</font></p>
+<p align="justify"><font size=3>De igual manera se observa que la cantidad de niños, entre 0 y 14 años, residentes por hogar en Las Condes es menor a la registrada en el país y la región. En la comuna hay 0,42 niños por hogar, mientras que a nivel nacional y regional esta cifra es de 0,62 y 0,61 respectivamente (*tabla 9*). Si se considera solo los hogares donde viven niños, el promedio de menores de 15 años por hogar en la comuna crece a 1,6, número similar al indicado a nivel nacional. Lo anterior obedece a la menor proporción de hogares que integran niños en Las Condes.</font></p>
 
 ```{r dataframe table9, echo=FALSE}
 
@@ -640,13 +641,13 @@ table9 <- data.frame(indicador_nin, lc_nin, comref_nin, rm_nin, nacional_nin)
 
 knitr::kable(table9, "html", col.names = c('Indicador', 'Las Condes', 'Comunas de referencia', 'Región Metropolitana','Nacional'), 
              caption = "Tabla 9. Hogares que integran niños entre 0 y 14 años, según área de referencia.", align = 'lcccc' ) %>%
-  kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = "hover",font_size = 12, full_width = TRUE) 
+  kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = "hover",font_size = 13, full_width = TRUE) 
 
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
 
-<p align="justify"><font size=2.5>En lo referente al número de adultos mayores por hogar, la situación tiende a homologarse en los distintos niveles analizados, siendo el promedio cercano a 0,5 adultos mayores por hogar. Por su parte, la proporción de hogares con presencia de adultos mayores es mayor en Las Condes y Comunas de referencia respecto del país y la región, lo cual es consistente con los niveles de envejecimiento alcanzados por la comuna. En la *tabla 10* se presentan los hogares que integran personas mayores por área de referencia.</font></p>
+<p align="justify"><font size=3>En lo referente al número de adultos mayores por hogar, la situación tiende a homologarse en los distintos niveles analizados, siendo el promedio cercano a 0,5 adultos mayores por hogar. Por su parte, la proporción de hogares con presencia de adultos mayores es mayor en Las Condes y Comunas de referencia respecto del país y la región, lo cual es consistente con los niveles de envejecimiento alcanzados por la comuna. En la *tabla 10* se presentan los hogares que integran personas mayores por área de referencia.</font></p>
 
 ```{r dataframe table10, echo=FALSE}
 
@@ -663,15 +664,15 @@ table10 <- data.frame(indicador_am, lc_am, comref_am, rm_am, nacional_am)
 ```{r print tab10, echo=FALSE, results= 'ASIS'}
 
 knitr::kable(table10, "html", col.names = c('Indicador', 'Las Condes', 'Comunas de referencia', 'Región Metropolitana','Nacional'), caption = "Tabla 10. Hogares que integran personas mayores (60 años y más), según área de referencia.", align = 'lcccc' ) %>%
-  kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = "hover", font_size = 12, full_width = TRUE) 
+  kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = "hover", font_size = 13, full_width = TRUE) 
   
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
 
-<p align="justify"><font size=2.5>En cuanto a las distintas tipologías de hogar definidas en el Censo, se aprecia que una mayor incidencia de los hogares nucleares biparentales con hijos, independiente del área de referencia analizada. En Las Condes este tipo de hogar representa el 26,5%, cifra relativamente inferior a la obtenida a nivel nacional (28,8%) y regional (29,1%), y superior al promedio de las comunas de referencia (24,5%). En la *figura 9* se describe la clasificación de hogares según área de referencia.</font></p>
+<p align="justify"><font size=3>En cuanto a las distintas tipologías de hogar definidas en el Censo, se aprecia que una mayor incidencia de los hogares nucleares biparentales con hijos, independiente del área de referencia analizada. En Las Condes este tipo de hogar representa el 26,5%, cifra relativamente inferior a la obtenida a nivel nacional (28,8%) y regional (29,1%), y superior al promedio de las comunas de referencia (24,5%). En la *figura 9* se describe la clasificación de hogares según área de referencia.</font></p>
 
-<p align="center"><font size=2.5>Figura 9. Tipología de hogares según área de referencia.</font></p>
+<p align="center"><font size=3>Figura 9. Tipología de hogares según área de referencia.</font></p>
 
 ```{r dataframe fig9, echo=FALSE}
 
@@ -701,11 +702,11 @@ tip_hog <- tip_hog  + scale_fill_manual(values = c('#00C0B8','slategray3','#F876
 div(ggplotly(tip_hog, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
 
-<p align="justify"><font size=2.5>Por su parte, cuando analizamos por sexo la figura del jefe/a de hogar observamos una situación bastante homogénea entre las distintas unidades de análisis, existiendo una mayor proporción de jefes de hogar de sexo masculino. En Las Condes el 57,9% de los hogares declara una jefatura masculina mientras que el 42,1% señala jefatura femenina (*figura 10*).</font></p>
+<p align="justify"><font size=3>Por su parte, cuando analizamos por sexo la figura del jefe/a de hogar observamos una situación bastante homogénea entre las distintas unidades de análisis, existiendo una mayor proporción de jefes de hogar de sexo masculino. En Las Condes el 57,9% de los hogares declara una jefatura masculina mientras que el 42,1% señala jefatura femenina (*figura 10*).</font></p>
 
-<p align="center"><font size=2.5>Figura 10. Proporción de jefes de hogar desagregada por sexo según área de referencia.</font></p>
+<p align="center"><font size=3>Figura 10. Proporción de jefes de hogar desagregada por sexo según área de referencia.</font></p>
 
 ```{r dataframfig10, include=FALSE}
 area = c(4, 3, 2, 1, 4, 3, 2, 1)
@@ -733,18 +734,18 @@ jhsexplot <-  ggplot(jh_sexo_sorted, aes ( y= prop_jh, x = area, fill = sexo, te
 jhsexplot <- jhsexplot + ggtitle("") + ylab("") + xlab("") + theme_calc() + 
 theme(text = element_text(size = 10,  color = "black" ), legend.position = 'top' , legend.box = 'horizontal', legend.title = element_blank()) + scale_y_continuous(breaks = seq(0,1,0.25), labels = scales::percent_format(accuracy = 1)) 
 #Add label % 
-jhsexplot <- jhsexplot + geom_text(aes(label = paste0(label,"%"),y=labelpos), size = 3, color = 'azure2', position = position_stack(vjust = 0.85,reverse = TRUE))
+jhsexplot <- jhsexplot + geom_text(aes(label = paste0(label,"%"),y=labelpos), size = 3.5, color = 'azure2', position = position_stack(vjust = 0.85,reverse = TRUE))
 #Select fill color
 jhsexplot <- jhsexplot + scale_fill_manual(values = c('#00C0B8', '#F8766D')) + coord_flip()
 
 div(ggplotly(jhsexplot, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
 
-<p align="justify"><font size=2.5>Del mismo modo, al analizar la edad del jefe de hogar no se aprecian grandes diferencias entre las áreas de referencia. El segmento entre 25 – 59 años representa la mayor proporción de jefes de hogar por edad. En Las Condes el 63% de los hogares tienen un jefe cuya edad oscila entre 25 y 59 años, y un 33,7% cuenta con un jefe de hogar de tercera edad (*figura 11*).</font></p>
+<p align="justify"><font size=3>Del mismo modo, al analizar la edad del jefe de hogar no se aprecian grandes diferencias entre las áreas de referencia. El segmento entre 25 – 59 años representa la mayor proporción de jefes de hogar por edad. En Las Condes el 63% de los hogares tienen un jefe cuya edad oscila entre 25 y 59 años, y un 33,7% cuenta con un jefe de hogar de tercera edad (*figura 11*).</font></p>
 
-<p align="center"><font size=2.5>Figura 11. Proporción de jefes de hogar desagregada por tramos de edad según área de referencia.</font></p>
+<p align="center"><font size=3>Figura 11. Proporción de jefes de hogar desagregada por tramos de edad según área de referencia.</font></p>
 
 ```{r dataframe fig11, echo=FALSE}
 
@@ -767,7 +768,7 @@ edad_jhogar$label <- formatC(edad_jhogar$label, digits = 3, decimal.mark="," ,bi
 edadjefe_hog <-  ggplot(edad_jhogar, aes ( y = area_hogar,  x= edadjhog_prop, label = edadjhog_prop, fill = edad_jhogar, text = paste0(label, "%"))) + 
 geom_bar(stat = 'identity' ,colour = 'azure2', width = 0.5,position = position_stack(reverse = TRUE))
 #Add labels + custom theme
-edadjefe_hog <- edadjefe_hog + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1 ,0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3, color = 'black',
+edadjefe_hog <- edadjefe_hog + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1 ,0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3.5, color = 'black',
                         position=position_stack (vjust = 0.7, reverse = TRUE))
 #Select fill color
 edadjefe_hog <- edadjefe_hog  + scale_fill_manual(values = c('slategray3' ,'#F8766D', '#00C0B8'))
@@ -775,11 +776,11 @@ edadjefe_hog <- edadjefe_hog  + scale_fill_manual(values = c('slategray3' ,'#F87
 div(ggplotly(edadjefe_hog, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
 
-<p align="justify"><font size=2.5>Con relación al nivel educacional alcanzado por los jefes de hogar, se aprecian diferencias significativas entre las distintas unidades analizadas. En el país y la Región Metropolitana existe una mayor concentración de jefes de hogar con estudios de enseñanza media, mientras que para Las Condes y comunas referencia se registra una alta densidad de jefes de hogar con estudios universitarios</font></p>
+<p align="justify"><font size=3>Con relación al nivel educacional alcanzado por los jefes de hogar, se aprecian diferencias significativas entre las distintas unidades analizadas. En el país y la Región Metropolitana existe una mayor concentración de jefes de hogar con estudios de enseñanza media, mientras que para Las Condes y comunas referencia se registra una alta densidad de jefes de hogar con estudios universitarios</font></p>
 
-<p align="center"><font size=2.5>Figura 12. Proporción de jefes de hogar desagregada por nivel educacional completado según área de referencia.</font></p>
+<p align="center"><font size=3>Figura 12. Proporción de jefes de hogar desagregada por nivel educacional completado según área de referencia.</font></p>
 
 ```{r dataframe fig12, echo=FALSE}
 
@@ -810,17 +811,17 @@ educjefe_hog <- educjefe_hog  + scale_fill_manual(values = c('#00C0B8','slategra
 div(ggplotly(educjefe_hog, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
 
-<p align="justify"><font size=2.5>Finalmente, cabe destacar la significativa cifra de jefes de hogar con estudios de postgrados en Las Condes (17,5%) y Comunas de referencia (19,2%), una realidad diametralmente opuesta a la observada a nivel nacional donde solo el 2,5% de los jefes de hogar cuenta con estudios de postgrado.</font></p>
+<p align="justify"><font size=3>Finalmente, cabe destacar la significativa cifra de jefes de hogar con estudios de postgrados en Las Condes (17,5%) y Comunas de referencia (19,2%), una realidad diametralmente opuesta a la observada a nivel nacional donde solo el 2,5% de los jefes de hogar cuenta con estudios de postgrado.</font></p>
 
 ### 2.2 Población de Personas Mayores
 
-<p align="justify"><font size=2.5>Chile se encuentra en un estado avanzado de envejecimiento, y en este contexto Las Condes se sitúa como una de las comunas urbanas más longevas del país. Conocer las características propias de este segmento etario es indispensable para poder abordar de manera integral las necesidades específicas de las personas mayores residentes en la comuna.</font></p>
+<p align="justify"><font size=3>Chile se encuentra en un estado avanzado de envejecimiento, y en este contexto Las Condes se sitúa como una de las comunas urbanas más longevas del país. Conocer las características propias de este segmento etario es indispensable para poder abordar de manera integral las necesidades específicas de las personas mayores residentes en la comuna.</font></p>
 
-<p align="justify"><font size=2.5>Según datos del Censo 2017, el 21% de los vecinos de Las Condes corresponden a adultos mayores, equivalentes a un total de 61.805 personas. Un segmento importante de éstos son personas de la cuarta edad[^10] (22,6%). Esta proporción de la población merece especial atención, por lo que más adelante se plantea una sección especialmente dedicada a ella, mientras que en el presente apartado se exploran una serie de dimensiones que abordan la situación de la población mayor en general. La *figura 13* describe la composición de la población mayor desagregada por edad en tramos para todas las áreas de referencia.</font></p>
+<p align="justify"><font size=3>Según datos del Censo 2017, el 21% de los vecinos de Las Condes corresponden a adultos mayores, equivalentes a un total de 61.805 personas. Un segmento importante de éstos son personas de la cuarta edad[^10] (22,6%). Esta proporción de la población merece especial atención, por lo que más adelante se plantea una sección especialmente dedicada a ella, mientras que en el presente apartado se exploran una serie de dimensiones que abordan la situación de la población mayor en general. La *figura 13* describe la composición de la población mayor desagregada por edad en tramos para todas las áreas de referencia.</font></p>
 
-<p align="center"><font size=2.5>Figura 13. Personas mayores desagregados por tramos de edad según área de referencia.</font></p>
+<p align="center"><font size=3>Figura 13. Personas mayores desagregados por tramos de edad según área de referencia.</font></p>
 
 ```{r dataframe fig13, echo=FALSE}
 
@@ -842,7 +843,7 @@ edad_am$label <- formatC(edad_am$label, digits = 3, decimal.mark="," ,big.mark="
 amedad <-  ggplot(edad_am, aes ( y = area,  x= propedad_am, label = propedad_am, fill = edad_am, text = paste0(label, "%"))) + 
   geom_bar(stat = 'identity' ,colour = 'azure2', width = 0.6,position = position_stack(reverse = TRUE))
 #Add labels + custom theme
-amedad  <- amedad  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1 ,0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3, color = 'azure2',
+amedad  <- amedad  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1 ,0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3.5, color = 'azure2',
                         position=position_stack (vjust = 0.5, reverse = TRUE))
 #Select fill color
 amedad  <- amedad  + scale_fill_manual(values = c('slategray3' ,'#F8766D', '#00C0B8'))
@@ -850,11 +851,11 @@ amedad  <- amedad  + scale_fill_manual(values = c('slategray3' ,'#F8766D', '#00C
 div(ggplotly(amedad, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
 
-<p align="justify"><font size=2.5>Una de las particularidades que presenta la población de personas mayores es la alta proporción de mujeres, especialmente en edades avanzadas. En Las Condes alrededor del 61% de los adultos mayores corresponden a población femenina, una proporción elevada en comparación a la observada a nivel nacional.</font></p>
+<p align="justify"><font size=3>Una de las particularidades que presenta la población de personas mayores es la alta proporción de mujeres, especialmente en edades avanzadas. En Las Condes alrededor del 61% de los adultos mayores corresponden a población femenina, una proporción elevada en comparación a la observada a nivel nacional.</font></p>
 
-<p align="center"><font size=2.5>Figura 14. Proporción de personas mayores por sexo según área de referencia.</font></p>
+<p align="center"><font size=3>Figura 14. Proporción de personas mayores por sexo según área de referencia.</font></p>
 
 ```{r dataframe fig14, echo=FALSE}
 
@@ -876,7 +877,7 @@ sexoam$label <- formatC(sexoam$label, digits = 3, decimal.mark="," ,big.mark="."
 amsexo <-  ggplot(sexoam, aes ( y = area,  x= sexoam_prop, label = sexoam_prop, fill = sexo_am, text = label)) + 
 geom_bar(stat = 'identity' ,colour = 'azure2', width = 0.5,position = position_stack(reverse = TRUE))
 #Add labels + custom theme
-amsexo <- amsexo  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 9,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1 ,0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3, color = 'azure2',
+amsexo <- amsexo  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 9,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1 ,0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3.5, color = 'azure2',
                         position=position_stack (vjust = 0.5, reverse = TRUE))
 #Select fill color
 amsexo  <- amsexo  + scale_fill_manual(values = c('#00C0B8', '#F8766D'))
@@ -884,15 +885,15 @@ amsexo  <- amsexo  + scale_fill_manual(values = c('#00C0B8', '#F8766D'))
 div(ggplotly(amsexo, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
 
-<p align="justify"><font size=2.5>Las mayores expectativas de vida alcanzadas por las mujeres explican este fenómeno cuando se trata de poblaciones de edad avanzada. Cuando la edad aumenta también lo hace la participación femenina en la composición demográfica.Por otra parte, un fenómeno importante de explorar es la soledad y abandono que enfrentan las personas mayores, lo que es preocupante, particularmente en personas que superan los 80 años, segmento que registra las tasas de suicidio más altas en todo el país.</font></p>
+<p align="justify"><font size=3>Las mayores expectativas de vida alcanzadas por las mujeres explican este fenómeno cuando se trata de poblaciones de edad avanzada. Cuando la edad aumenta también lo hace la participación femenina en la composición demográfica.Por otra parte, un fenómeno importante de explorar es la soledad y abandono que enfrentan las personas mayores, lo que es preocupante, particularmente en personas que superan los 80 años, segmento que registra las tasas de suicidio más altas en todo el país.</font></p>
 
-<p align="justify"><font size=2.5>A partir de los datos recogidos por el Censo 2017, es posible aproximarse a dicha realidad mediante el análisis de la composición de las viviendas. Cuando la composición de la vivienda sugiere que en ella reside solo una persona, se entiende como un índice aproximado de soledad.</font></p>
+<p align="justify"><font size=3>A partir de los datos recogidos por el Censo 2017, es posible aproximarse a dicha realidad mediante el análisis de la composición de las viviendas. Cuando la composición de la vivienda sugiere que en ella reside solo una persona, se entiende como un índice aproximado de soledad.</font></p>
 
-<p align="justify"><font size=2.5>Al respecto, se observa en la *figura 15* que la proporción de adultos mayores que viven solos es relativamente similar a nivel nacional (13,5%) y regional (11,9%). En Las Condes (15%), y Comunas de referencia (17,5%) se aprecia una proporción superior de adultos mayores que viven solo respecto del resto de las unidades analizadas.</font></p>
+<p align="justify"><font size=3>Al respecto, se observa en la *figura 15* que la proporción de adultos mayores que viven solos es relativamente similar a nivel nacional (13,5%) y regional (11,9%). En Las Condes (15%), y Comunas de referencia (17,5%) se aprecia una proporción superior de adultos mayores que viven solo respecto del resto de las unidades analizadas.</font></p>
 
-<p align="center"><font size=2.5>Figura 15. Proporción de Personas mayores según convivencia en la vivienda por área de referencia.</font></p>
+<p align="center"><font size=3>Figura 15. Proporción de Personas mayores según convivencia en la vivienda por área de referencia.</font></p>
 
 ```{r dataframe fig15, echo=FALSE}
 
@@ -908,7 +909,7 @@ amsolo$label <- formatC(amsolo$label, digits = 3, decimal.mark="," ,big.mark="."
 plotamsolo <-  ggplot(amsolo, aes ( y = area,  x= amsolo_prop, label = amsolo_prop, fill = sexo_am, text = paste0(label, "%"))) + 
 geom_bar(stat = 'identity' ,colour = 'azure2', width = 0.7, position = position_stack(reverse = TRUE))
 #Add labels + custom theme
-plotamsolo <- plotamsolo  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 9,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1 ,0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3, color = 'azure2',
+plotamsolo <- plotamsolo  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 9,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1 ,0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3.5, color = 'azure2',
                         position=position_stack (vjust = 0.5, reverse = TRUE))
 #Select fill color
 plotamsolo <- plotamsolo + scale_fill_manual(values = c('#00C0B8', '#F8766D'))
@@ -916,11 +917,11 @@ plotamsolo <- plotamsolo + scale_fill_manual(values = c('#00C0B8', '#F8766D'))
 div(ggplotly(plotamsolo, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
 
-<p align="justify"><font size=2.5>En relación a la edad de las personas mayores que viven solas en la comuna, se aprecia que a medida que aumenta la edad también lo hace la proporción de personas que viven solas dentro del mismo rango etario, esta relación es evidente hasta los 90 años de edad. En el segmento de personas entre 75 y 89 años se registra la mayor proporción de adultos mayores viviendo solos, con una cifra que alcanza como máximo el 18%.</font></p>
+<p align="justify"><font size=3>En relación a la edad de las personas mayores que viven solas en la comuna, se aprecia que a medida que aumenta la edad también lo hace la proporción de personas que viven solas dentro del mismo rango etario, esta relación es evidente hasta los 90 años de edad. En el segmento de personas entre 75 y 89 años se registra la mayor proporción de adultos mayores viviendo solos, con una cifra que alcanza como máximo el 18%.</font></p>
 
-<p align="center"><font size=2.5>Figura 16. Proporción de personas mayores que viven solas por tramo de edad en Las Condes.</font></p>
+<p align="center"><font size=3>Figura 16. Proporción de personas mayores que viven solas por tramo de edad en Las Condes.</font></p>
 
 ```{r dataframe fig16, echo=FALSE}
 
@@ -939,16 +940,16 @@ amsoloedad$label <- formatC(amsoloedad$label, digits = 3, decimal.mark="," ,big.
 plotamsoloedad <-  ggplot(amsoloedad, aes (y = amsoloedad_prop , x = rango_edad, text = paste0(label, "%"))) + 
 geom_bar(stat = 'identity' ,colour = 'azure', fill = '#00C0B8' ,width = 0.7,position = position_stack(reverse = TRUE))
 #Add labels + custom theme
-plotamsoloedad <- plotamsoloedad  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_y_continuous(breaks = seq(0, 0.25 ,0.05), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3, color = 'black', position=position_stack (vjust = 1.05, reverse = TRUE))
+plotamsoloedad <- plotamsoloedad  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_y_continuous(breaks = seq(0, 0.25 ,0.05), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3.5, color = 'black', position=position_stack (vjust = 1.05, reverse = TRUE))
 
 div(ggplotly(plotamsoloedad, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
 
-<p align="justify"><font size=2.5>Respecto de los tipos de hogares donde viven las personas mayores, los datos sugieren que existe una elevada concentración de residentes en hogares unipersonales en la comuna, un 18% de los adultos mayores de Las Condes integran un hogar solos, y una tendencia interesante es la que se refleja en la situación de los hogares extensos, donde se aprecia que en Las Condes (17,8%) y Comunas de referencia (14,3%), la proporción de adultos mayores es significativamente menor a la observada a nivel nacional (29,8%) y regional (31,8%).</font></p>
+<p align="justify"><font size=3>Respecto de los tipos de hogares donde viven las personas mayores, los datos sugieren que existe una elevada concentración de residentes en hogares unipersonales en la comuna, un 18% de los adultos mayores de Las Condes integran un hogar solos, y una tendencia interesante es la que se refleja en la situación de los hogares extensos, donde se aprecia que en Las Condes (17,8%) y Comunas de referencia (14,3%), la proporción de adultos mayores es significativamente menor a la observada a nivel nacional (29,8%) y regional (31,8%).</font></p>
 
-<p align="center"><font size=2.5>Figura 17. Proporción de personas mayores por tipo de hogar según área de referencia.</font></p>
+<p align="center"><font size=3>Figura 17. Proporción de personas mayores por tipo de hogar según área de referencia.</font></p>
 
 ```{r dataframe fig17, echo=FALSE}
 
@@ -972,13 +973,13 @@ tiphogam <- tiphogam + scale_fill_manual(values = c('#00C0B8','slategray3','#F87
 div(ggplotly(tiphogam, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
 
 #### 2.2.1 Personas mayores y Educación
 
-<p align="justify"><font size=2.5>La educación es un factor de incidencia directa en la calidad de vida de las personas, especialmente en edades avanzadas donde juega un papel importante en el autocuidado de la salud (Ross & Wu, 1996).La encuesta de calidad de vida en la vejez (2017) concluye que el nivel educacional es uno de los factores de mayor variación sobre el índice de calidad de vida; a mayor nivel educacional la calidad de vida aumenta sustantivamente.</font></p>
+<p align="justify"><font size=3>La educación es un factor de incidencia directa en la calidad de vida de las personas, especialmente en edades avanzadas donde juega un papel importante en el autocuidado de la salud (Ross & Wu, 1996).La encuesta de calidad de vida en la vejez (2017) concluye que el nivel educacional es uno de los factores de mayor variación sobre el índice de calidad de vida; a mayor nivel educacional la calidad de vida aumenta sustantivamente.</font></p>
 
-<p align="justify"><font size=2.5>En esta línea, los datos censales dan cuenta de elevados niveles de escolaridad en los adultos mayores residentes en Las Condes y Comunas de referencia. Las personas de 60 años y más en la comuna alcanzan una escolaridad promedio de 13,8 años, mientras que en el país esta es de 8,3 años (*tabla 11*).</font></p>
+<p align="justify"><font size=3>En esta línea, los datos censales dan cuenta de elevados niveles de escolaridad en los adultos mayores residentes en Las Condes y Comunas de referencia. Las personas de 60 años y más en la comuna alcanzan una escolaridad promedio de 13,8 años, mientras que en el país esta es de 8,3 años (*tabla 11*).</font></p>
 
 ```{r dataframe table11, echo=FALSE}
 
@@ -994,12 +995,12 @@ table11 <- data.frame(indicador_amesc, lc_amesc, comref_amesc, rm_amesc, naciona
 ```{r print tab11, echo=FALSE, results= 'ASIS'}
 
 knitr::kable(table11, "html", col.names = c('Indicador', 'Las Condes', 'Comunas de referencia', 'Región Metropolitana','Nacional'), caption = "Tabla 11. Escolaridad (años) media y mediana de la población de personas mayores según áreas de referencia.", align = 'lcccc' ) %>%
-  kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = "hover", font_size = 12, full_width = TRUE) 
+  kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = "hover", font_size = 13, full_width = TRUE) 
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
 
-<p align="justify"><font size=2.5>No obstante, cuando observamos la escolaridad de las personas mayores por sexo obaservamos una brecha importante . El promedio de años de educación para los hombres es de 15,1 mientras que en mujeres la escolaridad media es de 12,9 años. Cuando se observa la mediana de la escolaridad las diferencias por sexo aumentan considerablemente (*tabla 12*).</font></p>
+<p align="justify"><font size=3>No obstante, cuando observamos la escolaridad de las personas mayores por sexo obaservamos una brecha importante . El promedio de años de educación para los hombres es de 15,1 mientras que en mujeres la escolaridad media es de 12,9 años. Cuando se observa la mediana de la escolaridad las diferencias por sexo aumentan considerablemente (*tabla 12*).</font></p>
 
 ```{r dataframe table12, echo=FALSE}
 
@@ -1013,16 +1014,16 @@ table12 <- data.frame(indicador_amesc, lc_ameschombre, lc_amescmujer)
 ```{r print tab12, echo=FALSE, results= 'ASIS'}
 
 knitr::kable(table12, "html", col.names = c('Indicador', 'Hombre', 'Mujer'), caption = "Tabla 12. Escolaridad media y mediana en la población de personas mayores desagregada por sexo en Las Condes.", align = 'lcc' ) %>%
-  kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = "hover", font_size = 12, full_width = TRUE) 
+  kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = "hover", font_size = 13, full_width = TRUE) 
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
 
-<p align="justify"><font size=2.5>Al mismo tiempo, cuando se analiza el nivel educacional alcanzado por los adultos mayores es posible apreciar como en Las Condes existen una mayor proporción de personas mayores con estudios de educación superior, especialmente con estudios profesionales.</font></p>
+<p align="justify"><font size=3>Al mismo tiempo, cuando se analiza el nivel educacional alcanzado por los adultos mayores es posible apreciar como en Las Condes existen una mayor proporción de personas mayores con estudios de educación superior, especialmente con estudios profesionales.</font></p>
 
-<p align="justify"><font size=2.5>En la comuna el 35,3% de los adultos de 60 años y más terminaron una carrera profesional universitaria y un 8,3% cuentan con estudios postgrado, mientras que a nivel nacional la realidad es opuesta, donde solo 8,3% de las personas mayores alcanzo estudios profesionales (*figura 18*).</font></p>
+<p align="justify"><font size=3>En la comuna el 35,3% de los adultos de 60 años y más terminaron una carrera profesional universitaria y un 8,3% cuentan con estudios postgrado, mientras que a nivel nacional la realidad es opuesta, donde solo 8,3% de las personas mayores alcanzo estudios profesionales (*figura 18*).</font></p>
 
-<p align="center"><font size=2.5>Figura 18. Nivel educacional alcanzado por personas mayores según área de referencia.</font></p>
+<p align="center"><font size=3>Figura 18. Nivel educacional alcanzado por personas mayores según área de referencia.</font></p>
 ```{r dataframe fig18, echo=FALSE}
 
 niveleducam = c(.359, .283, .052, .063, .308, .322, .128, .133, .205, .232, .298, .298, .033, .041, .075, .08, .083, .105, .362, .353, .011, .017, .085, .073)
@@ -1045,23 +1046,23 @@ educam <- educam  + scale_fill_manual(values = c('#00C0B8','slategray3','#F8766D
 div(ggplotly(educam, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
 
 #### 2.2.2 Personas Mayores y Mercado Laboral
 
-<p align="justify"><font size=2.5>Uno los principales desafíos que deberán enfrentar las economías en desarrollo es el envejecimiento de su fuerza laboral (CIPEM, 2018b). En la literatura académica ya se visualizan una serie de consecuencias asociadas, como el aumento de la tasa de participación laboral[^11] sobre los 60 años, y un retraso en los patrones tradicionales de entrada y salida de la fuerza de trabajo (Bloom, Canning, & Lubet, 2015).</font></p>
+<p align="justify"><font size=3>Uno los principales desafíos que deberán enfrentar las economías en desarrollo es el envejecimiento de su fuerza laboral (CIPEM, 2018b). En la literatura académica ya se visualizan una serie de consecuencias asociadas, como el aumento de la tasa de participación laboral[^11] sobre los 60 años, y un retraso en los patrones tradicionales de entrada y salida de la fuerza de trabajo (Bloom, Canning, & Lubet, 2015).</font></p>
 
-<p align="justify"><font size=2.5>Al respecto, las estadísticas sugieren que Chile es uno de los países OCDE con mayor retraso en la edad de jubilación real respecto de la edad legal. En el caso de los hombres la edad promedio de retiro del mercado laboral alcanza los 70,5 años, mientras que en las mujeres es de 67,7 años (OECD, 2017).</font></p>
+<p align="justify"><font size=3>Al respecto, las estadísticas sugieren que Chile es uno de los países OCDE con mayor retraso en la edad de jubilación real respecto de la edad legal. En el caso de los hombres la edad promedio de retiro del mercado laboral alcanza los 70,5 años, mientras que en las mujeres es de 67,7 años (OECD, 2017).</font></p>
 
-<p align="justify"><font size=2.5>Desde 1990 a la fecha, la tasa de participación laboral en personas mayores creció de un 22,1% a un 35,3% según los datos de la Organización Mundial del Trabajo (OIT). Existe una elevada proporción de adultos mayores que señala que su principal razón para seguir en el mercado de trabajo es porque su empleo les permite seguir activos en una dimensión social y económica, aunque en la medida que aumenta la edad aparecen razones de necesidad económica.</font></p>
+<p align="justify"><font size=3>Desde 1990 a la fecha, la tasa de participación laboral en personas mayores creció de un 22,1% a un 35,3% según los datos de la Organización Mundial del Trabajo (OIT). Existe una elevada proporción de adultos mayores que señala que su principal razón para seguir en el mercado de trabajo es porque su empleo les permite seguir activos en una dimensión social y económica, aunque en la medida que aumenta la edad aparecen razones de necesidad económica.</font></p>
 
-<p align="justify"><font size=2.5>De acuerdo a los resultados obtenidos de Encuesta de Calidad de Vida del Adulto Mayor e Impacto del Pilar Solidario (ENCAVIDAM), el 90,4% de las personas mayores, entre 60 y 79 años que trabajan se sienten satisfechas o muy satisfechas con su empleo. Mientras que, para los trabajadores sobre 80 años esta proporción cae significativamente (69,5%).</font></p>
+<p align="justify"><font size=3>De acuerdo a los resultados obtenidos de Encuesta de Calidad de Vida del Adulto Mayor e Impacto del Pilar Solidario (ENCAVIDAM), el 90,4% de las personas mayores, entre 60 y 79 años que trabajan se sienten satisfechas o muy satisfechas con su empleo. Mientras que, para los trabajadores sobre 80 años esta proporción cae significativamente (69,5%).</font></p>
 
-<p align="justify"><font size=2.5>El reporte de la encuesta de Calidad de Vida de la Vejez da cuenta que los salarios son una de las principales fuentes de obtención de ingresos para las personas mayores, lo que se convierte en un incentivo directo para seguir económicamente activos.</font></p>
+<p align="justify"><font size=3>El reporte de la encuesta de Calidad de Vida de la Vejez da cuenta que los salarios son una de las principales fuentes de obtención de ingresos para las personas mayores, lo que se convierte en un incentivo directo para seguir económicamente activos.</font></p>
 
-<p align="justify"><font size=2.5>Los datos del Censo 2017 señalan que alrededor de un tercio de los adultos mayores a nivel nacional está trabajando o buscando empleo (32,4%), esta cifra es mayor en Las Condes donde 4 de cada 10 personas mayores se encuentran económicamente activas. En la *figura 19* se describe el porcentaje de adultos de 60 años y más por su condición de actividad para cada área de referencia analizada.</font></p>
+<p align="justify"><font size=3>Los datos del Censo 2017 señalan que alrededor de un tercio de los adultos mayores a nivel nacional está trabajando o buscando empleo (32,4%), esta cifra es mayor en Las Condes donde 4 de cada 10 personas mayores se encuentran económicamente activas. En la *figura 19* se describe el porcentaje de adultos de 60 años y más por su condición de actividad para cada área de referencia analizada.</font></p>
 
-<p align="center"><font size=2.5>Figura 19. Proporción de personas mayores por condición de actividad económica según área de referencia.</font></p>
+<p align="center"><font size=3>Figura 19. Proporción de personas mayores por condición de actividad económica según área de referencia.</font></p>
 
 ```{r dataframe fig19, echo=FALSE}
 
@@ -1083,7 +1084,7 @@ pea_am$label <- formatC(pea_am$label, digits = 3, decimal.mark="," ,big.mark="."
 peaplot <-  ggplot(pea_am, aes ( y = area,  x= propam, label = propam, fill = pea, text = paste0(label, "%"))) + 
 geom_bar(stat = 'identity' ,colour = 'azure2', width = 0.6,position = position_stack(reverse = TRUE))
 #Add labels + custom theme
-peaplot <- peaplot  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1 ,0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3, color = 'azure2',
+peaplot <- peaplot  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1 ,0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3.5, color = 'azure2',
                         position=position_stack (vjust = 0.5, reverse = TRUE))
 #Select fill color
 peaplot <- peaplot + scale_fill_manual(values = c('#00C0B8','slategray3'))
@@ -1091,15 +1092,15 @@ peaplot <- peaplot + scale_fill_manual(values = c('#00C0B8','slategray3'))
 div(ggplotly(peaplot, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
 
-<p align="justify"><font size=2.5>Entre los adultos mayores económicamente activos en Las Condes, la cifra de personas en búsqueda de empleo es marginal, estos representan el 2% del total de personas de 60 años y más activos en el mercado laboral. Esta baja cifra de desempleo en la población mayor de la comuna podría estar reflejando una alta retención de personas mayores en el mercado de trabajo. En esta línea, los datos de la OCDE (2017), señalan que Chile es la octava economía de los países que integran la organización, con mayor tasa de retención[^12] de trabajadores sobre 60 años.</font></p>
+<p align="justify"><font size=3>Entre los adultos mayores económicamente activos en Las Condes, la cifra de personas en búsqueda de empleo es marginal, estos representan el 2% del total de personas de 60 años y más activos en el mercado laboral. Esta baja cifra de desempleo en la población mayor de la comuna podría estar reflejando una alta retención de personas mayores en el mercado de trabajo. En esta línea, los datos de la OCDE (2017), señalan que Chile es la octava economía de los países que integran la organización, con mayor tasa de retención[^12] de trabajadores sobre 60 años.</font></p>
 
-<p align="justify"><font size=2.5>En tanto, la participación de los adultos mayores por sector de la actividad económica refleja una tendencia clara existente en el mercado laboral chileno, donde predomina la actividad de servicios (sector terciario).</font></p>
+<p align="justify"><font size=3>En tanto, la participación de los adultos mayores por sector de la actividad económica refleja una tendencia clara existente en el mercado laboral chileno, donde predomina la actividad de servicios (sector terciario).</font></p>
 
-<p align="justify"><font size=2.5>Comparativamente la participación en el sector de servicios de los adultos mayores de Las Condes (85,8%) es más elevada que la observada en el país (71,4%) y la Región Metropolitana (79,2%), y marginalmente inferior a la ocurrida en las Comunas de referencia (86,5%).</font></p>
+<p align="justify"><font size=3>Comparativamente la participación en el sector de servicios de los adultos mayores de Las Condes (85,8%) es más elevada que la observada en el país (71,4%) y la Región Metropolitana (79,2%), y marginalmente inferior a la ocurrida en las Comunas de referencia (86,5%).</font></p>
 
-<p align="center"><font size=2.5>Figura 20. Proporción de personas mayores ocupadas por sector de actividad económica según área de referencia.</font></p>
+<p align="center"><font size=3>Figura 20. Proporción de personas mayores ocupadas por sector de actividad económica según área de referencia.</font></p>
 ```{r dataframe fig20, echo=FALSE}
 
 sect_ec = c(1,2,3,1,2,3,1,2,3,1,2,3)
@@ -1126,18 +1127,18 @@ fig20$label <- formatC(fig20$label, digits = 3, decimal.mark="," ,big.mark=".")
 p_sect_ec <- p_sect_ec + ggtitle("") + ylab("") + xlab("") + theme_calc() +
 theme(legend.title = element_blank(), text = element_text(size = 10, color = "black")) + 
 scale_x_continuous(breaks = seq(0, 1, 0.1), label = scales::percent_format(accuracy = 1)) +
-geom_text(aes(label = paste0(label,"%")), size = 3, color = "black", position = position_jitterdodge( jitter.width = -0.5, jitter.height = -0.7))
+geom_text(aes(label = paste0(label,"%")), size = 3.5, color = "black", position = position_jitterdodge( jitter.width = -0.5, jitter.height = -0.7))
 
 p_sect_ec <- p_sect_ec + scale_fill_manual(values = c ( 'slategray3', '#F8766D','#00C0B8' ))
 
 ggplotly(p_sect_ec, tooltip="text") %>% config(displayModeBar = T) 
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
 
-<p align="justify"><font size=2.5>Respecto del tipo de trabajo que desarrollan los adultos mayores en la comuna, los datos de Casen indican que mayoritariamente se desempeñan como asalariados en el sector privado (31,9%) y como trabajadores por cuenta propia (30,4%). En la *figura 21* se describe el tipo de empleo realizado por los trabajadores de 60 años y más residentes en Las Condes.</font></p>
+<p align="justify"><font size=3>Respecto del tipo de trabajo que desarrollan los adultos mayores en la comuna, los datos de Casen indican que mayoritariamente se desempeñan como asalariados en el sector privado (31,9%) y como trabajadores por cuenta propia (30,4%). En la *figura 21* se describe el tipo de empleo realizado por los trabajadores de 60 años y más residentes en Las Condes.</font></p>
 
-<p align="center"><font size=2.5>Figura 21. Personas mayores de Las Condes ocupadas por tipo de empleo.</font></p>
+<p align="center"><font size=3>Figura 21. Personas mayores de Las Condes ocupadas por tipo de empleo.</font></p>
 
 ```{r dataframe fig21, echo=FALSE}
 
@@ -1153,20 +1154,162 @@ fig21$label <- formatC(fig21$label, digits = 3, decimal.mark="," ,big.mark=".")
 
 ```{r plot fig21, echo=FALSE ,results = 'ASIS'}
 #Select dataframe + Add geometry
-p_tipoempl <-  ggplot(fig21, aes (x = tipoempleo , y = tipoempleo_prop, text = paste0(label, "%"))) + 
+p_tipoempl <-  ggplot(fig21, aes (x = reorder(tipoempleo, tipoempleo_prop)  , y =  tipoempleo_prop  , text = paste0(label, "%"))) + 
 geom_bar(stat = 'identity' ,colour = 'azure', fill = '#00C0B8' ,width = 0.7,position = position_stack(reverse = TRUE))
 #Add labels + custom theme
-p_tipoempl  <- p_tipoempl  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_y_continuous(breaks = seq(0, 0.4 ,0.05), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3, color = 'black', position=position_stack (vjust = 0.75, reverse = TRUE)) + coord_flip()
+p_tipoempl  <- p_tipoempl  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_y_continuous(breaks = seq(0, 0.4 ,0.05), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3.5, color = 'black', position=position_stack (vjust = 0.75, reverse = TRUE)) + coord_flip()
 
 div(ggplotly(p_tipoempl , tooltip="text") %>% config(displayModeBar = T), align = "center")
 
 ```
-<p align="center"><font size=2.5>*Fuente: Elaboración propia en base a datos de Casen 2015*</font></p>
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos de Casen 2015*</font></p>
 
-<p align="justify"><font size=2.5>Por su parte, los datos revelan que los ingresos del trabajo de los adultos mayores en la comuna son significativamente más elevados a los observados en el resto del país. En promedio un trabajador de 60 años y más de Las Condes percibe un salario de 1,9 millones de pesos mensuales, mientras que a nivel nacional esta cifra es de $532.000 mensuales aproximadamente. La *figura 22* presenta el promedio y mediana del ingreso del trabajo para los adultos mayores en las áreas de referencia.</font></p>
+<p align="justify"><font size=3>Por su parte, los datos revelan que los ingresos del trabajo de los adultos mayores en la comuna son significativamente más elevados a los observados en el resto del país. En promedio un trabajador de 60 años y más de Las Condes percibe un salario de 1,87 millones de pesos mensuales, mientras que a nivel nacional esta cifra es de 430 mil pesos (valores ajustados a octubre de 2019). La *figura 22* presenta el promedio y mediana del ingreso del trabajo para los adultos mayores en las áreas de referencia.</font></p>
+
+<p align="center"><font size=3>Figura 22. Ingresos del trabajo en personas mayores según área de referencia.</font></p>
+
+``` {r dataframe fig22, echo=FALSE}
+
+#Actualización de ingresos del trabajo a valor Noviembre 2019
+uf2019 = 	28065.35
+uf2015 = 	25494.15
+casen15$ingreso_uf = casen15$ytrabajocor/uf2015
+casen15$itrabaj_valorpresente= casen15$ingreso_uf * uf2019
+
+#LAS CONDES:
+vector_ytrabaj_lc <- casen15 [which(casen15$comuna==13114 & casen15$edad>=60),] 
+mean_ingresostr_60lc =  weighted.mean(vector_ytrabaj_lc$itrabaj_valorpresente, vector_ytrabaj_lc$expc, na.rm = T)
+median_ingresostr_60lc =  weighted.median(vector_ytrabaj_lc$itrabaj_valorpresente, vector_ytrabaj_lc$expc, na.rm = T)
+
+#PROVIDENCIA:
+vector_ytrabaj_prov <- casen15 [which(casen15$comuna==13123 & casen15$edad>=60),] 
+mean_ingresostr_60prov =  weighted.mean(vector_ytrabaj_prov$itrabaj_valorpresente, vector_ytrabaj_prov$expc, na.rm = T)
+median_ingresostr_60prov =  weighted.median(vector_ytrabaj_prov$itrabaj_valorpresente, vector_ytrabaj_prov$expc, na.rm = T)
+
+#REGIÓN METROPOLITANA:
+vector_ytrabaj_rm <- casen15 [which(casen15$region==13 & casen15$edad>=60),] 
+mean_ingresostr_60rm =  weighted.mean(vector_ytrabaj_rm$itrabaj_valorpresente, vector_ytrabaj_rm$expr, na.rm = T)
+median_ingresostr_60rm =  weighted.median(vector_ytrabaj_rm$itrabaj_valorpresente, vector_ytrabaj_rm$expr, na.rm = T)
+
+#NACIONAL:
+vector_ytrabaj_nacional <- casen15 [which(casen15$edad>=60),] 
+mean_ingresostr_60nacional =  weighted.mean(vector_ytrabaj_nacional$itrabaj_valorpresente, vector_ytrabaj_nacional$expr, na.rm = T)
+median_ingresostr_60nacional =  weighted.median(vector_ytrabaj_nacional$itrabaj_valorpresente, vector_ytrabaj_nacional$expr, na.rm = T)
 
 
+#Data frame fig22:
+referencia <- c(1,1,2,2,3,3,4,4)
+referencia = factor (referencia, levels = c(1,2,3,4),
+                     labels = c("Nacional", "Región Metropolitana", "Providencia", "Las Condes"))
+ingresos <- c(mean_ingresostr_60nacional , median_ingresostr_60nacional, mean_ingresostr_60rm, median_ingresostr_60rm,
+              mean_ingresostr_60prov, median_ingresostr_60prov, mean_ingresostr_60lc, median_ingresostr_60lc)
 
+estadisticoingresos <- c(1,2,1,2,1,2,1,2)
+estadisticoingresos = factor (estadisticoingresos, levels = c(1,2),
+                     labels = c("Ingreso medio", "Ingreso mediano"))
+
+fig22 <- data.frame(referencia, ingresos, estadisticoingresos)
+fig22$label <- round(fig22$ingresos, digits=0)
+fig22$label <- formatC(fig22$label, digits = 8, decimal.mark="," ,big.mark=".")
+
+```
+
+```{r plot fig22, echo=FALSE ,results = 'ASIS'}
+#Select dataframe + Add geometry
+p_ingresostr60 <-  ggplot(fig22, aes (fill= estadisticoingresos , x = referencia , y = ingresos , text = paste0( "$", label))) + 
+geom_bar(stat = 'identity' ,colour = 'azure' ,width = 0.7, position = "dodge")
+#Add labels + custom theme
+p_ingresostr60   <- p_ingresostr60  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_y_discrete(breaks = seq(0, 2000000 ,150000)) + geom_text(aes(label = paste0("$", label)),size = 3.5, color = 'black', position=position_dodge (width = 0.7), vjust=-0.5) 
+
+p_ingresostr60 <- p_ingresostr60 + scale_fill_manual(values = c ('#00C0B8','#F8766D'))
+
+div(ggplotly(p_ingresostr60  , tooltip="text") %>% config(displayModeBar = T), align = "center")
+
+```
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos de Casen 2015*</font></p>
+
+
+<p align="justify"><font size=3>Al descomponer el ingreso laboral de los adultos mayores de Las Condes por género, se aprecia una brecha importante entre hombres y mujeres. El promedio de ingreso de los hombres supera en 2,7 veces el ingreso medio de una mujer (*tabla 13*)</font></p>
+
+
+```{r dataframe table13, echo=FALSE, message=FALSE, warning=FALSE}
+
+meanincomebysex <- vector_ytrabaj_lc %>% 
+        group_by(sexo) %>% 
+        summarise(weighted_meanincome = weighted.mean(itrabaj_valorpresente, expc, na.rm = T))
+
+medianincomebysex <- vector_ytrabaj_lc %>% 
+        group_by(sexo) %>% 
+        summarise(weighted_medianincome = weighted.median(itrabaj_valorpresente, expc, na.rm = T))
+
+table13 <- cbind(meanincomebysex, medianincomebysex$weighted_medianincome )
+table13 <- table13 %>%
+            rename(`Ingreso medio`= weighted_meanincome, `Ingreso mediano`= `medianincomebysex$weighted_medianincome`)
+table13 <- data.frame(t(table13[-1]))
+
+table13 <- table13 %>%
+            rename(Hombre= X1, Mujer= X2)
+table13$Hombre <- round(table13$Hombre, digits=0)
+table13$Hombre <- formatC(table13$Hombre, digits = 8, decimal.mark="," ,big.mark=".")
+table13$Hombre <- paste0("$", table13$Hombre)
+table13$Mujer <- round(table13$Mujer, digits=0)
+table13$Mujer <- formatC(table13$Mujer, digits = 8, decimal.mark="," ,big.mark=".")
+table13$Mujer <- paste0("$", table13$Mujer)
+
+```
+
+```{r print tab13, echo=FALSE, results= 'ASIS'}
+
+knitr::kable(table13, "html", col.names = c('Hombre', 'Mujer'), caption = "Tabla 13. Ingreso del trabajo en personas mayores de Las Condes desagregados por sexo.", align = 'cc' ) %>%
+  kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = "hover", font_size = 13, full_width = TRUE) 
+
+```
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos de Casen 2015*</font></p>
+
+<p align="justify"><font size=3>Las diferencias salariales de género en los trabajadores mayores son el reflejo de un fenómenos estructural del mercado laboral. En general, las mujeres perciben ingresos significativamente menores que los hombres a lo largo de todo el ciclo de vida activo, y el efecto decreciente de la edad en los salarios les afecta en edades más tempranas.</font></p>
+
+<p align="justify"><font size=3>Al analizar la consecuencia del aumento de la edad sobre el nivel de ingresos del trabajo en Las Condes descompuesta por sexo, y ajustado por años de escolaridad, se puede observar en detalle la diferencia salariar por género y se demuestra que la caída en el nivel de ingresos de las mujeres ocurre tempranamente. Antes de los 45 años los salarios de las mujeres comienzan a decrecer, mientras que en hombres este fenómeno ocurre posterior a los 60 años (*figura 23*).</font></p>
+
+<p align="justify"><font size=3>Figura 23. Efectos de la edad sobre el ingreso del trabajo ajustado por escolaridad y descompuesto por sexo en Las Condes.</font></p>
+<p align="center"><img src="C:/Users/17617549-4/Documents/Desarrollo Website Estudios/EstudiosDecom.git.io/images/incomebyageandsex.png" alt="drawing" width="630" height="480"/></p>
+<font size=3><p align="center"><font size=3>*Fuente: Elaboración propia en base a datos de Casen 2015*</font></p>
+
+<p align="justify"><font size=3>A partir de lo anterior es posible concluir que la menor valoración del empleo femenino y el efecto temprano de la edad sobre los salarios, afecta entre otros, la capacidad de ahorro previsional en las mujeres, generando una mayor vulnerabilidad en estas al momento de retirarse del mercado laboral</font></p>
+
+<p align="justify">Finalmente, en relación con los salarios por tipo de empleo se observa que los mayores ingresos se encuentran en el empleo asalariado del sector público ($), y en las FF.AA y de Orden (), mientras que el ingreso del trabajo más bajo corresponde al servicio doméstico (). En la *figura 24* se describe el ingreso medio de los trabajadores mayores de Las Condes según tipo de empleo.<font size=3>
+</font></p>
+
+```{r plot fig24, echo=FALSE, message=FALSE, warning=FALSE}
+
+
+```
+
+<p align="justify"><font size=3>
+</font></p>
+
+<p align="justify"><font size=3>
+</font></p>
+
+<p align="justify"><font size=3>
+</font></p>
+
+<p align="justify"><font size=3>
+</font></p>
+
+<p align="justify"><font size=3>
+</font></p>
+
+<p align="justify"><font size=3>
+</font></p>
+
+<p align="justify"><font size=3>
+</font></p>
+
+<p align="justify"><font size=3>
+</font></p>
+
+<p align="justify"><font size=3>
+</font></p>
 
 
 
