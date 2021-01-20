@@ -11,7 +11,7 @@ navbar:
       href: diagnostico.html
     - text: "Análisis"
       href: doc_analisis.html
-    - text: "Web mapping"
+    - text: "IDE DECOM"
       href: maps.html
     - text: "Nosotros"
       href: about.html
