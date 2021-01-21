@@ -1276,22 +1276,90 @@ knitr::kable(table13, "html", col.names = c('Hombre', 'Mujer'), caption = "Tabla
 
 <p align="justify"><font size=3>A partir de lo anterior es posible concluir que la menor valoración del empleo femenino y el efecto temprano de la edad sobre los salarios, afecta entre otros, la capacidad de ahorro previsional en las mujeres, generando una mayor vulnerabilidad en estas al momento de retirarse del mercado laboral</font></p>
 
-<p align="justify">Finalmente, en relación con los salarios por tipo de empleo se observa que los mayores ingresos se encuentran en el empleo asalariado del sector público ($), y en las FF.AA y de Orden (), mientras que el ingreso del trabajo más bajo corresponde al servicio doméstico (). En la *figura 24* se describe el ingreso medio de los trabajadores mayores de Las Condes según tipo de empleo.<font size=3>
-</font></p>
+<p align="justify"><font size=3>Finalmente, en relación con los salarios por tipo de empleo se observa que los mayores ingresos se encuentran en el empleo asalariado del sector privado (2.560.192 pesos), y en las FF.AA y de Orden (2.514.729 pesos), mientras que el ingreso del trabajo más bajo corresponde al servicio doméstico (376.917 pesos). En la *figura 24* se describe el ingreso medio de los trabajadores mayores de Las Condes según tipo de empleo.</font></p>
 
-```{r plot fig24, echo=FALSE, message=FALSE, warning=FALSE}
+<p align="center"><font size=3>Figura 23. Ingresos del trabajo en personas mayores de Las Condes descompuestos por tipo de empleo.</font></p>
+
+```{r dataframe fig23, echo=FALSE, message=FALSE}
+
+#Recodificar tipo de empleos:
+library("car")
+
+vector_ytrabaj_lc$tipoempleo <- recode(vector_ytrabaj_lc$o15, "1=1; 2=2; 3=3; 4=3; 5=4; 6=5 ; 7=5; 8=6; 9=7")
+
+vector_ytrabaj_lc$tipoempleo = factor (vector_ytrabaj_lc$tipoempleo, levels = c(1,2,3,4,5,6,7),
+                     labels = c("Empleador", "Trabajador por cuenta propia", "Asalariado sector público", "Asalariado sector privado",
+                                "Servicio doméstico", "FF.AA y de orden", "Familiar no remunerado"))
+
+#Calcular promedio de ingresos por tipo de empleo
+fig23 <- vector_ytrabaj_lc %>% 
+        group_by(tipoempleo) %>% 
+        summarise(weighted_meanincome = weighted.mean(itrabaj_valorpresente, expc, na.rm = T))
+fig23 = na.omit(fig23)
+fig23$label <- round(fig23$weighted_meanincome, digits=0)
+fig23$label  <- formatC(fig23$label , digits = 8, decimal.mark="," ,big.mark=".")
+fig23$label  <- paste0("$", fig23$label)
 
 
 ```
 
-<p align="justify"><font size=3>
-</font></p>
+```{r plot fig23, echo=FALSE ,results = 'ASIS'}
 
-<p align="justify"><font size=3>
-</font></p>
+#Select dataframe + Add geometry
+p_ingresostrocup60 <-  ggplot(fig23, aes (x = tipoempleo , y = weighted_meanincome , text = label)) + 
+geom_bar(stat = 'identity' ,fill = '#00C0B8', colour = 'azure' ,width = 0.7, position = "dodge")
+#Add labels + custom theme
+p_ingresostrocup60   <- p_ingresostrocup60   + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_y_discrete(breaks = seq(0, 3000000 ,250000)) + geom_text(aes(label = paste0(label)),size = 3.5, color = 'black', position=position_dodge (width = 0.7), vjust=-0.5) 
 
-<p align="justify"><font size=3>
-</font></p>
+p_ingresostrocup60  <- p_ingresostrocup60  + scale_fill_manual(values = c ('#00C0B8','#F8766D'))
+
+div(ggplotly(p_ingresostrocup60 , tooltip="text") %>% config(displayModeBar = T), align = "center")
+
+
+```
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos de Casen 2015*</font></p>
+
+#### 2.2.3 Personas Mayores y Salud
+
+<p align="justify"><font size=3>El envejecimiento poblacional genera diversos efectos en materia sanitaria. El deterioro gradual de capacidades físicas y mentales, sumado a una lata prevalencia de enfermedades crónicas como diabétes, hipertensión o afecciones de salud mental, son aspectos que afectamentan especialmente a la población mayor (World Health Organization, 2018).</font></p>
+
+<p align="justify"><font size=3>Al mismo tiempo, la disminución de ingresos en la tercera edad supone mayor dificultad de acceso a los servicios sanitarios, y de sobrellevar los costos asociados a una enfermedad, lo que se traduce en una preocupación desde el punto de vista de la salud pública.</font></p>
+
+<p align="justify"><font size=3>Respecto del gasto en salud, es importante mencionar que cerca del 14% del consumo de un hogar de personas mayores en Chile, corresponde a ítems de salud según los datos de la Encuesta de presupuestos familiares del año 2017.</font></p>
+
+<p align="center"><font size=3>Figura 24. Composición del gasto de una hogar de personas mayores en Chile.</font></p>
+
+```{r dataframe fig24, echo=FALSE}
+
+itemconsumo = c(1,2,3,4,5,6,7,8,9,10,11,12)
+itemconsumo <- factor (itemconsumo, levels = c(1,2,3,4,5,6,7,8,9,10,11,12),
+                     labels = c("Alimentos y bebidas no alcohólicas", "Bebidas alcohólicas, tabaco y estupefacientes", "Vestimenta y calzado", "Alojamiento y servicios básicos", 
+                                "Muebles y artículos para el hogar", "Salud", "Transporte", "Comunicaciones", "Recreación y cultura", "Educación", "Restaurant y hoteles", "Otros bienes y servicios"))
+
+consumoprop = c(.204, .012, .023, .173, .089, .139, .118, .054, .068, .004, .047, .068 )
+fig24 <- data.frame(itemconsumo,consumoprop)
+fig24$label  <- (fig24$consumoprop * 100)
+fig24$label  <- formatC(fig24$label , digits = 8, decimal.mark="," ,big.mark=".")
+
+
+```
+
+
+```{r plot fig24, echo=FALSE ,results = 'ASIS'}
+
+#Select dataframe + Add geometry
+p_consumohogar <-  ggplot(fig24, aes (x = itemconsumo , y = consumoprop ,fill= itemconsumo ,text = paste(""))) + 
+geom_bar(stat = 'identity' , colour = 'azure' ,width = 0.7, position = "dodge")
+#Add labels + custom theme
+p_consumohogar   <- p_consumohogar  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank(),legend.position = "none" , text = element_text(size = 10,  color = "black" )) + scale_y_continuous(breaks = seq(0, 1 ,0.05), label = scales::percent_format(accuracy = 1) ) + geom_text(aes(label = paste0(label, "%")),size = 3.5, color = 'black', position=position_dodge (width = 0.7), show.legend = FALSE ,vjust=-0.5) + coord_flip()
+
+p_consumohogar <- p_consumohogar + scale_fill_manual(values = c ('#00C0B8','#00C0B8','#00C0B8','#00C0B8','#00C0B8','#F8766D','#00C0B8', '#00C0B8','#00C0B8','#00C0B8','#00C0B8','#00C0B8'))
+
+div(ggplotly(p_consumohogar, tooltip="text") %>% config(displayModeBar = T), align = "center")
+
+
+```
+
 
 <p align="justify"><font size=3>
 </font></p>
