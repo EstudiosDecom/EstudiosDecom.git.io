@@ -224,7 +224,7 @@ brechatransporte$label <- formatC(brechatransporte$indicador, digits = 4, decima
 ```{r brechatransporte,  results='ASIS'}
 #Select dataframe
 transportplot <-  ggplot(brechatransporte, mapping = aes(x = comuna,  y = indicador, fill = brecha, 
-                 text = paste("Tiempo promedio de traslado en transporte público",indicador,"minutos" ))) 
+                 text = paste(""))) 
 #Add Geometry
 transportplot <- transportplot + geom_bar(stat = "identity", position = "dodge", colour = "#999999") + 
   geom_hline(yintercept=60, colour = "azure2", linetype="dotted")
@@ -264,7 +264,7 @@ medio_transporte$label <- formatC(medio_transporte$label, digits = 3, decimal.ma
 ```{r medtransp, fig.pos="center" ,results = 'ASIS'}
 
 #Select dataframe
-medtranspplot <-  ggplot(medio_transporte, mapping = aes(x = reorder(mediotransp, -prop_transp),  y =prop_transp,text = paste0(label,"%"))) 
+medtranspplot <-  ggplot(medio_transporte, mapping = aes(x = reorder(mediotransp, -prop_transp),  y =prop_transp,text = paste(""))) 
 #Add Geometry
 medtranspplot <- medtranspplot + geom_bar(stat = 'identity', 
                   colour = 'azure2', fill = '#00C0B8') 
@@ -324,7 +324,7 @@ pobl_sexo_sorted$label <- formatC(pobl_sexo_sorted$label, digits = 3, decimal.ma
 ```{r plotsex, fig.pos="center", results = 'ASIS'}
 
 #Select dataframe + Add geometry
-psexplot <-  ggplot(pobl_sexo_sorted, aes ( y= prop_pobl, x = area, fill = sexo, text = paste0(label, "%") )) +
+psexplot <-  ggplot(pobl_sexo_sorted, aes ( y= prop_pobl, x = area, fill = sexo, text = paste("") )) +
   geom_bar(stat = 'identity', colour = 'azure2', width = 0.7, position = position_stack(reverse = TRUE))
 #Add labels + custom theme
 psexplot <- psexplot + ggtitle("") + ylab("") + xlab("") + theme_calc() + 
@@ -428,7 +428,7 @@ piramide_d$label <- formatC(piramide_d$label, digits = 3, decimal.mark="," ,big.
 
 ```{r fig6, fig.pos="center", echo=FALSE, results='ASIS'}
 #Select dataframe
-pyramidplot <- ggplot(piramide_d, mapping = aes(x=edad_quin, y=ifelse(sexo=='Hombre',-pop,pop), fill=sexo, text = paste0(label, "%")))
+pyramidplot <- ggplot(piramide_d, mapping = aes(x=edad_quin, y=ifelse(sexo=='Hombre',-pop,pop), fill=sexo, text = paste(label, "%")))
 #Add geometry
 pyramidplot <- pyramidplot + geom_col(position = 'stack', colour = 'azure2') + facet_wrap(.~area, ncol = 4) + 
   coord_flip()
@@ -461,7 +461,7 @@ indice_pm$label <- formatC(indice_pm$indicepm, digits = 2, decimal.mark="," ,big
 
 ```{r plotparmed, fig.pos='center' ,results = 'ASIS'}
 #Select dataframe + Add geometry
-parmedplot <-  ggplot(indice_pm, aes ( y= area_pm, x = indicepm, fill = area_pm, text = paste(label) )) + 
+parmedplot <-  ggplot(indice_pm, aes ( y= area_pm, x = indicepm, fill = area_pm, text = paste("") )) + 
 geom_bar(stat = 'identity' ,colour = 'azure2', width = 0.8)
 #Add labels + custom theme
 parmedplot <- parmedplot + ggtitle("") + ylab("") + xlab("") + theme_light() + theme(legend.position = "none", text = element_text(size = 10,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1.5 ,0.3)) + geom_text(aes(label = label), size = 3.5, color = 'azure2', position=position_stack (vjust = 0.9)) 
@@ -510,7 +510,7 @@ envejecimiento$label <- formatC(envejecimiento$label, digits = 3, decimal.mark="
 
 ```{r plotenvej, echo=FALSE ,results = 'ASIS'}
 #Select dataframe + Add geometry
-env_plot <-  ggplot(envejecimiento, aes ( x = area_env,  y= envej_prop, label = envej_prop, fill = area_env, text = paste0(label, "%"))) + 
+env_plot <-  ggplot(envejecimiento, aes ( x = area_env,  y= envej_prop, label = envej_prop, fill = area_env, text = paste(""))) + 
   geom_bar(stat = 'identity' ,colour = 'azure2', width = 0.7)
 #Add labels + custom theme
 env_plot <- env_plot + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.position = "none", text = element_text(size = 10,  color = "black" )) + scale_y_continuous(breaks = seq(0, 0.3 ,0.05), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3.5, color = 'azure2', position=position_stack (vjust = 0.7))
@@ -691,7 +691,7 @@ tipo_hogar$label <- formatC(tipo_hogar$label, digits = 3, decimal.mark="," ,big.
 
 ```{r plottipohog, echo=FALSE ,results = 'ASIS'}
 #Select dataframe + Add geometry
-tip_hog <-  ggplot(tipo_hogar, aes ( y = area_hogar,  x= prop_tiphoga, label = prop_tiphoga, fill = tipo_hogar, text = paste0(label,"%"))) +
+tip_hog <-  ggplot(tipo_hogar, aes ( y = area_hogar,  x= prop_tiphoga, label = prop_tiphoga, fill = tipo_hogar, text = paste(""))) +
 geom_bar(stat = 'identity' ,colour = 'azure2', width = 0.6,position = position_stack(reverse = TRUE))
 #Add labels + custom theme
 tip_hog <- tip_hog + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1 ,0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 2.5, color = 'black',
@@ -728,7 +728,7 @@ jh_sexo_sorted$label <- formatC(jh_sexo_sorted$label, digits = 3, decimal.mark="
 
 ```{r plotjefehogar, echo=FALSE ,results = 'ASIS'}
 #Select dataframe + Add geometry
-jhsexplot <-  ggplot(jh_sexo_sorted, aes ( y= prop_jh, x = area, fill = sexo, text = paste0(label, "%"))) +
+jhsexplot <-  ggplot(jh_sexo_sorted, aes ( y= prop_jh, x = area, fill = sexo, text = paste(""))) +
   geom_bar(stat = 'identity',colour = 'azure2', width = 0.6 , position = position_stack(reverse = TRUE))
 #Add labels + custom theme
 jhsexplot <- jhsexplot + ggtitle("") + ylab("") + xlab("") + theme_calc() + 
@@ -765,7 +765,7 @@ edad_jhogar$label <- formatC(edad_jhogar$label, digits = 3, decimal.mark="," ,bi
 
 ```{r plot edad jefe hogar, echo=FALSE ,results = 'ASIS'}
 #Select dataframe + Add geometry
-edadjefe_hog <-  ggplot(edad_jhogar, aes ( y = area_hogar,  x= edadjhog_prop, label = edadjhog_prop, fill = edad_jhogar, text = paste0(label, "%"))) + 
+edadjefe_hog <-  ggplot(edad_jhogar, aes ( y = area_hogar,  x= edadjhog_prop, label = edadjhog_prop, fill = edad_jhogar, text = paste(""))) + 
 geom_bar(stat = 'identity' ,colour = 'azure2', width = 0.5,position = position_stack(reverse = TRUE))
 #Add labels + custom theme
 edadjefe_hog <- edadjefe_hog + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1 ,0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3.5, color = 'black',
@@ -800,7 +800,7 @@ educ_jhogar$label <- formatC(educ_jhogar$label, digits = 3, decimal.mark="," ,bi
 
 ```{r plot niveleducacional jefe hogar, echo=FALSE ,results = 'ASIS'}
 #Select dataframe + Add geometry
-educjefe_hog <-  ggplot(educ_jhogar, aes ( y = area_hogar,  x=educjhog_prop  , label = educjhog_prop , fill = niveled_jhogar, text = paste0(label, "%"))) + 
+educjefe_hog <-  ggplot(educ_jhogar, aes ( y = area_hogar,  x=educjhog_prop  , label = educjhog_prop , fill = niveled_jhogar, text = paste(""))) + 
 geom_bar(stat = 'identity' ,colour = 'azure2', width = 0.6,position = position_stack(reverse = TRUE))
 #Add labels + custom theme
 educjefe_hog <- educjefe_hog + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1 ,0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label ,"%")),size = 2.5, color = 'black',
@@ -840,7 +840,7 @@ edad_am$label <- formatC(edad_am$label, digits = 3, decimal.mark="," ,big.mark="
 
 ```{r plot Edad adultos mayores, echo=FALSE ,results = 'ASIS'}
 #Select dataframe + Add geometry
-amedad <-  ggplot(edad_am, aes ( y = area,  x= propedad_am, label = propedad_am, fill = edad_am, text = paste0(label, "%"))) + 
+amedad <-  ggplot(edad_am, aes ( y = area,  x= propedad_am, label = propedad_am, fill = edad_am, text = paste(""))) + 
   geom_bar(stat = 'identity' ,colour = 'azure2', width = 0.6,position = position_stack(reverse = TRUE))
 #Add labels + custom theme
 amedad  <- amedad  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1 ,0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3.5, color = 'azure2',
@@ -874,7 +874,7 @@ sexoam$label <- formatC(sexoam$label, digits = 3, decimal.mark="," ,big.mark="."
 
 ```{r plot sexo adultos mayores, echo=FALSE ,results = 'ASIS'}
 #Select dataframe + Add geometry
-amsexo <-  ggplot(sexoam, aes ( y = area,  x= sexoam_prop, label = sexoam_prop, fill = sexo_am, text = label)) + 
+amsexo <-  ggplot(sexoam, aes ( y = area,  x= sexoam_prop, label = sexoam_prop, fill = sexo_am, text = paste (""))) + 
 geom_bar(stat = 'identity' ,colour = 'azure2', width = 0.5,position = position_stack(reverse = TRUE))
 #Add labels + custom theme
 amsexo <- amsexo  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 9,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1 ,0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3.5, color = 'azure2',
@@ -906,7 +906,7 @@ amsolo$label <- formatC(amsolo$label, digits = 3, decimal.mark="," ,big.mark="."
 
 ```{r plot adultosmayores solos, echo=FALSE ,results = 'ASIS'}
 #Select dataframe + Add geometry
-plotamsolo <-  ggplot(amsolo, aes ( y = area,  x= amsolo_prop, label = amsolo_prop, fill = sexo_am, text = paste0(label, "%"))) + 
+plotamsolo <-  ggplot(amsolo, aes ( y = area,  x= amsolo_prop, label = amsolo_prop, fill = sexo_am, text = paste(""))) + 
 geom_bar(stat = 'identity' ,colour = 'azure2', width = 0.7, position = position_stack(reverse = TRUE))
 #Add labels + custom theme
 plotamsolo <- plotamsolo  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 9,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1 ,0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3.5, color = 'azure2',
@@ -937,7 +937,7 @@ amsoloedad$label <- formatC(amsoloedad$label, digits = 3, decimal.mark="," ,big.
 
 ```{r plot adultosmayores solos edad, echo=FALSE ,results = 'ASIS'}
 #Select dataframe + Add geometry
-plotamsoloedad <-  ggplot(amsoloedad, aes (y = amsoloedad_prop , x = rango_edad, text = paste0(label, "%"))) + 
+plotamsoloedad <-  ggplot(amsoloedad, aes (y = amsoloedad_prop , x = rango_edad, text = paste(""))) + 
 geom_bar(stat = 'identity' ,colour = 'azure', fill = '#00C0B8' ,width = 0.7,position = position_stack(reverse = TRUE))
 #Add labels + custom theme
 plotamsoloedad <- plotamsoloedad  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_y_continuous(breaks = seq(0, 0.25 ,0.05), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3.5, color = 'black', position=position_stack (vjust = 1.05, reverse = TRUE))
@@ -962,7 +962,7 @@ tipo_hogaram$label <- formatC(tipo_hogaram$label, digits = 3, decimal.mark="," ,
 
 ```{r plottipohogam, echo=FALSE ,results = 'ASIS'}
 #Select dataframe + Add geometry
-tiphogam <-  ggplot(tipo_hogaram, aes ( y = area_hogar,  x= tiphogaram_prop, label = tiphogaram_prop, fill = tipo_hogar, text = paste0(label,"%"))) + 
+tiphogam <-  ggplot(tipo_hogaram, aes ( y = area_hogar,  x= tiphogaram_prop, label = tiphogaram_prop, fill = tipo_hogar, text = paste(""))) + 
 geom_bar(stat = 'identity' ,colour = 'azure', width = 0.5, position = position_stack(reverse = TRUE))
 #Add labels + custom theme
 tiphogam  <- tiphogam+ ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1 ,0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 2.5, color = 'black',
@@ -1035,7 +1035,7 @@ educ_am$label <- formatC(educ_am$label, digits = 3, decimal.mark="," ,big.mark="
 
 ```{r plot niveleducacional am, echo=FALSE ,results = 'ASIS'}
 #Select dataframe + Add geometry
-educam <-  ggplot(educ_am, aes ( y = area_hogar,  x=niveleducam , label = niveleducam , fill = niveled_jhogar, text= paste0(label,"%"))) + 
+educam <-  ggplot(educ_am, aes ( y = area_hogar,  x=niveleducam , label = niveleducam , fill = niveled_jhogar, text= paste(""))) + 
   geom_bar(stat = 'identity' ,colour = 'azure2', width = 0.6, position = position_stack(reverse = TRUE))
 #Add labels + custom theme
 educam <- educam + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() , text = element_text(size = 10,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1 ,0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label ,"%")),size = 2.5, color = 'black',
@@ -1081,7 +1081,7 @@ pea_am$label <- formatC(pea_am$label, digits = 3, decimal.mark="," ,big.mark="."
 
 ```{r plot pea adultos mayores, echo=FALSE ,results = 'ASIS'}
 #Select dataframe + Add geometry
-peaplot <-  ggplot(pea_am, aes ( y = area,  x= propam, label = propam, fill = pea, text = paste0(label, "%"))) + 
+peaplot <-  ggplot(pea_am, aes ( y = area,  x= propam, label = propam, fill = pea, text = paste(""))) + 
 geom_bar(stat = 'identity' ,colour = 'azure2', width = 0.6,position = position_stack(reverse = TRUE))
 #Add labels + custom theme
 peaplot <- peaplot  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1 ,0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3.5, color = 'azure2',
@@ -1129,7 +1129,7 @@ theme(legend.title = element_blank(), text = element_text(size = 10, color = "bl
 scale_x_continuous(breaks = seq(0, 1, 0.1), label = scales::percent_format(accuracy = 1)) +
 geom_text(aes(label = paste0(label,"%")), size = 3.5, color = "black", position = position_jitterdodge( jitter.width = -0.5, jitter.height = -0.7))
 
-p_sect_ec <- p_sect_ec + scale_fill_manual(values = c ( 'slategray3', '#F8766D','#00C0B8' ))
+p_sect_ec <- p_sect_ec + scale_fill_manual(values = c ('#00C0B8', 'slategray3', '#F8766D' ))
 
 ggplotly(p_sect_ec, tooltip="text") %>% config(displayModeBar = T) 
 
@@ -1154,7 +1154,7 @@ fig21$label <- formatC(fig21$label, digits = 3, decimal.mark="," ,big.mark=".")
 
 ```{r plot fig21, echo=FALSE ,results = 'ASIS'}
 #Select dataframe + Add geometry
-p_tipoempl <-  ggplot(fig21, aes (x = reorder(tipoempleo, tipoempleo_prop)  , y =  tipoempleo_prop  , text = paste0(label, "%"))) + 
+p_tipoempl <-  ggplot(fig21, aes (x = reorder(tipoempleo, tipoempleo_prop)  , y =  tipoempleo_prop  , text = paste(""))) + 
 geom_bar(stat = 'identity' ,colour = 'azure', fill = '#00C0B8' ,width = 0.7,position = position_stack(reverse = TRUE))
 #Add labels + custom theme
 p_tipoempl  <- p_tipoempl  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_y_continuous(breaks = seq(0, 0.4 ,0.05), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3.5, color = 'black', position=position_stack (vjust = 0.75, reverse = TRUE)) + coord_flip()
@@ -1175,26 +1175,34 @@ uf2019 = 	28065.35
 uf2015 = 	25494.15
 casen15$ingreso_uf = casen15$ytrabajocor/uf2015
 casen15$itrabaj_valorpresente= casen15$ingreso_uf * uf2019
+casen15$previsionsalud <- recode(casen15$s12, "1=1; 2=1; 3=1; 4=1; 5=1; 6=3; 7=2; 8=4; 9=5; 99=0")
+casen15$previsionsalud = factor (casen15$previsionsalud, levels = c(1,2,3,4,5),
+                                 labels = c("FONASA", "Isapre", "FF.AA y de orden", "Ninguno (particular)", "Otro sistema"))
+
+referencia <- c(1,1,2,2,3,3,4,4)
+referencia = factor (referencia, levels = c(1,2,3,4),
+                     labels = c("Nacional", "Región Metropolitana", "Providencia", "Las Condes"))
+
 
 #LAS CONDES:
-vector_ytrabaj_lc <- casen15 [which(casen15$comuna==13114 & casen15$edad>=60),] 
-mean_ingresostr_60lc =  weighted.mean(vector_ytrabaj_lc$itrabaj_valorpresente, vector_ytrabaj_lc$expc, na.rm = T)
-median_ingresostr_60lc =  weighted.median(vector_ytrabaj_lc$itrabaj_valorpresente, vector_ytrabaj_lc$expc, na.rm = T)
+casen15_60lc <- casen15 [which(casen15$comuna==13114 & casen15$edad>=60),] 
+mean_ingresostr_60lc =  weighted.mean(casen15_60lc$itrabaj_valorpresente, casen15_60lc$expc, na.rm = T)
+median_ingresostr_60lc =  weighted.median(casen15_60lc$itrabaj_valorpresente, casen15_60lc$expc, na.rm = T)
 
 #PROVIDENCIA:
-vector_ytrabaj_prov <- casen15 [which(casen15$comuna==13123 & casen15$edad>=60),] 
-mean_ingresostr_60prov =  weighted.mean(vector_ytrabaj_prov$itrabaj_valorpresente, vector_ytrabaj_prov$expc, na.rm = T)
-median_ingresostr_60prov =  weighted.median(vector_ytrabaj_prov$itrabaj_valorpresente, vector_ytrabaj_prov$expc, na.rm = T)
+casen15_60prov <- casen15 [which(casen15$comuna==13123 & casen15$edad>=60),] 
+mean_ingresostr_60prov =  weighted.mean(casen15_60prov$itrabaj_valorpresente, casen15_60prov$expc, na.rm = T)
+median_ingresostr_60prov =  weighted.median(casen15_60prov$itrabaj_valorpresente, casen15_60prov$expc, na.rm = T)
 
 #REGIÓN METROPOLITANA:
-vector_ytrabaj_rm <- casen15 [which(casen15$region==13 & casen15$edad>=60),] 
-mean_ingresostr_60rm =  weighted.mean(vector_ytrabaj_rm$itrabaj_valorpresente, vector_ytrabaj_rm$expr, na.rm = T)
-median_ingresostr_60rm =  weighted.median(vector_ytrabaj_rm$itrabaj_valorpresente, vector_ytrabaj_rm$expr, na.rm = T)
+casen15_60rm <- casen15 [which(casen15$region==13 & casen15$edad>=60),] 
+mean_ingresostr_60rm =  weighted.mean(casen15_60rm$itrabaj_valorpresente, casen15_60rm$expr, na.rm = T)
+median_ingresostr_60rm =  weighted.median(casen15_60rm$itrabaj_valorpresente, casen15_60rm$expr, na.rm = T)
 
 #NACIONAL:
-vector_ytrabaj_nacional <- casen15 [which(casen15$edad>=60),] 
-mean_ingresostr_60nacional =  weighted.mean(vector_ytrabaj_nacional$itrabaj_valorpresente, vector_ytrabaj_nacional$expr, na.rm = T)
-median_ingresostr_60nacional =  weighted.median(vector_ytrabaj_nacional$itrabaj_valorpresente, vector_ytrabaj_nacional$expr, na.rm = T)
+casen15_60cl <- casen15 [which(casen15$edad>=60),] 
+mean_ingresostr_60nacional =  weighted.mean(casen15_60cl$itrabaj_valorpresente, casen15_60cl$expr, na.rm = T)
+median_ingresostr_60nacional =  weighted.median(casen15_60cl$itrabaj_valorpresente, casen15_60cl$expr, na.rm = T)
 
 
 #Data frame fig22:
@@ -1216,12 +1224,12 @@ fig22$label <- formatC(fig22$label, digits = 8, decimal.mark="," ,big.mark=".")
 
 ```{r plot fig22, echo=FALSE ,results = 'ASIS'}
 #Select dataframe + Add geometry
-p_ingresostr60 <-  ggplot(fig22, aes (fill= estadisticoingresos , x = referencia , y = ingresos , text = paste0( "$", label))) + 
+p_ingresostr60 <-  ggplot(fig22, aes (fill= estadisticoingresos , x = referencia , y = ingresos , text = paste(""))) + 
 geom_bar(stat = 'identity' ,colour = 'azure' ,width = 0.7, position = "dodge")
 #Add labels + custom theme
 p_ingresostr60   <- p_ingresostr60  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_y_discrete(breaks = seq(0, 2000000 ,150000)) + geom_text(aes(label = paste0("$", label)),size = 3.5, color = 'black', position=position_dodge (width = 0.7), vjust=-0.5) 
 
-p_ingresostr60 <- p_ingresostr60 + scale_fill_manual(values = c ('#00C0B8','#F8766D'))
+p_ingresostr60 <- p_ingresostr60 + scale_fill_manual(values = c ('#00C0B8','slategray3'))
 
 div(ggplotly(p_ingresostr60  , tooltip="text") %>% config(displayModeBar = T), align = "center")
 
@@ -1234,11 +1242,11 @@ div(ggplotly(p_ingresostr60  , tooltip="text") %>% config(displayModeBar = T), a
 
 ```{r dataframe table13, echo=FALSE, message=FALSE, warning=FALSE}
 
-meanincomebysex <- vector_ytrabaj_lc %>% 
+meanincomebysex <- casen15_60lc %>% 
         group_by(sexo) %>% 
         summarise(weighted_meanincome = weighted.mean(itrabaj_valorpresente, expc, na.rm = T))
 
-medianincomebysex <- vector_ytrabaj_lc %>% 
+medianincomebysex <- casen15_60lc %>% 
         group_by(sexo) %>% 
         summarise(weighted_medianincome = weighted.median(itrabaj_valorpresente, expc, na.rm = T))
 
@@ -1285,14 +1293,15 @@ knitr::kable(table13, "html", col.names = c('Hombre', 'Mujer'), caption = "Tabla
 #Recodificar tipo de empleos:
 library("car")
 
-vector_ytrabaj_lc$tipoempleo <- recode(vector_ytrabaj_lc$o15, "1=1; 2=2; 3=3; 4=3; 5=4; 6=5 ; 7=5; 8=6; 9=7")
+casen15_60lc$tipoempleo <- recode(casen15_60lc$o15, "1=1; 2=2; 3=3; 4=3; 5=4; 6=5 ; 7=5; 8=6; 9=7")
 
-vector_ytrabaj_lc$tipoempleo = factor (vector_ytrabaj_lc$tipoempleo, levels = c(1,2,3,4,5,6,7),
+
+casen15_60lc$tipoempleo = factor (casen15_60lc$tipoempleo, levels = c(1,2,3,4,5,6,7),
                      labels = c("Empleador", "Trabajador por cuenta propia", "Asalariado sector público", "Asalariado sector privado",
                                 "Servicio doméstico", "FF.AA y de orden", "Familiar no remunerado"))
 
 #Calcular promedio de ingresos por tipo de empleo
-fig23 <- vector_ytrabaj_lc %>% 
+fig23 <- casen15_60lc %>% 
         group_by(tipoempleo) %>% 
         summarise(weighted_meanincome = weighted.mean(itrabaj_valorpresente, expc, na.rm = T))
 fig23 = na.omit(fig23)
@@ -1306,7 +1315,7 @@ fig23$label  <- paste0("$", fig23$label)
 ```{r plot fig23, echo=FALSE ,results = 'ASIS'}
 
 #Select dataframe + Add geometry
-p_ingresostrocup60 <-  ggplot(fig23, aes (x = tipoempleo , y = weighted_meanincome , text = label)) + 
+p_ingresostrocup60 <-  ggplot(fig23, aes (x = tipoempleo , y = weighted_meanincome , text = paste(""))) + 
 geom_bar(stat = 'identity' ,fill = '#00C0B8', colour = 'azure' ,width = 0.7, position = "dodge")
 #Add labels + custom theme
 p_ingresostrocup60   <- p_ingresostrocup60   + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_y_discrete(breaks = seq(0, 3000000 ,250000)) + geom_text(aes(label = paste0(label)),size = 3.5, color = 'black', position=position_dodge (width = 0.7), vjust=-0.5) 
@@ -1351,23 +1360,76 @@ fig24$label  <- formatC(fig24$label , digits = 8, decimal.mark="," ,big.mark="."
 p_consumohogar <-  ggplot(fig24, aes (x = itemconsumo , y = consumoprop ,fill= itemconsumo ,text = paste(""))) + 
 geom_bar(stat = 'identity' , colour = 'azure' ,width = 0.7, position = "dodge")
 #Add labels + custom theme
-p_consumohogar   <- p_consumohogar  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank(),legend.position = "none" , text = element_text(size = 10,  color = "black" )) + scale_y_continuous(breaks = seq(0, 1 ,0.05), label = scales::percent_format(accuracy = 1) ) + geom_text(aes(label = paste0(label, "%")),size = 3.5, color = 'black', position=position_dodge (width = 0.7), show.legend = FALSE ,vjust=-0.5) + coord_flip()
+p_consumohogar   <- p_consumohogar  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank(),legend.position = "none" , text = element_text(size = 10,  color = "black" )) + scale_y_continuous(breaks = seq(0, 1 ,0.05), label = scales::percent_format(accuracy = 1) ) + geom_text(aes(label = paste0(label, "%")),size = 3.5, color = 'black', position=position_identity (), show.legend = FALSE ,vjust=-0.5) + coord_flip()
 
-p_consumohogar <- p_consumohogar + scale_fill_manual(values = c ('#00C0B8','#00C0B8','#00C0B8','#00C0B8','#00C0B8','#F8766D','#00C0B8', '#00C0B8','#00C0B8','#00C0B8','#00C0B8','#00C0B8'))
+p_consumohogar <- p_consumohogar + scale_fill_manual(values = c ('#00C0B8','#00C0B8','#00C0B8','#00C0B8','#00C0B8','slategray3','#00C0B8', '#00C0B8','#00C0B8','#00C0B8','#00C0B8','#00C0B8'))
 
 div(ggplotly(p_consumohogar, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
 
 ```
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos de Casen 2015*</font></p>
+
+<p align="justify"><font size=3>En términos de acceso a los servicios sanitarios, Chile cuenta con un sistema previsional mixto; uno de carácter público (FONASA) y otro privado (Isapres), además de otros sistemas especiales como el que poseen las fuerzas armadas y de orden.</font></p>
+
+<p align="justify"><font size=3>En relación con esto, se observa que en la comuna alrededor del 50% de las personas mayores cuentan con un sistema de previsión de salud privada, una proporción sustancialmente mayor a la observada en el resto del país, donde el 8,2% tiene acceso a este sistema. Respecto del sistema público el 41% de los adultos mayores de Las Condes accede a él, mientras que a nivel nacional esta cifra alcanza el 86,3% de las personas de 60 años y más.</font></p>
+
+<p align="center"><font size=3>Figura 25. Sistema previsional de salud en personas mayores según área de referencia.</font></p>
+
+``` {r dataframe fig25, echo=FALSE}
+
+#LAS CONDES:
+casen15_60lc$previsionsalud <- as.numeric(casen15_60lc$previsionsalud)
+prevamlc = wtd.table(x = casen15_60lc$previsionsalud, weights = casen15_60lc$expc)
+prevamlc <- cbind(prevamlc, prop.table(prevamlc))
+
+#PROVIDENCIA:
+prevamprov <- as.numeric(casen15_60prov$previsionsalud) 
+prevamprov = wtd.table(x = casen15_60prov$previsionsalud, weights = casen15_60prov$expc) 
+prevamprov <- cbind(prevamprov, prop.table(prevamprov))
+
+#REGIÓN METROPOLITANA:
+prevamrm <- as.numeric(casen15_60rm$previsionsalud) 
+prevamrm = wtd.table(x = casen15_60rm$previsionsalud, weights = casen15_60rm$expr) 
+prevamrm <- cbind(prevamrm, prop.table(prevamrm))
+
+#NACIONAL:
+prevamcl <- as.numeric(casen15_60cl$previsionsalud) 
+prevamcl = wtd.table(x = casen15_60cl$previsionsalud, weights = casen15_60cl$expr) 
+prevamcl <- cbind(prevamcl, prop.table(prevamcl))
+
+#Armar el dataframe:
+previsionsaludam = c(prevamlc[1:5,2], prevamprov[1:5,2], prevamrm[1:5,2] ,prevamcl[1:5,2])
+referencia = c(1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,4,4,4,4,4)
+referencia = factor(referencia, levels = c(1,2,3,4),
+                    labels = c("Las Condes", "Providencia", "Región Metropolitana", "Nacional"))
+tipoprevision = c(1,2,3,4,5,1,2,3,4,5,1,2,3,4,5,1,2,3,4,5)
+tipoprevision = factor (tipoprevision, levels = c(1,2,3,4,5),
+                                 labels = c("FONASA", "Isapre", "FF.AA y de orden", "Ninguno (particular)", "Otro sistema"))
+
+fig25 <- data.frame(referencia, tipoprevision, previsionsaludam)
+fig25$previsionsaludam <- round(fig25$previsionsaludam, digits = 3)
+fig25$label <- fig25$previsionsaludam*100
+fig25$label <- formatC(fig25$label, digits = 3, decimal.mark="," ,big.mark="." )
 
 
-<p align="justify"><font size=3>
-</font></p>
+```
 
-<p align="justify"><font size=3>
-</font></p>
+```{r plot fig25, echo=FALSE ,results = 'ASIS'}
+#Select dataframe + Add geometry
+p_previsionsal60 <-  ggplot(fig25, aes (fill= tipoprevision , x = referencia , y = previsionsaludam , text = paste(""))) + 
+geom_bar(stat = 'identity' ,colour = 'azure' ,width = 0.7, position = "dodge")
+#Add labels + custom theme
+p_previsionsal60 <- p_previsionsal60  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_y_continuous(breaks = seq(0, 1 , 0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3.5, color = 'black', position=position_dodge (width = 0.9), vjust=-0.5) 
 
-<p align="justify"><font size=3>
+p_previsionsal60 <- p_previsionsal60 + scale_fill_manual(values = c ('#00C0B8','slategray3','#F8766D','#FFCC33','#99CCFF'))
+
+div(ggplotly(p_previsionsal60  , tooltip="text") %>% config(displayModeBar = T), align = "center")
+
+```
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos de Casen 2015*</font></p>
+
+<p align="justify"><font size=3>En línea con lo anterior, la evidencia empírica sugiere la existencia de desigualdades significativas en el estado de salud y calidad de vida de las personas mayores que acceden a uno u otro sistema de salud en Chile. Si observamos la escala de valoración de salud autopercibida que recoge la encuesta CASEN, se aprecia que los adultos mayores de Las Condes, en promedio, alcanzan una mejor percepción de su estado de salud respecto del resto de las unidades de referencia. 
 </font></p>
 
 <p align="justify"><font size=3>
