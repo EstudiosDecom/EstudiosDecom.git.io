@@ -578,7 +578,7 @@ knitr::kable(table6, "html", col.names = c('Índice', 'Las Condes', 'Comunas de 
 ```
 <p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
 
-#### 2.1.3 Composición de los hogares
+#### 2.1.4 Composición de los hogares
 
 <p align="justify"><font size=3>Los hogares corresponden al conjunto de una o más personas que unidas o no por una relación de parentesco, comparten la alimentación, el presupuesto, y habitan la misma vivienda o parte de ella. A su vez, estas unidades se clasifican de acuerdo a su composición:</font></p>
 
@@ -1429,8 +1429,9 @@ div(ggplotly(p_previsionsal60  , tooltip="text") %>% config(displayModeBar = T),
 ```
 <p align="center"><font size=3>*Fuente: Elaboración propia en base a datos de Casen 2015*</font></p>
 
-<p align="justify"><font size=3>En línea con lo anterior, la evidencia empírica sugiere la existencia de desigualdades significativas en el estado de salud y calidad de vida de las personas mayores que acceden a uno u otro sistema de salud en Chile. Si observamos la escala de valoración de salud autopercibida que recoge la encuesta CASEN, se aprecia que los adultos mayores de Las Condes, en promedio, alcanzan una mejor percepción de su estado de salud respecto del resto de las unidades de referencia. 
-</font></p>
+<p align="justify"><font size=3>En línea con lo anterior, la evidencia empírica sugiere la existencia de desigualdades significativas en el estado de salud y calidad de vida de las personas mayores que acceden a uno u otro sistema de salud en Chile. Si observamos la escala de valoración de salud autopercibida[^13] que recoge la encuesta CASEN, se aprecia que los adultos mayores de Las Condes, en promedio, alcanzan una mejor percepción de su estado de salud respecto del resto de las unidades de referencia (*tabla 14*).</font></p>
+
+
 
 <p align="justify"><font size=3>
 </font></p>
@@ -1605,6 +1606,8 @@ https://lyd.org/wp-content/uploads/2019/05/tp-1399-clase-media.pdf </p>
 [^11]: La tasa de participación laboral representa la proporción de población económicamente activa respecto del total de población. En el caso de los adultos mayores, esta expresa el porcentaje de personas de 60 años y más que se encuentran económicamente activos respecto del total de personas de tercera edad.
 
 [^12]: Tasa de retención: Es la proporción de trabajadores entre 60 y 64 años que conserva el mismo empleo hace al menos cinco años.
+
+[^13]: La escala de valoración subjetiva o autopercepción de salud, es una escala sobre la cual las personas evalúan su propio estado de salud con una nota que va desde 1 a 7, donde 1 representa un pésimo de estado de salud y 7 un excelente de salud.
 
 </font>
 
