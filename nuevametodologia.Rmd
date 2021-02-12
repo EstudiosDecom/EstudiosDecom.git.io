@@ -1,18 +1,23 @@
 ---
-title: "Nueva estrategia Desarrollo Social DECOM"
+title: "Estrategia de Desarrollo Social DECOM 2021"
 ---
 
 ---
 
 <p style="font-size:18px"; align="justify"><b>PRESENTACIÓN</b></p>
 
-<p align="justify">La nueva estrategia de desarrollo social de DECOM está enmarcada en un proceso de modernización en la gestión de los programas ejecutados por la Dirección, e impulsada por la necesidad de brindar mayor protección a los vecinos y vecinas de Las Condes, que se han visto afectados por la crisis económica en el contexto de pandemia COVID-19.</p>
+<p align="justify">La nueva estrategia de desarrollo social está impulsada por la necesidad de reconstruir mejor el bienestar de la comunidad, que hoy enfrenta las consecuencias profundas de la crisis sanitaria y económica provocada por la pandemia de COVID19 que afecta al mundo, y se enmarca en el contexto de modernización en la gestión de los programas sociales de DECOM impulsado por la Dirección.</p>
 
-<p align="justify">Este proceso se apoya en la definición de un modelo de brechas de bienestar a nivel local, que utiliza de base la metodología de pobreza multidimensional (Alkire & Foster, 2011). El modelo evalúa una cantidad definida de dimensiones asociadas a un concepto de bienestar social, sobre las cuales las distintas políticas sociales de DECOM deben operar.</p>
+<p align="justify">En términos técnicos este proyecto se apoyó en la literatura desarrollada por el equipo del *Oxford Poverty Human Initiative* (OPHI) sobre pobreza multidimensional y bien-estar (*well-being*). El ejercicio de definición de un indicador de bienestar local Las Condes, está inspirado en el índice de pobreza multidimensional que se mide en Chile desde el año 2013.</p>
 
-<p align="justify">El concepto de bienestar que aquí se utiliza, se desprende del enfoque de capacidades de Amartya Sen, cuyas reflexiones respecto al desarrollo humano, han puesto el foco del bienestar en las personas, la ampliación de sus capacidades y la protección de funcionamientos elementales y complejos, para perseguir aquellos resultados que por diversas razones valoran para sus vidas.</p>
+<p align="justify">El concepto de bienestar que aquí se instala, sigue las reflexiones del enfoque de capacidades de Amartya Sen, cuyo trabajo en torno al desarrollo humano ha puesto el foco del bienestar en las personas, incorporando una mirada holística del desarrollo económico y el bienestar de las sociedades.</p>
 
-<p align="justify">El trabajo realizado se divididó en cuatro etapas resumidas en el diagrama adjunto. Las distintas fases se fueron desarrollando de manera paralela, cada una con hitos y productos entregados a la Dirección. Corresponde agradecer la colaboración de los equipo involucrados en las diferentes etapas, y esperamos que esta estrategia de desarrollo social contribuya al bienestar integral de los vecinos y vecinas de Las Condes.</p> 
+<p align="justify">El modelo de bienestar local Las Condes, observa una cantidad de diez dimensiones en su primera etapa de implementación; (1) Educación, (2) Salud, (3) Empleo, (4) Redes de apoyo, (5)  Vivienda, (6) Transporte, (7) Participación vecinal, (8) Recreación y Deportes, (9) Apoyo social y (10) Medioambiente. Estas dimensiones fueron definidas en conjunto con los equipos de DECOM de acuerdo a la oferta de programas sociales existentes.</p>
+
+<p align="justify">El trabajo realizado se divididó en distintas etapas que se fueron desarrollando de manera progresiva, cada una con hitos y productos entregados a la Dirección. Como Departamento de Estudios agradecemos la colaboración de los distintos  equipos involucrados en las diferentes etapas de este proceso, y esperamos que esta estrategia de desarrollo social contribuya al bien-estar  de los vecinos y vecinas de Las Condes.</p> 
+
+<p style="font-size:18px"; align="justify"><b>ETAPAS DE TRABAJO</b></p>
+
 
 <img style="float:left; margin:15px;" src="C:/Users/17617549-4/Documents/Desarrollo Website Estudios/EstudiosDecom.git.io/images/Diagramatrabajo.png" alt="drawing" width="470" height="380"/><p align="justify"><br>1. En una primera etapa de trabajo se realizó un diagnóstico sobre el estado de la oferta programática de DECOM. Se revisaron los 77 programas sociales, y se evaluaron las líneas de acción de estos dentro de las dimensiones del modelo de pobreza multidimensional: Educación, Salud, Trabajo y Seguridad social, Vivienda y entorno, y Redes y Cohesión social.<br>
 <br>
@@ -32,7 +37,7 @@ Al mismo tiempo, se revisaron los instrumentos de focalización y la coherencia 
 
 ---
 
-<p style="font-size:18px"; align="justify"><b>Definición de un modelo de bienestar local</b></p>
+<p style="font-size:18px"; align="justify"><b>DEFINICIÓN DE UN MODELO DE BIEN-ESTAR LOCAL</b></p>
 
 > "El bienestar se evalúa en la capacidad que poseen las personas de lograr aquellos resultados que por diversos motivos consideran valiosos para sus vidas […]” – Amartya Sen.
 
@@ -79,13 +84,6 @@ Al mismo tiempo, se revisaron los instrumentos de focalización y la coherencia 
 <br>
 <br>
 </br>
-
-
-
-
----
-
-<p style="font-size:18px"; align="justify"><b>DEFINICIÓN DE UN MODELO DE BIENESTAR SOCIAL LOCAL</b></p>
 
 
 ---
