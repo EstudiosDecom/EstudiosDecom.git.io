@@ -6,11 +6,11 @@ title: "Estrategia de Desarrollo Social DECOM 2021"
 
 <p style="font-size:18px"; align="justify"><b>PRESENTACIÓN</b></p>
 
-<p align="justify">La nueva estrategia de desarrollo social está impulsada por la necesidad de reconstruir mejor el bienestar de la comunidad, que hoy enfrenta las consecuencias profundas de la crisis sanitaria y económica provocada por la pandemia de COVID19 que afecta al mundo, y se enmarca en el contexto de modernización en la gestión de los programas sociales de DECOM impulsado por la Dirección.</p>
+<p align="justify">La nueva estrategia de desarrollo social está impulsada por la necesidad de reconstruir mejor el bienestar de nuestra comunidad, que hoy enfrenta las consecuencias profundas de la crisis sanitaria y económica provocada por la pandemia de COVID19 que afecta al mundo, y se enmarca en un proceso de modernización en la gestión de los programas sociales de DECOM impulsado por la Dirección.</p>
 
-<p align="justify">En términos técnicos este proyecto se apoyó en la literatura desarrollada por el equipo del *Oxford Poverty Human Initiative* (OPHI) sobre pobreza multidimensional y bien-estar (*well-being*). El ejercicio de definición de un indicador de bienestar local Las Condes, está inspirado en el índice de pobreza multidimensional que se mide en Chile desde el año 2013.</p>
+<p align="justify">En términos técnicos este trabajo se apoyó en el proyecto del *Oxford Poverty & Human Development Initiative (OPHI)*, sobre un marco económico conceptual que observa la pobreza y bienestar (*well-being*) desde un enfoque multidimensional. El ejercicio de definición de un indicador de bienestar local Las Condes, está inspirado en el índice de pobreza multidimensional que en Chile se mide desde el año 2013.</p>
 
-<p align="justify">El concepto de bienestar que aquí se instala, sigue las reflexiones del enfoque de capacidades de Amartya Sen, cuyo trabajo en torno al desarrollo humano ha puesto el foco del bienestar en las personas, incorporando una mirada holística del desarrollo económico y el bienestar de las sociedades.</p>
+<p align="justify">El concepto de bienestar que aquí se instala, sigue las reflexiones del enfoque de capacidades de Amartya Sen, cuyo trabajo en torno al desarrollo humano ha puesto el foco del bienestar en las personas, sus experiencia y valoraciones respecto del tipo de vida que desean llevar, incorporando una mirada holística del desarrollo económico y el bienestar de las sociedades.</p>
 
 <p align="justify">El modelo de bienestar local Las Condes, observa una cantidad de diez dimensiones en su primera etapa de implementación; (1) Educación, (2) Salud, (3) Empleo, (4) Redes de apoyo, (5)  Vivienda, (6) Transporte, (7) Participación vecinal, (8) Recreación y Deportes, (9) Apoyo social y (10) Medioambiente. Estas dimensiones fueron definidas en conjunto con los equipos de DECOM de acuerdo a la oferta de programas sociales existentes.</p>
 
