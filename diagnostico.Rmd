@@ -1370,9 +1370,9 @@ div(ggplotly(p_consumohogar, tooltip="text") %>% config(displayModeBar = T), ali
 ```
 <p align="center"><font size=3>*Fuente: Elaboración propia en base a datos de Casen 2015*</font></p>
 
-<p align="justify"><font size=3>En términos de acceso a los servicios sanitarios, Chile cuenta con un sistema previsional mixto; uno de carácter público (FONASA) y otro privado (Isapres), además de otros sistemas especiales como el que poseen las fuerzas armadas y de orden.</font></p>
+<p align="justify"><font size=3>En términos de acceso a los servicios sanitarios, Chile cuenta con un sistema previsional mixto; uno de carácter público (FONASA) y otro privado (Isapres o seguros privados), además de otros sistemas especiales como el que poseen las fuerzas armadas y de orden.</font></p>
 
-<p align="justify"><font size=3>En relación con esto, se observa que en la comuna alrededor del 50% de las personas mayores cuentan con un sistema de previsión de salud privada, una proporción sustancialmente mayor a la observada en el resto del país, donde el 8,2% tiene acceso a este sistema. Respecto del sistema público el 41% de los adultos mayores de Las Condes accede a él, mientras que a nivel nacional esta cifra alcanza el 86,3% de las personas de 60 años y más.</font></p>
+<p align="justify"><font size=3>En relación con esto, se observa que en la comuna alrededor del 50% de las personas mayores cuentan con un sistema de previsión de salud privada, una proporción sustancialmente mayor a la observada en el resto del país, donde solo el 8,2% tiene acceso a este sistema. Respecto del sistema público el 41% de los adultos mayores de Las Condes accede a él, mientras que a nivel nacional esta cifra alcanza el 86,3% de las personas de 60 años y más.</font></p>
 
 <p align="center"><font size=3>Figura 25. Sistema previsional de salud en personas mayores según área de referencia.</font></p>
 
@@ -1429,15 +1429,49 @@ div(ggplotly(p_previsionsal60  , tooltip="text") %>% config(displayModeBar = T),
 ```
 <p align="center"><font size=3>*Fuente: Elaboración propia en base a datos de Casen 2015*</font></p>
 
-<p align="justify"><font size=3>En línea con lo anterior, la evidencia empírica sugiere la existencia de desigualdades significativas en el estado de salud y calidad de vida de las personas mayores que acceden a uno u otro sistema de salud en Chile. Si observamos la escala de valoración de salud autopercibida[^13] que recoge la encuesta CASEN, se aprecia que los adultos mayores de Las Condes, en promedio, alcanzan una mejor percepción de su estado de salud respecto del resto de las unidades de referencia (*tabla 14*).</font></p>
+<p align="justify"><font size=3>En síntonia con lo anterior, la escala de valoración de salud autopercibida que recoge CASEN, y que mide la evaluación que tiene un individuo sobre su propio estado de salud en un rango que va de 1 a 7, donde 1 representa un pésimo estado de salud y 7 un excelente estado de salud, acusa que los adultos mayores de Las Condes en promedio presentan una mejor percepción de su estado de salud respecto del resto de las unidades de referencia. En este sentido, la evidencia empírica sugiere que entre otros factores, las desigualdades en salud se explican por la posibilidad de acceder a uno u otro sistema de salud en Chile. (*tabla 14*).</font></p>
+
+```{r dataframe table14, echo=FALSE, message=FALSE, warning=FALSE}
+
+selfratedhealthbylc <- c("5,4", 6)
+selfratedhealthbyref <- c("5,3", 5)
+selfratedhealthbyrm <- c("4,8", 5)
+selfratedhealthbycl <- c("4,8", 5)
+autopercepcionsalud <- c('Nota promedio', 'Nota mediana')
+table14 <- data.frame(autopercepcionsalud, selfratedhealthbycl, selfratedhealthbyrm, selfratedhealthbyref, selfratedhealthbylc)
+
+```
+
+```{r print tab14, echo=FALSE, results= 'ASIS'}
+
+knitr::kable(table14, "html", col.names = c('Autoperceción de salud' ,'Nacional', 'Región Metropolitana', 'Providencia', 'Las Condes'), caption = "Tabla 14. Autopercepción de salud en personas mayores según área de referencia.", align = 'lcccc' ) %>%
+  kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = "hover", font_size = 13, full_width = TRUE) 
+
+```
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos de Casen 2015*</font></p>
+
+<p align="justify"><font size=3>Cuando vamos al detalle de la escala de salud autopercibida por las personas mayores de Las Condes según la cobertura de salud a la que acceden, se aprecian brechas estadísticamente significativas entre los adultos mayores de la comuna. En promedio un adulto mayor que cuenta con Isapre o sistema privado de salud presenta una valoración de hasta 12% superior respecto de una persona mayor con acceso a Fonasa (*tabla 15*).</font></p>
+
+```{r dataframe table15, echo=FALSE, message=FALSE, warning=FALSE}
+
+autopercepcionsaludamlc <- c("5,1", "5,6", "5,2", "5,7")
+sistprevisional <- c("Fonasa", "Isapre", "FF.AA y de Orden y Seguridad", "Particular")
+table15 <- data.frame(sistprevisional, autopercepcionsaludamlc)
 
 
+```
 
-<p align="justify"><font size=3>
-</font></p>
+```{r print tab15, echo=FALSE, results= 'ASIS'}
 
-<p align="justify"><font size=3>
-</font></p>
+knitr::kable(table15, "html", col.names = c('Sistema previsional de salud' ,'Autopercepción de salud'), caption = "Tabla 15. Autopercepción de salud en personas mayores desagregada por sistema previsional de salud.", align = 'lc' ) %>%
+  kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = "hover", font_size = 13, full_width = TRUE) 
+
+```
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos de Casen 2015*</font></p>
+
+### 2.2 Caracterización de la cuarta edad en Las Condes
+
+<p align="justify"><font size=3>Sobre el total de 61.805 adultos mayores de la comuna, 13.986 corresponden a personas de 80 años o más, es decir, 2 de cada 10 adultos mayores en la comuna pertenecen al segmento de la cuarta edad. Comparativamente, Las Condes alcanza una proporción mayor de personas de cuarta edad (4,7%) respecto de lo observado a nivel nacional (2,7%) y regional (2,6%), lo que es consistente con el hecho de ser la segunda comuna más longeva de la Región Metropolitana. Respecto de las comunas de referencia, la diferencia es marginal.</font></p>
 
 <p align="justify"><font size=3>
 </font></p>
@@ -1607,7 +1641,6 @@ https://lyd.org/wp-content/uploads/2019/05/tp-1399-clase-media.pdf </p>
 
 [^12]: Tasa de retención: Es la proporción de trabajadores entre 60 y 64 años que conserva el mismo empleo hace al menos cinco años.
 
-[^13]: La escala de valoración subjetiva o autopercepción de salud, es una escala sobre la cual las personas evalúan su propio estado de salud con una nota que va desde 1 a 7, donde 1 representa un pésimo de estado de salud y 7 un excelente de salud.
 
 </font>
 
