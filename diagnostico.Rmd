@@ -1420,7 +1420,7 @@ fig25$label <- formatC(fig25$label, digits = 3, decimal.mark="," ,big.mark="." )
 p_previsionsal60 <-  ggplot(fig25, aes (fill= tipoprevision , x = referencia , y = previsionsaludam , text = paste(""))) + 
 geom_bar(stat = 'identity' ,colour = 'azure' ,width = 0.7, position = "dodge")
 #Add labels + custom theme
-p_previsionsal60 <- p_previsionsal60  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_y_continuous(breaks = seq(0, 1 , 0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3.5, color = 'black', position=position_dodge (width = 0.9), vjust=-0.5) 
+p_previsionsal60 <- p_previsionsal60  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_y_continuous(breaks = seq(0, 1 , 0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3.5, color = 'black', position=position_dodge (width = 0.55)) 
 
 p_previsionsal60 <- p_previsionsal60 + scale_fill_manual(values = c ('#00C0B8','slategray3','#F8766D','#FFCC33','#99CCFF'))
 
@@ -1429,7 +1429,7 @@ div(ggplotly(p_previsionsal60  , tooltip="text") %>% config(displayModeBar = T),
 ```
 <p align="center"><font size=3>*Fuente: Elaboración propia en base a datos de Casen 2015*</font></p>
 
-<p align="justify"><font size=3>En síntonia con lo anterior, la escala de valoración de salud autopercibida que recoge CASEN, y que mide la evaluación que tiene un individuo sobre su propio estado de salud en un rango que va de 1 a 7, donde 1 representa un pésimo estado de salud y 7 un excelente estado de salud, acusa que los adultos mayores de Las Condes en promedio presentan una mejor percepción de su estado de salud respecto del resto de las unidades de referencia. En este sentido, la evidencia empírica sugiere que entre otros factores, las desigualdades en salud se explican por la posibilidad de acceder a uno u otro sistema de salud en Chile. (*tabla 14*).</font></p>
+<p align="justify"><font size=3>En síntonia con lo anterior, la escala de valoración de salud autopercibida que recoge CASEN, y que mide la evaluación que tiene un individuo sobre su propio estado de salud en un rango que va de 1 a 7, donde 1 representa un pésimo estado de salud y 7 un excelente estado de salud, acusa que los adultos mayores de Las Condes en promedio presentan una mejor percepción de su estado de salud respecto del resto de las unidades de referencia. En este sentido, la evidencia empírica sugiere que entre otros factores, las desigualdades en salud se explican por la posibilidad de acceder a uno u otro sistema de salud en Chile (*tabla 14*).</font></p>
 
 ```{r dataframe table14, echo=FALSE, message=FALSE, warning=FALSE}
 
@@ -1469,12 +1469,59 @@ knitr::kable(table15, "html", col.names = c('Sistema previsional de salud' ,'Aut
 ```
 <p align="center"><font size=3>*Fuente: Elaboración propia en base a datos de Casen 2015*</font></p>
 
-### 2.2 Caracterización de la cuarta edad en Las Condes
+### 2.3 Caracterización de la cuarta edad en Las Condes
 
 <p align="justify"><font size=3>Sobre el total de 61.805 adultos mayores de la comuna, 13.986 corresponden a personas de 80 años o más, es decir, 2 de cada 10 adultos mayores en la comuna pertenecen al segmento de la cuarta edad. Comparativamente, Las Condes alcanza una proporción mayor de personas de cuarta edad (4,7%) respecto de lo observado a nivel nacional (2,7%) y regional (2,6%), lo que es consistente con el hecho de ser la segunda comuna más longeva de la Región Metropolitana. Respecto de las comunas de referencia, la diferencia es marginal.</font></p>
 
-<p align="justify"><font size=3>
-</font></p>
+<p align="center"><font size=3>Figura 26. Proporción de personas de cuarta edad según área de referencia.</font></p>
+
+```{r dataframe fig26, echo=FALSE}
+
+propcedad = c(0.027, 0.026, 0.051, 0.047 )
+fig26 <- data.frame(area_env, propcedad)
+fig26$label  <- (fig26$propcedad * 100)
+fig26$label  <- formatC(fig26$label , digits = 8, decimal.mark="," ,big.mark=".")
+
+```
+
+
+```{r plot fig26, echo=FALSE ,results = 'ASIS'}
+
+#Select dataframe + Add geometry
+p_cuartaedad <-  ggplot(fig26, aes (x = propcedad , y = area_env ,fill= area_env ,text = paste(""))) + 
+geom_bar(stat = 'identity' , colour = 'azure' ,width = 0.7, position = "dodge")
+#Add labels + custom theme
+p_cuartaedad    <- p_cuartaedad  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank(),legend.position = "none" , text = element_text(size = 10,  color = "black" )) + scale_x_continuous(breaks = seq(0, 0.05 ,0.01), label = scales::percent_format(accuracy = 1) ) + geom_text(aes(label = paste0(label, "%")),size = 3.5, color = 'black', position=position_identity (), show.legend = FALSE ,vjust=0.5) 
+
+p_cuartaedad <- p_cuartaedad  + scale_fill_manual(values = c ('#00C0B8','#00C0B8','#00C0B8','slategray3'))
+
+div(ggplotly(p_cuartaedad , tooltip="text") %>% config(displayModeBar = T), align = "center")
+
+
+```
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
+
+<p align="justify"><font size=3>Por su parte, el índice o tasa de envejecimiento, indicador que expresa la cantidad de personas mayores por cada cien niños menores de 15 años, indica que en Las Condes existen 31,1 personas de 80 años y más por cada cien niños. Una cifra elevada si se compara con la realidad nacional (13,4) y regional (13,2). En la *tabla 16* se describen las tasas de envejecimiento para las áreas de referencia definidas.</font></p>
+
+```{r dataframe table16, echo=FALSE, message=FALSE, warning=FALSE}
+
+indiceenvejec <- c("31,1", "34,7", "13,2", "13,4")
+areasref <- c("Las Condes", "Comunas de referencia", "Región Metropolitana", "Nacional")
+table16 <- data.frame(areasref, indiceenvejec)
+
+```
+
+```{r print tab16, echo=FALSE, results= 'ASIS'}
+
+knitr::kable(table16, "html", col.names = c('Unidad de referencia' ,'Índice de envejecimiento cuarta edad'), caption = "Tabla 16. Índice de envejecimiento cuarta edad según áreas de referencia.", align = 'lc' ) %>%
+  kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = "hover", font_size = 13, full_width = TRUE) 
+
+```
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
+
+<p align="justify"><font size=3>Entre las características demográficas que se aprecias a partir de la cuarta edad, destaca la alta proporción de mujeres en la composición de esta población. En Las Condes, 9.207 adultos mayores de 80 años y más corresponden a mujeres (65,8%) y 4.799 son hombres (34,2%).</font></p>
+
+<p align="justify"><font size=3>Al descomponer la población de adultos mayores por quinquenios de edad, es posible apreciar como la mayor proporción de mujeres en la población se acentúa en las cohortes de edad más avanzada. Los datos censales sugieren una relación de hombres y mujeres en la composición demográfica que se mantiene relativamente estable hasta los 79 años, y es a partir de los 80 años donde aparecen diferencias considerables. Así, desde los 80 años de edad observa que 7 de cada 10 adultos mayores residentes en Las Condes son mujeres, razón que crece en la población mayor de 95 años. Lo anterior es reflejo de las mayores expectativas de vida que alcanzan las mujeres.</font></p>
 
 
 
@@ -1518,11 +1565,11 @@ knitr::kable(table15, "html", col.names = c('Sistema previsional de salud' ,'Aut
 
 <p align="justify">Castles, S., De Haas, H., & Miller, M. J. (2013). The age of migration: International population movements in the modern world. Palgrave Macmillan.</p>
 
-<p align="justify">CEPAL. (2009). El envejecimiento y las personas de edad. Indicadores sociodemográficos para América Latina y el Caribe (CELADE, Ed.). Retrieved from https://www.cepal.org/es/publicaciones/1350-envejecimiento-personas-edad-indicadores-sociodemograficos-america-latina-caribe </p>
+<p align="justify">CEPAL. (2009). El envejecimiento y las personas de edad. Indicadores sociodemográficos para América Latina y el Caribe (CELADE, Ed.). Recuperado desde https://www.cepal.org/es/publicaciones/1350-envejecimiento-personas-edad-indicadores-sociodemograficos-america-latina-caribe </p>
 
-<p align="justify">CIPEM. (2018a). Contexto Demográfico Global y Chileno: Situación de la Población Adulto Mayor. Retrieved from http://www.cipem.cl/wp-content/uploads/2018/12/Informe-1.pdf </p>
+<p align="justify">CIPEM. (2018a). Contexto Demográfico Global y Chileno: Situación de la Población Adulto Mayor. Recuperado desde http://www.cipem.cl/wp-content/uploads/2018/12/Informe-1.pdf </p>
 
-<p align="justify">CIPEM. (2018b). Mercado Laboral y Personas Mayores. Retrieved from http://www.cipem.cl/wp-content/uploads/2018/12/Reporte-II-20_12FV.pdf </p>
+<p align="justify">CIPEM. (2018b). Mercado Laboral y Personas Mayores. Recuperado desde http://www.cipem.cl/wp-content/uploads/2018/12/Reporte-II-20_12FV.pdf </p>
 
 <p align="justify">Dahlgren, G., & Whitehead, M. (1991). Policies and strategies to promote social equity in health (1st ed.). Stockholm: Institute for future studies.</p>
 
@@ -1530,9 +1577,9 @@ knitr::kable(table15, "html", col.names = c('Sistema previsional de salud' ,'Aut
 
 <p align="justify">Donoso, E. (2008). Embarazo adolescente: un problema país. *Revista Chilena de Obstetricia y Ginecología*, 73, 291–292.</p>
 
-<p align="justify">Estudios Urbanos UC. (2019). Índice de Calidad de Vida Urbana Comunas y Ciudades de Chile. Retrieved from https://www.cchc.cl/uploads/comunicacion/archivos/20180508_ICVU_2018-_Versión_Definitiva.pdf </p>
+<p align="justify">Estudios Urbanos UC. (2019). Índice de Calidad de Vida Urbana Comunas y Ciudades de Chile. Recuperado desde https://www.cchc.cl/uploads/comunicacion/archivos/20180508_ICVU_2018-_Versión_Definitiva.pdf </p>
 
-<p align="justify">Fernandez, B., & Herrera, S. (2017). Chile y sus mayores: 10 años de la Encuesta Calidad de Vida en la Vejez UC - Caja Los Andes. Retrieved from http://adultomayor.uc.cl/docs/Libro_CHILE_Y_SUS_MAYORES_2016.pdf </p>
+<p align="justify">Fernandez, B., & Herrera, S. (2017). Chile y sus mayores: 10 años de la Encuesta Calidad de Vida en la Vejez UC - Caja Los Andes. Recuperado desde http://adultomayor.uc.cl/docs/Libro_CHILE_Y_SUS_MAYORES_2016.pdf </p>
 
 <p align="justify">Franco, R., Hopenhayn, M., & León, A. (2010). Las clases medias en América Latina (1st ed.). México D.F: CEPAL.</p>
 
@@ -1544,17 +1591,17 @@ knitr::kable(table15, "html", col.names = c('Sistema previsional de salud' ,'Aut
 
 <p align="justify">Idler, E., & Cartwright, K. (2018). What do we rate when we rate our health? Decomposing age-related contributions to self-rated health. *Journal of Health and Social Behavior*, 59(1), 74–93.</p>
 
-<p align="justify">Instituto Nacional de Estadísticas. (2016). Jefatura de hogar: Usos del concepto, historia, críticas y expresión en los indicadores. Retrieved from http://historico.ine.cl/genero/files/estadisticas/pdf/documentos/jefatura_hogar.pdf </p>
+<p align="justify">Instituto Nacional de Estadísticas. (2016). Jefatura de hogar: Usos del concepto, historia, críticas y expresión en los indicadores. Recuperado desde http://historico.ine.cl/genero/files/estadisticas/pdf/documentos/jefatura_hogar.pdf </p>
 
-<p align="justify">Instituto Nacional de Estadísticas, & PNUD. (2018). Sistema de Indicadores y Estándares del Desarrollo Urbano (SIEDU). Retrieved July 25, 2019, from http://siedu.ine.cl/compromisos/compromisos.html </p>
+<p align="justify">Instituto Nacional de Estadísticas, & PNUD. (2018). Sistema de Indicadores y Estándares del Desarrollo Urbano (SIEDU). Recuperado el 25 de julio de 2019 desde http://siedu.ine.cl/compromisos/compromisos.html </p>
 
-<p align="justify">International Labour Organization. (2019). World Employment Social Outlook. Retrieved from https://www.ilo.org/wcmsp5/groups/public/---dgreports/---dcomm/---publ/documents/publication/wcms_670542.pdf </p>
+<p align="justify">International Labour Organization. (2019). World Employment Social Outlook. Recuperado desde https://www.ilo.org/wcmsp5/groups/public/---dgreports/---dcomm/---publ/documents/publication/wcms_670542.pdf </p>
 
 <p align="justify">Kotok, S., Ikoma, S., & Bodovski, K. (2016). School climate and dropping out of school in the era of accountability. *American Journal of Education*, 122(4), 569–599.</p>
 
 <p align="justify">Krugman, P. (1994). Competitiveness: A Dangerous Obsession. *Foreign Affairs*, 73(2), 28–44.</p>
 
-<p align="justify">Libertad y Desarrollo. (2019). Hacia una definición de clase media en Chile. Retrieved from
+<p align="justify">Libertad y Desarrollo. (2019). Hacia una definición de clase media en Chile. Recuperado desde
 https://lyd.org/wp-content/uploads/2019/05/tp-1399-clase-media.pdf </p>
 
 <p align="justify">Marmot, M., & Allen, J. J. (2014). Social Determinants of Health Equity. *American Journal of Public Health*, 104(S4), S517–S519.</p>
@@ -1563,9 +1610,9 @@ https://lyd.org/wp-content/uploads/2019/05/tp-1399-clase-media.pdf </p>
 
 <p align="justify">Martin, J. (2015). Activation and active labour market policies in OECD countries: stylised facts and evidence on their effectiveness. *Journal of Labor Policy*, 4(1), 4.</p>
 
-<p align="justify">Ministerio de Desarrollo Social. (2015). Definición de ingresos Casen. Retrieved June 25, 2019, from http://observatorio.ministeriodesarrollosocial.gob.cl/casen/casen_def_ingresos.php </p>
+<p align="justify">Ministerio de Desarrollo Social. (2015). Definición de ingresos Casen. Rescatada el 25 de junio de 2019 desde http://observatorio.ministeriodesarrollosocial.gob.cl/casen/casen_def_ingresos.php </p>
 
-<p align="justify">Naciones Unidas. (2009). Clasificación Industrial Internacional Uniforme de todas las acividades económicas (CIIU). Retrieved from file:///C:/respaldo/Downloads/SLV_2017_EHPM_v01_M_DIGESTYC-TEC-CIIU_Rev4.pdf </p>
+<p align="justify">Naciones Unidas. (2009). Clasificación Industrial Internacional Uniforme de todas las acividades económicas (CIIU). Recuperado desde file:///C:/respaldo/Downloads/SLV_2017_EHPM_v01_M_DIGESTYC-TEC-CIIU_Rev4.pdf </p>
 
 <p align="justify">Newman, P., & Jennings, I. (2008). Cities as Sustainable Ecosystems (1st ed.). Washington, DC: ISLAND PRESS.</p>
 
@@ -1597,25 +1644,25 @@ https://lyd.org/wp-content/uploads/2019/05/tp-1399-clase-media.pdf </p>
 
 <p align="justify">Stiglitz, J., Sen, A., & Fitoussi, J. P. (2009). The measurement of economic performance and social progress revisited. Reflections and overview. Commission on the measurement of economic performance and social progress, Paris.</p>
 
-<p align="justify">UNESCO (2015). Education 2030: Towards inclusive and equitable quality education and lifelong learning for all. Retrieved from https://unesdoc.unesco.org/ark:/48223/pf0000245656 </p>
+<p align="justify">UNESCO (2015). Education 2030: Towards inclusive and equitable quality education and lifelong learning for all. Recuperado desde https://unesdoc.unesco.org/ark:/48223/pf0000245656 </p>
 
 <p align="justify">United Nations, Department of Economics and Social Affairs, P. D. (2017). International Migration report 2017: Highlights. New York.</p>
 
-<p align="justify">United Nations. (2016). Nueva Agenda Urbana. Retrieved from http://habitat3.org/wp-content/uploads/NUA-Spanish.pdf</p>
+<p align="justify">United Nations. (2016). Nueva Agenda Urbana. Recuperado desde http://habitat3.org/wp-content/uploads/NUA-Spanish.pdf</p>
 
-<p align="justify">United Nations. (2018). Disability and Development Report. Retrieved from https://www.un.org/disabilities/documents/2019/UN-flagship-report-disability-7June.pdf </p>
+<p align="justify">United Nations. (2018). Disability and Development Report. Recuperado desde https://www.un.org/disabilities/documents/2019/UN-flagship-report-disability-7June.pdf </p>
 
 <p align="justify">Uribe, G. G.-B. (2014). Pobreza infantil e impacto de la crisis en la infancia. *Educación y Futuro: Revista de Investigación Aplicada y Experiencias Educativas*, (30), 109–126.</p>
 
 <p align="justify">Weiss, R. S., Bass, S. A., Heimovitz, H. K., & Oka, M. (2005). Japan’s silver human resource centers and participant well-being. *Journal of Cross-Cultural Gerontology*, 20(1), 47–66.</p>
 
-<p align="justify">World Health Organization. (2007). Global Age-Friendly Cities. Retrieved from https://www.who.int/ageing/publications/Global_age_friendly_cities_Guide_English.pdf </p>
+<p align="justify">World Health Organization. (2007). Global Age-Friendly Cities. Recuperado desde https://www.who.int/ageing/publications/Global_age_friendly_cities_Guide_English.pdf </p>
 
-<p align="justify">World Health Organization. (2018). Ageing and health. Retrieved October 22, 2019, from https://www.who.int/news-room/fact-sheets/detail/ageing-and-health </p>
+<p align="justify">World Health Organization. (2018). Ageing and health. Recupera el 22 de octubre de 2019 desde https://www.who.int/news-room/fact-sheets/detail/ageing-and-health </p>
 
 ---
 
-<font size=3><main><b>Footnotes</b></main>
+<main><b>Footnotes</b></main>
 
 [^1]: Este indicador se construye a partir de distancia mínima promedio ponderada por población entre el centro geométrico de cada manzana y la plaza pública más cercana. Dicha distancia se pondera en función de la población a nivel de manzana con la finalidad de no subestimar el resultado final. El estándar establecido por el CNDU para este indicador es de 400m.
 
@@ -1641,8 +1688,6 @@ https://lyd.org/wp-content/uploads/2019/05/tp-1399-clase-media.pdf </p>
 
 [^12]: Tasa de retención: Es la proporción de trabajadores entre 60 y 64 años que conserva el mismo empleo hace al menos cinco años.
 
-
-</font>
 
 
 
