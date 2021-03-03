@@ -1521,8 +1521,50 @@ knitr::kable(table16, "html", col.names = c('Unidad de referencia' ,'Índice de 
 
 <p align="justify"><font size=3>Entre las características demográficas que se aprecias a partir de la cuarta edad, destaca la alta proporción de mujeres en la composición de esta población. En Las Condes, 9.207 adultos mayores de 80 años y más corresponden a mujeres (65,8%) y 4.799 son hombres (34,2%).</font></p>
 
-<p align="justify"><font size=3>Al descomponer la población de adultos mayores por quinquenios de edad, es posible apreciar como la mayor proporción de mujeres en la población se acentúa en las cohortes de edad más avanzada. Los datos censales sugieren una relación de hombres y mujeres en la composición demográfica que se mantiene relativamente estable hasta los 79 años, y es a partir de los 80 años donde aparecen diferencias considerables. Así, desde los 80 años de edad observa que 7 de cada 10 adultos mayores residentes en Las Condes son mujeres, razón que crece en la población mayor de 95 años. Lo anterior es reflejo de las mayores expectativas de vida que alcanzan las mujeres.</font></p>
+<p align="justify"><font size=3>Al descomponer la población de adultos mayores por quinquenios de edad, es posible apreciar como la mayor proporción de mujeres en la población se acentúa en las cohortes de edad más avanzada. Los datos censales sugieren una relación de hombres y mujeres en la composición demográfica que se mantiene relativamente estable hasta los 79 años, y es a partir de los 80 años donde aparecen diferencias considerables. Así, desde los 80 años de edad observa que 7 de cada 10 adultos mayores residentes en Las Condes son mujeres, razón que crece en la población mayor de 95 años. Lo anterior es reflejo de las mayores expectativas de vida que alcanzan las mujeres (*figura 27*).</font></p>
 
+<p align="justify"><font size=3>Figura 27. Composición de población de personas mayores de Las Condes por quinquenios de edad desagregada por sexo.</font></p>
+
+```{r dataframfig27, include=FALSE}
+
+edad_quinquenioam = c(1, 2, 3, 4, 5, 6, 7, 8)
+edad_quinquenioam = factor (edad_quinquenioam, levels = c(1,2,3,4,5,6,7,8) ,
+        labels = c('60-64', '65-69', '70-74', '75-79', '80-84', '85-89', '90-94', '95+' ))
+sexo = c (1, 1, 1, 1, 1, 1, 1, 1 , 2, 2, 2, 2, 2, 2, 2, 2)
+sexo = factor(sexo, levels = c(1,2),
+                       labels = c("Hombre", "Mujer"))
+prop_poblquin = c (0.414, 0.416, 0.405, 0.401, 0.38, 0.331, 0.3, 0.223, 0.586, 0.584, 0.595, 0.599, 0.62, 0.669, 0.70, 0.777)
+fig27 <- data.frame( sexo, edad_quinquenioam , prop_poblquin )
+fig27$labelpos <- ifelse(fig27$sexo=='Mujer', fig27$prop_poblquin/2, 
+                                    1-fig27$prop_poblquin/2)
+
+fig27$label <- fig27$prop_poblquin*100
+fig27$label <- formatC(fig27$label, digits = 3, decimal.mark="," ,big.mark="." )
+
+```
+
+```{r plot fig27, fig.pos="center", results = 'ASIS'}
+
+#Select dataframe + Add geometry
+p_cuartaedadquin <-  ggplot(fig27, aes ( y= prop_poblquin, x = edad_quinquenioam, fill = sexo, text = paste("") )) +
+  geom_bar(stat = 'identity', colour = 'azure2', width = 0.7, position = position_stack(reverse = TRUE))
+#Add labels + custom theme
+p_cuartaedadquin <- p_cuartaedadquin + ggtitle("") + ylab("") + xlab("") + theme_calc() + 
+theme(text = element_text(size = 10,  color = "black" ), legend.position = 'top' , legend.box = 'vertical', legend.title = element_blank()) + scale_y_continuous(breaks = seq(0,1,0.25), labels = scales::percent_format(accuracy = 1)) 
+#Add label % 
+p_cuartaedadquin <- p_cuartaedadquin + geom_text (aes(label = paste0(label,"%"), y=labelpos), size = 3.5, color = 'azure2', position=position_stack (vjust = 0.15, reverse = TRUE))
+
+#Select fill color
+p_cuartaedadquin <- p_cuartaedadquin + scale_fill_manual(values = c('#00C0B8', '#F8766D')) + coord_flip()
+
+div( ggplotly(p_cuartaedadquin, tooltip="text") %>% config(displayModeBar = T), align = "center")
+
+```
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
+
+<p align="justify"><font size=3>
+
+</font></p>
 
 
 ---
