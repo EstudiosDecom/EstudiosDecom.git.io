@@ -169,7 +169,7 @@ averdes <- averdes +  ggtitle("") + ylab("Distancia (metros)") + xlab("Superfici
     text = element_text(size = 10,  color = "black" )) + scale_y_continuous(breaks = seq(100,550,75)) + scale_x_continuous(breaks = seq(0,20,2.5)) + 
   geom_text(aes(label = Comuna),size = 2, color = 'black', hjust = -1)
 #Change fill colour
-averdes <- averdes  + scale_fill_manual(values = c('#009900', '#00C0B8','#FFCC33','#CC0033'))
+averdes <- averdes  + scale_fill_manual(values = c('firebrick3', 'dimgray' ,'slategray3','#F8766D'))
 
 div( ggplotly(averdes, tooltip="text") %>% config(displayModeBar = T) , align = "center")
 
@@ -261,17 +261,17 @@ medio_transporte$label <- formatC(medio_transporte$label, digits = 3, decimal.ma
 
 ```
 
-```{r medtransp, fig.pos="center" ,results = 'ASIS'}
+```{r plot fig4, fig.pos="center" ,results = 'ASIS'}
 
 #Select dataframe
 medtranspplot <-  ggplot(medio_transporte, mapping = aes(x = reorder(mediotransp, -prop_transp),  y =prop_transp,text = paste(""))) 
 #Add Geometry
 medtranspplot <- medtranspplot + geom_bar(stat = 'identity', 
-                  colour = 'azure2', fill = '#00C0B8') 
+                  colour = 'azure2', fill = 'firebrick3') 
 #Add labels + custom theme
 medtranspplot <- medtranspplot +  ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(
 text = element_text(size = 10,  color = "black" )) + scale_y_continuous(breaks = seq(0,0.5,0.1), labels = scales::percent_format(accuracy = 1)) +
-geom_text(aes(label = paste0(label,"%")), size = 3.5, color = "black", position = position_stack(vjust = 0.5), show.legend = FALSE )  + coord_flip()
+geom_text(aes(label = paste0(label,"%")), size = 3.5, color = "azure3", position = position_stack(vjust = 0.5), show.legend = FALSE )  + coord_flip()
 
 div( ggplotly(medtranspplot, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
@@ -333,7 +333,7 @@ theme(text = element_text(size = 10,  color = "black" ), legend.position = 'top'
 psexplot <- psexplot + geom_text (aes(label = paste0(label,"%"), y=labelpos), size = 3.5, color = 'azure2', position=position_stack (vjust = 0.25, reverse = TRUE))
 
 #Select fill color
-psexplot <- psexplot + scale_fill_manual(values = c('#00C0B8', '#F8766D')) + coord_flip()
+psexplot <- psexplot + scale_fill_manual(values = c('dimgray', 'firebrick3')) + coord_flip()
 
 div( ggplotly(psexplot, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
@@ -435,7 +435,7 @@ pyramidplot <- pyramidplot + geom_col(position = 'stack', colour = 'azure2') + f
 #Add legend + custom theme
 pyramidplot <- pyramidplot + ggtitle("") + ylab("") + xlab("") + theme_calc() +  theme(legend.position = "bottom", legend.title = element_blank(),text = element_text(size = 10,  color = "black" )) + scale_y_continuous(breaks = seq(0,0.1,0.05), labels = scales::percent_format(accuracy = 1))
 #Select fill color
-pyramidplot <- pyramidplot + scale_fill_manual(values = c('#00C0B8', '#F8766D'))
+pyramidplot <- pyramidplot + scale_fill_manual(values = c('dimgray', 'firebrick3'))
 
 div( ggplotly(pyramidplot, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
@@ -467,7 +467,7 @@ geom_bar(stat = 'identity' ,colour = 'azure2', width = 0.8)
 parmedplot <- parmedplot + ggtitle("") + ylab("") + xlab("") + theme_light() + theme(legend.position = "none", text = element_text(size = 10,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1.5 ,0.3)) + geom_text(aes(label = label), size = 3.5, color = 'azure2', position=position_stack (vjust = 0.9)) 
 #Select fill color
 
-parmedplot <- parmedplot + scale_fill_manual(values = c('#00C0B8','#00C0B8','#00C0B8','slategray3'))
+parmedplot <- parmedplot + scale_fill_manual(values = c('dimgray', 'dimgray', 'dimgray' ,'firebrick3'))
 
 div(ggplotly(parmedplot, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
@@ -517,7 +517,7 @@ env_plot <- env_plot + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(
 
 #Select fill color
 
-env_plot <- env_plot + scale_fill_manual(values = c('#00C0B8','#00C0B8','#00C0B8','slategray3'))
+env_plot <- env_plot + scale_fill_manual(values = c('dimgray', 'dimgray','dimgray' ,'firebrick3'))
 
 div(ggplotly(env_plot, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
@@ -697,7 +697,8 @@ geom_bar(stat = 'identity' ,colour = 'azure2', width = 0.6,position = position_s
 tip_hog <- tip_hog + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1 ,0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 2.5, color = 'black',
                         position=position_stack (vjust = 0.5, reverse = TRUE))
 #Select fill color
-tip_hog <- tip_hog  + scale_fill_manual(values = c('#00C0B8','slategray3','#F8766D','#FFCC33','#99CCFF','#CCCCCC', 'steelblue3'))
+tip_hog <- tip_hog  + scale_fill_manual(values = c('firebrick3', 'dimgray' ,'slategray3','#F8766D','gray90', '#00C0B8','#99CCFF'))
+ 
 
 div(ggplotly(tip_hog, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
@@ -736,7 +737,7 @@ theme(text = element_text(size = 10,  color = "black" ), legend.position = 'top'
 #Add label % 
 jhsexplot <- jhsexplot + geom_text(aes(label = paste0(label,"%"),y=labelpos), size = 3.5, color = 'azure2', position = position_stack(vjust = 0.85,reverse = TRUE))
 #Select fill color
-jhsexplot <- jhsexplot + scale_fill_manual(values = c('#00C0B8', '#F8766D')) + coord_flip()
+jhsexplot <- jhsexplot + scale_fill_manual(values = c('dimgray', 'firebrick3')) + coord_flip()
 
 div(ggplotly(jhsexplot, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
@@ -768,10 +769,10 @@ edad_jhogar$label <- formatC(edad_jhogar$label, digits = 3, decimal.mark="," ,bi
 edadjefe_hog <-  ggplot(edad_jhogar, aes ( y = area_hogar,  x= edadjhog_prop, label = edadjhog_prop, fill = edad_jhogar, text = paste(""))) + 
 geom_bar(stat = 'identity' ,colour = 'azure2', width = 0.5,position = position_stack(reverse = TRUE))
 #Add labels + custom theme
-edadjefe_hog <- edadjefe_hog + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1 ,0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3.5, color = 'black',
-                        position=position_stack (vjust = 0.7, reverse = TRUE))
+edadjefe_hog <- edadjefe_hog + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1 ,0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3.5, color = 'gray90',
+                        position=position_stack (vjust = 0.8, reverse = TRUE))
 #Select fill color
-edadjefe_hog <- edadjefe_hog  + scale_fill_manual(values = c('slategray3' ,'#F8766D', '#00C0B8'))
+edadjefe_hog <- edadjefe_hog  + scale_fill_manual(values = c('firebrick3', 'dimgray' ,'slategray3'))
 
 div(ggplotly(edadjefe_hog, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
@@ -806,7 +807,7 @@ geom_bar(stat = 'identity' ,colour = 'azure2', width = 0.6,position = position_s
 educjefe_hog <- educjefe_hog + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1 ,0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label ,"%")),size = 2.5, color = 'black',
                         position=position_stack (vjust = 0.5, reverse = TRUE)) #+ coord_flip()
 #Select fill color
-educjefe_hog <- educjefe_hog  + scale_fill_manual(values = c('#00C0B8','slategray3','#F8766D','#FFCC33','#99CCFF','#CCCCCC'))
+educjefe_hog <- educjefe_hog  + scale_fill_manual(values = c('firebrick3', 'dimgray' ,'slategray3','#F8766D','gray90', '#00C0B8'))
 
 div(ggplotly(educjefe_hog, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
@@ -846,7 +847,7 @@ amedad <-  ggplot(edad_am, aes ( y = area,  x= propedad_am, label = propedad_am,
 amedad  <- amedad  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1 ,0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3.5, color = 'azure2',
                         position=position_stack (vjust = 0.5, reverse = TRUE))
 #Select fill color
-amedad  <- amedad  + scale_fill_manual(values = c('slategray3' ,'#F8766D', '#00C0B8'))
+amedad  <- amedad  + scale_fill_manual(values = c('firebrick3', 'dimgray' ,'slategray3'))
 
 div(ggplotly(amedad, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
@@ -880,7 +881,7 @@ geom_bar(stat = 'identity' ,colour = 'azure2', width = 0.5,position = position_s
 amsexo <- amsexo  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 9,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1 ,0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3.5, color = 'azure2',
                         position=position_stack (vjust = 0.5, reverse = TRUE))
 #Select fill color
-amsexo  <- amsexo  + scale_fill_manual(values = c('#00C0B8', '#F8766D'))
+amsexo  <- amsexo  + scale_fill_manual(values = c( 'dimgray', 'firebrick3'))
 
 div(ggplotly(amsexo, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
@@ -912,7 +913,7 @@ geom_bar(stat = 'identity' ,colour = 'azure2', width = 0.7, position = position_
 plotamsolo <- plotamsolo  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 9,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1 ,0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3.5, color = 'azure2',
                         position=position_stack (vjust = 0.5, reverse = TRUE))
 #Select fill color
-plotamsolo <- plotamsolo + scale_fill_manual(values = c('#00C0B8', '#F8766D'))
+plotamsolo <- plotamsolo + scale_fill_manual(values = c( 'dimgray', 'firebrick3'))
 
 div(ggplotly(plotamsolo, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
@@ -938,7 +939,7 @@ amsoloedad$label <- formatC(amsoloedad$label, digits = 3, decimal.mark="," ,big.
 ```{r plot adultosmayores solos edad, echo=FALSE ,results = 'ASIS'}
 #Select dataframe + Add geometry
 plotamsoloedad <-  ggplot(amsoloedad, aes (y = amsoloedad_prop , x = rango_edad, text = paste(""))) + 
-geom_bar(stat = 'identity' ,colour = 'azure', fill = '#00C0B8' ,width = 0.7,position = position_stack(reverse = TRUE))
+geom_bar(stat = 'identity' ,colour = 'azure', fill = 'firebrick3' ,width = 0.7,position = position_stack(reverse = TRUE))
 #Add labels + custom theme
 plotamsoloedad <- plotamsoloedad  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_y_continuous(breaks = seq(0, 0.25 ,0.05), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3.5, color = 'black', position=position_stack (vjust = 1.05, reverse = TRUE))
 
@@ -968,7 +969,7 @@ geom_bar(stat = 'identity' ,colour = 'azure', width = 0.5, position = position_s
 tiphogam  <- tiphogam+ ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1 ,0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 2.5, color = 'black',
                         position=position_stack (vjust = 0.5, reverse = TRUE))
 #Select fill color
-tiphogam <- tiphogam + scale_fill_manual(values = c('#00C0B8','slategray3','#F8766D','#FFCC33','#99CCFF','#CCCCCC', 'steelblue3'))
+tiphogam <- tiphogam + scale_fill_manual(values = c('firebrick3', 'dimgray' ,'slategray3','#F8766D','gray90', '#00C0B8','#99CCFF'))
 
 div(ggplotly(tiphogam, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
@@ -1041,7 +1042,7 @@ educam <-  ggplot(educ_am, aes ( y = area_hogar,  x=niveleducam , label = nivele
 educam <- educam + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() , text = element_text(size = 10,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1 ,0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label ,"%")),size = 2.5, color = 'black',
                         position=position_stack (vjust = 0.4, reverse = TRUE)) #+ coord_flip()
 #Select fill color
-educam <- educam  + scale_fill_manual(values = c('#00C0B8','slategray3','#F8766D','#FFCC33','#99CCFF','#CCCCCC'))
+educam <- educam  + scale_fill_manual(values = c('firebrick3', 'dimgray' ,'slategray3','#F8766D','gray90', '#00C0B8','#99CCFF'))
 
 div(ggplotly(educam, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
@@ -1087,7 +1088,7 @@ geom_bar(stat = 'identity' ,colour = 'azure2', width = 0.6,position = position_s
 peaplot <- peaplot  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_x_continuous(breaks = seq(0, 1 ,0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3.5, color = 'azure2',
                         position=position_stack (vjust = 0.5, reverse = TRUE))
 #Select fill color
-peaplot <- peaplot + scale_fill_manual(values = c('#00C0B8','slategray3'))
+peaplot <- peaplot + scale_fill_manual(values = c('firebrick3', 'dimgray'))
 
 div(ggplotly(peaplot, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
@@ -1129,7 +1130,7 @@ theme(legend.title = element_blank(), text = element_text(size = 10, color = "bl
 scale_x_continuous(breaks = seq(0, 1, 0.1), label = scales::percent_format(accuracy = 1)) +
 geom_text(aes(label = paste0(label,"%")), size = 3.5, color = "black", position = position_jitterdodge( jitter.width = -0.5, jitter.height = -0.7))
 
-p_sect_ec <- p_sect_ec + scale_fill_manual(values = c ('#00C0B8', 'slategray3', '#F8766D' ))
+p_sect_ec <- p_sect_ec + scale_fill_manual(values = c ('firebrick3', 'dimgray' ,'slategray3'))
 
 ggplotly(p_sect_ec, tooltip="text") %>% config(displayModeBar = T) 
 
@@ -1155,9 +1156,9 @@ fig21$label <- formatC(fig21$label, digits = 3, decimal.mark="," ,big.mark=".")
 ```{r plot fig21, echo=FALSE ,results = 'ASIS'}
 #Select dataframe + Add geometry
 p_tipoempl <-  ggplot(fig21, aes (x = reorder(tipoempleo, tipoempleo_prop)  , y =  tipoempleo_prop  , text = paste(""))) + 
-geom_bar(stat = 'identity' ,colour = 'azure', fill = '#00C0B8' ,width = 0.7,position = position_stack(reverse = TRUE))
+geom_bar(stat = 'identity' ,colour = 'azure', fill = 'firebrick3' ,width = 0.7,position = position_stack(reverse = TRUE))
 #Add labels + custom theme
-p_tipoempl  <- p_tipoempl  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_y_continuous(breaks = seq(0, 0.4 ,0.05), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3.5, color = 'black', position=position_stack (vjust = 0.75, reverse = TRUE)) + coord_flip()
+p_tipoempl  <- p_tipoempl  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_y_continuous(breaks = seq(0, 0.4 ,0.05), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3.5, color = 'black', position=position_stack (vjust = 0.9, reverse = TRUE)) + coord_flip()
 
 div(ggplotly(p_tipoempl , tooltip="text") %>% config(displayModeBar = T), align = "center")
 
@@ -1227,9 +1228,9 @@ fig22$label <- formatC(fig22$label, digits = 8, decimal.mark="," ,big.mark=".")
 p_ingresostr60 <-  ggplot(fig22, aes (fill= estadisticoingresos , x = referencia , y = ingresos , text = paste(""))) + 
 geom_bar(stat = 'identity' ,colour = 'azure' ,width = 0.7, position = "dodge")
 #Add labels + custom theme
-p_ingresostr60   <- p_ingresostr60  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_y_discrete(breaks = seq(0, 2000000 ,150000)) + geom_text(aes(label = paste0("$", label)),size = 3.5, color = 'black', position=position_dodge (width = 0.7), vjust=-0.5) 
+p_ingresostr60   <- p_ingresostr60  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_y_discrete(breaks = seq(0, 2500000 ,150000)) + geom_text(aes(label = paste0("$", label)),size = 3.5, color = 'black', position=position_dodge(width = 0.7), vjust=1) 
 
-p_ingresostr60 <- p_ingresostr60 + scale_fill_manual(values = c ('#00C0B8','slategray3'))
+p_ingresostr60 <- p_ingresostr60 + scale_fill_manual(values = c ('firebrick3', 'dimgray'))
 
 div(ggplotly(p_ingresostr60  , tooltip="text") %>% config(displayModeBar = T), align = "center")
 
@@ -1316,11 +1317,9 @@ fig23$label  <- paste0("$", fig23$label)
 
 #Select dataframe + Add geometry
 p_ingresostrocup60 <-  ggplot(fig23, aes (x = tipoempleo , y = weighted_meanincome , text = paste(""))) + 
-geom_bar(stat = 'identity' ,fill = '#00C0B8', colour = 'azure' ,width = 0.7, position = "dodge")
+geom_bar(stat = 'identity' ,fill = 'firebrick3', colour = 'azure' ,width = 0.7, position = "dodge")
 #Add labels + custom theme
 p_ingresostrocup60   <- p_ingresostrocup60   + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_y_discrete(breaks = seq(0, 3000000 ,250000)) + geom_text(aes(label = paste0(label)),size = 3.5, color = 'black', position=position_dodge (width = 0.7), vjust=-0.5) 
-
-p_ingresostrocup60  <- p_ingresostrocup60  + scale_fill_manual(values = c ('#00C0B8','#F8766D'))
 
 div(ggplotly(p_ingresostrocup60 , tooltip="text") %>% config(displayModeBar = T), align = "center")
 
@@ -1362,7 +1361,7 @@ geom_bar(stat = 'identity' , colour = 'azure' ,width = 0.7, position = "dodge")
 #Add labels + custom theme
 p_consumohogar   <- p_consumohogar  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank(),legend.position = "none" , text = element_text(size = 10,  color = "black" )) + scale_y_continuous(breaks = seq(0, 1 ,0.05), label = scales::percent_format(accuracy = 1) ) + geom_text(aes(label = paste0(label, "%")),size = 3.5, color = 'black', position=position_identity (), show.legend = FALSE ,vjust=-0.5) + coord_flip()
 
-p_consumohogar <- p_consumohogar + scale_fill_manual(values = c ('#00C0B8','#00C0B8','#00C0B8','#00C0B8','#00C0B8','slategray3','#00C0B8', '#00C0B8','#00C0B8','#00C0B8','#00C0B8','#00C0B8'))
+p_consumohogar <- p_consumohogar + scale_fill_manual(values = c ('dimgray','dimgray','dimgray','dimgray','dimgray','firebrick3','dimgray', 'dimgray','dimgray','dimgray','dimgray','dimgray'))
 
 div(ggplotly(p_consumohogar, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
@@ -1399,10 +1398,10 @@ prevamcl = wtd.table(x = casen15_60cl$previsionsalud, weights = casen15_60cl$exp
 prevamcl <- cbind(prevamcl, prop.table(prevamcl))
 
 #Armar el dataframe:
-previsionsaludam = c(prevamlc[1:5,2], prevamprov[1:5,2], prevamrm[1:5,2] ,prevamcl[1:5,2])
+previsionsaludam = c(prevamcl[1:5,2], prevamrm[1:5,2], prevamprov[1:5,2] ,prevamlc[1:5,2])
 referencia = c(1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,4,4,4,4,4)
 referencia = factor(referencia, levels = c(1,2,3,4),
-                    labels = c("Las Condes", "Providencia", "Región Metropolitana", "Nacional"))
+                    labels = c(  "Nacional","Región Metropolitana",  "Providencia" ,"Las Condes"))
 tipoprevision = c(1,2,3,4,5,1,2,3,4,5,1,2,3,4,5,1,2,3,4,5)
 tipoprevision = factor (tipoprevision, levels = c(1,2,3,4,5),
                                  labels = c("FONASA", "Isapre", "FF.AA y de orden", "Ninguno (particular)", "Otro sistema"))
@@ -1422,7 +1421,7 @@ geom_bar(stat = 'identity' ,colour = 'azure' ,width = 0.7, position = "dodge")
 #Add labels + custom theme
 p_previsionsal60 <- p_previsionsal60  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank() ,legend.position = "top", text = element_text(size = 10,  color = "black" )) + scale_y_continuous(breaks = seq(0, 1 , 0.1), label = scales::percent_format(accuracy = 1)) + geom_text(aes(label = paste0(label,"%")),size = 3.5, color = 'black', position=position_dodge (width = 0.55)) 
 
-p_previsionsal60 <- p_previsionsal60 + scale_fill_manual(values = c ('#00C0B8','slategray3','#F8766D','#FFCC33','#99CCFF'))
+p_previsionsal60 <- p_previsionsal60 + scale_fill_manual(values = c ('firebrick3', 'dimgray' ,'slategray3','#F8766D','gray90'))
 
 div(ggplotly(p_previsionsal60  , tooltip="text") %>% config(displayModeBar = T), align = "center")
 
@@ -1493,7 +1492,7 @@ geom_bar(stat = 'identity' , colour = 'azure' ,width = 0.7, position = "dodge")
 #Add labels + custom theme
 p_cuartaedad    <- p_cuartaedad  + ggtitle("") + ylab("") + xlab("") + theme_calc() + theme(legend.title = element_blank(),legend.position = "none" , text = element_text(size = 10,  color = "black" )) + scale_x_continuous(breaks = seq(0, 0.05 ,0.01), label = scales::percent_format(accuracy = 1) ) + geom_text(aes(label = paste0(label, "%")),size = 3.5, color = 'black', position=position_identity (), show.legend = FALSE ,vjust=0.5) 
 
-p_cuartaedad <- p_cuartaedad  + scale_fill_manual(values = c ('#00C0B8','#00C0B8','#00C0B8','slategray3'))
+p_cuartaedad <- p_cuartaedad  + scale_fill_manual(values = c ('dimgray', 'dimgray', 'dimgray', 'firebrick3'))
 
 div(ggplotly(p_cuartaedad , tooltip="text") %>% config(displayModeBar = T), align = "center")
 
@@ -1555,17 +1554,43 @@ theme(text = element_text(size = 10,  color = "black" ), legend.position = 'top'
 p_cuartaedadquin <- p_cuartaedadquin + geom_text (aes(label = paste0(label,"%"), y=labelpos), size = 3.5, color = 'azure2', position=position_stack (vjust = 0.15, reverse = TRUE))
 
 #Select fill color
-p_cuartaedadquin <- p_cuartaedadquin + scale_fill_manual(values = c('#00C0B8', '#F8766D')) + coord_flip()
+p_cuartaedadquin <- p_cuartaedadquin + scale_fill_manual(values = c('dimgray', 'firebrick3')) + coord_flip()
 
 div( ggplotly(p_cuartaedadquin, tooltip="text") %>% config(displayModeBar = T), align = "center")
 
 ```
 <p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
 
-<p align="justify"><font size=3>
+#### 2.3.1 Convivencia en hogares
 
-</font></p>
+<p align="justify"><font size=3>La cuarta edad es un ciclo de vida que requiere especiales atención. La prevalencia de enfermedades físicas y psíquicas aumenta signficativamente sobre los 80 años, lo que supone un riesgo de dependencia mayor en esta población. En este sentido, identificar la composición de los hogares de personas de cuarta edad es relevante al momento de definir eventuales programas municipales que vayan en ayuda de de este segmento etario, especialmente para el caso de los adultos mayores que viven solos.</font></p>
 
+<p align="justify"><font size=3>En cuanto a la situación de convivencia que experimentan las personas mayores en la comuna, los datos censales, los datos censales sugieren que 2.359 personas de cuarta edad viven solas, equivalentes al 16,8% del total de adultos mayores de 80 años y más. Esta cifra supera a la que se observa a nivel nacional (15,5%) y regional (14,4%), y se encuentra marginalmente por debajo del promedio de las comunas de referencia (17,5).</font></p>
+
+<p align="justify"><font size=3>A continuación, se describe la composición de las viviendas que integran personas de cuarta edad desagregadas en tres subgrupos; (i)adultos mayores de cuarta edad que viven solos; (ii)adultos mayores de cuarta edad que viven acompañados por otro mayo de 80 años y más; y (iii)adultos mayores de cuarta edad que viven acompañados por menores de 80 años. Los datos corresponden a la información proveniente de los micro datos del censo de personas y viviendas 2017.</font></p>
+
+```{r dataframe table17, echo=FALSE, message=FALSE, warning=FALSE}
+
+clas_viviendas <- c("i. Vivienda con adulto mayor de cuarta edad que vive solo", "ii. Vivienda con dos o más adultos mayores de cuarta edad", "iii. Vivienda con adultos mayores de cuarta edad acompañados por un menor de 80 años")
+n_viviendas <- c("2.359", "997", "4.620")
+prop_viviendas <-c("29,6%", "12,5%", "57,9%")
+table17 <- data.frame(clas_viviendas, n_viviendas, prop_viviendas)
+
+```
+
+```{r print tab17, echo=FALSE, results= 'ASIS'}
+
+knitr::kable(table17, "html", col.names = c('Clasificación de vivienda' ,'N° de viviendas', 'Viviendas con personas de cuarta edad (%)'), caption = "Tabla 17. Composición de viviendas particulares en Las Condes que integran personas de cuarta edad.", align = 'lcc' ) %>%
+  kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = "hover", font_size = 13, full_width = TRUE) 
+
+```
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
+
+<p align="justify"><font size=3>Por sexo, se aprecia una mayor proporción de mujeres de 80 años y más que viven solas, respecto de hombres. El 82,2% de los vecinos de cuarta edad en Las Condes que residen solos corresponde a mujeres, mientras que los hombres representan solo el 17,2%.</font></p>
+
+<p align="justify"><font size=3>Lo anterior, podría estar reflejando un fenómeno de abandono y soledad que sufren las personas mayores en la comuna. Si se considera el importante rol que juegan las redes de apoyo, el capital social y la confianza interpersonal en la protección de la salud, el abandono en la cuarta edad se convierte en un factor mayor de riesgo para la integridad física y psicológica de estos vecinos y vecinas de Las Condes (Grundy & Sloggett, 2003).</font></p>
+
+<p align="justify"><font size=3>Cuando examinamos la relación entre la autopercepción de salud en personas de cuarta edad y las redes de apoyo, los datos de Casen 2015 reflejan que existe una asociación entre ambos fenómenos. En la medida que aumenta el stock de capital social (entendido como redes de apoyo y confianza interpersonal) y reciprocidad, también lo hace la valoración que poseen las personas mayores respecto de su propio estado de salud (*figura 28*)</font></p>
 
 ---
 
