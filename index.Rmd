@@ -33,10 +33,8 @@ if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.t
 ---
 
 <p style="font-size:18px"; align="justify"><b>Revisa los resultados del estudio general COVID19 Las Condes</b></p>
-
-<img style="float:left; margin:5px;" src="C:/Users/17617549-4/Documents/Desarrollo Website Estudios/EstudiosDecom.git.io/images/resultadosdeencuesta.jpeg" alt="drawing" width="270" height="300"/><p align="justify">El análisis da cuenta de la situación de los vecinos producto de la crisis y cómo se ha entregado la ayuda municipal. Se estima que las necesidades han crecido significativamente, principalmente en temas monetarios y de alimentos. Por su parte, la cobertura de los servicios municipales aumentó en 18,4% respecto a antes de marzo, con un crecimiento significativo en los segmentos medios.</p>
+<img style="float:left; margin:5px;" src="C:/Users/17617549-4/OneDrive - Municipalidad de Las Condes/Documents/Desarrollo Website Estudios/EstudiosDecom.git.io/images/resultadosdeencuesta.jpeg" alt="drawing" width="270" height="300"/><p align="justify">El análisis da cuenta de la situación de los vecinos producto de la crisis y cómo se ha entregado la ayuda municipal. Se estima que las necesidades han crecido significativamente, principalmente en temas monetarios y de alimentos. Por su parte, la cobertura de los servicios municipales aumentó en 18,4% respecto a antes de marzo, con un crecimiento significativo en los segmentos medios.</p>
 <p align="left"><a href="https://rpubs.com/estudiosdecom/censosocial2020">más detalles aquí: rpubs.com/estudiosdecom/censosocial2020</a></p>
-
 <br>
 <br>
 <br>

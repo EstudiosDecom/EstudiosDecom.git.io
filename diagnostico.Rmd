@@ -32,8 +32,9 @@ library('questionr')
 library("shiny")
 library("spatstat")
 
-casen15 <- read_dta("C:/Users/17617549-4/Documents/Dataset/CASEN/Casen_2015.dta")
-casen17 <- read_dta("C:/Users/17617549-4/Documents/Dataset/CASEN/Casen_2017.dta")
+
+casen15 <- read_dta("C:/Users/17617549-4/OneDrive - Municipalidad de Las Condes/Documents/Dataset/CASEN/Casen_2015.dta")
+casen17 <- read_dta("C:/Users/17617549-4/OneDrive - Municipalidad de Las Condes/Documents/Dataset/CASEN/Casen_2017.dta")
 
 ```
 
@@ -149,7 +150,7 @@ kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = 
 
 ```{r dataframe fig2, echo=FALSE}
 
-areasverdes <- read.table("C:/Users/17617549-4/Documents/Dataset/SIEDU/ÁreasverdesRM.csv", header = TRUE, encoding = "UTF-8", sep = ",")
+areasverdes <- read.table("C:/Users/17617549-4/OneDrive - Municipalidad de Las Condes/Documents/Dataset/SIEDU/ÁreasverdesRM.csv", header = TRUE, encoding = "UTF-8", sep = ",")
 areasverdes$label_y <-  formatC(areasverdes$distancia, digits = 4, decimal.mark = ",", big.mark = ".")
 areasverdes$label_x <-  formatC(areasverdes$areaporhab, digits = 3, decimal.mark = ",", big.mark = ".")
 areasverdes$cuadrante <- ifelse(areasverdes$distancia<=400 & areasverdes$areaporhab>=10, "Cumple ambos estándares", ifelse(areasverdes$distancia<=400 & areasverdes$areaporhab<10, "Cumple estándar de distancia", ifelse(areasverdes$distancia>400 & areasverdes$areaporhab>=10, "Cumple estándar de superficie", "No cumple con ningún estándar")))

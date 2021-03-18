@@ -3,29 +3,18 @@
 
 ## Presentación
 
-<p align="justify">La nueva estrategia de desarrollo social está impulsada por la necesidad de reconstruir mejor el bienestar de nuestra comunidad, que hoy enfrenta las consecuencias profundas de la crisis sanitaria y económica provocada por la pandemia de COVID19 que afecta al mundo, y se enmarca en un proceso de modernización en la gestión de los programas sociales de DECOM impulsado por la Dirección.</p>
+<p align="justify">La nueva estrategia de desarrollo social está impulsada por la necesidad de reconstruir mejor el bienestar de la comunidad de Las Condes, que hoy enfrenta las consecuencias profundas de la crisis sanitaria y económica provocada por la pandemia de COVID19 que afecta al mundo, y se enmarca en un proceso de modernización en la gestión de los programas sociales de DECOM impulsado por la Dirección.</p>
 
-<p align="justify">En términos técnicos este proyecto se apoyó en el trabajo desarrollado por el equipo de *Oxford Poverty & Human Development Initiative (OPHI)* y el *Programa de Naciones Unidas para el Desarrollo (PNUD)*, que propone un marco económico conceptual para observar la pobreza y bien-estar (*well-being*) desde un enfoque multidimensional. El ejercicio de definición de un indicador de bienestar local Las Condes, está inspirado en el índice de pobreza multidimensional que en Chile se mide desde el año 2015.</p>
+<p align="justify">En términos técnicos este proyecto se apoyó en el trabajo desarrollado por el equipo de *Oxford Poverty & Human Development Initiative (OPHI)* y el *Programa de Naciones Unidas para el Desarrollo (PNUD)*, que propone un marco económico conceptual para observar la pobreza y bienestar (*well-being*) desde un enfoque multidimensional. El ejercicio de construcción de un indicador de bienestar local Las Condes, está inspirado en el índice de pobreza multidimensional que en Chile se mide desde el año 2015 en sus cinco dimensiones.</p>
 
-<p align="justify">El concepto de bienestar que aquí se presenta, sigue las reflexiones del *enfoque de capacidades* de Sen[^1] , cuyo trabajo en torno al desarrollo humano ha puesto el foco del bien-estar en las personas, sus experiencia y valoraciones respecto del tipo de vida que desean llevar, incorporando una mirada holística del desarrollo económico y el bienestar de las sociedades.</p>
+<p align="justify">El concepto de bienestar que aquí se presenta, utiliza como espacio de medición los conceptos de funcionamientos y capacidades, que se extraen del marco teórico del *enfoque de capacidades* desarrollado por Sen[^1]. El trabajo académico de Sen ha girado en torno al desarrollo humano, y ha dirigido el foco del bienestar a las personas, sus experiencia y valoraciones respecto del tipo de vida que desean llevar, incorporando una mirada holística del desarrollo económico y el bienestar de las sociedades.</p>
 
 <p align="justify">El modelo de bienestar local Las Condes, observa una cantidad de diez dimensiones en su primera etapa de implementación; (1) Educación, (2) Salud, (3) Empleo, (4) Redes de apoyo, (5)  Vivienda, (6) Transporte, (7) Participación vecinal, (8) Recreación y Deportes, (9) Apoyo social y (10) Medioambiente. Estas dimensiones fueron definidas en conjunto con los equipos de DECOM de acuerdo a la oferta de programas sociales existentes.</p>
 
-<p align="justify">El trabajo realizado se divididó en distintas etapas que se fueron desarrollando de manera progresiva, cada una con hitos y productos entregados a la Dirección. Como Departamento de Estudios agradecemos la colaboración de los distintos  equipos involucrados en las diferentes etapas de este proceso, y esperamos que esta estrategia de desarrollo social contribuya al bien-estar  de los vecinos y vecinas de Las Condes.</p> 
+<img style="float:right; margin:10px;" src="C:/Users/17617549-4/OneDrive - Municipalidad de Las Condes/Documents/Desarrollo Website Estudios/EstudiosDecom.git.io/images/Diagramatrabajo.png" alt="drawing" width="350" height="320"/><p align="justify">El trabajo realizado se divididó en distintas etapas (descritas en el diagrama adjunto) que se fueron desarrollando de manera progresiva, cada una con hitos y productos entregados a la Dirección. Como Departamento de Estudios agradecemos la colaboración de los distintos  equipos involucrados en las diferentes etapas de este proceso, y esperamos que esta estrategia de desarrollo social contribuya al bienestar  de los vecinos y vecinas de Las Condes.</p> 
 
-<img style="float:left; margin:15px;" src="C:/Users/17617549-4/Documents/Desarrollo Website Estudios/EstudiosDecom.git.io/images/Diagramatrabajo.png" alt="drawing" width="470" height="380"/><p align="justify"><br>1. En una primera etapa de trabajo se realizó un diagnóstico sobre el estado de la oferta programática de DECOM. Se revisaron los 77 programas sociales, y se evaluaron las líneas de acción de estos dentro de las dimensiones del modelo de pobreza multidimensional: Educación, Salud, Trabajo y Seguridad social, Vivienda y entorno, y Redes y Cohesión social.<br>
-<br>
-Al mismo tiempo, se revisaron los instrumentos de focalización y la coherencia de los indicadores utilizados con la definición de la población objetivo de los programas, y la validez interna de estos instrumentos en relación a los criterios definidos en la evaluación de los distintos equipos.<br>
-<br>
-2. La segunda parte del proceso correspondió a la definición teórica de un modelo de bienestar social local. En base a una revisión extensa de literatura académica se diseñó un modelo multidimensional de bienestar en el cual se encasilló la oferta programática de DECOM existente.<br>
-<br>El resultado de este proceso arrojó un modelo de bienestar social local con 9 dimensiones que consideró la distintas líneas de acción de las políticas sociales ejecutadas por DECOM. Salud, Educación, Empleo, Transporte, Participación, redes y cohesión social, Medioambiente, Vivienda, Servicios básicos y alimentación, y Deportes, fueron las dimensiones levantadas en este proceso.<br> 
-<br> 
-3. En la tercera etapa se presentó el plan de abordaje programático en base al modelo de bienestar definido. Se reorientaron los distintos programas sociales de DECOM dentro de un diseño de intervención para la protección de brechas de bienestar observadas en los vecinos y vecinas de Las Condes.<br> 
-<br>En esta parte del proceso destaca la creación de un instrumento de ventanilla única que apunta a una lectura inicial de la situación de los vecinos y vecinas que se acercan a la Dirección de Desarrollo Comunitario, generando un diagnóstico integral sobre la vulnerabilidad del usuario.<br>
-<br>Lo anterior, fue acompañado por la habilitación de un sistema informático integrado que dispone de las herramientas necesarias para la gestión de la información recogida a través del instrumento de ventanilla única, y la creación de métricas requeridas para la operacionalización del modelo de bienestar y la lectura de brechas.<br>
-<br>En la etapa de desarrollo informático, destaca el soporte brindado por el Banco Mundial y la implementación del sistema de Gestión Social Local (GSL) que en su modulo base nos permite contar con un sistema integrado de datos administrativos y fuentes de datos externas como el Registro Social de Hogares, y un catálogo actualizado para la gestión de los distintos beneficios sociales y subsidios entregados por DECOM.<br>
-<br>
-4. Finalmente,
+[^1]:Amartya Sen es un economista de origen bengalí (India), cuyo trabajo académico ha girado entorno a la idea del desarrollo humano y la libertad. En 1998 obtuvo el Premio Nobel de Economía por sus contribuciones al análisis del bienestar económico. Actualmente es profesor titular de Economía y Filosofía en la Universidad de Harvard, y profesor visitante en decenas de universidades alrededor del mundo. 
+
 <br>
 </br></p>
 
@@ -45,23 +34,23 @@ Al mismo tiempo, se revisaron los instrumentos de focalización y la coherencia 
 
 <p align="justify"><b>Sen pone el énfasis en las capacidades que permiten a las personas alcanzar los resultados que aspiran para sus vidas (well-being)</b>, antes que en un determinado nivel de renta. A través del enfoque de capacidades se propone superar algunos de los axiomas de la economía tradicional “bienestarista” (welfare) centrados en la satisfacción de preferencias, o dicho de otro modo que <b>entienden la ausencia de bienestar exclusivamente como la falta de recursos.</b></p>
 
-<p align="justify"><b>Bien-estar (well-being) implicancias prácticas para las políticas públicas:</b></p>
+<p align="justify"><b>bienestar (well-being) implicancias prácticas para las políticas públicas:</b></p>
 
 <p align="justify"><b>Enfoque de productos (*commodities*)</b></p>
 
-<div align="center"><img src="C:/Users/17617549-4/Documents/Desarrollo Website Estudios/EstudiosDecom.git.io/images/welfare.png" alt="drawing" width="400"/>
+<div align="center"><img src="C:/Users/17617549-4/OneDrive - Municipalidad de Las Condes/Documents/Desarrollo Website Estudios/EstudiosDecom.git.io/images/welfare.png" alt="drawing" width="400"/>
 
 <p align="justify"><b>Enfoque de capacidades (*capabilities*)</b></p>
 
-<div align="center"><img src="C:/Users/17617549-4/Documents/Desarrollo Website Estudios/EstudiosDecom.git.io/images/bicicleta.png" alt="drawing" width="650"/>
+<div align="center"><img src="C:/Users/17617549-4/OneDrive - Municipalidad de Las Condes/Documents/Desarrollo Website Estudios/EstudiosDecom.git.io/images/bicicleta.png" alt="drawing" width="650"/>
 
-<p align="justify"><b>El recurso importa pero es solo instrumental. Lo sustancial son las capacidades que poseemos las personas de convertir esos recursos en funcionamientos deseables</b>. No existe relación entre poseer la bicicleta y el bien-estar. Lo que realmente importa es la habilidad de utilizar la bicicleta para poder movilizarse. Cuando pensamos en una personas en situación de discapacidad, esta requiere un conjunto más amplio de recursos para poder utilizar la bicicleta y alcanzar el funcionamiento de desplazarse, no le basta con tener la bicicleta.</p> 
+<p align="justify"><b>El recurso importa pero es solo instrumental. Lo sustancial son las capacidades que poseemos las personas de convertir esos recursos en funcionamientos deseables</b>. No existe relación entre poseer la bicicleta y el bienestar. Lo que realmente importa es la habilidad de utilizar la bicicleta para poder movilizarse. Cuando pensamos en una personas en situación de discapacidad, esta requiere un conjunto más amplio de recursos para poder utilizar la bicicleta y alcanzar el funcionamiento de desplazarse, no le basta con tener la bicicleta.</p> 
 
 <p align="justify">Lo mismo aplica en el caso de una mujer emabarazada que tiene requerimientos nutricionales especiales. No podemos asumir que por tener un nivel de renta o una canasta de alimentos realmente va a poder acceder a un estado nutricional óptimo. Se requiere un set más amplio de recursos para poder alcanzar el funcionamiento nutricional acorde a su condición.</p> 
 
 <p align="justify">En términos prácticos cuando diseñamos las políticas públicas con atención en la satisfacción de preferencias, generamos asistencia basada únicamente en transferencia de recursos (enfoque de productos), y dejamos de prestar atención a las distintas combinaciones de funcionamientos (seres y haceres) que permiten a las personas realmente lograr aquello que aspiran para sus vidas. Desde el enfoque de productos suponemos que si tienes la bicicleta entonces alcanzaste el bienestar (no necesitas ayuda). En cambio, el enfoque de capacidades nos advierte que la planificación de políticas sociales no pasa por una definición fáctica de un set de bienes primarios que las personas necesitan, sino que se debe dotar de agencia y empoderamiento a las personas para que puedan desarrollarse libremente.</p> 
 
-## Definición del índice de bien-estar
+## Definición del índice de bienestar
 
 ## Esquema de transferencias directas 
 
@@ -84,7 +73,6 @@ pp. 115–133</p>
 
 <p align="justify">Stiglitz, J. E., Sen, A., & Fitoussi, J.-P. (2009). Report by the commission on the measurement of economic performance and social progress. Citeseer.</p>
 
-[^1]:Amartya Sen es un economista de origen bengalí (India), cuyo trabajo académico ha girado entorno a la idea del desarrollo humano y la libertad. En 1998 obtuvo el Premio Nobel de Economía por sus contribuciones al análisis del bienestar económico. Actualmente es profesor titular de Economía y Filosofía en la Universidad de Harvard, y profesor visitante en decenas de universidades alrededor del mundo. 
 
 
 
