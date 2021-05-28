@@ -11,7 +11,7 @@ output:
       smooth_scroll: true
 ---
 
-> Estamos casi ciegos cuando las métricas que guían nuestras acciones son defectuosas o cuando estas no son bien entendidas[...] El cómo medimos afecta en lo que hacemos, y cuando nuestros indicadores son defectuosos podemos distorsionar las distintas alternativas de políticas. Los indicadores son esenciales para diseñar y evaluar políticas que persigan el bienestar de nuestras sociedades - (Stiglitz, Sen, & Fitoussi, 2009). 
+> Estamos casi ciegos cuando las métricas que guían nuestras acciones son defectuosas o cuando estas no son bien entendidas[...] El cómo medimos afecta en lo que hacemos, y cuando nuestros indicadores son defectuosos podemos distorsionar las distintas alternativas de políticas (Stiglitz, Sen, & Fitoussi, 2009). 
 
 ---
 
@@ -170,7 +170,7 @@ averdes <- averdes +  ggtitle("") + ylab("Distancia (metros)") + xlab("Superfici
     text = element_text(size = 10,  color = "black" )) + scale_y_continuous(breaks = seq(100,550,75)) + scale_x_continuous(breaks = seq(0,20,2.5)) + 
   geom_text(aes(label = Comuna),size = 2, color = 'black', hjust = -1)
 #Change fill colour
-averdes <- averdes  + scale_fill_manual(values = c('firebrick3', 'dimgray' ,'slategray3','#F8766D'))
+averdes <- averdes  + scale_fill_manual(values = c('firebrick3', 'dimgray' ,'slategray3','#00C0B8'))
 
 div( ggplotly(averdes, tooltip="text") %>% config(displayModeBar = T) , align = "center")
 
@@ -486,7 +486,7 @@ de personas mayores fue de un 2,5% anual en el periodo intercensal 1982 - 2017. 
 
 <p align="justify"><font size=3>Chile es un país que transita aceleradamente hacia el envejecimiento de su población (CEPAL, 2009). El aumento significativo en la esperanza de vida, y la abrupta caída en las tasas de natalidad y mortalidad infantil son fenómenos que explican este escenario.</font></p>
 
-<p align="justify"><font size=3>Los datos del Banco Mundial sugieren que desde 1960 a la fecha el país ha logrado un aumento en la expectativa de vida de su población de alrededor de 24 años, la segunda economía OCDE con mayor crecimiento en este indicador. Al mismo tiempo, es el país con la menor mortalidad infantil bajo los 5 años en todo América Latina.</p>
+<p align="justify"><font size=3>Los datos del Banco Mundial sugieren que desde 1960 a la fecha el país ha logrado un aumento en la expectativa de vida de su población de alrededor de 24 años, la segunda economía OECD con mayor crecimiento en este indicador. Al mismo tiempo, es el país con la menor mortalidad infantil bajo los 5 años en todo América Latina.</p>
 <p align="justify">De acuerdo con las proyecciones del Departamento de Asuntos Económicos y Sociales (DAES) de Naciones Unidas, al año 2050 se espera que Chile supere el 25% de envejecimiento relativo, una proporción similar a alcanzada actualmente por Japón el país más longevo del planeta.</font></p>
 
 <p align="justify"><font size=3>Un estudio del Centro de Investigación en Personas Mayores (2018a) reveló que la edad media de la población chilena entre 1982 y 2017 aumentó de 26,9 años a 35,8 años, y que la tasa de envejecimiento[^7] en el país es de 80,9 adultos mayores por cada 100 niños, la más elevada de Latinoamérica.</font></p>
@@ -1054,7 +1054,7 @@ div(ggplotly(educam, tooltip="text") %>% config(displayModeBar = T), align = "ce
 
 <p align="justify"><font size=3>Uno los principales desafíos que deberán enfrentar las economías en desarrollo es el envejecimiento de su fuerza laboral (CIPEM, 2018b). En la literatura académica ya se visualizan una serie de consecuencias asociadas, como el aumento de la tasa de participación laboral[^11] sobre los 60 años, y un retraso en los patrones tradicionales de entrada y salida de la fuerza de trabajo (Bloom, Canning, & Lubet, 2015).</font></p>
 
-<p align="justify"><font size=3>Al respecto, las estadísticas sugieren que Chile es uno de los países OCDE con mayor retraso en la edad de jubilación real respecto de la edad legal. En el caso de los hombres la edad promedio de retiro del mercado laboral alcanza los 70,5 años, mientras que en las mujeres es de 67,7 años (OECD, 2017).</font></p>
+<p align="justify"><font size=3>Al respecto, las estadísticas sugieren que Chile es uno de los países OECD con mayor retraso en la edad de jubilación real respecto de la edad legal. En el caso de los hombres la edad promedio de retiro del mercado laboral alcanza los 70,5 años, mientras que en las mujeres es de 67,7 años (OECD, 2017).</font></p>
 
 <p align="justify"><font size=3>Desde 1990 a la fecha, la tasa de participación laboral en personas mayores creció de un 22,1% a un 35,3% según los datos de la Organización Mundial del Trabajo (OIT). Existe una elevada proporción de adultos mayores que señala que su principal razón para seguir en el mercado de trabajo es porque su empleo les permite seguir activos en una dimensión social y económica, aunque en la medida que aumenta la edad aparecen razones de necesidad económica.</font></p>
 
@@ -1096,7 +1096,7 @@ div(ggplotly(peaplot, tooltip="text") %>% config(displayModeBar = T), align = "c
 ```
 <p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
 
-<p align="justify"><font size=3>Entre los adultos mayores económicamente activos en Las Condes, la cifra de personas en búsqueda de empleo es marginal, estos representan el 2% del total de personas de 60 años y más activos en el mercado laboral. Esta baja cifra de desempleo en la población mayor de la comuna podría estar reflejando una alta retención de personas mayores en el mercado de trabajo. En esta línea, los datos de la OCDE (2017), señalan que Chile es la octava economía de los países que integran la organización, con mayor tasa de retención[^12] de trabajadores sobre 60 años.</font></p>
+<p align="justify"><font size=3>Entre los adultos mayores económicamente activos en Las Condes, la cifra de personas en búsqueda de empleo es marginal, estos representan el 2% del total de personas de 60 años y más activos en el mercado laboral. Esta baja cifra de desempleo en la población mayor de la comuna podría estar reflejando una alta retención de personas mayores en el mercado de trabajo. En esta línea, los datos de la OECD (2017), señalan que Chile es la octava economía de los países que integran la organización, con mayor tasa de retención[^12] de trabajadores sobre 60 años.</font></p>
 
 <p align="justify"><font size=3>En tanto, la participación de los adultos mayores por sector de la actividad económica refleja una tendencia clara existente en el mercado laboral chileno, donde predomina la actividad de servicios (sector terciario).</font></p>
 
@@ -1177,14 +1177,9 @@ uf2019 = 	28065.35
 uf2015 = 	25494.15
 casen15$ingreso_uf = casen15$ytrabajocor/uf2015
 casen15$itrabaj_valorpresente= casen15$ingreso_uf * uf2019
-casen15$previsionsalud <- recode(casen15$s12, "1=1; 2=1; 3=1; 4=1; 5=1; 6=3; 7=2; 8=4; 9=5; 99=0")
+casen15$previsionsalud <- car::recode(casen15$s12, "1=1; 2=1; 3=1; 4=1; 5=1; 6=3; 7=2; 8=4; 9=5; 99=0")
 casen15$previsionsalud = factor (casen15$previsionsalud, levels = c(1,2,3,4,5),
                                  labels = c("FONASA", "Isapre", "FF.AA y de orden", "Ninguno (particular)", "Otro sistema"))
-
-referencia <- c(1,1,2,2,3,3,4,4)
-referencia = factor (referencia, levels = c(1,2,3,4),
-                     labels = c("Nacional", "Región Metropolitana", "Providencia", "Las Condes"))
-
 
 #LAS CONDES:
 casen15_60lc <- casen15 [which(casen15$comuna==13114 & casen15$edad>=60),] 
@@ -1208,15 +1203,15 @@ median_ingresostr_60nacional =  weighted.median(casen15_60cl$itrabaj_valorpresen
 
 
 #Data frame fig22:
-referencia <- c(1,1,2,2,3,3,4,4)
-referencia = factor (referencia, levels = c(1,2,3,4),
-                     labels = c("Nacional", "Región Metropolitana", "Providencia", "Las Condes"))
 ingresos <- c(mean_ingresostr_60nacional , median_ingresostr_60nacional, mean_ingresostr_60rm, median_ingresostr_60rm,
               mean_ingresostr_60prov, median_ingresostr_60prov, mean_ingresostr_60lc, median_ingresostr_60lc)
 
 estadisticoingresos <- c(1,2,1,2,1,2,1,2)
 estadisticoingresos = factor (estadisticoingresos, levels = c(1,2),
                      labels = c("Ingreso medio", "Ingreso mediano"))
+referencia <- c(1,1,2,2,3,3,4,4)
+referencia = factor (referencia, levels = c(1,2,3,4),
+                     labels = c("Nacional", "Región Metropolitana", "Providencia", "Las Condes"))
 
 fig22 <- data.frame(referencia, ingresos, estadisticoingresos)
 fig22$label <- round(fig22$ingresos, digits=0)
@@ -1268,6 +1263,7 @@ table13$Mujer <- paste0("$", table13$Mujer)
 
 ```
 
+
 ```{r print tab13, echo=FALSE, results= 'ASIS'}
 
 knitr::kable(table13, "html", col.names = c('Hombre', 'Mujer'), caption = "Tabla 13. Ingreso del trabajo en personas mayores de Las Condes desagregados por sexo.", align = 'cc' ) %>%
@@ -1281,7 +1277,7 @@ knitr::kable(table13, "html", col.names = c('Hombre', 'Mujer'), caption = "Tabla
 <p align="justify"><font size=3>Al analizar la consecuencia del aumento de la edad sobre el nivel de ingresos del trabajo en Las Condes descompuesta por sexo, y ajustado por años de escolaridad, se puede observar en detalle la diferencia salariar por género y se demuestra que la caída en el nivel de ingresos de las mujeres ocurre tempranamente. Antes de los 45 años los salarios de las mujeres comienzan a decrecer, mientras que en hombres este fenómeno ocurre posterior a los 60 años (*figura 23*).</font></p>
 
 <p align="justify"><font size=3>Figura 23. Efectos de la edad sobre el ingreso del trabajo ajustado por escolaridad y descompuesto por sexo en Las Condes.</font></p>
-<p align="center"><img src="C:/Users/17617549-4/Documents/Desarrollo Website Estudios/EstudiosDecom.git.io/images/incomebyageandsex.png" alt="drawing" width="630" height="480"/></p>
+<p align="center"><img src="C:/Users/17617549-4/OneDrive - Municipalidad de Las Condes/Documents/Desarrollo Website Estudios/EstudiosDecom.git.io/images/incomebyageandsex.png" alt="drawing" width="630" height="480"/></p>
 <font size=3><p align="center"><font size=3>*Fuente: Elaboración propia en base a datos de Casen 2015*</font></p>
 
 <p align="justify"><font size=3>A partir de lo anterior es posible concluir que la menor valoración del empleo femenino y el efecto temprano de la edad sobre los salarios, afecta entre otros, la capacidad de ahorro previsional en las mujeres, generando una mayor vulnerabilidad en estas al momento de retirarse del mercado laboral</font></p>
@@ -1295,7 +1291,7 @@ knitr::kable(table13, "html", col.names = c('Hombre', 'Mujer'), caption = "Tabla
 #Recodificar tipo de empleos:
 library("car")
 
-casen15_60lc$tipoempleo <- recode(casen15_60lc$o15, "1=1; 2=2; 3=3; 4=3; 5=4; 6=5 ; 7=5; 8=6; 9=7")
+casen15_60lc$tipoempleo <- car::recode(casen15_60lc$o15, "1=1; 2=2; 3=3; 4=3; 5=4; 6=5 ; 7=5; 8=6; 9=7")
 
 
 casen15_60lc$tipoempleo = factor (casen15_60lc$tipoempleo, levels = c(1,2,3,4,5,6,7),
@@ -1589,11 +1585,265 @@ knitr::kable(table17, "html", col.names = c('Clasificación de vivienda' ,'N° d
 
 <p align="justify"><font size=3>Por sexo, se aprecia una mayor proporción de mujeres de 80 años y más que viven solas, respecto de hombres. El 82,2% de los vecinos de cuarta edad en Las Condes que residen solos corresponde a mujeres, mientras que los hombres representan solo el 17,2%.</font></p>
 
-<p align="justify"><font size=3>Lo anterior, podría estar reflejando un fenómeno de abandono y soledad que sufren las personas mayores en la comuna. Si se considera el importante rol que juegan las redes de apoyo, el capital social y la confianza interpersonal en la protección de la salud, el abandono en la cuarta edad se convierte en un factor mayor de riesgo para la integridad física y psicológica de estos vecinos y vecinas de Las Condes (Grundy & Sloggett, 2003).</font></p>
+<p align="justify"><font size=3>Lo anterior, podría estar reflejando un fenómeno de abandono y soledad que sufren las personas mayores en la comuna. Si se considera el importante rol que juegan las redes de apoyo, el capital social y la confianza interpersonal en la protección de la salud, el abandono en la cuarta edad se convierte en un factor mayor de riesgo para la integridad física y psicológica de esta población (Grundy & Sloggett, 2003).</font></p>
 
-<p align="justify"><font size=3>Cuando examinamos la relación entre la autopercepción de salud en personas de cuarta edad y las redes de apoyo, los datos de Casen 2015 reflejan que existe una asociación entre ambos fenómenos. En la medida que aumenta el stock de capital social (entendido como redes de apoyo y confianza interpersonal) y reciprocidad, también lo hace la valoración que poseen las personas mayores respecto de su propio estado de salud (*figura 28*)</font></p>
+<p align="justify"><font size=3>En este sentido, la soledad podría ser un factor de incidencia directa sobre la prevalencia de depresión y las elevadas cifras de suicidio en la cuarta edad. Según los registros de defunciones del Departamento d Estadísticas e Información de Salud (DEIS), las tasas más altas de mortalidad por suicidio en el país se concentran en la población sobre 80 años de edad, y el 22,2% de las personas de cuarta edad ha sido diagnosticada con depresión según datos de la Encuesta de Calidad de Vida en el Adulto Mayor e Impacto del Pilar Solidario (ENCAVIDAM).</font></p>
 
----
+#### 2.3.2 Cuarta edad y Mercado laboral
+
+<p align="justify"><font size=3>Como se observó anteriormente, los indicadores demográficos reflejan importantes cambios en la composición demográfica del país. Indudablemente el envejecimiento poblacional es uno de los grandes desafíos para los hacedores de políticas públicas en las próximas décadas. Destaca en esta materia el envejecimiento de la fuerza laboral, reto que enfrentan transversalmente las economías en desarrollo alrededor del mundo (CIPEM, 2018b).</font></p>
+
+<p align="justify"><font size=3>En la literatura académica ya se visualizan una serie de consecuencias asociadas, como el aumento de las tasas de participación laboral[^13] sobre los 60 años, y un retraso en los patrones normales de entrada y salida de la fuerza de trabajo (Bloom et al., 2015).</font></p>
+
+<p align="justify"><font size=3>Al respecto, las estadística sugieren que Chile es uno de los países de la OECD con mayor retraso en la edad de jubilación real respecto de la edad legal. En el caso de los hombres la edad promedio de retiro del mercado laboral alcanza los 70,5 años, mientras que en las mujeres es de 67,7 años (OECD, 2017). Al mismo tiempo, desde 1990 a la fecha, la tasa de participación laboral en personas mayores creció de un 22,1% a un 35,3% según los datos de la Organización Mundial del Trabajo (OIT).</font></p>
+
+<p align="justify"><font size=3>Explicar los fenómenos de retraso en la salida de los mercados de trabajo y aumento de la población mayor económicamente activa, resulta complejo dada la gran heterogeneidad de este segmento etario, sumado a los diversos factores culturales e institucionales relativos a cada país.</font></p>
+
+<p align="justify"><font size=3>Cuando se consulta a los propios adultos mayores respecto de los motivos por los cuales siguen participando en la fuerza de trabajo, un número importante señala que es porque el trabajo les permite seguir activos, y sentirse útiles e integrados en la sociedad, aunque en la medida que aumenta la edad aparecen razones de necesidad económica.</font></p>
+
+<p align="justify"><font size=3>De acuerdo a los resultados obtenidos de ENCAVIDAM, el 90,4% de las personas mayores, entre 60 y 79 años que trabajan se sienten satisfechas o muy satisfechas con su empleo. Mientras que en los trabajadores sobre 80 años esta proporción cae al 69,5%.</font></p>
+
+<p align="justify"><font size=3>En relación a la información reportada en el Censo 2017, si bien es acotada, las estadísticas laborales sugieren que a nivel nacional existe una población de 23.093 personas de cuarta edad que trabajan en un empleo remunerado, estas representan el 4,9% del total de los adultos mayores de 80 años y más. Al mismo tiempo, se observa que en las Condes esta cifra alcanza los 1.152 adultos de cuarta edad que equivalen al 8,9% de este segmento etario (*figura 28*).</font></p>
+
+<p align="justify"><font size=3>
+</font></p>
+
+
+```{r dataframfig28, include=FALSE}
+
+ocupa80 = c(1, 2, 3, 4, 5, 6)
+ocupa80 = factor (ocupa80, levels = c(1,2,3,4,5,6) ,
+        labels = c("Trabajo remunerado en dinero o especies", "Trabajo no remunerado para un familiar", "Buscando empleo", "Quehaceres del hogar", "Jubilado o rentista","Otra situación"))
+propoc80 = c (0.082, 0.009, 0.001, 0.103, 0.682, 0.123)
+fig28 <- data.frame( ocupa80, propoc80)
+
+#Add labels escala 0 a 100
+fig28$label <- fig28$propoc80*100
+## Compute the position of labels
+fig28 <- fig28 %>% 
+  arrange(desc(ocupa80)) %>%
+    mutate(ypos = cumsum(label) - 0.5*label)
+#Set format labels
+fig28$label <- formatC(fig28$label, digits = 3, decimal.mark="," ,big.mark="." )
+
+```
+
+<p align="justify"><font size=3>Figura 28. Tipo de actividades en personas de cuarta edad en Las Condes.</font></p>
+
+```{r  fig28, echo=FALSE ,results = 'ASIS'}
+
+colors <- c('rgb(105, 105, 105)', 'rgb(178, 34, 34)','rgb(220, 220, 220)', 'rgb(112, 128, 144)','rgb(250, 128, 114)', 'rgb(32, 178, 170)')
+
+ocupacion80 <- plot_ly(fig28, labels = ~ocupa80, values = ~propoc80, type = 'pie',
+        textposition = 'inside',
+        textinfo = 'label+percent',
+        insidetextfont = list(color = '#FFFFFF'),
+        hoverinfo = 'label+percent',
+        text = ~paste(propoc80*100, '%'),
+        marker = list(colors = colors,
+                      line = list(color = '#FFFFFF', width = 1)),
+        showlegend = F) %>%
+layout(title = "" ,
+    xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+    yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+
+
+ocupacion80 
+
+
+```
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Censo 2017*</font></p>
+
+<p align="justify"><font size=3>Por su parte, los datos de Casen 2017 reportan que en Chile existen alrededor de 25 mil personas de 80 años y más que se encuentran ocupadas en el mercado laboral, y representan el 4,4% de la población total de cuarta edad. Por su parte, cerca de 73 mil adultos mayores de 80 años declaran estar dispuestos a trabajar si se les ofreciera una oportunidad.</font></p>
+
+<p align="justify"><font size=3>En tanto, los datos de Casen 2015 sugieren que alrededor de un 5% de los adultos mayores de cuarta edad en Las Condes se encuentra ocupados, una cifra marginalmente superior a la encontrada a nivel nacional, regional y de comunas de referencia.</font></p>
+
+<p align="justify"><font size=3>Entre las personas de cuarta edad empleadas en Las Condes destaca la mayor participación del empleo asalariado en el sector privado (39,5%), seguido del empleador (31,5%), y en menor medida aparecen los asalariados en el sector público (10,6%). En la *figura 29* se presenta la desagregación por tipo de empleo desempeñado por la población de cuarta edad ocupada en la comuna.</font></p>
+
+<p align="justify"><font size=3>Figura 29. Tipo de empleo en personas ocupadas de cuarta edad en Las Condes.</font></p>
+
+```{r dataframfig29, include=FALSE}
+
+#DATA FRAME LAS CONDES:
+casen15_80lc <- casen15 [which(casen15$comuna==13114 & casen15$edad>=80),] 
+casen15_80lc$tipoempleo_80 <-   car::recode(casen15_80lc$o15 , "1=1; 2=2; 3=3; 4=4; 5=5; 6=6; 7=6; 8=7; 9=8")
+casen15_80lc$tipoempleo_80 = factor(casen15_80lc$tipoempleo_80, levels = c(1,2,3,4,5,6,7,8),
+                                    labels = c ("Patrón o empleador", "Trabajador por cuenta propia", "Empleado u obrero en el sector público", "Empleado u obrero en el sector público",
+                                                "Empleado u obrero en el sector privado", "Servicio doméstico", "FF.AA y del Orden", "Familiar no remunerado"))
+tipoempleo80 = wtd.table(x = casen15_80lc$tipoempleo_80, weights = casen15_80lc$expc )
+fig29 <- cbind(tipoempleo80, prop.table(tipoempleo80)) 
+fig29 <- data.frame(fig29) %>%
+            rename("porcentaje"= V2,"n"= tipoempleo80) 
+fig29$porcentaje = round(fig29$porcentaje, digits = 3)
+fig29$categoria <- c(1,2,3,4,5,6,7)
+fig29$categoria <- factor(fig29$categoria, levels = c(1,2,3,4,5,6,7),
+                       labels = c("Patrón o empleador", "Trabajador por cuenta propia", "Empleado u obrero en el sector público",
+                                                "Empleado u obrero en el sector privado", "Servicio doméstico", "FF.AA y del Orden", "Familiar no remunerado"))
+fig29 <- fig29 %>%
+            arrange(desc(porcentaje)) %>%
+                slice(1:4) 
+```
+
+```{r  fig29, echo=FALSE ,results = 'ASIS'}
+
+colors <- c('rgb(105, 105, 105)', 'rgb(178, 34, 34)','rgb(220, 220, 220)', 'rgb(112, 128, 144)')
+
+tipoempleo_80 <- plot_ly(fig29, labels = ~categoria , values = ~porcentaje, type = 'pie',
+        textposition = 'inside',
+        textinfo = 'label+percent',
+        insidetextfont = list(color = '#FFFFFF'),
+        hoverinfo = 'label+percent',
+        text = ~paste(porcentaje*100, '%'),
+        marker = list(colors = colors,
+                      line = list(color = '#FFFFFF', width = 1)),
+        showlegend = F) %>%
+layout(title = "" ,
+    xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+    yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+
+tipoempleo_80
+
+```
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos de Casen 2015*</font></p>
+
+<p align="justify"><font size=3>En cuanto a los salarios, se aprecia que los trabajadores de 80 años y más residentes en la comuna alcanzan un ingreso medio de $951.050. Comparativamente, estos ingresos son significativamente superiores a los observados a nivel nacional y regional. El promedio de ingresos del trabajo de un adulto mayor de 80 años de Las Condes supera en 4,5 veces el obtenido por uno a nivel nacional (*tabla 18*).</font></p>
+
+```{r dataframe table18, echo=FALSE, message=FALSE, warning=FALSE}
+
+#DATA FRAME LAS CONDES:
+casen15_80lc <- casen15 [which(casen15$comuna==13114 & casen15$edad>=80),] 
+mean_ingresostr_80lc =  weighted.mean(casen15_80lc$itrabaj_valorpresente, casen15_80lc$expc, na.rm = T)
+#DATA FRAME PROVIDENCIA
+casen15_80pr <- casen15 [which(casen15$comuna==13123 & casen15$edad>=80),] 
+mean_ingresostr_80pr =  weighted.mean(casen15_80pr$itrabaj_valorpresente, casen15_80pr$expc, na.rm = T)
+#DATA FRAME RM
+casen15_80rm <- casen15 [which(casen15$region==13 & casen15$edad>=80),]
+mean_ingresostr_80rm =  weighted.mean(casen15_80rm$itrabaj_valorpresente, casen15_80rm$expr, na.rm = T)
+#DATA FRAME NACIONAL
+casen15_80na <- casen15 [which(casen15$edad>=80),]
+mean_ingresostr_80na =  weighted.mean(casen15_80na$itrabaj_valorpresente, casen15_80na$expr, na.rm = T)
+areasref <- c("Las Condes", "Providencia", "Región Metropolitana", "Nacional")
+ingresos <- c(mean_ingresostr_80lc, mean_ingresostr_80pr, mean_ingresostr_80rm, mean_ingresostr_80na   )
+#Dataframe tabla 18
+table18 <- data.frame(areasref, ingresos)
+table18$ingresos <- round(table18$ingresos, digits=0)
+table18$ingresos <- formatC(table18$ingresos, digits = 8, decimal.mark="," ,big.mark=".")
+table18$ingresos <- paste0("$",table18$ingresos)
+
+```
+
+```{r print tab18, echo=FALSE, results= 'ASIS'}
+
+knitr::kable(table18, "html", col.names = c('Área de referencia' ,'Promedio de ingresos del trabajo'), caption = "Tabla 18. Promedio de los salarios en personas de cuarta edad por áreas de referencia.", align = 'lc' ) %>%
+  kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = "hover", font_size = 13, full_width = TRUE) 
+
+```
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos de Casen 2015*</font></p>
+
+#### 2.3.3 Ingresos de los hogares en personas de la cuarta edad en Las Condes
+<p align="justify"><font size=3>A través de los datos de Casen podemos analizar cómo varían los ingresos de los hogares de la comuna donde residen personas de la cuarta edad. En la *tabla 19* se describen las categorías de hogares a utilizar en este apartado para comparar las métricas de ingresos en Las Condes.</font></p>
+
+```{r dataframe table19, echo=FALSE, message=FALSE, warning=FALSE}
+
+#DATA FRAME LAS CONDES 2015:
+casen15$n80 <- ifelse(casen15$edad>=80, 1, 0)
+casen15$men80 <- ifelse(casen15$edad<80,1,0)
+casen15 <- within(casen15, {numper80=ave(n80, folio, FUN=sum)})
+casen15 <- within(casen15, {numper79=ave(men80, folio, FUN=sum)})
+#GEN Clasificación de hogares
+casen15$tiphogar <- ifelse(casen15$numper==casen15$numper80, 1,  ifelse(casen15$numper==casen15$numper79, 3, 2))
+
+#DATA FRAME LAS CONDES 2017:
+casen17$n80 <- ifelse(casen17$edad>=80, 1, 0)
+casen17$men80 <- ifelse(casen17$edad<80,1,0)
+casen17 <- within(casen17, {numper80=ave(n80, folio, FUN=sum)})
+casen17 <- within(casen17, {numper79=ave(men80, folio, FUN=sum)})
+#GEN Clasificación de hogares
+casen17$tiphogar <- ifelse(casen17$numper==casen17$numper80, 1,  ifelse(casen17$numper==casen17$numper79, 3, 2))
+
+#Tab clasificación hogares 2015
+casen15_hogares <- casen15 [which(casen15$comuna==13114 & casen15$pco1==1),] 
+x15 = wtd.table(x = casen15_hogares$tiphogar, weights = casen15_hogares$expc )
+
+#tab clasificación hogares 2017
+casen17_hogares <- casen17 [which(casen17$comuna==13114 & casen17$pco1==1),] 
+x17 = wtd.table(x = casen17_hogares$tiphogar, weights = casen17_hogares$expc )
+
+thogar80 <- c("Hogar de cuarta edad", "Hogar mixto", "Hogar sin personas de cuarta edad", "Total de Hogares")
+nhogares15 <- c("3.296", "7.481", "85.523", "96.300")
+nhogares17 <- c("4.822", "6.325", "90.455", "101.602")
+table19 <- data.frame(thogar80, nhogares15, nhogares17)
+
+
+
+```
+
+```{r print tab19, echo=FALSE, results= 'ASIS'}
+
+knitr::kable(table19, "html", col.names = c('Tipo de hogar' ,'N° de hogares en 2015', 'N° de hogares en 2017'), caption = "Tabla 19. Clasificación de los hogares en Las Condes según composición etaria.", align = 'lcc' ) %>%
+  kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = "hover", font_size = 13, full_width = TRUE) 
+
+```
+<p align="center"><font size=3>*Fuente: Elaboración propia en base a datos de Casen 2015 y 2017.*</font></p>
+
+<p align="justify"><font size=3>Cabe destacar que el aumento de los hogares integrados únicamente por personas de cuarta edad ha sido importante en la comuna. Según Casen, entre 2015 y 2017, los hogares de personas de 80 años y más crecieron en un 31,6%, el aumento más fuerte considerando todas las tipologías de hogares según su composición etaria. Estas cifras son consistentes con las estadísticas demográficas censales que sugieren un acelerado envejecimiento de la población comunal.</font></p>
+
+<p align="justify"><font size=3><b>Ingreso autónomo del hogar</b></font></p>
+
+<p align="center"><font size=3>El ingreso autónomo del hogar corresponde a la suma de todos los ingresos percibidos por una familia provenientes del trabajo, la autoprovisión de bienes producidos por el hogar, las rentas, jubilaciones y retiro de utilidades (Ministerio de Desarrollo Social, 2015).</font></p>
+
+<p align="center"><font size=3>En general los ingresos del trabajo presentan la mayor participación en la composición del los ingresos autónomos de los hogares, y en la medida que la cantidad de personas mayores en el grupo familiar aumenta, el ingreso autónomo tiende a disminuir significativamente como resultado del retiro de los mercados laborales. En esta línea, Bardasi, Jenkins y Rigg (2002) advierten que el retiro de los mercados de trabajo supone cambios importantes en el perfil de los ingresos familiares y pueden poner en riesgo la seguridad económica de los hogares vulnerables</font></p>
+
+<p align="center"><font size=3>
+</font></p>
+
+<p align="center"><font size=3>
+</font></p>
+
+<p align="center"><font size=3>
+</font></p>
+
+<p align="center"><font size=3>
+</font></p>
+
+<p align="center"><font size=3>
+</font></p>
+
+<p align="center"><font size=3>
+</font></p>
+
+<p align="center"><font size=3>
+</font></p>
+
+<p align="center"><font size=3>
+</font></p>
+
+<p align="center"><font size=3>
+</font></p>
+
+<p align="center"><font size=3>
+</font></p>
+
+<p align="center"><font size=3>
+</font></p>
+
+<p align="center"><font size=3>
+</font></p>
+
+<p align="center"><font size=3>
+</font></p>
+
+<p align="center"><font size=3>
+</font></p>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</br>
 
 ## Capítulo 3: Caracterización Socioeconómica
 
@@ -1730,7 +1980,7 @@ https://lyd.org/wp-content/uploads/2019/05/tp-1399-clase-media.pdf </p>
 
 ---
 
-<main><b>Footnotes</b></main>
+<main><b>Notas al pie:</b></main>
 
 [^1]: Este indicador se construye a partir de distancia mínima promedio ponderada por población entre el centro geométrico de cada manzana y la plaza pública más cercana. Dicha distancia se pondera en función de la población a nivel de manzana con la finalidad de no subestimar el resultado final. El estándar establecido por el CNDU para este indicador es de 400m.
 
@@ -1756,7 +2006,7 @@ https://lyd.org/wp-content/uploads/2019/05/tp-1399-clase-media.pdf </p>
 
 [^12]: Tasa de retención: Es la proporción de trabajadores entre 60 y 64 años que conserva el mismo empleo hace al menos cinco años.
 
-
+[^13]: La tasa de participación laboral representa la proporción de población económicamente activa respecto del total de población. Para el caso de la tasa de participación laboral en personas mayores, esta expresa el porcentaje de personas de 60 años y más que se encuentran económicamente activos respecto del total de personas de tercera edad.
 
 
 
