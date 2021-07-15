@@ -1790,9 +1790,9 @@ knitr::kable(table19, "html", col.names = c('Tipo de hogar' ,'N° de hogares en 
 
 <p align="justify"><font size=3><b>Ingreso autónomo del hogar</b></font></p>
 
-<p align="center"><font size=3>El ingreso autónomo del hogar corresponde a la suma de todos los ingresos percibidos por una familia provenientes del trabajo, la autoprovisión de bienes producidos por el hogar, las rentas, jubilaciones y retiro de utilidades (Ministerio de Desarrollo Social, 2015).</font></p>
+<p align="justify"><font size=3>El ingreso autónomo del hogar corresponde a la suma de todos los ingresos percibidos por una familia provenientes del trabajo, la autoprovisión de bienes producidos por el hogar, las rentas, jubilaciones y retiro de utilidades (Ministerio de Desarrollo Social, 2015).</font></p>
 
-<p align="center"><font size=3>En general los ingresos del trabajo presentan la mayor participación en la composición del los ingresos autónomos de los hogares, y en la medida que la cantidad de personas mayores en el grupo familiar aumenta, el ingreso autónomo tiende a disminuir significativamente como resultado del retiro de los mercados laborales. En esta línea, Bardasi, Jenkins y Rigg (2002) advierten que el retiro de los mercados de trabajo supone cambios importantes en el perfil de los ingresos familiares y pueden poner en riesgo la seguridad económica de los hogares vulnerables</font></p>
+<p align="justify"><font size=3>En general los ingresos del trabajo presentan la mayor participación en la composición del los ingresos autónomos de los hogares, y en la medida que la cantidad de personas mayores en el grupo familiar aumenta, el ingreso autónomo tiende a disminuir significativamente como resultado del retiro de los mercados laborales. En esta línea, Bardasi, Jenkins y Rigg (2002) advierten que el retiro de los mercados de trabajo supone cambios importantes en el perfil de los ingresos familiares y pueden poner en riesgo la seguridad económica de los hogares vulnerables</font></p>
 
 <p align="center"><font size=3>
 </font></p>

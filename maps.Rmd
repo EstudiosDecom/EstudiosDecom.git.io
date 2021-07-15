@@ -4,8 +4,7 @@ title: "Visor territorial DEPSE"
 
 ---
 
-<p align="justify">Visor de Población por Unidad Vecinal construido con microdatos del Censo 2017 y el Registro Social de Hogares.</p>
-<p align="justify">Desarrollador: Cristian Villagrán, geógrafo Secplan</p>
+<p align="justify">Visor de Población por Unidad Vecinal construido con microdatos del Censo 2017 y el Registro Social de Hogares.<br><b>*Desarrollador: Cristian Villagrán, geógrafo Secplan*</b></br></p>
 
 <embed src="https://lascondes.maps.arcgis.com/apps/dashboards/68186f49c28145cfb523febaf7ccf316" style="width: 1680px; height: 1180px;">
 
