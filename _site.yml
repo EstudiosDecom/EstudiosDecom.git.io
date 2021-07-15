@@ -6,12 +6,12 @@ navbar:
     - text: "Inicio"
       href: index.html
     - text: "Estrategia Desarrollo Social"
-      href: nuevametodologia.html
+      href: blank_.html
     - text: "Diagnóstico Social Comunal"
       href: diagnostico.html
     - text: "Análisis"
       href: doc_analisis.html
-    - text: "IDE DECOM"
+    - text: "Visor territorial DEPSE"
       href: maps.html
     - text: "Nosotros"
       href: about.html

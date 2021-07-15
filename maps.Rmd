@@ -1,8 +1,10 @@
 ---
-title: "Portal de infraestructura de datos espaciales" 
+title: "Visor territorial DEPSE" 
 ---
 
 ---
 
-<embed src="https://visor-de-barrios-lascondes.hub.arcgis.com" style="width: 1800px; height: 1200px;">
+<p align="justify">Visor de Población por Unidad Vecinal construido con microdatos del Censo 2017 y el Registro Social de Hogares.</p>
+
+<embed src="https://lascondes.maps.arcgis.com/apps/dashboards/68186f49c28145cfb523febaf7ccf316" style="width: 1680px; height: 1180px;">
 
