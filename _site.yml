@@ -11,7 +11,7 @@ navbar:
       href: diagnostico.html
     - text: "Análisis"
       href: doc_analisis.html
-    - text: "Visor territorial DEPSE"
+    - text: "Visor territorial"
       href: maps.html
     - text: "Nosotros"
       href: about.html

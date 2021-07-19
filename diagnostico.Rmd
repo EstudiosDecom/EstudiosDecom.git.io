@@ -90,7 +90,7 @@ casen17 <- read_dta("C:/Users/17617549-4/OneDrive - Municipalidad de Las Condes/
 
 <p align="justify"><font size=3>Las unidades vecinales son determinadas por el alcalde “...de propia iniciativa o a petición de las juntas de vecinos o de los vecinos interesados, con el acuerdo del Concejo y oyendo al Consejo Económico y Social de la Comuna”. Actualmente, existen 25 unidades vecinales distribuidas en el territorio comunal (ver mapa).</font></p>
 
-<p align="center"><iframe src="https://www.google.com/maps/d/embed?mid=1Qp_2a8tQn-_jWYvTB_eWLO1CLU1arma3" width="650" height="450" frameborder="0"></iframe></p>
+<p align="center"><iframe src="https://estudiosdecom.github.io/uvLC/#13/-33.3994/-70.5425" width="800" height="500" frameborder="0"></iframe></p>
 
 #### 1.1.1 Organizaciones territoriales y funcionales.
 
@@ -135,7 +135,7 @@ kable_styling(position = "center", stripe_color = "gray!6", bootstrap_options = 
 <p align="justify"><font size=3>En la *figura 1* se muestra la distribución de metros cuadrados de áreas verdes por habitantes para las comunas de la Provincia de Santiago a través de un mapa, aquellas comunas con mayor cantidad de áreas verdes per cápita aparecen más oscuras, y se incluye una clasificación del índice de calidad de parques urbanos y plazas de uso público.</font></p>
 
 <p align="center"><font size=3>Figura 1. Áreas verdes (mt2/habitante) comunas de la Provincia de Santiago.</font></p>
-<p align="center"><iframe src="https://estudiosdecom.github.io/areasverdesurbanasGranStgo/#11/-33.4486/-70.6270" width="650" height="450" frameborder="0"></iframe></p>
+<p align="center"><iframe src="https://estudiosdecom.github.io/areasverdesurbanasGranStgo/#11/-33.4486/-70.6270" width="800" height="500" frameborder="0"></iframe></p>
 <p align="center"><font size=3>*Fuente: Elaboración propia en base a datos del Sistema de Indicadores y Estándares del Desarrollo Urbano(SIEDU)*</font></p>
 
 <p align="justify"><font size=3>Las comunas de referencia, Vitacura y Providencia se encuentran dentro de las tres con mayor cantidad de áreas verdes por persona con un promedio de 17,2 metros cuadrados por habitante. Vitacura se ubica en el primer lugar a nivel nacional con un índice de 18,9 m2/hab., mientras que Providencia aparece en el tercer lugar con 15,5 m2/hab.</font></p>
